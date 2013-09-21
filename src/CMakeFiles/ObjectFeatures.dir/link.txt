@@ -1,0 +1,2 @@
+/usr/bin/ar cr libObjectFeatures.a  CMakeFiles/ObjectFeatures.dir/ObjectFeatures.cpp.o
+/usr/bin/ranlib libObjectFeatures.a

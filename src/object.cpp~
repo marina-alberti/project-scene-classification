@@ -1,0 +1,53 @@
+#include "object.hpp"
+  
+
+void object::setName(string inputName) {
+  name = inputName;
+}
+void object::setXvertix(float input) {
+  xvertix = input;
+}
+
+void object::setYvertix(float input) {
+  yvertix = input;
+}
+
+void object::setZvertix(float input) {
+  zvertix = input;
+}
+
+void object::setRoll(float input) {
+  roll = input;
+}
+
+void object::setPitch(float input) {
+  pitch = input;
+}
+void object::setYaw(float input) {
+  yaw = input;
+}
+void object::setLength(float input) {
+  length = input;
+}
+
+void object::setWidth(float input) {
+  width = input;
+}
+
+void object::setHeight(float input) {
+  height = input;
+}
+
+vector<float> object::computeCentroid() { 
+  
+}
+
+void object::computeVertices() {
+  xmin = xvertix;
+  ymin = yvertix;
+  zmin = zvertix;
+  xmax = xmin + length;
+  ymax = ymin + width;
+  zmax = zmin + height;
+
+}

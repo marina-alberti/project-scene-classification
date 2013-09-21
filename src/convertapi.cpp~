@@ -1,0 +1,94 @@
+#include "convertapi.hpp"
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/xml_parser.hpp>
+#include <iostream>
+
+#define DEBUG 1
+
+using namespace boost::property_tree;
+
+// Input: the filename 
+// Output: sceneinformation object
+
+static const std::string TAG_SCENARIO = "scenario";
+static const std::string TAG_NAME = "name";
+static const std::string TAG_OBJECT = "object";
+static const std::string TAG_NOBJECTS = "numberOfObjects";
+static const std::string TAG_ALLOBJECTS = "allObjects";
+static const std::string TAG_POSE = "pose";
+static const std::string TAG_DIMENSIONS = "dimensions";
+static const std::string TAG_LENGTH = "length";
+static const std::string TAG_WIDTH = "width";
+static const std::string TAG_HEIGHT = "height";
+static const std::string TAG_COLOR = "color";
+static const std::string TAG_INDICES = "indices";
+
+convertApi::convertApi(std::string inputFilename) {
+  xmlFilename = inputFilename;
+}
+
+void convertApi::importXmlAnnotations(){
+  //sceneInformation mySceneInformation;
+  boost::property_tree::ptree root;
+  std::string xmlFile = xmlFilename;
+  read_xml(xmlFile, root);
+
+   // QString scenarioType = QString::fromStdString(root.get<std::string>(TAG_SCENARIO + "." + "type"));
+  std::string scenarioType = root.get<std::string>(TAG_SCENARIO + "." + "type");
+  mySceneInformation.setType(scenarioType);
+  if (DEBUG) {
+    std::cout << scenarioType << endl;
+  }
+
+/* // add later for landmark
+    ptree& tableDimensions = root.get_child(TAG_SCENARIO + "." + TAG_DIMENSIONS);
+    _tableLength = tableDimensions.get<float>(TAG_LENGTH);
+    _tableWidth = tableDimensions.get<float>(TAG_WIDTH);
+*/
+
+  boost::property_tree::ptree& allObjects = root.get_child(TAG_SCENARIO + "." + TAG_ALLOBJECTS);
+  boost::property_tree::ptree::iterator it = allObjects.begin();
+  it++;
+
+  for(; it != allObjects.end(); it++){
+      parseObject(it->second);
+  }
+
+}
+
+void convertApi::parseObject(boost::property_tree::ptree &parent){
+    object newObject;
+    // newObject.setName = parent.get<std::string>(TAG_NAME);
+    // set the "Pose" parameters: the coordinates of a vertix and roll, pitch, yaw angles
+    boost::property_tree::ptree& pose = parent.get_child(TAG_POSE);
+    newObject.setXvertix(pose.get<float>("x"));
+    newObject.setYvertix(pose.get<float>("y"));
+    newObject.setZvertix(pose.get<float>("z"));
+    newObject.setRoll(pose.get<float>("roll"));
+    newObject.setPitch(pose.get<float>("pitch"));
+    newObject.setYaw(pose.get<float>("yaw"));
+
+    // set the dimensions of bounding box
+    boost::property_tree::ptree& dimensions = parent.get_child(TAG_DIMENSIONS);
+    newObject.setLength(dimensions.get<float>(TAG_LENGTH));
+    newObject.setWidth(dimensions.get<float>(TAG_WIDTH));
+    newObject.setHeight(dimensions.get<float>(TAG_HEIGHT));
+ 
+   // add object to objectlist in sceneinfo
+    mySceneInformation.addObject(newObject);
+
+/*
+  // Get indices 
+    std::istringstream str(parent.get<std::string>(TAG_INDICES));
+    newObject.indices.indices.clear();
+    int i;
+    while(str >> i){
+        newObject.indices.indices.push_back(i);
+    }
+*/
+}
+
+sceneInformation convertApi::getAnnotations() {
+  return mySceneInformation;
+}
+

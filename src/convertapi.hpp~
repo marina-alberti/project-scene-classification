@@ -1,0 +1,28 @@
+#ifndef CONVERTAPI_H
+#define CONVERTAPI_H
+
+#include "object.hpp"
+#include "sceneinformation.hpp"
+#include <string>
+#include <boost/property_tree/ptree.hpp>
+#include <boost/property_tree/xml_parser.hpp>
+#include <vector>
+
+// Input: the filename 
+// Output: sceneinformation object
+
+class convertApi {
+
+private:
+  string xmlFilename;
+  sceneInformation mySceneInformation;
+
+public:
+  convertApi(string);
+  void importXmlAnnotations();
+  void parseObject(boost::property_tree::ptree &parent);
+  sceneInformation getAnnotations();
+  
+};
+
+#endif

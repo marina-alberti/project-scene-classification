@@ -1,0 +1,2 @@
+/usr/bin/ar cr libApiConvertKTHDB.a  CMakeFiles/ApiConvertKTHDB.dir/ApiConvertKTHDB.cpp.o
+/usr/bin/ranlib libApiConvertKTHDB.a

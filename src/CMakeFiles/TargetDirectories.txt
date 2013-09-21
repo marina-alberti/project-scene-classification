@@ -1,0 +1,11 @@
+/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/ApiConvertKTHDB.dir
+/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/ApiFeatureExtraction.dir
+/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/DatabaseInformation.dir
+/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/FeatureInformation.dir
+/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/LOOCV.dir
+/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/Object.dir
+/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/ObjectFeatures.dir
+/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/ObjectPairFeatures.dir
+/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/SceneInformation.dir
+/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/TestScene.dir
+/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/test.dir

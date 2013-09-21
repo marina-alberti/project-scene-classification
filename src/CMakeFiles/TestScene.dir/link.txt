@@ -1,0 +1,2 @@
+/usr/bin/ar cr libTestScene.a  CMakeFiles/TestScene.dir/TestScene.cpp.o
+/usr/bin/ranlib libTestScene.a

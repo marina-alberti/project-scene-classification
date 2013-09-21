@@ -1,0 +1,54 @@
+#ifndef OBJECT_H
+#define OBJECT_H
+
+#include <string>
+#include <boost/property_tree/ptree.hpp>
+#include<vector>
+
+using namespace std;
+
+// The object geometry amd information 
+class object{
+public:
+// string object::importObjectsInformation(QString xmlFile);
+  void computeCentroid();
+
+// all the 9 set functions for parameters given in xml file
+  void setName(string);
+  void setXvertix(float);
+  void setYvertix(float);
+  void setZvertix(float);
+  void setRoll(float);
+  void setPitch(float);
+  void setYaw(float);
+  void setLength(float);
+  void setWidth(float);
+  void setHeight(float);
+
+  vector<float> computeCentroid();
+
+private:
+  float xmin;
+  float ymin;
+  float zmin;
+  float xmax;
+  float ymax;
+  float zmax;
+  float volume;
+  float xvertix;
+  float yvertix;
+  float zvertix;
+  float roll;
+  float pitch;
+  float yaw;
+  float length;
+  float width;
+  float height;
+  float centroid;
+  string name;
+
+};
+
+
+#endif
+

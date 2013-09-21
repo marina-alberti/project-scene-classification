@@ -1,0 +1,35 @@
+#ifndef SCENEFEATURESCOMPUTATION_H
+#define SCENEFEATURESCOMPUTATION_H
+
+#include "Object.hpp"
+#include "ObjectFeatures.hpp"
+#include "SceneInformation.hpp"
+#include <string>
+#include <vector>
+#include <pcl/point_types.h>
+#include <pcl/point_cloud.h>
+
+using namespace std;
+
+class SceneFeaturesComputation {
+
+private:
+
+  SceneInformation basicSceneInformation();
+
+  ObjectFeatures ReferenceObject;  // to interpret as the static/landmark
+  ObjectFeatures TargetObject;
+
+  float EuclideanDistance;
+  float EuclideanDistanceProjectedHorizontal;
+  float Orientation;
+  float OrientationProjectedHorizontal;
+  float MinimumDistanceBoudaries; 
+
+public:
+
+
+
+};
+
+#endif
