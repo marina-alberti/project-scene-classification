@@ -1,6 +1,0 @@
-cmake_minimum_required (VERSION 2.6)
-project (SceneDescription)
-add_executable(bin/test test.cpp)
-add_library( object object.cpp )
-add_library( sceneInformation sceneInformation.cpp )
-add_library( convertApi convertApi.cpp )
