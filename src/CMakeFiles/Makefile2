@@ -47,10 +47,10 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/marina/APIs_Scene_Structure_from_DB_v3
+CMAKE_SOURCE_DIR = /home/marina/Project_Scene_Classification/project-scene-classification
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/marina/APIs_Scene_Structure_from_DB_v3/src
+CMAKE_BINARY_DIR = /home/marina/Project_Scene_Classification/project-scene-classification/src
 
 #=============================================================================
 # Target rules for target CMakeFiles/ApiConvertKTHDB.dir
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/marina/APIs_Scene_Structure_from_DB_v3/src
 CMakeFiles/ApiConvertKTHDB.dir/all:
 	$(MAKE) -f CMakeFiles/ApiConvertKTHDB.dir/build.make CMakeFiles/ApiConvertKTHDB.dir/depend
 	$(MAKE) -f CMakeFiles/ApiConvertKTHDB.dir/build.make CMakeFiles/ApiConvertKTHDB.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles  1
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles  1
 	@echo "Built target ApiConvertKTHDB"
 .PHONY : CMakeFiles/ApiConvertKTHDB.dir/all
 
@@ -69,9 +69,9 @@ all: CMakeFiles/ApiConvertKTHDB.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ApiConvertKTHDB.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ApiConvertKTHDB.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 0
 .PHONY : CMakeFiles/ApiConvertKTHDB.dir/rule
 
 # Convenience name for target.
@@ -91,13 +91,13 @@ clean: CMakeFiles/ApiConvertKTHDB.dir/clean
 # Target rules for target CMakeFiles/ApiFeatureExtraction.dir
 
 # All Build rule for target.
-CMakeFiles/ApiFeatureExtraction.dir/all: CMakeFiles/ObjectFeatures.dir/all
 CMakeFiles/ApiFeatureExtraction.dir/all: CMakeFiles/FeatureInformation.dir/all
-CMakeFiles/ApiFeatureExtraction.dir/all: CMakeFiles/ObjectPairFeatures.dir/all
 CMakeFiles/ApiFeatureExtraction.dir/all: CMakeFiles/SceneInformation.dir/all
+CMakeFiles/ApiFeatureExtraction.dir/all: CMakeFiles/ObjectFeatures.dir/all
+CMakeFiles/ApiFeatureExtraction.dir/all: CMakeFiles/ObjectPairFeatures.dir/all
 	$(MAKE) -f CMakeFiles/ApiFeatureExtraction.dir/build.make CMakeFiles/ApiFeatureExtraction.dir/depend
 	$(MAKE) -f CMakeFiles/ApiFeatureExtraction.dir/build.make CMakeFiles/ApiFeatureExtraction.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles  2
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles  2
 	@echo "Built target ApiFeatureExtraction"
 .PHONY : CMakeFiles/ApiFeatureExtraction.dir/all
 
@@ -107,9 +107,9 @@ all: CMakeFiles/ApiFeatureExtraction.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ApiFeatureExtraction.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ApiFeatureExtraction.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 0
 .PHONY : CMakeFiles/ApiFeatureExtraction.dir/rule
 
 # Convenience name for target.
@@ -129,12 +129,12 @@ clean: CMakeFiles/ApiFeatureExtraction.dir/clean
 # Target rules for target CMakeFiles/DatabaseInformation.dir
 
 # All Build rule for target.
-CMakeFiles/DatabaseInformation.dir/all: CMakeFiles/ApiConvertKTHDB.dir/all
-CMakeFiles/DatabaseInformation.dir/all: CMakeFiles/ApiFeatureExtraction.dir/all
 CMakeFiles/DatabaseInformation.dir/all: CMakeFiles/SceneInformation.dir/all
+CMakeFiles/DatabaseInformation.dir/all: CMakeFiles/ApiFeatureExtraction.dir/all
+CMakeFiles/DatabaseInformation.dir/all: CMakeFiles/ApiConvertKTHDB.dir/all
 	$(MAKE) -f CMakeFiles/DatabaseInformation.dir/build.make CMakeFiles/DatabaseInformation.dir/depend
 	$(MAKE) -f CMakeFiles/DatabaseInformation.dir/build.make CMakeFiles/DatabaseInformation.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles  3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles  3
 	@echo "Built target DatabaseInformation"
 .PHONY : CMakeFiles/DatabaseInformation.dir/all
 
@@ -144,9 +144,9 @@ all: CMakeFiles/DatabaseInformation.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/DatabaseInformation.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 8
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 8
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/DatabaseInformation.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 0
 .PHONY : CMakeFiles/DatabaseInformation.dir/rule
 
 # Convenience name for target.
@@ -169,7 +169,7 @@ clean: CMakeFiles/DatabaseInformation.dir/clean
 CMakeFiles/FeatureInformation.dir/all:
 	$(MAKE) -f CMakeFiles/FeatureInformation.dir/build.make CMakeFiles/FeatureInformation.dir/depend
 	$(MAKE) -f CMakeFiles/FeatureInformation.dir/build.make CMakeFiles/FeatureInformation.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles  4
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles  4
 	@echo "Built target FeatureInformation"
 .PHONY : CMakeFiles/FeatureInformation.dir/all
 
@@ -179,9 +179,9 @@ all: CMakeFiles/FeatureInformation.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/FeatureInformation.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/FeatureInformation.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 0
 .PHONY : CMakeFiles/FeatureInformation.dir/rule
 
 # Convenience name for target.
@@ -205,7 +205,7 @@ CMakeFiles/LOOCV.dir/all: CMakeFiles/TestScene.dir/all
 CMakeFiles/LOOCV.dir/all: CMakeFiles/DatabaseInformation.dir/all
 	$(MAKE) -f CMakeFiles/LOOCV.dir/build.make CMakeFiles/LOOCV.dir/depend
 	$(MAKE) -f CMakeFiles/LOOCV.dir/build.make CMakeFiles/LOOCV.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles  5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles  5
 	@echo "Built target LOOCV"
 .PHONY : CMakeFiles/LOOCV.dir/all
 
@@ -215,9 +215,9 @@ all: CMakeFiles/LOOCV.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/LOOCV.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 10
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 10
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/LOOCV.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 0
 .PHONY : CMakeFiles/LOOCV.dir/rule
 
 # Convenience name for target.
@@ -240,7 +240,7 @@ clean: CMakeFiles/LOOCV.dir/clean
 CMakeFiles/Object.dir/all:
 	$(MAKE) -f CMakeFiles/Object.dir/build.make CMakeFiles/Object.dir/depend
 	$(MAKE) -f CMakeFiles/Object.dir/build.make CMakeFiles/Object.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles  6
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles  6
 	@echo "Built target Object"
 .PHONY : CMakeFiles/Object.dir/all
 
@@ -250,9 +250,9 @@ all: CMakeFiles/Object.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Object.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 1
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 1
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/Object.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 0
 .PHONY : CMakeFiles/Object.dir/rule
 
 # Convenience name for target.
@@ -272,11 +272,11 @@ clean: CMakeFiles/Object.dir/clean
 # Target rules for target CMakeFiles/ObjectFeatures.dir
 
 # All Build rule for target.
-CMakeFiles/ObjectFeatures.dir/all: CMakeFiles/Object.dir/all
 CMakeFiles/ObjectFeatures.dir/all: CMakeFiles/FeatureInformation.dir/all
+CMakeFiles/ObjectFeatures.dir/all: CMakeFiles/Object.dir/all
 	$(MAKE) -f CMakeFiles/ObjectFeatures.dir/build.make CMakeFiles/ObjectFeatures.dir/depend
 	$(MAKE) -f CMakeFiles/ObjectFeatures.dir/build.make CMakeFiles/ObjectFeatures.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles  7
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles  7
 	@echo "Built target ObjectFeatures"
 .PHONY : CMakeFiles/ObjectFeatures.dir/all
 
@@ -286,9 +286,9 @@ all: CMakeFiles/ObjectFeatures.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ObjectFeatures.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ObjectFeatures.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 0
 .PHONY : CMakeFiles/ObjectFeatures.dir/rule
 
 # Convenience name for target.
@@ -308,11 +308,11 @@ clean: CMakeFiles/ObjectFeatures.dir/clean
 # Target rules for target CMakeFiles/ObjectPairFeatures.dir
 
 # All Build rule for target.
-CMakeFiles/ObjectPairFeatures.dir/all: CMakeFiles/Object.dir/all
 CMakeFiles/ObjectPairFeatures.dir/all: CMakeFiles/FeatureInformation.dir/all
+CMakeFiles/ObjectPairFeatures.dir/all: CMakeFiles/Object.dir/all
 	$(MAKE) -f CMakeFiles/ObjectPairFeatures.dir/build.make CMakeFiles/ObjectPairFeatures.dir/depend
 	$(MAKE) -f CMakeFiles/ObjectPairFeatures.dir/build.make CMakeFiles/ObjectPairFeatures.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles  8
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles  8
 	@echo "Built target ObjectPairFeatures"
 .PHONY : CMakeFiles/ObjectPairFeatures.dir/all
 
@@ -322,9 +322,9 @@ all: CMakeFiles/ObjectPairFeatures.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/ObjectPairFeatures.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/ObjectPairFeatures.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 0
 .PHONY : CMakeFiles/ObjectPairFeatures.dir/rule
 
 # Convenience name for target.
@@ -344,11 +344,11 @@ clean: CMakeFiles/ObjectPairFeatures.dir/clean
 # Target rules for target CMakeFiles/SceneInformation.dir
 
 # All Build rule for target.
-CMakeFiles/SceneInformation.dir/all: CMakeFiles/Object.dir/all
 CMakeFiles/SceneInformation.dir/all: CMakeFiles/FeatureInformation.dir/all
+CMakeFiles/SceneInformation.dir/all: CMakeFiles/Object.dir/all
 	$(MAKE) -f CMakeFiles/SceneInformation.dir/build.make CMakeFiles/SceneInformation.dir/depend
 	$(MAKE) -f CMakeFiles/SceneInformation.dir/build.make CMakeFiles/SceneInformation.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles  9
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles  9
 	@echo "Built target SceneInformation"
 .PHONY : CMakeFiles/SceneInformation.dir/all
 
@@ -358,9 +358,9 @@ all: CMakeFiles/SceneInformation.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/SceneInformation.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/SceneInformation.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 0
 .PHONY : CMakeFiles/SceneInformation.dir/rule
 
 # Convenience name for target.
@@ -380,11 +380,11 @@ clean: CMakeFiles/SceneInformation.dir/clean
 # Target rules for target CMakeFiles/TestScene.dir
 
 # All Build rule for target.
-CMakeFiles/TestScene.dir/all: CMakeFiles/ObjectFeatures.dir/all
 CMakeFiles/TestScene.dir/all: CMakeFiles/Object.dir/all
+CMakeFiles/TestScene.dir/all: CMakeFiles/ObjectFeatures.dir/all
 	$(MAKE) -f CMakeFiles/TestScene.dir/build.make CMakeFiles/TestScene.dir/depend
 	$(MAKE) -f CMakeFiles/TestScene.dir/build.make CMakeFiles/TestScene.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles  10
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles  10
 	@echo "Built target TestScene"
 .PHONY : CMakeFiles/TestScene.dir/all
 
@@ -394,9 +394,9 @@ all: CMakeFiles/TestScene.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/TestScene.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 4
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/TestScene.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 0
 .PHONY : CMakeFiles/TestScene.dir/rule
 
 # Convenience name for target.
@@ -416,19 +416,19 @@ clean: CMakeFiles/TestScene.dir/clean
 # Target rules for target CMakeFiles/test.dir
 
 # All Build rule for target.
-CMakeFiles/test.dir/all: CMakeFiles/ObjectFeatures.dir/all
-CMakeFiles/test.dir/all: CMakeFiles/Object.dir/all
 CMakeFiles/test.dir/all: CMakeFiles/FeatureInformation.dir/all
-CMakeFiles/test.dir/all: CMakeFiles/TestScene.dir/all
-CMakeFiles/test.dir/all: CMakeFiles/ObjectPairFeatures.dir/all
-CMakeFiles/test.dir/all: CMakeFiles/ApiConvertKTHDB.dir/all
-CMakeFiles/test.dir/all: CMakeFiles/ApiFeatureExtraction.dir/all
 CMakeFiles/test.dir/all: CMakeFiles/SceneInformation.dir/all
-CMakeFiles/test.dir/all: CMakeFiles/DatabaseInformation.dir/all
+CMakeFiles/test.dir/all: CMakeFiles/ApiFeatureExtraction.dir/all
+CMakeFiles/test.dir/all: CMakeFiles/ApiConvertKTHDB.dir/all
+CMakeFiles/test.dir/all: CMakeFiles/TestScene.dir/all
 CMakeFiles/test.dir/all: CMakeFiles/LOOCV.dir/all
+CMakeFiles/test.dir/all: CMakeFiles/Object.dir/all
+CMakeFiles/test.dir/all: CMakeFiles/ObjectFeatures.dir/all
+CMakeFiles/test.dir/all: CMakeFiles/ObjectPairFeatures.dir/all
+CMakeFiles/test.dir/all: CMakeFiles/DatabaseInformation.dir/all
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles  11
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles  11
 	@echo "Built target test"
 .PHONY : CMakeFiles/test.dir/all
 
@@ -438,9 +438,9 @@ all: CMakeFiles/test.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 11
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 11
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 0
 .PHONY : CMakeFiles/test.dir/rule
 
 # Convenience name for target.

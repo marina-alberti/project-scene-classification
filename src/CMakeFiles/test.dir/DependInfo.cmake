@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/marina/APIs_Scene_Structure_from_DB_v3/src/test.cpp" "/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/test.dir/test.cpp.o"
+  "/home/marina/Project_Scene_Classification/project-scene-classification/src/test.cpp" "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/test.dir/test.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,14 +17,14 @@ SET(CMAKE_TARGET_DEFINITIONS
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/DatabaseInformation.dir/DependInfo.cmake"
-  "/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/Object.dir/DependInfo.cmake"
-  "/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/SceneInformation.dir/DependInfo.cmake"
-  "/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/ApiConvertKTHDB.dir/DependInfo.cmake"
-  "/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/ObjectFeatures.dir/DependInfo.cmake"
-  "/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/ApiFeatureExtraction.dir/DependInfo.cmake"
-  "/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/FeatureInformation.dir/DependInfo.cmake"
-  "/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/ObjectPairFeatures.dir/DependInfo.cmake"
-  "/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/TestScene.dir/DependInfo.cmake"
-  "/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/LOOCV.dir/DependInfo.cmake"
+  "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/DatabaseInformation.dir/DependInfo.cmake"
+  "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/Object.dir/DependInfo.cmake"
+  "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/SceneInformation.dir/DependInfo.cmake"
+  "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/ApiConvertKTHDB.dir/DependInfo.cmake"
+  "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/ObjectFeatures.dir/DependInfo.cmake"
+  "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/ApiFeatureExtraction.dir/DependInfo.cmake"
+  "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/FeatureInformation.dir/DependInfo.cmake"
+  "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/ObjectPairFeatures.dir/DependInfo.cmake"
+  "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/TestScene.dir/DependInfo.cmake"
+  "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/LOOCV.dir/DependInfo.cmake"
   )

@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/FeatureInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
 string
 -
 vector
@@ -16,7 +16,7 @@ pcl/point_types.h
 pcl/point_cloud.h
 -
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/Object.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/Object.hpp
 string
 -
 boost/property_tree/ptree.hpp
@@ -28,11 +28,11 @@ pcl/point_types.h
 pcl/point_cloud.h
 -
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/ObjectFeatures.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/ObjectFeatures.hpp
 Object.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/Object.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/Object.hpp
 SceneInformation.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/SceneInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/SceneInformation.hpp
 string
 -
 vector
@@ -52,17 +52,17 @@ algorithm
 cmath
 -
 FeatureInformation.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/FeatureInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/ObjectPairFeatures.cpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/ObjectPairFeatures.cpp
 ObjectPairFeatures.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/ObjectPairFeatures.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/ObjectPairFeatures.hpp
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/ObjectPairFeatures.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/ObjectPairFeatures.hpp
 Object.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/Object.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/Object.hpp
 ObjectFeatures.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/ObjectFeatures.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/ObjectFeatures.hpp
 string
 -
 vector
@@ -72,15 +72,15 @@ pcl/point_types.h
 pcl/point_cloud.h
 -
 FeatureInformation.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/FeatureInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/SceneInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/SceneInformation.hpp
 string.h
 -
 boost/property_tree/ptree.hpp
 -
 Object.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/Object.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/Object.hpp
 vector
 -
 pcl/point_types.h
@@ -88,7 +88,7 @@ pcl/point_types.h
 pcl/point_cloud.h
 -
 FeatureInformation.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/FeatureInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
 
 /opt/ros/groovy/include/pcl-1.6/pcl/channel_properties.h
 pcl/pcl_macros.h

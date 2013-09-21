@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/ApiConvertKTHDB.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/ApiConvertKTHDB.hpp
 Object.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/Object.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/Object.hpp
 SceneInformation.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/SceneInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/SceneInformation.hpp
 string
 -
 boost/property_tree/ptree.hpp
@@ -30,17 +30,17 @@ pcl/point_types.h
 pcl/point_cloud.h
 -
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/ApiFeatureExtraction.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/ApiFeatureExtraction.hpp
 string.h
 -
 Object.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/Object.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/Object.hpp
 SceneInformation.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/SceneInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/SceneInformation.hpp
 ObjectFeatures.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/ObjectFeatures.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/ObjectFeatures.hpp
 ObjectPairFeatures.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/ObjectPairFeatures.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/ObjectPairFeatures.hpp
 vector
 -
 pcl/point_types.h
@@ -48,21 +48,21 @@ pcl/point_types.h
 pcl/point_cloud.h
 -
 FeatureInformation.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/FeatureInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/DatabaseInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/DatabaseInformation.hpp
 string.h
 -
 boost/property_tree/ptree.hpp
 -
 Object.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/Object.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/Object.hpp
 ApiConvertKTHDB.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/ApiConvertKTHDB.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/ApiConvertKTHDB.hpp
 ApiFeatureExtraction.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/ApiFeatureExtraction.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/ApiFeatureExtraction.hpp
 SceneInformation.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/SceneInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/SceneInformation.hpp
 vector
 -
 fstream
@@ -86,11 +86,11 @@ sys/types.h
 opencv2/opencv.hpp
 -
 opencv2/ml/ml.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/opencv2/ml/ml.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/opencv2/ml/ml.hpp
 cmath
 -
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/FeatureInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
 string
 -
 vector
@@ -100,23 +100,23 @@ pcl/point_types.h
 pcl/point_cloud.h
 -
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/LOOCV.cpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/LOOCV.cpp
 LOOCV.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/LOOCV.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/LOOCV.hpp
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/LOOCV.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/LOOCV.hpp
 string.h
 -
 boost/property_tree/ptree.hpp
 -
 Object.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/Object.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/Object.hpp
 ApiConvertKTHDB.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/ApiConvertKTHDB.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/ApiConvertKTHDB.hpp
 ApiFeatureExtraction.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/ApiFeatureExtraction.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/ApiFeatureExtraction.hpp
 SceneInformation.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/SceneInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/SceneInformation.hpp
 vector
 -
 fstream
@@ -140,15 +140,15 @@ sys/types.h
 opencv2/opencv.hpp
 -
 opencv2/ml/ml.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/opencv2/ml/ml.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/opencv2/ml/ml.hpp
 cmath
 -
 DatabaseInformation.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/DatabaseInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/DatabaseInformation.hpp
 TestScene.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/TestScene.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/TestScene.hpp
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/Object.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/Object.hpp
 string
 -
 boost/property_tree/ptree.hpp
@@ -160,11 +160,11 @@ pcl/point_types.h
 pcl/point_cloud.h
 -
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/ObjectFeatures.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/ObjectFeatures.hpp
 Object.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/Object.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/Object.hpp
 SceneInformation.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/SceneInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/SceneInformation.hpp
 string
 -
 vector
@@ -184,13 +184,13 @@ algorithm
 cmath
 -
 FeatureInformation.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/FeatureInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/ObjectPairFeatures.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/ObjectPairFeatures.hpp
 Object.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/Object.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/Object.hpp
 ObjectFeatures.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/ObjectFeatures.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/ObjectFeatures.hpp
 string
 -
 vector
@@ -200,15 +200,15 @@ pcl/point_types.h
 pcl/point_cloud.h
 -
 FeatureInformation.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/FeatureInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/SceneInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/SceneInformation.hpp
 string.h
 -
 boost/property_tree/ptree.hpp
 -
 Object.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/Object.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/Object.hpp
 vector
 -
 pcl/point_types.h
@@ -216,21 +216,21 @@ pcl/point_types.h
 pcl/point_cloud.h
 -
 FeatureInformation.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/FeatureInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/TestScene.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/TestScene.hpp
 string.h
 -
 boost/property_tree/ptree.hpp
 -
 Object.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/Object.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/Object.hpp
 ApiConvertKTHDB.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/ApiConvertKTHDB.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/ApiConvertKTHDB.hpp
 ApiFeatureExtraction.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/ApiFeatureExtraction.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/ApiFeatureExtraction.hpp
 SceneInformation.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/SceneInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/SceneInformation.hpp
 vector
 -
 fstream
@@ -254,9 +254,9 @@ sys/types.h
 opencv2/opencv.hpp
 -
 opencv2/ml/ml.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/opencv2/ml/ml.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/opencv2/ml/ml.hpp
 opencv2/gpu/gpu.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/opencv2/gpu/gpu.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/opencv2/gpu/gpu.hpp
 cmath
 -
 algorithm

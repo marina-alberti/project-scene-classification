@@ -34,10 +34,11 @@ private:
   int numberOfObjects;
   vector<Object> objectList;
   vector<double> predictedClasses;
-  vector<Object> orderedObjectList;
+  // (0) monitor, (1) keyboard, (2) mouse in this order
+  vector<Object> orderedObjectList;  
   string fileNameXML;
 
-/* Each element is one object - 3 separate feat Information vectors*/
+/* Each element is one object -> 3 separate FeatureInformation vectors*/
   vector<vector<FeatureInformation> > featureListSingleObject;
   vector<FeatureInformation> featureListPairObject;
   pcl::PointXYZ deskCentroid;
@@ -45,7 +46,7 @@ private:
   float deskWidth;
   objectParametersKTH mapKTHparameters;
   std::vector<cv::EM> learnedModelSingleObject;   //  it will contain 3 models : 1 per object
-  std::vector<cv::EM> learnedModelPairObject;     //  it will contain 15models (if using separate features)
+  std::vector<cv::EM> learnedModelPairObject;     //  it will contain 30 models (if using separate features)
   vector<vector<double> > meanNormalization;
   vector<vector<double> > stdNormalization;
 
@@ -56,6 +57,8 @@ private:
   void setDeskCentroid();
 
   double totalSceneLogP;
+
+  cv::Mat cMatrix;
 
 public:
 
@@ -73,7 +76,8 @@ public:
   /* Compute the probabilities for each object matched with all the learned models */
   void predictObjectClasses();
 
- 
+  void evaluateObjectClassificationPerformance(); 
+
   /* Set and store the object classes */ 
   void setObjectClasses();
 
@@ -82,6 +86,8 @@ public:
 
   /* Compute the probabilities / likelihoods for the object pairs */ 
   double computeProbObjectPairs();
+
+  cv::Mat getConfusionMatrix() {return cMatrix; }
 
 };
 

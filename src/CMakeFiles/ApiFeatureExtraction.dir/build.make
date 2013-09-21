@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/marina/APIs_Scene_Structure_from_DB_v3
+CMAKE_SOURCE_DIR = /home/marina/Project_Scene_Classification/project-scene-classification
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/marina/APIs_Scene_Structure_from_DB_v3/src
+CMAKE_BINARY_DIR = /home/marina/Project_Scene_Classification/project-scene-classification/src
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ApiFeatureExtraction.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/ApiFeatureExtraction.dir/flags.make
 
 CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.o: CMakeFiles/ApiFeatureExtraction.dir/flags.make
 CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.o: ApiFeatureExtraction.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.o -c /home/marina/APIs_Scene_Structure_from_DB_v3/src/ApiFeatureExtraction.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.o -c /home/marina/Project_Scene_Classification/project-scene-classification/src/ApiFeatureExtraction.cpp
 
 CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/marina/APIs_Scene_Structure_from_DB_v3/src/ApiFeatureExtraction.cpp > CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/marina/Project_Scene_Classification/project-scene-classification/src/ApiFeatureExtraction.cpp > CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.i
 
 CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/marina/APIs_Scene_Structure_from_DB_v3/src/ApiFeatureExtraction.cpp -o CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/marina/Project_Scene_Classification/project-scene-classification/src/ApiFeatureExtraction.cpp -o CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.s
 
 CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.o.requires:
 .PHONY : CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.o.requires
@@ -98,6 +98,6 @@ CMakeFiles/ApiFeatureExtraction.dir/clean:
 .PHONY : CMakeFiles/ApiFeatureExtraction.dir/clean
 
 CMakeFiles/ApiFeatureExtraction.dir/depend:
-	cd /home/marina/APIs_Scene_Structure_from_DB_v3/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/marina/APIs_Scene_Structure_from_DB_v3 /home/marina/APIs_Scene_Structure_from_DB_v3 /home/marina/APIs_Scene_Structure_from_DB_v3/src /home/marina/APIs_Scene_Structure_from_DB_v3/src /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/ApiFeatureExtraction.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/marina/Project_Scene_Classification/project-scene-classification/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/marina/Project_Scene_Classification/project-scene-classification /home/marina/Project_Scene_Classification/project-scene-classification /home/marina/Project_Scene_Classification/project-scene-classification/src /home/marina/Project_Scene_Classification/project-scene-classification/src /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/ApiFeatureExtraction.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ApiFeatureExtraction.dir/depend
 

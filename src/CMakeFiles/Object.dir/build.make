@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/marina/APIs_Scene_Structure_from_DB_v3
+CMAKE_SOURCE_DIR = /home/marina/Project_Scene_Classification/project-scene-classification
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/marina/APIs_Scene_Structure_from_DB_v3/src
+CMAKE_BINARY_DIR = /home/marina/Project_Scene_Classification/project-scene-classification/src
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Object.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/Object.dir/flags.make
 
 CMakeFiles/Object.dir/Object.cpp.o: CMakeFiles/Object.dir/flags.make
 CMakeFiles/Object.dir/Object.cpp.o: Object.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/Object.dir/Object.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Object.dir/Object.cpp.o -c /home/marina/APIs_Scene_Structure_from_DB_v3/src/Object.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/Object.dir/Object.cpp.o -c /home/marina/Project_Scene_Classification/project-scene-classification/src/Object.cpp
 
 CMakeFiles/Object.dir/Object.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Object.dir/Object.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/marina/APIs_Scene_Structure_from_DB_v3/src/Object.cpp > CMakeFiles/Object.dir/Object.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/marina/Project_Scene_Classification/project-scene-classification/src/Object.cpp > CMakeFiles/Object.dir/Object.cpp.i
 
 CMakeFiles/Object.dir/Object.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Object.dir/Object.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/marina/APIs_Scene_Structure_from_DB_v3/src/Object.cpp -o CMakeFiles/Object.dir/Object.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/marina/Project_Scene_Classification/project-scene-classification/src/Object.cpp -o CMakeFiles/Object.dir/Object.cpp.s
 
 CMakeFiles/Object.dir/Object.cpp.o.requires:
 .PHONY : CMakeFiles/Object.dir/Object.cpp.o.requires
@@ -98,6 +98,6 @@ CMakeFiles/Object.dir/clean:
 .PHONY : CMakeFiles/Object.dir/clean
 
 CMakeFiles/Object.dir/depend:
-	cd /home/marina/APIs_Scene_Structure_from_DB_v3/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/marina/APIs_Scene_Structure_from_DB_v3 /home/marina/APIs_Scene_Structure_from_DB_v3 /home/marina/APIs_Scene_Structure_from_DB_v3/src /home/marina/APIs_Scene_Structure_from_DB_v3/src /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/Object.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/marina/Project_Scene_Classification/project-scene-classification/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/marina/Project_Scene_Classification/project-scene-classification /home/marina/Project_Scene_Classification/project-scene-classification /home/marina/Project_Scene_Classification/project-scene-classification/src /home/marina/Project_Scene_Classification/project-scene-classification/src /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/Object.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Object.dir/depend
 

@@ -1,18 +1,22 @@
 #include "LOOCV.hpp"
 
 #define DEBUG 0
+#define TESTFLAG 1
 
 LOOCV::LOOCV(string inputfolder)  {
   dirname = inputfolder;
   numberOfFiles = 0;
   testFilesList = "";
+  cMatrixSet = 0;
 
 }
 
 void LOOCV::compute() {
   storeFiles();
- /* Following computatino should be for each cross validation fold */
-  for (int i = 1; i < 2 ; i++) {      //; i < allFileNames.size(); i++ ) {    // allFileNames.size()
+
+ /* Following computation should be for each cross validation fold */
+  for (int i = 0; i < allFileNames.size(); i++) {      //; i < allFileNames.size(); i++ ) {
+    indexLoop = i;
     // i = INDEX_TEST;
     createTrainingSet(i);
     createTestSet(i);
@@ -126,20 +130,32 @@ void LOOCV::doTest() {
   if (DEBUG) {
     cout << endl<< "Inside Test. Before predicting object classes. " << endl;
   }
-  /* Compute probabilities for 3 objects */
+  /* Compute probabilities for 3 objects + classify objects. */
   unknownScene.predictObjectClasses();
 
-  if (DEBUG) {
-    cout << std::endl << " Inside LOOCV doTest. End test. " << endl;
+  // add here the LOOCV for object class prediction - performance computation.
+  unknownScene.evaluateObjectClassificationPerformance();
+  cv::Mat cMatrix = unknownScene.getConfusionMatrix();
+
+  if ( cMatrixSet == 0 ) {
+    cMatrixObjectClassification = cMatrix.clone();
+    cMatrixSet = 1;
+  }
+  else {
+    cMatrixObjectClassification = cMatrixObjectClassification + cMatrix;
+  }
+ 
+  if (TESTFLAG) {
+    cout << "The total confision matrix is: " << endl << cMatrixObjectClassification << endl;
   }
 
-  unknownScene.extractFeaturesPairObjects();
+/*  unknownScene.extractFeaturesPairObjects();
 
   double prob = unknownScene.computeProbObjectPairs();
 
   probSceneListLoocv.push_back(prob);
-
   
+ */
 
 }
 

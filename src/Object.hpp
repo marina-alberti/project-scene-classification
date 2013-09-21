@@ -25,10 +25,16 @@ private:
   coordinate values of all the 8 vertices of the bounding box cuboid.
 */
   void setCentroid();
+  int actualObjectID;
+  int predictedObjectID;
+  void setActualObjectID(int i) { actualObjectID = i; } 
 
 public:
   Object();
   void setObjectName(string);
+  int getActualObjectID() { return actualObjectID; }
+  int getPredictedObjectID() { return predictedObjectID; }
+  void setPredictedObjectID(int i) { predictedObjectID = i; } 
 
 /*
   This function sets the "boundingBox" data member given in input a 

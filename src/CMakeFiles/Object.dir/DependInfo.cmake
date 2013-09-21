@@ -4,7 +4,7 @@ SET(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 SET(CMAKE_DEPENDS_CHECK_CXX
-  "/home/marina/APIs_Scene_Structure_from_DB_v3/src/Object.cpp" "/home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/Object.dir/Object.cpp.o"
+  "/home/marina/Project_Scene_Classification/project-scene-classification/src/Object.cpp" "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/Object.dir/Object.cpp.o"
   )
 SET(CMAKE_CXX_COMPILER_ID "GNU")
 

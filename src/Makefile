@@ -39,10 +39,10 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/marina/APIs_Scene_Structure_from_DB_v3
+CMAKE_SOURCE_DIR = /home/marina/Project_Scene_Classification/project-scene-classification
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/marina/APIs_Scene_Structure_from_DB_v3/src
+CMAKE_BINARY_DIR = /home/marina/Project_Scene_Classification/project-scene-classification/src
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,9 +69,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

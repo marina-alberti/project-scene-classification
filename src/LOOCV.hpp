@@ -31,6 +31,8 @@
 class LOOCV{ 
 
 private:
+
+  int indexLoop;
   string dirname;
   int numberOfFiles;
   vector<string> allFileNames;
@@ -44,6 +46,10 @@ private:
   vector<vector<double> > stdNormalization;
 
   vector<double> probSceneListLoocv;
+
+  cv::Mat cMatrixObjectClassification;
+
+  bool cMatrixSet;
 
 public:
 

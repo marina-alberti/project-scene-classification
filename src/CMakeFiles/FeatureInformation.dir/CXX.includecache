@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/FeatureInformation.cpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.cpp
 FeatureInformation.hpp
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/FeatureInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
 
-/home/marina/APIs_Scene_Structure_from_DB_v3/src/FeatureInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
 string
 -
 vector

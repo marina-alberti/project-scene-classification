@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/marina/APIs_Scene_Structure_from_DB_v3
+CMAKE_SOURCE_DIR = /home/marina/Project_Scene_Classification/project-scene-classification
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/marina/APIs_Scene_Structure_from_DB_v3/src
+CMAKE_BINARY_DIR = /home/marina/Project_Scene_Classification/project-scene-classification/src
 
 # Include any dependencies generated for this target.
 include CMakeFiles/FeatureInformation.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/FeatureInformation.dir/flags.make
 
 CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.o: CMakeFiles/FeatureInformation.dir/flags.make
 CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.o: FeatureInformation.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.o -c /home/marina/APIs_Scene_Structure_from_DB_v3/src/FeatureInformation.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.o -c /home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.cpp
 
 CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/marina/APIs_Scene_Structure_from_DB_v3/src/FeatureInformation.cpp > CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.cpp > CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.i
 
 CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/marina/APIs_Scene_Structure_from_DB_v3/src/FeatureInformation.cpp -o CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.cpp -o CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.s
 
 CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.o.requires:
 .PHONY : CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.o.requires
@@ -98,6 +98,6 @@ CMakeFiles/FeatureInformation.dir/clean:
 .PHONY : CMakeFiles/FeatureInformation.dir/clean
 
 CMakeFiles/FeatureInformation.dir/depend:
-	cd /home/marina/APIs_Scene_Structure_from_DB_v3/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/marina/APIs_Scene_Structure_from_DB_v3 /home/marina/APIs_Scene_Structure_from_DB_v3 /home/marina/APIs_Scene_Structure_from_DB_v3/src /home/marina/APIs_Scene_Structure_from_DB_v3/src /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/FeatureInformation.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/marina/Project_Scene_Classification/project-scene-classification/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/marina/Project_Scene_Classification/project-scene-classification /home/marina/Project_Scene_Classification/project-scene-classification /home/marina/Project_Scene_Classification/project-scene-classification/src /home/marina/Project_Scene_Classification/project-scene-classification/src /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/FeatureInformation.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/FeatureInformation.dir/depend
 

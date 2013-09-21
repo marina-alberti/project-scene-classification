@@ -35,10 +35,10 @@ RM = /usr/bin/cmake -E remove -f
 CMAKE_EDIT_COMMAND = /usr/bin/cmake-gui
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/marina/APIs_Scene_Structure_from_DB_v3
+CMAKE_SOURCE_DIR = /home/marina/Project_Scene_Classification/project-scene-classification
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/marina/APIs_Scene_Structure_from_DB_v3/src
+CMAKE_BINARY_DIR = /home/marina/Project_Scene_Classification/project-scene-classification/src
 
 # Include any dependencies generated for this target.
 include CMakeFiles/LOOCV.dir/depend.make
@@ -51,17 +51,17 @@ include CMakeFiles/LOOCV.dir/flags.make
 
 CMakeFiles/LOOCV.dir/LOOCV.cpp.o: CMakeFiles/LOOCV.dir/flags.make
 CMakeFiles/LOOCV.dir/LOOCV.cpp.o: LOOCV.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/LOOCV.dir/LOOCV.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LOOCV.dir/LOOCV.cpp.o -c /home/marina/APIs_Scene_Structure_from_DB_v3/src/LOOCV.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/LOOCV.dir/LOOCV.cpp.o -c /home/marina/Project_Scene_Classification/project-scene-classification/src/LOOCV.cpp
 
 CMakeFiles/LOOCV.dir/LOOCV.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/LOOCV.dir/LOOCV.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/marina/APIs_Scene_Structure_from_DB_v3/src/LOOCV.cpp > CMakeFiles/LOOCV.dir/LOOCV.cpp.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/marina/Project_Scene_Classification/project-scene-classification/src/LOOCV.cpp > CMakeFiles/LOOCV.dir/LOOCV.cpp.i
 
 CMakeFiles/LOOCV.dir/LOOCV.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/LOOCV.dir/LOOCV.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/marina/APIs_Scene_Structure_from_DB_v3/src/LOOCV.cpp -o CMakeFiles/LOOCV.dir/LOOCV.cpp.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/marina/Project_Scene_Classification/project-scene-classification/src/LOOCV.cpp -o CMakeFiles/LOOCV.dir/LOOCV.cpp.s
 
 CMakeFiles/LOOCV.dir/LOOCV.cpp.o.requires:
 .PHONY : CMakeFiles/LOOCV.dir/LOOCV.cpp.o.requires
@@ -98,6 +98,6 @@ CMakeFiles/LOOCV.dir/clean:
 .PHONY : CMakeFiles/LOOCV.dir/clean
 
 CMakeFiles/LOOCV.dir/depend:
-	cd /home/marina/APIs_Scene_Structure_from_DB_v3/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/marina/APIs_Scene_Structure_from_DB_v3 /home/marina/APIs_Scene_Structure_from_DB_v3 /home/marina/APIs_Scene_Structure_from_DB_v3/src /home/marina/APIs_Scene_Structure_from_DB_v3/src /home/marina/APIs_Scene_Structure_from_DB_v3/src/CMakeFiles/LOOCV.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/marina/Project_Scene_Classification/project-scene-classification/src && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/marina/Project_Scene_Classification/project-scene-classification /home/marina/Project_Scene_Classification/project-scene-classification /home/marina/Project_Scene_Classification/project-scene-classification/src /home/marina/Project_Scene_Classification/project-scene-classification/src /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/LOOCV.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/LOOCV.dir/depend
 

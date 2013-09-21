@@ -4,11 +4,25 @@
 
 Object::Object() {
   objectName = "";
+  predictedObjectID = -1;
+  actualObjectID = -1;
 }
 
 void Object::setObjectName(string inputName) {
   objectName = inputName;
+  // set object actual ID
+  const char * nameChar = inputName.c_str();
+  if ( strcmp(nameChar, "Monitor") == 0 || strcmp(nameChar, "monitor") == 0 || strcmp(nameChar, "Screen") == 0 ) {
+    actualObjectID = 0;
+  }
+  if ( strcmp(nameChar, "Keyboard") == 0 || strcmp(nameChar, "keyboard") == 0 ) {
+    actualObjectID = 1;
+  }
+  if (strcmp(nameChar, "Mouse") == 0 || strcmp(nameChar, "mouse") == 0 ) {
+    actualObjectID = 2;
+  }
 } 
+
 
 void Object::setBoundingBox(vector<pcl::PointXYZ> inputBoundingBox)   {
   for (int i = 0; i < inputBoundingBox.size(); i++) {

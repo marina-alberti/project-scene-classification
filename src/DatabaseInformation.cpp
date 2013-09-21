@@ -264,6 +264,7 @@ void DatabaseInformation::computeGMM_SingleObject_AllFeat(int nclusters) {
     // // end normalization feature matrix.
 
     /* test: select lower dimensionality of feature matrix   */
+    cv::Mat featsTrain = normalizedFeatMat.colRange(0,3);     
     if (DEBUG) {
       cout << endl << endl << "Object : " << i << endl << 
          "The feature matrix dim is " << normalizedFeatMat.size() << endl;
@@ -280,7 +281,7 @@ void DatabaseInformation::computeGMM_SingleObject_AllFeat(int nclusters) {
     if (DEBUG) { 
       std::cout << "Training the EM model." << std::endl; 
     }
-    em_model.train ( normalizedFeatMat ); 
+    em_model.train ( featsTrain );    // normalizedFeatMat to change
     if (DEBUG) { 
       std::cout << "Getting the parameters of the learned GMM model." << std::endl; 
     }

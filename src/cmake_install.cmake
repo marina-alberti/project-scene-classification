@@ -1,4 +1,4 @@
-# Install script for directory: /home/marina/APIs_Scene_Structure_from_DB_v3
+# Install script for directory: /home/marina/Project_Scene_Classification/project-scene-classification
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -12,7 +12,7 @@ IF(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
     STRING(REGEX REPLACE "^[^A-Za-z0-9_]+" ""
            CMAKE_INSTALL_CONFIG_NAME "${BUILD_TYPE}")
   ELSE(BUILD_TYPE)
-    SET(CMAKE_INSTALL_CONFIG_NAME "Debug")
+    SET(CMAKE_INSTALL_CONFIG_NAME "")
   ENDIF(BUILD_TYPE)
   MESSAGE(STATUS "Install configuration: \"${CMAKE_INSTALL_CONFIG_NAME}\"")
 ENDIF(NOT DEFINED CMAKE_INSTALL_CONFIG_NAME)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/marina/APIs_Scene_Structure_from_DB_v3/src/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/marina/Project_Scene_Classification/project-scene-classification/src/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/marina/APIs_Scene_Structure_from_DB_v3/src/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/marina/Project_Scene_Classification/project-scene-classification/src/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)
