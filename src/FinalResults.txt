@@ -1,0 +1,14 @@
+The total confision matrix is: 
+[34, 0, 0;
+  0, 34, 0;
+  0, 1, 33]
+
+
+
+Only the 3 pose features (x, y, z coordiantes of the object pose)
+
+The total confision matrix is: 
+[34, 0, 0;
+  0, 31, 3;
+  0, 3, 31]
+
