@@ -24,7 +24,7 @@
 #include "TestScene.hpp"
 
 #define N_CLUSTERS_OBJECT 3
-#define N_CLUSTERS_PAIR 3
+#define N_CLUSTERS_PAIR 5
 #define INDEX_TEST 30
 
 

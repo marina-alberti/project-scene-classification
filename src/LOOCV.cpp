@@ -97,7 +97,8 @@ void LOOCV::doTraining() {
 
   /* Learning module */
   storeDatabase.computeGMM_SingleObject_AllFeat(N_CLUSTERS_OBJECT);
-  storeDatabase.computeGMM_PairObject_SingleFeat(N_CLUSTERS_PAIR);   
+  // storeDatabase.computeGMM_PairObject_SingleFeat(N_CLUSTERS_PAIR);   
+  storeDatabase.computeGMM_PairObject_AllFeat(N_CLUSTERS_PAIR); 
 
   learnedModelSingleObject = storeDatabase.getLearnedModelSingleObject();
   learnedModelPairObject = storeDatabase.getLearnedModelPairObject();
@@ -149,13 +150,13 @@ void LOOCV::doTest() {
     cout << "The total confision matrix is: " << endl << cMatrixObjectClassification << endl;
   }
 
-/*  unknownScene.extractFeaturesPairObjects();
+  unknownScene.extractFeaturesPairObjects();
 
-  double prob = unknownScene.computeProbObjectPairs();
+  double prob = unknownScene.computeProbObjectPairs_AllFeats();
 
   probSceneListLoocv.push_back(prob);
   
- */
+ 
 
 }
 

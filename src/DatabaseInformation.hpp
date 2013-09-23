@@ -68,11 +68,13 @@ vector<FeatureInformation> featureList;
 
   void printFeatureMatrix();
 
-  void computeGMM_SingleObject_SingleFeat(int);  // ok check with matlab plots
+  void computeGMM_SingleObject_SingleFeat(int); 
 
-  void computeGMM_SingleObject_AllFeat(int );    // 
+  void computeGMM_SingleObject_AllFeat(int );    
 
-  void computeGMM_PairObject_SingleFeat(int);    // ok check with matlab plots
+  void computeGMM_PairObject_SingleFeat(int);    
+
+  void computeGMM_PairObject_AllFeat( int) ;
 
   std::vector<cv::EM> getLearnedModelSingleObject () { return learnedModelSingleObject; }
 

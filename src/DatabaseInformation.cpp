@@ -264,7 +264,7 @@ void DatabaseInformation::computeGMM_SingleObject_AllFeat(int nclusters) {
     // // end normalization feature matrix.
 
     /* test: select lower dimensionality of feature matrix   */
-    cv::Mat featsTrain = normalizedFeatMat.colRange(0,3);     
+    cv::Mat featsTrain = normalizedFeatMat.colRange(0, 9);     
     if (DEBUG) {
       cout << endl << endl << "Object : " << i << endl << 
          "The feature matrix dim is " << normalizedFeatMat.size() << endl;
@@ -302,6 +302,7 @@ void DatabaseInformation::computeGMM_SingleObject_AllFeat(int nclusters) {
 
 
 /*  
+Train a GMM model for pairs of objects considering 1 feature (SR) at a time.
 */
 void DatabaseInformation::computeGMM_PairObject_SingleFeat(int nclusters) {
 
@@ -365,6 +366,70 @@ void DatabaseInformation::computeGMM_PairObject_SingleFeat(int nclusters) {
 
 
 
+
+
+/*  
+Train a GMM model for pairs of objects considering ALL the features (SR) at a time.
+*/
+void DatabaseInformation::computeGMM_PairObject_AllFeat(int nclusters) {
+
+
+  int numberOfPairs = 6;
+  int numberOfFeatTot = (featureMatrixPairObject.at(0)).size();
+  int numberOfFeat =   numberOfFeatTot / numberOfPairs;
+
+  /* For each pair of objects.  */
+  for (int i = 0; i < numberOfPairs; i++)  {
+
+    int countScene = 0;
+    int index_feat_min = i * numberOfFeat;  
+    int index_feat_max = i * numberOfFeat + numberOfFeat;
+    cv::Mat FeatMat = cv::Mat::zeros ( numberOfScenes, numberOfFeat,  CV_64F ); 
+
+    for(vector<vector<FeatureInformation> >::iterator it = featureMatrixPairObject.begin(); it != featureMatrixPairObject.end(); ++it) {
+        int countFeat = 0;  
+        if (DEBUG)  {
+          cout << "  Current scene :  " << countScene << endl; 
+        }
+
+        // for each feature of the current scene and belonging to current object
+        for (int index = index_feat_min; index < index_feat_max; index++ ) {
+          FeatureInformation currentFeature = (*it).at(index) ;  
+          vector<float> currentFeatureValues = currentFeature.getAllValues();  
+          // depending on dimentionality of that feature: I add all values in current row
+        for ( int j = 0; j < currentFeatureValues.size() ; j++ ) {
+          FeatMat.at<double>(countScene, countFeat) = (double) (currentFeatureValues.at(j));
+          countFeat++;
+        }
+      }
+      countScene++; 
+    }
+
+    // cv::Mat featsTrain = FeatMat.clone();     
+    if (DEBUG) {
+      cout << endl << endl << "Object : " << i << endl << 
+         "The feature matrix dim is " << FeatMat.size() << endl;
+      cout << endl << endl << "The feature matrix N ROWS is " << FeatMat.rows << endl;
+      cout << endl <<  "The features are " << endl <<  FeatMat << endl;
+    }
+    /* End test lower feature dimensionality */
+
+    /*  Training EM model for the current object.  */
+    cv::EM em_model(nclusters);
+    if (DEBUG) { 
+      std::cout << "Training the EM model." << std::endl; 
+    }
+    em_model.train ( FeatMat );    // normalizedFeatMat to change
+    if (DEBUG) { 
+      std::cout << "Getting the parameters of the learned GMM model." << std::endl; 
+    }
+    learnedModelPairObject.push_back(em_model);
+
+  }
+
+
+
+}
 
 
 

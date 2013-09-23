@@ -40,7 +40,7 @@ private:
 
 /* Each element is one object -> 3 separate FeatureInformation vectors*/
   vector<vector<FeatureInformation> > featureListSingleObject;
-  vector<FeatureInformation> featureListPairObject;
+  vector<vector<FeatureInformation> > featureListPairObject;
   pcl::PointXYZ deskCentroid;
   float deskLength;
   float deskWidth;
@@ -86,6 +86,9 @@ public:
 
   /* Compute the probabilities / likelihoods for the object pairs */ 
   double computeProbObjectPairs();
+
+  /* Compute the probabilities / likelihoods for the object pairs - models from all feats at a time */ 
+  double computeProbObjectPairs_AllFeats();  
 
   cv::Mat getConfusionMatrix() {return cMatrix; }
 
