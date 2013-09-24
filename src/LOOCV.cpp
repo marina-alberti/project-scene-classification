@@ -78,9 +78,9 @@ void LOOCV::createTrainingSet(int index) {
 
 // to do: eliminate for loop - write an inline function
 void LOOCV::createTestSet(int index) {
-
-  testFilesList = allFileNames.at(index);
-
+   testFilesList = allFileNames.at(index);
+  //testFilesList = "./mock_Missing_mouse/710-27-06-13-morning.xml";
+  // testFilesList = "./mock_Duplicate_monitor/scene.xml";
 }
 
 
@@ -121,7 +121,7 @@ void LOOCV::doTest() {
     cout << endl<< "Inside Test. Before Loading annotations. " << endl;
   }
 
-  unknownScene.loadAnnotation();
+  unknownScene.loadAnnotation(1);
 
   if (DEBUG) {
     cout << endl<< "Inside Test. Before extracting features. " << endl;
@@ -150,7 +150,7 @@ void LOOCV::doTest() {
     cout << "The total confision matrix is: " << endl << cMatrixObjectClassification << endl;
   }
 
-  unknownScene.extractFeaturesPairObjects();
+  unknownScene.extractFeaturesPairObjects_HandleMissing();
 
   double prob = unknownScene.computeProbObjectPairs_AllFeats();
 

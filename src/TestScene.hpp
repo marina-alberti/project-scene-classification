@@ -46,12 +46,14 @@ private:
   float deskWidth;
   objectParametersKTH mapKTHparameters;
   std::vector<cv::EM> learnedModelSingleObject;   //  it will contain 3 models : 1 per object
-  std::vector<cv::EM> learnedModelPairObject;     //  it will contain 30 models (if using separate features)
+  std::vector<cv::EM> learnedModelPairObject;     //  it will contain 6 models (if using all features)
   vector<vector<double> > meanNormalization;
   vector<vector<double> > stdNormalization;
+  vector <int> objectPairID;
+  int removeID;
 
   // functions
-  void parseObject(boost::property_tree::ptree & );
+  void parseObject(boost::property_tree::ptree & , bool);
   vector<pcl::PointXYZ> convertObjectParameters();
   void setmapKTHparameters(float, float , float , float , float , float , float , float , float );
   void setDeskCentroid();
@@ -66,9 +68,9 @@ public:
   TestScene(string, vector<cv::EM> , vector<vector<double> > , vector<vector<double> > , vector<cv::EM> );
 
   /* loadAnnotations In IDS */
-  void loadAnnotation();
+  void loadAnnotation(bool);
 
-  void parseFileXML();
+  void parseFileXML(bool);
     
   /* extract feats only for one scene only single objects */
   void extractFeatures();
@@ -84,11 +86,16 @@ public:
   /* Extract feats object pairs */
    void extractFeaturesPairObjects();
 
+  /* Extract feats object pairs, handles missing objects and multiple objects. */
+   void extractFeaturesPairObjects_HandleMissing();
+
   /* Compute the probabilities / likelihoods for the object pairs */ 
   double computeProbObjectPairs();
 
   /* Compute the probabilities / likelihoods for the object pairs - models from all feats at a time */ 
   double computeProbObjectPairs_AllFeats();  
+
+  double computeProbObjectPairs_AllFeats_old(); 
 
   cv::Mat getConfusionMatrix() {return cMatrix; }
 

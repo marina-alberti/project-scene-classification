@@ -21,6 +21,34 @@ static const std::string TAG_COLOR = "color";
 static const std::string TAG_INDICES = "indices";
 
 
+int setPairID(int a, int b) {
+  int out;
+  if( a == 0 && b == 1) {
+    out = 0;
+  }
+  else if( a == 0 && b == 2) {
+    out = 1;
+  }
+  else if( a == 1 && b == 0) {
+    out = 2;
+  }
+  else if( a == 1 && b == 2) {
+    out = 3;
+  }
+  else if( a == 2 && b == 0) {
+    out = 4;
+  }
+  else if( a == 2 && b == 1) {
+    out = 5;
+  }
+  else {
+  cout << "Error: not existing object pair:  " << a << "   " << b << endl;
+  exit(1);
+  }
+  return out;  
+}
+
+
 double computeGMMProbability(cv::Mat feats, cv::Mat means, vector<cv::Mat> covs, cv::Mat weights );
 
 TestScene::TestScene(string inputname, std::vector<cv::EM> inputmodel, vector<vector<double> > inputmeanNormalization , vector<vector<double> > inputstdNormalization , vector<cv::EM> inputmodelPair) {
@@ -31,17 +59,22 @@ TestScene::TestScene(string inputname, std::vector<cv::EM> inputmodel, vector<ve
   stdNormalization = inputstdNormalization;
   learnedModelPairObject = inputmodelPair;
   orderedObjectList.reserve(N_OBJECTS);
+  removeID = -1;
 }
 
 
   /* loadAnnotations In IDS */
-void TestScene::loadAnnotation() {
- cout << "The XML file name is: " << fileNameXML << endl;  
- parseFileXML();
+void TestScene::loadAnnotation(bool removeObject) {
+  cout << "The XML file name is: " << fileNameXML << endl;  
+  if (removeObject) {
+    removeID = rand() % 3;
+  }
+  parseFileXML(removeObject);
+
 }
 
 
-void TestScene::parseFileXML() {
+void TestScene::parseFileXML(bool removeObject) {
 
   cout << "The filename of the test scene is : " << fileNameXML << endl;
   boost::property_tree::ptree root;
@@ -65,15 +98,16 @@ void TestScene::parseFileXML() {
   boost::property_tree::ptree::iterator it = allObjects.begin();
   
   it++;
+
   for(; it != allObjects.end(); it++){
     if (DEBUG) {   cout << "New object will be parsed" << endl;     }
-    parseObject(it->second);
+    parseObject(it->second, removeObject);
   }
 }
 
 
 
-void TestScene::parseObject(boost::property_tree::ptree & parent){
+void TestScene::parseObject(boost::property_tree::ptree & parent, bool removeObject){
   Object newObject;
   if (DEBUG) {
   cout << "Indide the parseObject function" << endl;
@@ -107,15 +141,29 @@ void TestScene::parseObject(boost::property_tree::ptree & parent){
   string currentname = parent.get<std::string>(TAG_NAME);
   const char * currentNameChar = currentname.c_str();
   if ( strcmp(currentNameChar, "Monitor") == 0 || strcmp(currentNameChar, "monitor") == 0 || strcmp(currentNameChar, "Screen") == 0  || strcmp(currentNameChar, "Keyboard") == 0 || strcmp(currentNameChar, "keyboard") == 0 || strcmp(currentNameChar, "Mouse") == 0 || strcmp(currentNameChar, "mouse") == 0 )  {
-    objectList.push_back(newObject);
-    orderedObjectList.push_back(newObject);
-    numberOfObjects++;
-    if (DEBUG) {
-      cout << "Indide the parseObject function: Added object " << parent.get<std::string>(TAG_NAME) << endl;
+
+    if (removeObject ) {
+      if (TESTFLAG)  {
+        cout << "Remove object ID is: " << removeID << endl;
+      }
+      if ((strcmp(currentNameChar, "Monitor") == 0 || strcmp(currentNameChar, "monitor") == 0 || strcmp(currentNameChar, "Screen") == 0) && (removeID == 0)) {}
+      else if ( (strcmp(currentNameChar, "Keyboard") == 0 || strcmp(currentNameChar, "keyboard") == 0) && (removeID == 1) ) {}
+      else if ( (strcmp(currentNameChar, "Mouse") == 0 || strcmp(currentNameChar, "mouse") == 0 ) && (removeID == 2) ) {}
+      else {
+        objectList.push_back(newObject);
+        orderedObjectList.push_back(newObject);
+        numberOfObjects++;
+        if (TESTFLAG) {
+          cout << "Adding object ID = " << newObject.getActualObjectID() << endl;
+        }
+      }
+    }
+    else {
+      objectList.push_back(newObject);
+      orderedObjectList.push_back(newObject);
+      numberOfObjects++;
     }
   }
-
-
 }
 
 
@@ -223,6 +271,7 @@ void TestScene::setDeskCentroid() {
 
 
 void TestScene::extractFeatures() {
+
   /* For each object */
   for(vector<Object>::iterator it = objectList.begin(); it != objectList.end(); ++it) {
     
@@ -238,6 +287,17 @@ void TestScene::extractFeatures() {
       << singleObjectFeatures.size() << endl;
     }
     featureListSingleObject.push_back(singleObjectFeatures);
+ 
+    // check if the object should be removed 
+    /*
+    if (currentObject.getActualObjectID() != randomN) {
+      if (TESTFLAG) {
+        cout << "Adding the object which is a : "  << currentObject.getActualObjectID() << endl;
+      }
+      featureListSingleObject.push_back(singleObjectFeatures);
+    }
+    */
+    
   }
 }
 
@@ -366,9 +426,8 @@ void TestScene::predictObjectClasses() {
  
     predictedClasses.push_back(maxProbClassIndex);
 
-    orderedObjectList.at(maxProbClassIndex) = objectList.at(i);  // to do : delete
+    // orderedObjectList.at(maxProbClassIndex) = objectList.at(i);  // to do : delete
     (objectList.at(i)).setPredictedObjectID(maxProbClassIndex);
-
 
     if (TESTFLAG) { 
       cout << "The predicted class is : " << maxProbClassIndex << " for the unknown object no. " << i 
@@ -455,6 +514,67 @@ void TestScene::extractFeaturesPairObjects() {
 }
 
 
+/*
+For each object (i) in the scene:
+ - Iterates over all the other objects and for each other object: 
+     -  takes this object (j)
+     - computes feature for object pair (i, j)
+     - adds the features to the vector<features> of the scene "inputScene".
+*/
+void TestScene::extractFeaturesPairObjects_HandleMissing() {
+
+  for(vector<Object>::iterator it = objectList.begin(); it != objectList.end(); ++it) {
+    Object referenceObject = *it;
+
+    if (DEBUG) {
+      cout << endl << "Adding the features of a new REFERENCE object. " << endl; 
+    }
+    for(vector<Object>::iterator it2 = objectList.begin(); it2 != objectList.end(); ++it2) {
+      if (it2 != it) {
+        Object targetObject = *it2;
+        if (DEBUG) {
+        cout << endl << "Adding the features of a new TARGET object. Pair is : " << 
+		referenceObject.getObjectName() << ",  " << targetObject.getObjectName() << endl; 
+        }
+        // all feature for current object pair 
+        ObjectPairFeatures pairObjectFeatureExtraction(referenceObject, targetObject);
+        pairObjectFeatureExtraction.extractFeatures();
+        vector<FeatureInformation> _features = pairObjectFeatureExtraction.getAllFeatures();
+
+        /*
+        for (int i = 0 ; i < _features.size() ; i++ ) {
+          featureListPairObject.push_back(_features.at(i));
+        }
+        */
+
+        /* Check the object class IDs of the reference object and target object
+        and accordingly set ID of the current Object-Pair */
+        int referenceID = (*it).getPredictedObjectID(); 
+        int targetID = (*it2).getPredictedObjectID();
+        if (referenceID != targetID) {
+          int currentObjectPairID = setPairID(referenceID, targetID); // 0 to 5
+  
+          objectPairID.push_back(currentObjectPairID);
+          featureListPairObject.push_back(_features);
+
+          if (TESTFLAG) { 
+            cout << "The size of the features of the current object pair is : " 
+               << _features.size() << endl;
+            cout << "The current Object-Pair ID is " << currentObjectPairID <<  endl;
+          }
+        }
+      }
+
+    }
+    if (TESTFLAG) { 
+      cout << "The size of the features of the TOTAL featureListPairObject is : " 
+               << featureListPairObject.size() << endl;
+    } 
+  }
+}
+
+
+
 /* 
 SINGLE FEATURES
 For each of the learned probability models 
@@ -533,7 +653,7 @@ double TestScene::computeProbObjectPairs() {
 */
 
 
-double TestScene::computeProbObjectPairs_AllFeats() {
+double TestScene::computeProbObjectPairs_AllFeats_old() {
 
   double prob;
   double sumProb = 0;
@@ -597,6 +717,73 @@ double TestScene::computeProbObjectPairs_AllFeats() {
   return sumProb;
 }
 
+
+
+
+/* Compute prob scene vesion 2: handles missing objects and dupliacte objects */
+double TestScene::computeProbObjectPairs_AllFeats() {
+  double prob;
+  double sumProb = 0;
+  int objPairID;
+  int i = 0;   // iterator over the Pairs-Of-Object models
+  if (TESTFLAG) { 
+    cout << " The size of the learned model pair object is :  " << learnedModelPairObject.size()
+	 << endl;
+  }
+
+  /* For each vector_FeatureInformation = Object-Pair*/
+  for (vector<vector<FeatureInformation> >::iterator it = featureListPairObject.begin(); it != featureListPairObject.end(); ++it) {
+
+    objPairID  = objectPairID.at(i);
+    if (TESTFLAG) {
+        cout << std::endl << "Predict prob for New Object-Pair Features : " << objPairID << endl;
+    }
+    /* extract mean, cov, and weight coefficients for CORRESPONDING GMM model  */
+    cv::Mat _means = (learnedModelPairObject.at(objPairID)).get<cv::Mat>("means"); // dims x nclusters
+    cv::Mat _weights = (learnedModelPairObject.at(objPairID)).get<cv::Mat> ("weights");  //  nclusters x 1
+    vector<cv::Mat> _covs = (learnedModelPairObject.at(objPairID)).get<vector<cv::Mat> >("covs");     
+ 
+    cv::Mat features(1, (featureListPairObject[i]).size(),  CV_64F); 
+    int countFeat = 0;
+    vector <FeatureInformation>  featureCurrentObjectPair =  featureListPairObject[i]; 
+    for (vector<FeatureInformation>::iterator it2 = featureCurrentObjectPair.begin(); it2 != featureCurrentObjectPair.end(); ++it2 )  {
+      vector<float> allFeatValues = (*it2).getAllValues();   
+      double feat = (double)allFeatValues.at(0); 
+      features.at<double>( countFeat ) = feat;
+      if (DEBUG) { 
+        cout << "Feature : " << i <<  "  " << countFeat << "    : " << feat << endl; 
+      }
+      countFeat++;
+    }
+    if (TESTFLAG) {
+      cout << "The features are : " << endl << features << endl;
+    }
+
+    /* Computing likelihood with OpenCV predict function */
+    /*
+    cv::Mat Out;  
+    cv::Vec2d vec = (*it).predict(feats, Out);
+    if (TESTFLAG) {
+      cout  << " Compute Likelihood (Opencv predict) for class " << i << " :  "   << vec(0) << endl;
+    }
+    prob = (double)vec(0);
+    */
+
+    /* Computing probability with developed Multivariate Normal distribution function */
+    prob = computeGMMProbability(features, _means, _covs, _weights);
+    prob = log(prob);
+    sumProb += prob;
+    if (TESTFLAG) {
+      cout << " Compute likelihood with function Multivariate Normal Distribution : " << prob << endl;
+    }
+    i++;
+  }
+  if (TESTFLAG) {
+    cout << "The total sum of likelihoods is : " << sumProb << endl;
+  }
+  totalSceneLogP = sumProb;
+  return sumProb;
+}
 
 
 

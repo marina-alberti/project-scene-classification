@@ -123,5 +123,48 @@ Scene 35 :   12.1516
 Scene 36 :   12.9608
 
 
+-------------------------
+Nclusters = 5 for object pairs models
+and 1 object is RANDOMLY removed from each scene.
+
+Scene 0 :   8.22786
+Scene 1 :   -0.792272
+Scene 2 :   18.1743
+Scene 3 :   3.77816
+Scene 4 :   4.99304
+Scene 5 :   7.53748
+Scene 6 :   8.23729
+Scene 7 :   5.39195
+Scene 8 :   12.2066
+Scene 9 :   -8.5251
+Scene 10 :   6.80178
+Scene 11 :   6.7916
+Scene 12 :   2.33291
+Scene 13 :   4.55211
+Scene 14 :   6.28752
+Scene 15 :   4.91733
+Scene 16 :   6.32391
+Scene 17 :   9.22444
+Scene 18 :   6.63358
+Scene 19 :   7.50694
+Scene 20 :   8.32329
+Scene 21 :   11.7568
+Scene 22 :   17.6879
+Scene 23 :   14.2759
+Scene 24 :   7.98931
+Scene 25 :   -3.68038
+Scene 26 :   4.45287
+Scene 27 :   -4.47347
+Scene 28 :   2.22751
+Scene 29 :   6.80695
+Scene 30 :   1.78476
+Scene 31 :   5.31801
+Scene 32 :   5.60533
+Scene 33 :   8.29005
+Scene 34 :   7.37794
+Scene 35 :   17.0162
+Scene 36 :   5.38285
+
+
 
 

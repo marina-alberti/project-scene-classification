@@ -35,7 +35,6 @@ int main(int argc, char *argv[]) {
   LOOCV computeLoocv(inputFolder); 
   computeLoocv.compute();
 
-
   return 0;
 }
 
