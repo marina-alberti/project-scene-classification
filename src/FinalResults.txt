@@ -15,6 +15,20 @@ Only the 3 pose features (x, y, z coordiantes of the object pose):    (1 x 3)
   0, 32, 5;
   0, 5, 32]
 
+Sensitivity:
+
+100, 32/37, 32/37 = 100, 86.49, 86.49
+
+
+Precision:
+
+1, 32/37, 32/37 = 100, 86.49, 86.49
+
+
+F-Measure:
+
+100 ,  0.8649 ,  0.8649
+
 -----------------------
 
 Angle features:   (1 x 2)
@@ -22,6 +36,18 @@ Angle features:   (1 x 2)
 [35, 2, 0;
   5, 22, 10;
   0, 4, 33]
+
+Sensitivity:
+
+35/37, 22/37, 33/37 = 94.59 , 59.46 , 89.19
+
+Precision:
+
+35/40, 22/28, 33/43 = 87.5 , 78.57 , 76.74
+
+
+F-Measure:  0.9091,    0.6769,   0.8250
+
 
 ------------------------
 
@@ -31,6 +57,19 @@ Volume:          (1 x 1)
   1, 36, 0;
   0, 0, 37]
 
+
+Sensitivity:
+
+36/37, 36/37, 100 =  97.3 ,  97.3, 100
+
+Precision:
+
+36/37, 36/37, 100  =  97.3 ,  97.3, 100
+
+F-Measure:
+
+97.3 ,  97.3, 100
+
 -----------------------
 
 Lengths projection of bounding box along x, y, z: (1 x 3)
@@ -39,7 +78,12 @@ Lengths projection of bounding box along x, y, z: (1 x 3)
   0, 37, 0;
   0, 0, 37]
 
-------------------------
+Sensitivity: 
+
+100, 100, 100
+
+-------------------------
+-------------------------
 
 Nclusters = 4 for object pairs models:
 
@@ -164,6 +208,17 @@ Scene 33 :   8.29005
 Scene 34 :   7.37794
 Scene 35 :   17.0162
 Scene 36 :   5.38285
+
+DUPLICATE OBJECTS EXPERIMENT:
+
+Test scene n. 5 : ./data/719-25-06-13-morning.xml
+Likelihood =  18.4217
+
+2 monitors:  -40.3266
+
+2 keyboards:  16.44
+
+2 mouse:  24.4
 
 
 

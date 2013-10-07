@@ -15,7 +15,7 @@ void LOOCV::compute() {
   storeFiles();
 
  /* Following computation should be for each cross validation fold */
-  for (int i = 0; i < allFileNames.size(); i++) {      //; i < allFileNames.size(); i++ ) {
+  for (int i = 5; i < 6; i++) {      //; i < allFileNames.size(); i++ ) {
     indexLoop = i;
     // i = INDEX_TEST;
     createTrainingSet(i);
@@ -78,9 +78,9 @@ void LOOCV::createTrainingSet(int index) {
 
 // to do: eliminate for loop - write an inline function
 void LOOCV::createTestSet(int index) {
-   testFilesList = allFileNames.at(index);
+  // testFilesList = allFileNames.at(index);
   //testFilesList = "./mock_Missing_mouse/710-27-06-13-morning.xml";
-  // testFilesList = "./mock_Duplicate_monitor/scene.xml";
+  testFilesList = "./mock_Duplicate/719-25-06-13-morning_mouse.xml";
 }
 
 
@@ -121,7 +121,8 @@ void LOOCV::doTest() {
     cout << endl<< "Inside Test. Before Loading annotations. " << endl;
   }
 
-  unknownScene.loadAnnotation(1);
+ // choose 1 to randomly remove 1 object from the test scene.
+  unknownScene.loadAnnotation(0);
 
   if (DEBUG) {
     cout << endl<< "Inside Test. Before extracting features. " << endl;
