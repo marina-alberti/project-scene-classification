@@ -99,6 +99,32 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named AllFeatPairObject
+
+# Build rule for target.
+AllFeatPairObject: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 AllFeatPairObject
+.PHONY : AllFeatPairObject
+
+# fast build rule for target.
+AllFeatPairObject/fast:
+	$(MAKE) -f CMakeFiles/AllFeatPairObject.dir/build.make CMakeFiles/AllFeatPairObject.dir/build
+.PHONY : AllFeatPairObject/fast
+
+#=============================================================================
+# Target rules for targets named AllFeatSingleObject
+
+# Build rule for target.
+AllFeatSingleObject: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 AllFeatSingleObject
+.PHONY : AllFeatSingleObject
+
+# fast build rule for target.
+AllFeatSingleObject/fast:
+	$(MAKE) -f CMakeFiles/AllFeatSingleObject.dir/build.make CMakeFiles/AllFeatSingleObject.dir/build
+.PHONY : AllFeatSingleObject/fast
+
+#=============================================================================
 # Target rules for targets named ApiConvertKTHDB
 
 # Build rule for target.
@@ -240,6 +266,54 @@ test: cmake_check_build_system
 test/fast:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
 .PHONY : test/fast
+
+AllFeatPairObject.o: AllFeatPairObject.cpp.o
+.PHONY : AllFeatPairObject.o
+
+# target to build an object file
+AllFeatPairObject.cpp.o:
+	$(MAKE) -f CMakeFiles/AllFeatPairObject.dir/build.make CMakeFiles/AllFeatPairObject.dir/AllFeatPairObject.cpp.o
+.PHONY : AllFeatPairObject.cpp.o
+
+AllFeatPairObject.i: AllFeatPairObject.cpp.i
+.PHONY : AllFeatPairObject.i
+
+# target to preprocess a source file
+AllFeatPairObject.cpp.i:
+	$(MAKE) -f CMakeFiles/AllFeatPairObject.dir/build.make CMakeFiles/AllFeatPairObject.dir/AllFeatPairObject.cpp.i
+.PHONY : AllFeatPairObject.cpp.i
+
+AllFeatPairObject.s: AllFeatPairObject.cpp.s
+.PHONY : AllFeatPairObject.s
+
+# target to generate assembly for a file
+AllFeatPairObject.cpp.s:
+	$(MAKE) -f CMakeFiles/AllFeatPairObject.dir/build.make CMakeFiles/AllFeatPairObject.dir/AllFeatPairObject.cpp.s
+.PHONY : AllFeatPairObject.cpp.s
+
+AllFeatSingleObject.o: AllFeatSingleObject.cpp.o
+.PHONY : AllFeatSingleObject.o
+
+# target to build an object file
+AllFeatSingleObject.cpp.o:
+	$(MAKE) -f CMakeFiles/AllFeatSingleObject.dir/build.make CMakeFiles/AllFeatSingleObject.dir/AllFeatSingleObject.cpp.o
+.PHONY : AllFeatSingleObject.cpp.o
+
+AllFeatSingleObject.i: AllFeatSingleObject.cpp.i
+.PHONY : AllFeatSingleObject.i
+
+# target to preprocess a source file
+AllFeatSingleObject.cpp.i:
+	$(MAKE) -f CMakeFiles/AllFeatSingleObject.dir/build.make CMakeFiles/AllFeatSingleObject.dir/AllFeatSingleObject.cpp.i
+.PHONY : AllFeatSingleObject.cpp.i
+
+AllFeatSingleObject.s: AllFeatSingleObject.cpp.s
+.PHONY : AllFeatSingleObject.s
+
+# target to generate assembly for a file
+AllFeatSingleObject.cpp.s:
+	$(MAKE) -f CMakeFiles/AllFeatSingleObject.dir/build.make CMakeFiles/AllFeatSingleObject.dir/AllFeatSingleObject.cpp.s
+.PHONY : AllFeatSingleObject.cpp.s
 
 ApiConvertKTHDB.o: ApiConvertKTHDB.cpp.o
 .PHONY : ApiConvertKTHDB.o
@@ -511,6 +585,8 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... AllFeatPairObject"
+	@echo "... AllFeatSingleObject"
 	@echo "... ApiConvertKTHDB"
 	@echo "... ApiFeatureExtraction"
 	@echo "... DatabaseInformation"
@@ -524,6 +600,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... AllFeatPairObject.o"
+	@echo "... AllFeatPairObject.i"
+	@echo "... AllFeatPairObject.s"
+	@echo "... AllFeatSingleObject.o"
+	@echo "... AllFeatSingleObject.i"
+	@echo "... AllFeatSingleObject.s"
 	@echo "... ApiConvertKTHDB.o"
 	@echo "... ApiConvertKTHDB.i"
 	@echo "... ApiConvertKTHDB.s"

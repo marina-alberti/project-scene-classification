@@ -10,9 +10,10 @@ Object::Object() {
 
 void Object::setObjectName(string inputName) {
   objectName = inputName;
-  // set object actual ID
+
+  // set object actual ID 
   const char * nameChar = inputName.c_str();
-  if ( strcmp(nameChar, "Monitor") == 0 || strcmp(nameChar, "monitor") == 0 || strcmp(nameChar, "Screen") == 0 ) {
+  if ( strcmp(nameChar, "Monitor") == 0 || strcmp(nameChar, "monitor") == 0 || strcmp(nameChar, "Screen") == 0 || strcmp(nameChar, "Monitor2") == 0) {
     actualObjectID = 0;
   }
   if ( strcmp(nameChar, "Keyboard") == 0 || strcmp(nameChar, "keyboard") == 0 ) {
@@ -20,6 +21,18 @@ void Object::setObjectName(string inputName) {
   }
   if (strcmp(nameChar, "Mouse") == 0 || strcmp(nameChar, "mouse") == 0 ) {
     actualObjectID = 2;
+  }
+  if (strcmp(nameChar, "Mug") == 0 || strcmp(nameChar, "Cup") == 0 || strcmp(nameChar, "mug") == 0) {
+    actualObjectID = 3;
+  }
+  if (strcmp(nameChar, "Lamp") == 0 || strcmp(nameChar, "Lamp2") == 0) {
+    actualObjectID = 4;
+  }
+  if (strcmp(nameChar, "Laptop") == 0 || strcmp(nameChar, "laptop") == 0) {
+    actualObjectID = 5;
+  }
+  if (strcmp(nameChar, "Pen") == 0 || strcmp(nameChar, "Pen2") == 0 || strcmp(nameChar, "Pen3") == 0 || strcmp(nameChar, "pen") == 0 || strcmp(nameChar, "Pencil") == 0) {
+    actualObjectID = 6;
   }
 } 
 

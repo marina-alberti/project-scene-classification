@@ -30,17 +30,23 @@ void ApiFeatureExtraction::extractFeaturesSingleObjects( SceneInformation & inpu
       << singleObjectFeatures.size() << endl;
     }
     
+    /*
     for(vector<FeatureInformation>::iterator it2 = singleObjectFeatures.begin(); it2 != singleObjectFeatures.end(); ++it2) {
       inputScene.addFeatureSingleObject(*it2);
       if (DEBUG) {
         // cout << "The added feature is : " << (*it2) << endl; 
       }
     }
-    vector <FeatureInformation> allFeats = inputScene.getFeatureListSingleObject();
-    if (DEBUG) { cout << "Total N Of features : " << allFeats.size() << endl;   } // ok 
+    */
+    int objectID =  (*it).getActualObjectID();
+    inputScene.addAllFeatSingleObject(singleObjectFeatures, objectID) ; // new
+    
+    //vector <FeatureInformation> allFeats = inputScene.getFeatureListSingleObject();
+    //if (DEBUG) { cout << "Total N Of features : " << allFeats.size() << endl;   } // ok 
   }
 }
 
+// to do: add check the actual object ID.
 
 /*
 For each object (i) in the scene:
@@ -59,7 +65,6 @@ void ApiFeatureExtraction::extractFeaturesPairObjects(SceneInformation & inputSc
       cout << endl << "Adding the features of a new REFERENCE object. " << endl; 
     }
  
-
     for(vector<Object>::iterator it2 = objectList.begin(); it2 != objectList.end(); ++it2) {
       if (it2 != it) {
         Object targetObject = *it2;
@@ -76,13 +81,18 @@ void ApiFeatureExtraction::extractFeaturesPairObjects(SceneInformation & inputSc
           cout << "The size of the features of the current object pair is : " 
                << _features.size() << endl;
         }
-
+        int objectID1 = (*it).getActualObjectID();
+        int objectID2 = (*it2).getActualObjectID();
+        inputScene.addAllFeatPairObject( _features, objectID1, objectID2);  // new
+;
+/*
         for(vector<FeatureInformation>::iterator it3 = _features.begin(); it3 != _features.end(); ++it3) {
           inputScene.addFeaturePairObject((*it3));
           if (DEBUG) {
            // cout << "The added feature is : " << (*it3) << endl; 
           }
         }
+*/
       }
     }
  

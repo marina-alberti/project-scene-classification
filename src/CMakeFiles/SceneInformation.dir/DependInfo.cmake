@@ -19,4 +19,6 @@ SET(CMAKE_TARGET_DEFINITIONS
 SET(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/Object.dir/DependInfo.cmake"
   "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/FeatureInformation.dir/DependInfo.cmake"
+  "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/AllFeatSingleObject.dir/DependInfo.cmake"
+  "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/AllFeatPairObject.dir/DependInfo.cmake"
   )

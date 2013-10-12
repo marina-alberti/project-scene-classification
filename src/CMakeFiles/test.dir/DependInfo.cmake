@@ -27,4 +27,6 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
   "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/ObjectPairFeatures.dir/DependInfo.cmake"
   "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/TestScene.dir/DependInfo.cmake"
   "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/LOOCV.dir/DependInfo.cmake"
+  "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/AllFeatSingleObject.dir/DependInfo.cmake"
+  "/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/AllFeatPairObject.dir/DependInfo.cmake"
   )

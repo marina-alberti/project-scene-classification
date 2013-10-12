@@ -22,8 +22,9 @@
 #include "opencv2/gpu/gpu.hpp"
 #include <cmath>
 #include <algorithm>
+#include "AllFeatPairObject.hpp"
 
-#define N_OBJECTS 3
+#define N_OBJECTS 7
 
 typedef map<string, float> objectParametersKTH;
 
@@ -35,21 +36,26 @@ private:
   vector<Object> objectList;
   vector<double> predictedClasses;
   // (0) monitor, (1) keyboard, (2) mouse in this order
-  vector<Object> orderedObjectList;  
+ // vector<Object> orderedObjectList;  
   string fileNameXML;
 
-/* Each element is one object -> 3 separate FeatureInformation vectors*/
+  /* Each element is one object -> N_objects separate FeatureInformation vectors */
   vector<vector<FeatureInformation> > featureListSingleObject;
-  vector<vector<FeatureInformation> > featureListPairObject;
+  // vector<vector<FeatureInformation> > featureListPairObject;
+  vector<AllFeatPairObject>  featureListPair;
+
   pcl::PointXYZ deskCentroid;
   float deskLength;
   float deskWidth;
   objectParametersKTH mapKTHparameters;
+
   std::vector<cv::EM> learnedModelSingleObject;   //  it will contain 3 models : 1 per object
-  std::vector<cv::EM> learnedModelPairObject;     //  it will contain 6 models (if using all features)
+  std::vector<vector<cv::EM> > learnedModelPairObject;     //  it will contain 6 models (if using all features)
+
   vector<vector<double> > meanNormalization;
   vector<vector<double> > stdNormalization;
-  vector <int> objectPairID;
+
+//  vector <int> objectPairID;
   int removeID;
 
   // functions
@@ -65,7 +71,7 @@ private:
 public:
 
   /*  load the given file index data */
-  TestScene(string, vector<cv::EM> , vector<vector<double> > , vector<vector<double> > , vector<cv::EM> );
+  TestScene(string, vector<cv::EM> , vector<vector<double> > , vector<vector<double> > , vector<vector<cv::EM> > );
 
   /* loadAnnotations In IDS */
   void loadAnnotation(bool);

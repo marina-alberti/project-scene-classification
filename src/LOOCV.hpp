@@ -24,7 +24,7 @@
 #include "TestScene.hpp"
 
 #define N_CLUSTERS_OBJECT 3
-#define N_CLUSTERS_PAIR 5
+#define N_CLUSTERS_PAIR 5  // 5
 #define INDEX_TEST 30
 
 
@@ -35,18 +35,28 @@ private:
   int indexLoop;
   string dirname;
   int numberOfFiles;
-  vector<string> allFileNames;
-  vector<string> trainingFilesList;
-  string testFilesList;
 
-  std::vector<cv::EM> learnedModelSingleObject;   //  it will contain 3 models : 1 per object
-  std::vector<cv::EM> learnedModelPairObject;     //  it will contain 3 X 5 models (if using separate features)
+  // names of all files in the folder chosen for cross-validation experiments
+  vector<string> allFileNames;
+
+  // names of all files used for training
+  vector<string> trainingFilesList;
+
+  // name of one file used for testing
+  string testFilesList;                 
+
+  //  it will contain N_objects models : 1 per object category
+  std::vector<cv::EM> learnedModelSingleObject;   
+  //  it will contain N_combinations models : combintations of object category pairs
+  std::vector<vector<cv::EM> > learnedModelPairObject;     
 
   vector<vector<double> > meanNormalization;
   vector<vector<double> > stdNormalization;
 
+  // the similarity scores for all the test scenes in the cross-validation experiment
   vector<double> probSceneListLoocv;
 
+  // the confusion matrix for object class prediction = object classification
   cv::Mat cMatrixObjectClassification;
 
   bool cMatrixSet;

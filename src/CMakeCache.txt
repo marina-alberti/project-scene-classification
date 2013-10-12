@@ -15,6 +15,18 @@
 ########################
 
 //Dependencies for target
+AllFeatPairObject.cpp_LIB_DEPENDS:STATIC=
+
+//Dependencies for the target
+AllFeatPairObject_LIB_DEPENDS:STATIC=general;FeatureInformation;
+
+//Dependencies for target
+AllFeatSingleObject.cpp_LIB_DEPENDS:STATIC=
+
+//Dependencies for the target
+AllFeatSingleObject_LIB_DEPENDS:STATIC=general;FeatureInformation;
+
+//Dependencies for target
 ApiConvertKTHDB_LIB_DEPENDS:STATIC=
 
 //Dependencies for the target
@@ -209,7 +221,7 @@ CMAKE_USE_RELATIVE_PATHS:BOOL=OFF
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Dependencies for the target
-DatabaseInformation_LIB_DEPENDS:STATIC=general;SceneInformation;general;ApiConvertKTHDB;general;ApiFeatureExtraction;
+DatabaseInformation_LIB_DEPENDS:STATIC=general;SceneInformation;general;ApiConvertKTHDB;general;ApiFeatureExtraction;general;AllFeatSingleObject;general;AllFeatPairObject;debug;/opt/ros/groovy/lib/libopencv_calib3d.so;debug;/opt/ros/groovy/lib/libopencv_contrib.so;debug;/opt/ros/groovy/lib/libopencv_core.so;debug;/opt/ros/groovy/lib/libopencv_features2d.so;debug;/opt/ros/groovy/lib/libopencv_flann.so;debug;/opt/ros/groovy/lib/libopencv_gpu.so;debug;/opt/ros/groovy/lib/libopencv_highgui.so;debug;/opt/ros/groovy/lib/libopencv_imgproc.so;debug;/opt/ros/groovy/lib/libopencv_legacy.so;debug;/opt/ros/groovy/lib/libopencv_ml.so;debug;/opt/ros/groovy/lib/libopencv_nonfree.so;debug;/opt/ros/groovy/lib/libopencv_objdetect.so;debug;/opt/ros/groovy/lib/libopencv_photo.so;debug;/opt/ros/groovy/lib/libopencv_stitching.so;debug;/opt/ros/groovy/lib/libopencv_superres.so;debug;/opt/ros/groovy/lib/libopencv_ts.so;debug;/opt/ros/groovy/lib/libopencv_video.so;debug;/opt/ros/groovy/lib/libopencv_videostab.so;optimized;/opt/ros/groovy/lib/libopencv_calib3d.so;optimized;/opt/ros/groovy/lib/libopencv_contrib.so;optimized;/opt/ros/groovy/lib/libopencv_core.so;optimized;/opt/ros/groovy/lib/libopencv_features2d.so;optimized;/opt/ros/groovy/lib/libopencv_flann.so;optimized;/opt/ros/groovy/lib/libopencv_gpu.so;optimized;/opt/ros/groovy/lib/libopencv_highgui.so;optimized;/opt/ros/groovy/lib/libopencv_imgproc.so;optimized;/opt/ros/groovy/lib/libopencv_legacy.so;optimized;/opt/ros/groovy/lib/libopencv_ml.so;optimized;/opt/ros/groovy/lib/libopencv_nonfree.so;optimized;/opt/ros/groovy/lib/libopencv_objdetect.so;optimized;/opt/ros/groovy/lib/libopencv_photo.so;optimized;/opt/ros/groovy/lib/libopencv_stitching.so;optimized;/opt/ros/groovy/lib/libopencv_superres.so;optimized;/opt/ros/groovy/lib/libopencv_ts.so;optimized;/opt/ros/groovy/lib/libopencv_video.so;optimized;/opt/ros/groovy/lib/libopencv_videostab.so;
 
 //Path to a file.
 EIGEN_INCLUDE_DIRS:PATH=/usr/include/eigen3
@@ -364,7 +376,7 @@ SceneDescription_BINARY_DIR:STATIC=/home/marina/Project_Scene_Classification/pro
 SceneDescription_SOURCE_DIR:STATIC=/home/marina/Project_Scene_Classification/project-scene-classification
 
 //Dependencies for the target
-SceneInformation_LIB_DEPENDS:STATIC=general;Object;general;FeatureInformation;
+SceneInformation_LIB_DEPENDS:STATIC=general;Object;general;FeatureInformation;general;AllFeatSingleObject;general;AllFeatPairObject;
 
 //Dependencies for the target
 TestScene_LIB_DEPENDS:STATIC=general;Object;general;ObjectFeatures;
@@ -546,7 +558,7 @@ CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //Details about finding Flann
 FIND_PACKAGE_MESSAGE_DETAILS_Flann:INTERNAL=[/opt/ros/groovy/lib/libflann_cpp_s.a][/opt/ros/groovy/include][v()]
 //Details about finding PCL
-FIND_PACKAGE_MESSAGE_DETAILS_PCL:INTERNAL=[/usr/lib/libboost_system-mt.so;/usr/lib/libboost_filesystem-mt.so;/usr/lib/libboost_thread-mt.so;pthread;/usr/lib/libboost_date_time-mt.so;/usr/lib/libboost_iostreams-mt.so;optimized;/opt/ros/groovy/lib/libpcl_common.so;debug;/opt/ros/groovy/lib/libpcl_common.so;optimized;/opt/ros/groovy/lib/libpcl_octree.so;debug;/opt/ros/groovy/lib/libpcl_octree.so;vtkCommon;vtkRendering;vtkHybrid;optimized;/opt/ros/groovy/lib/libpcl_io.so;debug;/opt/ros/groovy/lib/libpcl_io.so;optimized;/opt/ros/groovy/lib/libflann_cpp_s.a;debug;/opt/ros/groovy/lib/libflann_cpp_s-gd.a;optimized;/opt/ros/groovy/lib/libpcl_kdtree.so;debug;/opt/ros/groovy/lib/libpcl_kdtree.so;optimized;/opt/ros/groovy/lib/libpcl_search.so;debug;/opt/ros/groovy/lib/libpcl_search.so;optimized;/opt/ros/groovy/lib/libpcl_visualization.so;debug;/opt/ros/groovy/lib/libpcl_visualization.so;optimized;/opt/ros/groovy/lib/libpcl_sample_consensus.so;debug;/opt/ros/groovy/lib/libpcl_sample_consensus.so;optimized;/opt/ros/groovy/lib/libpcl_filters.so;debug;/opt/ros/groovy/lib/libpcl_filters.so;optimized;/opt/ros/groovy/lib/libpcl_segmentation.so;debug;/opt/ros/groovy/lib/libpcl_segmentation.so][/opt/ros/groovy/include/pcl-1.6;/usr/include/eigen3;/usr/include;/usr/include/vtk-5.8;/opt/ros/groovy/include][v(1.4)]
+FIND_PACKAGE_MESSAGE_DETAILS_PCL:INTERNAL=[/usr/lib/libboost_system-mt.so;/usr/lib/libboost_filesystem-mt.so;/usr/lib/libboost_thread-mt.so;/usr/lib/libboost_date_time-mt.so;/usr/lib/libboost_iostreams-mt.so;optimized;/opt/ros/groovy/lib/libpcl_common.so;debug;/opt/ros/groovy/lib/libpcl_common.so;optimized;/opt/ros/groovy/lib/libpcl_octree.so;debug;/opt/ros/groovy/lib/libpcl_octree.so;vtkCommon;vtkRendering;vtkHybrid;optimized;/opt/ros/groovy/lib/libpcl_io.so;debug;/opt/ros/groovy/lib/libpcl_io.so;optimized;/opt/ros/groovy/lib/libflann_cpp_s.a;debug;/opt/ros/groovy/lib/libflann_cpp_s-gd.a;optimized;/opt/ros/groovy/lib/libpcl_kdtree.so;debug;/opt/ros/groovy/lib/libpcl_kdtree.so;optimized;/opt/ros/groovy/lib/libpcl_search.so;debug;/opt/ros/groovy/lib/libpcl_search.so;optimized;/opt/ros/groovy/lib/libpcl_visualization.so;debug;/opt/ros/groovy/lib/libpcl_visualization.so;optimized;/opt/ros/groovy/lib/libpcl_sample_consensus.so;debug;/opt/ros/groovy/lib/libpcl_sample_consensus.so;optimized;/opt/ros/groovy/lib/libpcl_filters.so;debug;/opt/ros/groovy/lib/libpcl_filters.so;optimized;/opt/ros/groovy/lib/libpcl_segmentation.so;debug;/opt/ros/groovy/lib/libpcl_segmentation.so][/opt/ros/groovy/include/pcl-1.6;/usr/include/eigen3;/usr/include;/usr/include/vtk-5.8;/opt/ros/groovy/include][v(1.4)]
 //Details about finding PCL_COMMON
 FIND_PACKAGE_MESSAGE_DETAILS_PCL_COMMON:INTERNAL=[/opt/ros/groovy/lib/libpcl_common.so][/opt/ros/groovy/include/pcl-1.6][v()]
 //Details about finding PCL_FILTERS

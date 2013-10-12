@@ -9,17 +9,25 @@
 #include <pcl/point_types.h>
 #include <pcl/point_cloud.h>
 #include "FeatureInformation.hpp"
+#include "AllFeatSingleObject.hpp"
+#include "AllFeatPairObject.hpp"
+
 
 class SceneInformation{
 
 private:
   string sceneType;
   int numberOfObjects;
-  vector<Object> objectList;
+
+  vector<Object> objectList;   // will contain also the object IDs
  //vector<Object> landmarkObjectList;
 
-  vector<FeatureInformation> featureListSingleObject;
-  vector<FeatureInformation> featureListPairObject;
+ // vector<FeatureInformation> featureListSingleObject;
+ // vector<FeatureInformation> featureListPairObject;
+
+  // new classes TO DO:
+  vector<AllFeatSingleObject> featureListSingle;
+  vector<AllFeatPairObject>  featureListPair;
 
   pcl::PointXYZ deskCentroid;
   float deskLength;
@@ -49,11 +57,20 @@ public:
   will allow to use Iterators on the objectList vector,
   to compute features between pairs of objects.
   */
-  void orderObjectList(); 
+  void orderObjectList();
+ 
   void addFeatureSingleObject(FeatureInformation);
   void addFeaturePairObject(FeatureInformation);
-  vector<FeatureInformation> getFeatureListSingleObject() { return featureListSingleObject; }
-  vector<FeatureInformation> getFeatureListPairObject() { return featureListPairObject; }
+
+  // new: to inetgrate into the ApiFeatureExtraction 
+  void addAllFeatSingleObject(vector<FeatureInformation>, int);
+  void addAllFeatPairObject(vector<FeatureInformation>, int, int);
+
+  vector<AllFeatSingleObject> getAllFeatSingleObject() { return featureListSingle; }
+  vector<AllFeatPairObject> getAllFeatPairObject() { return featureListPair; }
+
+ // vector<FeatureInformation> getFeatureListSingleObject() { return featureListSingleObject; }
+ // vector<FeatureInformation> getFeatureListPairObject() { return featureListPairObject; }
 
 };
 

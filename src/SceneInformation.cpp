@@ -82,6 +82,7 @@ considered objects, then push_back that object
 in specific positino in the new vector.
 Then replaces the old vector with the new one
 */
+
 // to do : check what happens if the 3 objects are not present. size = 3.
 // I shuold skip the current scene (?)
 void SceneInformation::orderObjectList() {
@@ -110,8 +111,12 @@ void SceneInformation::orderObjectList() {
        newObjectList[2] = *it;
        checkMouse = 1;
     }
-    
+   
+/// here add other object classes !!! TO DO
+ 
   }
+  // to modify and allow that objects are not present in training scenes !!! TO DO
+  // add this bools for each object class and then use them in feature computation.
   if (checkMonitor == 0 || checkKeyboard == 0 || checkMouse == 0) {
 
     cout << endl << "ERROR: the objects have not been found." << endl;
@@ -122,12 +127,33 @@ void SceneInformation::orderObjectList() {
   cout << objectList.size() << endl;
 }
 
+/*
 void SceneInformation::addFeatureSingleObject(FeatureInformation currentFeature) {
   featureListSingleObject.push_back(currentFeature);
 }
 
 void SceneInformation::addFeaturePairObject(FeatureInformation currentFeature) {
   featureListPairObject.push_back(currentFeature);
+}
+*/
+
+void SceneInformation::addAllFeatSingleObject(vector<FeatureInformation> featureVector, int ID) {
+  AllFeatSingleObject currentObjectFeatures;
+  currentObjectFeatures.setObjectID(ID);
+  for (int i = 0; i<featureVector.size(); i++) {
+    currentObjectFeatures.addFeature(featureVector.at(i));
+  }
+  featureListSingle.push_back(currentObjectFeatures);
+}
+
+void SceneInformation::addAllFeatPairObject(vector<FeatureInformation> featureVector, int ID1, int ID2) {
+  AllFeatPairObject currentObjectPairFeatures;
+  currentObjectPairFeatures.setObjectID1(ID1);
+  currentObjectPairFeatures.setObjectID2(ID2);
+  for (int i = 0; i<featureVector.size(); i++) {
+    currentObjectPairFeatures.addFeature(featureVector.at(i));
+  }
+  featureListPair.push_back(currentObjectPairFeatures);
 }
 
 

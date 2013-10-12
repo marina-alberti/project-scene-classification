@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/marina/Project_Scene_Classification/project-scene-classification/src/AllFeatPairObject.hpp
+string
+-
+vector
+-
+FeatureInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
+
+/home/marina/Project_Scene_Classification/project-scene-classification/src/AllFeatSingleObject.hpp
+string
+-
+vector
+-
+FeatureInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
+
 /home/marina/Project_Scene_Classification/project-scene-classification/src/ApiConvertKTHDB.hpp
 Object.hpp
 /home/marina/Project_Scene_Classification/project-scene-classification/src/Object.hpp
@@ -129,6 +145,10 @@ pcl/point_cloud.h
 -
 FeatureInformation.hpp
 /home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
+AllFeatSingleObject.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/AllFeatSingleObject.hpp
+AllFeatPairObject.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/AllFeatPairObject.hpp
 
 /home/marina/Project_Scene_Classification/project-scene-classification/src/TestScene.cpp
 TestScene.hpp
@@ -177,6 +197,8 @@ cmath
 -
 algorithm
 -
+AllFeatPairObject.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/AllFeatPairObject.hpp
 
 /opt/ros/groovy/include/opencv2/calib3d/calib3d.hpp
 opencv2/core/core.hpp

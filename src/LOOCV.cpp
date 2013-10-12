@@ -15,13 +15,16 @@ void LOOCV::compute() {
   storeFiles();
 
  /* Following computation should be for each cross validation fold */
-  for (int i = 5; i < 6; i++) {      //; i < allFileNames.size(); i++ ) {
+  for (int i = 0; i < 3; i++) {      //; i < allFileNames.size(); i++ ) {
+
+    cout << endl << endl << "inside LOOCV looping: LOOP = " << i << endl << endl;
     indexLoop = i;
     // i = INDEX_TEST;
     createTrainingSet(i);
     createTestSet(i);
     doTraining();
-    doTest();
+
+    doTest();  // TO DO put back
 
     if (DEBUG) {
       cout << std::endl << " Inside LOOCV compute. End test. " << endl;
@@ -29,11 +32,12 @@ void LOOCV::compute() {
     
   }
   for (int j = 0; j < probSceneListLoocv.size(); j++ ) {
-    cout << "Scene "  << j << " :   " << probSceneListLoocv[j] << endl;
+    cout << "Scene "  << j << " :  Simlarity score :  " << probSceneListLoocv[j] << endl;
   }
 }
 
 // getAnnotationFileNames change the function name
+/* Stores all the file names in the folder into the data member "allFileNames" */
 void LOOCV::storeFiles() {
   DIR *dp;
   struct dirent *ep;
@@ -78,61 +82,79 @@ void LOOCV::createTrainingSet(int index) {
 
 // to do: eliminate for loop - write an inline function
 void LOOCV::createTestSet(int index) {
-  // testFilesList = allFileNames.at(index);
+  testFilesList = allFileNames.at(index);
   //testFilesList = "./mock_Missing_mouse/710-27-06-13-morning.xml";
-  testFilesList = "./mock_Duplicate/719-25-06-13-morning_mouse.xml";
+  // testFilesList = "./mock_Duplicate/719-25-06-13-morning_mouse.xml";
 }
 
 
 void LOOCV::doTraining() {
+
   DatabaseInformation storeDatabase(trainingFilesList);
-  storeDatabase.loadAnnotationsInIDS ();
 
-  /* Feature Extraction  */
-  cout << "Before calling apifeatureextraction from LOOCV" << endl;
+  // Convert objects annotations from KTH manual annotation tool format ->
+//     -> Internal Data Structure (IDS) 
+  storeDatabase.loadAnnotationsInIDS();
+
+  // Feature Extraction  
+  cout << "Inside LOOCV Training: Before calling apifeatureextraction from LOOCV" << endl;
   storeDatabase.callApiFeatureExtraction();
-  cout << "The total number of Scenes is: " << storeDatabase.getNumberOfScenes() << endl;
+  cout << "Inside LOOCV Training: The total number of Scenes is: " << storeDatabase.getNumberOfScenes() << endl;
   storeDatabase.setFeatureMatrix();
-  cout << "The feature matrix has been filled." << endl;
+  cout << "Inside LOOCV Training: The feature matrix has been filled." << endl;
 
-  /* Learning module */
+
+  // Learning module 
+  // (i) Learning Object category models 
   storeDatabase.computeGMM_SingleObject_AllFeat(N_CLUSTERS_OBJECT);
-  // storeDatabase.computeGMM_PairObject_SingleFeat(N_CLUSTERS_PAIR);   
+
+
+  // (ii) Learning spatial relations between different object categories 
+  // // storeDatabase.computeGMM_PairObject_SingleFeat(N_CLUSTERS_PAIR);   
   storeDatabase.computeGMM_PairObject_AllFeat(N_CLUSTERS_PAIR); 
 
+  // Store the learned models into the data members of LOOCV class 
   learnedModelSingleObject = storeDatabase.getLearnedModelSingleObject();
   learnedModelPairObject = storeDatabase.getLearnedModelPairObject();
 
-  cout <<  "Inside LOOCV Do training :the size of learnedModelPairObject is : " << learnedModelPairObject.size() << endl;
+  if (TESTFLAG) {
+    cout <<  "Inside LOOCV Do training: the size of learnedModelPairObject is : " 
+         << learnedModelPairObject.size() << endl;
+    cout <<  "Inside LOOCV Do training: the size of learnedModelSingleObject is : " 
+         << learnedModelSingleObject.size() << endl;
+  }
   meanNormalization = storeDatabase.getmeanNormalization();
   stdNormalization = storeDatabase.getstdNormalization();
 
   // storeDatabase.printFeatureMatrix();
 
-  cout << endl ;
+  cout << endl ; 
+
 }
 
 
+/* Test of unkown scene. */
 void LOOCV::doTest() {
   cout << "TestFile = "  << testFilesList << endl;
+
   TestScene unknownScene(testFilesList, learnedModelSingleObject, meanNormalization, stdNormalization, learnedModelPairObject);
 
   if (DEBUG) {
-    cout << endl<< "Inside Test. Before Loading annotations. " << endl;
+    cout << endl<< "Inside LOOCV Test. Before Loading annotations. " << endl;
   }
 
- // choose 1 to randomly remove 1 object from the test scene.
+  // choose 1 to randomly remove 1 object from the test scene, 0 for normal behaviour.
   unknownScene.loadAnnotation(0);
 
   if (DEBUG) {
-    cout << endl<< "Inside Test. Before extracting features. " << endl;
+    cout << endl<< "Inside LOOCV Test. Before extracting features. " << endl;
   }
   unknownScene.extractFeatures();
 
   if (DEBUG) {
-    cout << endl<< "Inside Test. Before predicting object classes. " << endl;
+    cout << endl<< "Inside LOOCV Test. Before predicting object classes. " << endl;
   }
-  /* Compute probabilities for 3 objects + classify objects. */
+  // Compute probabilities for 3 objects + classify objects. 
   unknownScene.predictObjectClasses();
 
   // add here the LOOCV for object class prediction - performance computation.
@@ -148,7 +170,7 @@ void LOOCV::doTest() {
   }
  
   if (TESTFLAG) {
-    cout << "The total confision matrix is: " << endl << cMatrixObjectClassification << endl;
+    cout << "The total confusion matrix is: " << endl << cMatrixObjectClassification << endl;
   }
 
   unknownScene.extractFeaturesPairObjects_HandleMissing();

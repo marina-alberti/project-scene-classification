@@ -27,7 +27,7 @@ private:
   void setCentroid();
   int actualObjectID;
   int predictedObjectID;
-  void setActualObjectID(int i) { actualObjectID = i; } 
+
 
 public:
   Object();
@@ -46,7 +46,7 @@ public:
   string getObjectName();
   pcl::PointCloud<pcl::PointXYZ> getBoundingBox();  
   pcl::PointXYZ getCentroid();
-
+  void setActualObjectID(int i) { actualObjectID = i; } 
 
 };
 

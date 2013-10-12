@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/marina/Project_Scene_Classification/project-scene-classification/src/AllFeatPairObject.hpp
+string
+-
+vector
+-
+FeatureInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
+
+/home/marina/Project_Scene_Classification/project-scene-classification/src/AllFeatSingleObject.hpp
+string
+-
+vector
+-
+FeatureInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
+
 /home/marina/Project_Scene_Classification/project-scene-classification/src/ApiConvertKTHDB.cpp
 ApiConvertKTHDB.hpp
 /home/marina/Project_Scene_Classification/project-scene-classification/src/ApiConvertKTHDB.hpp
@@ -77,6 +93,10 @@ pcl/point_cloud.h
 -
 FeatureInformation.hpp
 /home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
+AllFeatSingleObject.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/AllFeatSingleObject.hpp
+AllFeatPairObject.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/AllFeatPairObject.hpp
 
 /opt/ros/groovy/include/pcl-1.6/pcl/channel_properties.h
 pcl/pcl_macros.h

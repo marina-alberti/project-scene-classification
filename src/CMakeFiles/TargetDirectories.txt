@@ -1,3 +1,5 @@
+/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/AllFeatPairObject.dir
+/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/AllFeatSingleObject.dir
 /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/ApiConvertKTHDB.dir
 /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/ApiFeatureExtraction.dir
 /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/DatabaseInformation.dir

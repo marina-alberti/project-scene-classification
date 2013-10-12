@@ -90,6 +90,35 @@ void ApiConvertKTHDB::parseObject(boost::property_tree::ptree & parent, SceneInf
   vector<pcl::PointXYZ> myboundingBoxPoints = convertObjectParameters();
   newObject.setBoundingBox(myboundingBoxPoints); 
   newObject.setObjectName(parent.get<std::string>(TAG_NAME));
+
+// to do: add set object ID  TO DO: uncomment
+// setActualObjectID(int i)
+
+    string currentName = parent.get<std::string>(TAG_NAME);
+    const char * currentNameChar = currentName.c_str();
+/*
+    if (strcmp(currentNameChar, "Monitor") == 0 || strcmp(currentNameChar, "monitor") == 0 || strcmp(currentNameChar, "Screen") == 0 || strcmp(currentNameChar, "Monitor2") == 0) {
+       newObject.setActualObjectID(0);
+    }
+    if (strcmp(currentNameChar, "Keyboard") == 0 || strcmp(currentNameChar, "keyboard") == 0) {
+       newObject.setActualObjectID(1);
+    }
+    if (strcmp(currentNameChar, "Mouse") == 0 || strcmp(currentNameChar, "mouse") == 0) {
+       newObject.setActualObjectID(2);
+    }
+    if (strcmp(currentNameChar, "Mug") == 0 || strcmp(currentNameChar, "Cup") == 0) {
+       newObject.setActualObjectID(3);
+    }
+    if (strcmp(currentNameChar, "Lamp") == 0 || strcmp(currentNameChar, "Lamp2") == 0) {
+       newObject.setActualObjectID(4);
+    }
+    if (strcmp(currentNameChar, "Laptop") == 0 || strcmp(currentNameChar, "laptop") == 0) {
+       newObject.setActualObjectID(5);
+    }
+    if (strcmp(currentNameChar, "Pen") == 0 || strcmp(currentNameChar, "Pen2") == 0 || strcmp(currentNameChar, "Pen3") == 0) {
+       newObject.setActualObjectID(6);
+    }
+*/
   mySceneInformation.addObject(newObject);
   if (DEBUG) {
   cout << "Indide the parseObject function: Added object " << parent.get<std::string>(TAG_NAME) << endl;

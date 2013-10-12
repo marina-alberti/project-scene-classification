@@ -1,6 +1,7 @@
 #include "DatabaseInformation.hpp"
 
 #define DEBUG 0
+#define TESTFLAG 1
 
 DatabaseInformation::DatabaseInformation(vector<string> trainingFilesList) {
   numberOfScenes = 0;
@@ -15,12 +16,12 @@ void DatabaseInformation::loadAnnotationsInIDS() {
   for (int i = 0; i < filesList.size(); i++ ) {
 
     string filenameXML = filesList.at(i);
-    if (DEBUG)  { cout << "The XML file name is: " << filenameXML << endl;    }
+    if (TESTFLAG)  { cout << "The XML file name is: " << filenameXML << endl;    }
   
     ApiConvertKTHDB convertKTHannotation(filenameXML);
     SceneInformation currentScene;
     convertKTHannotation.parseFileXML(currentScene);
-    currentScene.orderObjectList();
+    //currentScene.orderObjectList();
     sceneList.push_back(currentScene);
     numberOfScenes = numberOfScenes + 1; 
     if (DEBUG) {cout << "Added a new scene to the sceneList. " << endl; } 
@@ -37,21 +38,25 @@ of the scene
 void DatabaseInformation::callApiFeatureExtraction() {
   
   for(vector<SceneInformation>::iterator it = sceneList.begin(); it != sceneList.end(); ++it) {
-    if (DEBUG) {cout << endl << endl << "Feature Extraction STARTS: "<< endl << "Selecting a new scene for feature extration (inside DatabaseInformation::callApiFeatureExtraction)" << endl; }
+    if (DEBUG) {cout << endl << endl << "Feature Extraction STARTS: "<< endl 
+	<< "Selecting a new scene for feature extration (inside DatabaseInformation::callApiFeatureExtraction)" << endl; }
     
     SceneInformation currentScene = (*it);  
     ApiFeatureExtraction extractFeaturesApi; 
-    extractFeaturesApi.extractFeaturesSingleObjects((*it));   // here sould be not local
+    extractFeaturesApi.extractFeaturesSingleObjects((*it));  
 
+  //  if (DEBUG) {
+  //    vector<FeatureInformation> allFeats = (*it).getFeatureListSingleObject();
+  //    cout << "In DBINFO callApiFE : The size of the vector of Feat of current scene is : " << 
+  //	allFeats.size() << endl;
+ //   } 
     if (DEBUG) {
-      vector<FeatureInformation> allFeats = (*it).getFeatureListSingleObject();
-      cout << "In DBINFO callApiFE : The size of the vector of Feat of current scene is : " << 
-	allFeats.size() << endl;
-    } 
-    if (DEBUG) {cout << "After extracting all single object features. " << endl<<endl<<endl; }
+      cout << "In DBINFO callApiFE : After extracting all single object features. " << endl<<endl<<endl; 
+    }
     extractFeaturesApi.extractFeaturesPairObjects((*it)); 
   }
 }
+
 
 /*
   This function collects all the features stored into the field "featureList" of 
@@ -60,19 +65,20 @@ void DatabaseInformation::callApiFeatureExtraction() {
   goes through vector<FeatureInformation> featureListSingleObject
   stores it in a row of featureMatrix
 */
+/*
 void DatabaseInformation::setFeatureMatrix() {
 
   for(vector<SceneInformation>::iterator it = sceneList.begin(); it != sceneList.end(); ++it) {
     SceneInformation currentScene = (*it);
 
-  /* The SingleObjectFeatures computation */
+    // The SingleObjectFeatures computation 
     vector<FeatureInformation> currentSceneFeaturesSingleObject =     currentScene.getFeatureListSingleObject();
     if (DEBUG) { 
-      cout << "In DBINFO set FMatrix : The size of the vector of Feat SINGLE_OBJ of current scene is : " <<  currentSceneFeaturesSingleObject.size() << endl;
+      cout << "In DBINFO set FMatrix : The size of the vector of Feat SINGLE_OBJ of current scene is : " <<  		  currentSceneFeaturesSingleObject.size() << endl;
     }
     featureMatrixSingleObject.push_back(currentSceneFeaturesSingleObject);
 
-    /* The pair of Objects Features Computation */
+    // The pair of Objects Features Computation 
     vector <FeatureInformation> currentSceneFeaturesPairObject =     currentScene.getFeatureListPairObject();
     if (DEBUG) { 
       cout << "In DBINFO set FMatrix : The size of the vector of Feat PAIR_OBJ of current scene is : " <<  currentSceneFeaturesPairObject.size() << endl;
@@ -80,28 +86,153 @@ void DatabaseInformation::setFeatureMatrix() {
     featureMatrixPairObject.push_back(currentSceneFeaturesPairObject);
   }
 }
+*/
+
+
+
+/*  New version of the function : creates feature matrices for all objects 
+     and pairs objects, in predefined category list */ 
+void DatabaseInformation::setFeatureMatrix() {
+
+  if (TESTFLAG) {
+    cout << "In setFeatureMatrix : start." << endl;
+  }
+  // Single Object FM
+  // initialize the feature matrix (I already know the Number of predifined object classes)
+  FMSingleObject.reserve(NOBJECTCLASSES);
+
+  if (TESTFLAG) {
+    cout << "In setFeatureMatrix : reserved space in the matrix, == NOBJECTCLASSES." << endl;
+  }
+
+  // iterate over set of object class IDs, predefined 
+  for (int i = 0; i < NOBJECTCLASSES ; i++) {
+    if (TESTFLAG) {
+      cout << "In setFeatureMatrix : current object class ID: i =  " << i << endl;
+    }
+    int countScene = 0;
+    int nScene = sceneList.size();
+    vector<vector<FeatureInformation> > currentFeaturesScenes;
+    //(FMSingleObject[i]).resize(nScene);
+    // iterate over all scenes in the database
+    for(vector<SceneInformation>::iterator it = sceneList.begin(); it != sceneList.end(); ++it) {
+      //SceneInformation currentScene = (*it);
+
+      if (DEBUG) {
+        cout << "In setFeatureMatrix : scene ID:  " << countScene << endl;
+      }
+
+      // iterate over all sets of features (from different objects) present in the current scene of the database
+      vector<AllFeatSingleObject> allFeatureCurrentObject = (*it).getAllFeatSingleObject();
+      if (TESTFLAG) {
+      //  cout << "In setFeatureMatrix : size of allFeatureCurrentObject is : " << allFeatureCurrentObject.size() << endl;
+      }
+
+      for(vector<AllFeatSingleObject>::iterator it2 = allFeatureCurrentObject.begin(); it2 != allFeatureCurrentObject.end(); ++it2) {
+
+
+        // if the current set of features is actually from the currently considered object class
+        
+        int currentID  = (*it2).getObjectID();
+        
+        if ( currentID == i) {
+
+          vector<FeatureInformation> currentFeatList = (*it2).getAllFeatures(); 
+          if (TESTFLAG) {
+          //  cout << "In setFeatureMatrix : size of currentFeatList:  " << currentFeatList.size() << endl;
+          }
+          currentFeaturesScenes.push_back(currentFeatList);  
+          
+        }
+      
+      }
+      countScene++;
+    }
+    FMSingleObject.push_back(currentFeaturesScenes);
+  }
+
+  if (TESTFLAG) {
+    cout << "In setFeatureMatrix : end of single object features." << endl;
+    cout << "The size of FMSingleObject is :  " << FMSingleObject.size() << endl;
+    cout << "The size of FMSingleObject 1 = Monitor is :  " << (FMSingleObject[0]).size() << endl;
+    cout << "The size of FMSingleObject 2 = keyboard is :  " << (FMSingleObject[1]).size() << endl;
+    cout << "The size of FMSingleObject 3 = mouse is :  " << (FMSingleObject[2]).size() << endl ;
+    cout << "The size of FMSingleObject 4 = mug is :  " << (FMSingleObject[3]).size() << endl;
+    cout << "The size of FMSingleObject 5 = lamp is :  " << (FMSingleObject[4]).size() << endl;
+    cout << "The size of FMSingleObject 6 = laptop is :  " << (FMSingleObject[5]).size() << endl;
+    cout << "The size of FMSingleObject 7 = pen is :  " << (FMSingleObject[6]).size() << endl;
+
+  }
+   
+  // Pair Object FM
+  // initialize the feature matrix (I already know the Number of predifined object classes)
+  FMPairObject.reserve(NOBJECTCLASSES);
+  // iterate over set of object class IDs, predefined 
+  for (int i = 0; i < NOBJECTCLASSES ; i++) {
+    vector<vector<vector<FeatureInformation > > > vectorObj1;
+    for (int j = 0; j < NOBJECTCLASSES ; j++) {
+      if (i != j) {
+
+      if (TESTFLAG) {
+        cout << "In setFeatureMatrix : current object classes IDs : i =  " << i << " and j = " << j << endl;
+      }
+
+        vector<vector<FeatureInformation> > currentFeaturesScenes;
+        // iterate over all scenes in the database
+        int countScene = 0;
+        for(vector<SceneInformation>::iterator it = sceneList.begin(); it != sceneList.end(); ++it) {
+          //SceneInformation currentScene = (*it);
+        if (DEBUG) {
+          cout << "In setFeatureMatrix : scene ID:  " << countScene << endl;
+        }
+          // iterate over all sets of features (from different object pairs) present in the current scene of the database
+          vector<AllFeatPairObject> allFeatureCurrentObjectPair =  (*it).getAllFeatPairObject();
+          for(vector<AllFeatPairObject>::iterator it2 = allFeatureCurrentObjectPair.begin(); it2 != allFeatureCurrentObjectPair.end(); ++it2) {
+            // if the current set of features is actually from the currently considered object pair classes
+            if ( ((*it2).getObjectID1() == i ) && ( (*it2).getObjectID2() == j ) ) {
+              vector<FeatureInformation> currentFeatList = (*it2).getAllFeatures();
+              currentFeaturesScenes.push_back(currentFeatList); 
+            }
+          }
+          countScene++;
+        }
+        vectorObj1.push_back(currentFeaturesScenes);
+      }
+    }
+    FMPairObject.push_back(vectorObj1);
+  }
+
+
+ 
+}
+
 
 void DatabaseInformation::printFeatureMatrix() {
-/* for each scene     */
-  int Scenec = 0;
-/* Printing the matrix with features from the Single Object */
-  for(vector<vector<FeatureInformation> >::iterator it = featureMatrixSingleObject.begin(); it != featureMatrixSingleObject.end(); ++it) {
-    Scenec ++;
-    cout << endl ; // <<  "Scene" << Scenec << endl; 
-    // for each feature of the current scene
-    vector<FeatureInformation> featureVectorScene = (*it); 
+// for each scene    
+  int Ocount = 0;
+// Printing the matrix with features from the Single Object 
+  for(vector<vector<vector<FeatureInformation> > >::iterator it = FMSingleObject.begin(); it != FMSingleObject.end(); ++it) {
+    Ocount ++;
+    cout << endl << "Object : " << Ocount << endl << endl; // <<  "Scene" << Scenec << endl; 
+    // for each object in predefined list
+    vector<vector<FeatureInformation> > featureVectorO = (*it); 
     
-    for ( vector<FeatureInformation>::iterator it2 = featureVectorScene.begin(); it2 != featureVectorScene.end(); ++it2) {
-      
-      FeatureInformation currentFeature = (*it2);
+    for ( vector<vector<FeatureInformation> >::iterator it2 = featureVectorO.begin(); it2 != featureVectorO.end(); ++it2) {
+      cout << endl;
+      vector<FeatureInformation> currentSceneFeature = (*it2);
+
+      for ( vector<FeatureInformation>::iterator it3 = currentSceneFeature.begin(); it3 != currentSceneFeature.end(); ++it3) {
+      FeatureInformation  currentFeature = *it3;
       vector<float> currentFeatureValues = currentFeature.getAllValues();
-      for ( vector <float>::iterator it3 = currentFeatureValues.begin(); it3 != currentFeatureValues.end(); ++it3) {
-        cout << (*it3) << "   " ;
+      for ( vector <float>::iterator it3 = currentFeatureValues.begin(); it3 != currentFeatureValues.end(); ++it3)  {
+          cout << (*it3) << "   " ;
+        }
       }
+
     }
   }
   cout << endl << endl << endl;
-
+/*
   // // Printing the matrix with features from the Object Pair 
   Scenec = 0;
 
@@ -119,8 +250,11 @@ void DatabaseInformation::printFeatureMatrix() {
         cout << (*it3) << "   " ;
       }
     }
-  } 
+  }
+*/ 
 }
+
+
 
 /*
   For each feature iterate over all the scenes
@@ -131,13 +265,14 @@ void DatabaseInformation::printFeatureMatrix() {
   these should be stored / returned.
   I will have NFeat EM models
 */
-void  DatabaseInformation::computeGMM_SingleObject_SingleFeat(int nclusters) {
+/*0, 0, 0, 0
+void DatabaseInformation::computeGMM_SingleObject_SingleFeat(int nclusters) {
 
- // compute the number of features 
+  // compute the number of features 
   vector<FeatureInformation> exv1 = featureMatrixSingleObject.at(1);
   int nFeats = exv1.size();
   if (DEBUG) {
-    cout << endl << endl << "Starting Compute GMM for Single Objects / Single Feats " << endl << endl;
+    cout << endl << endl << "Starting Compute GMM for Single Objects / Svoid DatabaseInformation::computeGMM_SingleObject_SingleFeat(int nclusters)ingle Feats " << endl << endl;
   }
 
   // for each feature (Single Feat of Single Object)
@@ -184,7 +319,7 @@ void  DatabaseInformation::computeGMM_SingleObject_SingleFeat(int nclusters) {
   }
 }
 
-
+*/
 
 /* For each object - 
 	for each scene -
@@ -196,6 +331,7 @@ void  DatabaseInformation::computeGMM_SingleObject_SingleFeat(int nclusters) {
   I will need more components WRT the Single Feature modelling of the SingleObject
   I need to normalize the features.
  */
+/*
 void DatabaseInformation::computeGMM_SingleObject_AllFeat(int nclusters) {
 
   // compute the number of features 
@@ -263,7 +399,7 @@ void DatabaseInformation::computeGMM_SingleObject_AllFeat(int nclusters) {
     stdNormalization.push_back(currentObjectStd);
     // // end normalization feature matrix.
 
-    /* test: select lower dimensionality of feature matrix   */
+    // test: select lower dimensionality of feature matrix   
     cv::Mat featsTrain = normalizedFeatMat.colRange(0, 9);     
     if (DEBUG) {
       cout << endl << endl << "Object : " << i << endl << 
@@ -274,9 +410,9 @@ void DatabaseInformation::computeGMM_SingleObject_AllFeat(int nclusters) {
       // cout << "The feature dimensionality for training is now : " << featsTrain.size() << endl;
       // cout << "The features are " <<  featsTrain << endl;
     }
-    /* End test lower feature dimensionality */
+    // End test lower feature dimensionality 
 
-    /*  Training EM model for the current object.  */
+    //  Training EM model for the current object.  
     cv::EM em_model(nclusters);
     if (DEBUG) { 
       std::cout << "Training the EM model." << std::endl; 
@@ -299,11 +435,97 @@ void DatabaseInformation::computeGMM_SingleObject_AllFeat(int nclusters) {
     }
   }  
 }
+*/
+
+
+void DatabaseInformation::computeGMM_SingleObject_AllFeat(int nclusters) {
+
+  int fsize = 9;        // to do: compute it
+  int countFeat;
+  if (DEBUG) {
+    cout << endl << endl << "Starting Compute GMM for Single Objects / All Feats " << endl << endl;
+  }
+
+  // for each considered object class ("i" is also the object class ID)
+  for ( int i = 0 ; i < FMSingleObject.size(); i++ ) {
+
+       
+    cv::Mat FeatMat = cv::Mat::zeros ( FMSingleObject.at(i).size(), fsize,  CV_64F ); 
+    if (DEBUG)  {cout << "Current object :  " << i << endl; }
+
+    int countScene = 0; 
+    // for each scene in the training database
+    for(vector<vector<FeatureInformation> >::iterator it = (FMSingleObject.at(i)).begin(); it != (FMSingleObject.at(i)).end(); ++it) {
+      
+      // *it is a vector of FI
+      countFeat = 0;
+      // for each feature of the current scene and belonging to current object
+      for (vector<FeatureInformation>::iterator it2 = (*it).begin(); it2 != (*it).end(); ++it2) {
+        FeatureInformation currentFeature = *it2;  
+        vector<float> currentFeatureValues = currentFeature.getAllValues();  
+
+        
+        // depending on dimentionality of that feature: I add all values in current row
+        for ( int j = 0; j < currentFeatureValues.size() ; j++ ) {
+          FeatMat.at<double>(countScene, countFeat) = (double) (currentFeatureValues.at(j));
+          countFeat++;
+        }
+      }
+      countScene++; 
+    }
+    
+    // Test for feature relevance experiments ->
+    // test: select lower dimensionality of feature matrix   
+    cv::Mat featsTrain = FeatMat.colRange(0, 9);     
+    if (DEBUG) {
+      cout << endl << endl << "Object : " << i << endl << 
+         "The feature matrix dim is " << FeatMat.size() << endl;
+      cout << endl << endl << "The feature matrix N ROWS is " << FeatMat.rows << endl;
+      cout << endl <<  "The features are " << endl <<  FeatMat << endl;
+      // cv::Mat featsTrain = normalizedFeatMat.clone();  // col(5);
+      // cout << "The feature dimensionality for training is now : " << featsTrain.size() << endl;
+      // cout << "The features are " <<  featsTrain << endl;
+    }
+    // END test lower feature dimensionality 
+
+
+    //  Training EM model for the current object.  
+    cv::EM em_model(nclusters);
+    if (DEBUG) { 
+      std::cout << "Training the EM model." << std::endl; 
+    }
+    em_model.train ( featsTrain );    // normalizedFeatMat to change
+    if (DEBUG) { 
+      std::cout << "Getting the parameters of the learned GMM model." << std::endl; 
+    }
+    learnedModelSingleObject.push_back(em_model);
+
+    if (TESTFLAG) {
+      cout << "Inside DBInfo compute GMM SO: size of model is now: " << learnedModelSingleObject.size() << endl;
+    }
+
+
+    if (DEBUG) { 
+      cv::Mat _means = em_model.get<cv::Mat>("means");
+      cv::Mat _weights = em_model.get<cv::Mat> ("weights");
+      vector<cv::Mat> _covs = em_model.get<vector<cv::Mat> > ("covs");
+
+      std::cout << "The size of the means is:  " << _means.size()  <<
+       "  and weights : " << _weights.size()  << std::endl << 
+       std::endl;
+       cout << "The mean matrix of current GMM model is : "  << _means << endl;
+     
+    }
+  }  
+}
+
+
 
 
 /*  
 Train a GMM model for pairs of objects considering 1 feature (SR) at a time.
 */
+/*
 void DatabaseInformation::computeGMM_PairObject_SingleFeat(int nclusters) {
 
  // compute the number of features 
@@ -364,6 +586,7 @@ void DatabaseInformation::computeGMM_PairObject_SingleFeat(int nclusters) {
   }
 }
 
+*/
 
 
 
@@ -371,6 +594,7 @@ void DatabaseInformation::computeGMM_PairObject_SingleFeat(int nclusters) {
 /*  
 Train a GMM model for pairs of objects considering ALL the features (SR) at a time.
 */
+/*
 void DatabaseInformation::computeGMM_PairObject_AllFeat(int nclusters) {
 
 
@@ -378,7 +602,7 @@ void DatabaseInformation::computeGMM_PairObject_AllFeat(int nclusters) {
   int numberOfFeatTot = (featureMatrixPairObject.at(0)).size();
   int numberOfFeat =   numberOfFeatTot / numberOfPairs;
 
-  /* For each pair of objects.  */
+  // For each pair of objects.  
   for (int i = 0; i < numberOfPairs; i++)  {
 
     int countScene = 0;
@@ -412,9 +636,9 @@ void DatabaseInformation::computeGMM_PairObject_AllFeat(int nclusters) {
       cout << endl << endl << "The feature matrix N ROWS is " << FeatMat.rows << endl;
       cout << endl <<  "The features are " << endl <<  FeatMat << endl;
     }
-    /* End test lower feature dimensionality */
+    // End test lower feature dimensionality 
 
-    /*  Training EM model for the current object.  */
+    //  Training EM model for the current object.  
     cv::EM em_model(nclusters);
     if (DEBUG) { 
       std::cout << "Training the EM model." << std::endl; 
@@ -426,12 +650,108 @@ void DatabaseInformation::computeGMM_PairObject_AllFeat(int nclusters) {
     learnedModelPairObject.push_back(em_model);
 
   }
+}
+*/
+
+
+void DatabaseInformation::computeGMM_PairObject_AllFeat(int nclusters) {
+
+
+  if (TESTFLAG) {
+    cout << "Inside DBInfo compute GMM PAIR O: start." << endl;
+  }
+
+  learnedModelPairObject.reserve(NOBJECTCLASSES);
+  int numberOfFeat = 5;  			// to do: compute it
+  int countFeat;
+  for ( int i = 0 ; i < FMPairObject.size(); i++ ) {
 
 
 
+    vector<cv::EM> internalEMvector;  // to work with vector of vector
+
+    for ( int j = 0;  j < FMPairObject[i].size(); j++) {
+    
+      if (TESTFLAG) {
+        cout << "Inside DBInfo compute GMM PAIR O: size of model is now: " << learnedModelPairObject.size() << " for object classes :   " << i << " and " << j << endl;
+      }
+
+      int numberOfScenes = FMPairObject[i][j].size();
+      int countScene = 0;
+      cv::Mat FeatMat = cv::Mat::zeros ( numberOfScenes, numberOfFeat,  CV_64F ); 
+
+     
+      for(vector<vector<FeatureInformation> >::iterator it = (FMPairObject[i][j]).begin(); it != (FMPairObject[i][j]).end(); ++it) {
+        countFeat = 0;
+        // for each feature of the current scene and belonging to current object
+        for (vector<FeatureInformation>::iterator it2 = (*it).begin(); it2 != (*it).end(); ++it2) {
+          FeatureInformation currentFeature = *it2;  
+          vector<float> currentFeatureValues = currentFeature.getAllValues();  
+          // depending on dimentionality of that feature: I add all values in current row
+          
+          for ( int k = 0; k < currentFeatureValues.size() ; k++ ) {
+            FeatMat.at<double>(countScene, countFeat) = (double) (currentFeatureValues.at(k));
+            countFeat++;
+          }
+        }
+        countScene++; 
+      } 
+
+      // cv::Mat featsTrain = FeatMat.clone();     
+      if (DEBUG) {
+        cout << endl << endl << "Object : " << i << "and " << j << endl << 
+           "The feature matrix dim is " << FeatMat.size() << endl;
+        cout << endl << endl << "The feature matrix N ROWS is " << FeatMat.rows << endl;
+        cout << endl <<  "The features are " << endl <<  FeatMat << endl;
+      }
+      // End test lower feature dimensionality 
+
+      //  Training EM model for the current object.  
+      cv::EM em_model(nclusters);
+      cout << endl << endl << "The feature matrix N ROWS is " << FeatMat.rows << endl;
+      // trains the GMM model for object pair features only if the number of samples is sufficient
+      if (FeatMat.rows > nclusters*7) {
+        if (DEBUG) { 
+          std::cout << "Training the EM model." << std::endl; 
+        }
+        em_model.train ( FeatMat );    // normalizedFeatMat to change
+        if (DEBUG) { 
+          std::cout << "Getting the parameters of the learned GMM model." << std::endl; 
+        }
+      }
+
+      internalEMvector.push_back(em_model);
+    }
+    learnedModelPairObject.push_back(internalEMvector);  // to check
+  }
 }
 
 
+void DatabaseInformation::computeObjectFrequencies() {
 
+  objectFrequencies.reserve(NOBJECTCLASSES);
+  int nScenes = sceneList.size();
+
+  // initialize matrix to 0
+  for (int i = 0; i < NOBJECTCLASSES; i++) {
+    for (int j = 0; j < nScenes; j++) {
+      objectFrequencies[i].push_back(0);
+    }
+  }
+
+  int countScene = 0;
+  // for everyScene in the database
+  for (vector<SceneInformation>::iterator it = sceneList.begin(); it != sceneList.end(); ++it) {
+    vector<Object> currentSceneObjects = (*it).getObjectList();
+    // for every object instance in the current scene
+    for (vector<Object>::iterator it2 = currentSceneObjects.begin(); it2 != currentSceneObjects.end(); ++it2) {
+      int currentObjectID = (*it2).getActualObjectID();
+      
+      objectFrequencies[currentObjectID][countScene]++;
+    }
+    countScene++;
+  }
+
+}
 
 
