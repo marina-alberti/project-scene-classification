@@ -20,8 +20,11 @@
 #include <opencv2/opencv.hpp>
 #include "opencv2/ml/ml.hpp"
 #include <cmath>
+#include "utils.hpp"
 
 #define NOBJECTCLASSES 7
+#define NORMALIZEPAIR 1
+#define NSAMPLESMIN 5
 
 class DatabaseInformation{
 
@@ -35,20 +38,31 @@ private:
  // vector<vector<FeatureInformation> > featureMatrixSingleObject;
  // vector<vector<FeatureInformation> > featureMatrixPairObject;
 
-  vector<vector<vector<FeatureInformation> > > FMSingleObject;  // objectClasses * scenes * featuresSingleObject
+  // <N_objectClasses * N_scenes * N_featuresSingleObject>
+  vector<vector<vector<FeatureInformation> > > FMSingleObject;  
   vector<vector<vector<vector<FeatureInformation> > > > FMPairObject;    
 
   std::vector<cv::EM> learnedModelSingleObject;  
   std::vector<std::vector<cv::EM> > learnedModelPairObject;     
 
-  vector<vector<double> > meanNormalization;
+  // <N_objectClasses x N_featuresSingleObject (1-D features)>
+  vector<vector<double> > meanNormalization;    
   vector<vector<double> > stdNormalization;
 
   vector<vector< int> > objectFrequencies;
   vector<int> countObjectFrequencies; 
   vector<int> countObjectFrequencies1;
-  vector<int> countObjectFrequencies2;
+  // vector<int> countObjectFrequencies2;
+  vector<vector<vector<int> > > objectPairFrequencies;
+  vector<vector< int> > countObjectPairFrequencies;  
 
+  vector<vector<vector<double> > > meanNormalizationPair;
+  vector<vector<vector<double> > > stdNormalizationPair;
+
+  vector<vector<vector<double> > > minFeatPair;
+  vector<vector<vector<double> > > maxFeatPair;
+
+  vector<double> thresholds;
 
 public:
 
@@ -80,6 +94,8 @@ public:
 
   void computeGMM_SingleObject_SingleFeat(int); 
 
+  void computeGMMSingleObject_Onemodel();
+
   void computeGMM_SingleObject_AllFeat(int );    
 
   void computeGMM_PairObject_SingleFeat(int);    
@@ -87,14 +103,26 @@ public:
   void computeGMM_PairObject_AllFeat( int) ;
 
   std::vector<cv::EM> getLearnedModelSingleObject () { return learnedModelSingleObject; }
-
   std::vector<std::vector<cv::EM> > getLearnedModelPairObject() {return learnedModelPairObject; }
 
-  vector<vector<double> > getmeanNormalization() {return meanNormalization; }
-
-  vector<vector<double> > getstdNormalization() {return stdNormalization; }
+  vector<vector<double> > getmeanNormalization() { return meanNormalization; }
+  vector<vector<double> > getstdNormalization() { return stdNormalization; }
 
   void computeObjectFrequencies();
+
+  double computeStdWeights(cv::Mat FeatMat, vector<double> maxvector, vector<double> minvector);
+
+  vector<int> getObjectFrequencies() { return countObjectFrequencies; }
+  vector<int> getObjectFrequencies1() { return countObjectFrequencies1; }
+  vector<vector<int> > getObjectPairFrequencies() { return countObjectPairFrequencies; }
+
+  vector<vector<vector<double> > > getmeanNormalizationPair() { return meanNormalizationPair; }
+  vector<vector<vector<double> > > getstdNormalizationPair() {return stdNormalizationPair; }
+  vector<vector<vector<double> > > getmaxFeatPair() {return maxFeatPair; }
+  vector<vector<vector<double> > > getminFeatPair() {return minFeatPair; }
+
+  vector<double> getThresholds() {return thresholds; }
+
 };
 
 #endif

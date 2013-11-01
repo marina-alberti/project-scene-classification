@@ -119,7 +119,9 @@ void ApiConvertKTHDB::parseObject(boost::property_tree::ptree & parent, SceneInf
        newObject.setActualObjectID(6);
     }
 */
-  mySceneInformation.addObject(newObject);
+  if (newObject.getActualObjectID() != -1) {
+    mySceneInformation.addObject(newObject);
+  }
   if (DEBUG) {
   cout << "Indide the parseObject function: Added object " << parent.get<std::string>(TAG_NAME) << endl;
   }

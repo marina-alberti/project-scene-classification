@@ -23,8 +23,13 @@
 #include <cmath>
 #include <algorithm>
 #include "AllFeatPairObject.hpp"
+#include "utils.hpp"
 
 #define N_OBJECTS 7
+#define NORMALIZEPAIR 1
+#define NSCENES 41
+#define PI 3.14159265
+#define REMOVEID 6
 
 typedef map<string, float> objectParametersKTH;
 
@@ -32,6 +37,7 @@ class TestScene{
 
 private:
   
+  vector<double> thresholds;
   int numberOfObjects;
   vector<Object> objectList;
   vector<double> predictedClasses;
@@ -49,13 +55,18 @@ private:
   float deskWidth;
   objectParametersKTH mapKTHparameters;
 
-  std::vector<cv::EM> learnedModelSingleObject;   //  it will contain 3 models : 1 per object
-  std::vector<vector<cv::EM> > learnedModelPairObject;     //  it will contain 6 models (if using all features)
+  //  it will contain 3 models : 1 per object  
+  std::vector<cv::EM> learnedModelSingleObject;   
+  std::vector<vector<cv::EM> > learnedModelPairObject;    
 
   vector<vector<double> > meanNormalization;
   vector<vector<double> > stdNormalization;
 
-//  vector <int> objectPairID;
+  vector<int> countObjectFrequencies;
+  vector<int> countObjectFrequencies1;
+  vector<vector< int> > countObjectPairFrequencies;  
+
+  //  vector <int> objectPairID;
   int removeID;
 
   // functions
@@ -67,11 +78,16 @@ private:
   double totalSceneLogP;
 
   cv::Mat cMatrix;
+  
+  vector<vector<vector<double> > > meanNormalizationPair;
+  vector<vector<vector<double> > > stdNormalizationPair;
+  vector<vector<vector<double> > > minFeatPair;
+  vector<vector<vector<double> > > maxFeatPair;
 
 public:
 
   /*  load the given file index data */
-  TestScene(string, vector<cv::EM> , vector<vector<double> > , vector<vector<double> > , vector<vector<cv::EM> > );
+  TestScene(string, vector<cv::EM> , vector<vector<double> > , vector<vector<double> > , vector<vector<cv::EM> >, vector<int>, vector<int> , vector<vector<vector<double> > > , vector<vector<vector<double> > >,   vector<vector< int> >, vector<vector<vector<double> > >, vector<vector<vector<double> > >, vector<double> );
 
   /* loadAnnotations In IDS */
   void loadAnnotation(bool);
@@ -104,6 +120,10 @@ public:
   double computeProbObjectPairs_AllFeats_old(); 
 
   cv::Mat getConfusionMatrix() {return cMatrix; }
+
+  double computeSimilarityScore();
+   
+
 
 };
 

@@ -1,8 +1,9 @@
 #include "TestScene.hpp"
+//#include "DatabaseInformation.cpp"
 
 #define DEBUG 0
 #define TESTFLAG 1
-#define PI 3.14159265
+
 
 using namespace boost::property_tree;
 
@@ -48,16 +49,21 @@ int setPairID(int a, int b) {
   return out;  
 }
 
-
-double computeGMMProbability(cv::Mat feats, cv::Mat means, vector<cv::Mat> covs, cv::Mat weights );
-
-TestScene::TestScene(string inputname, std::vector<cv::EM> inputmodel, vector<vector<double> > inputmeanNormalization , vector<vector<double> > inputstdNormalization , vector<vector<cv::EM> > inputmodelPair) {
+TestScene::TestScene(string inputname, std::vector<cv::EM> inputmodel, vector<vector<double> > inputmeanNormalization , vector<vector<double> > inputstdNormalization , vector<vector<cv::EM> > inputmodelPair, vector<int> countObjectFrequenciesin, vector<int> countObjectFrequencies1in, vector<vector<vector<double> > > meanPair, vector<vector<vector<double> > > stdPair,   vector<vector< int> > countObjectPairFrequenciesin , vector<vector<vector<double> > > maxin, vector<vector<vector<double> > > minin, vector<double> thre) {
     
   fileNameXML = inputname;
   learnedModelSingleObject = inputmodel;
   meanNormalization = inputmeanNormalization;
   stdNormalization = inputstdNormalization;
   learnedModelPairObject = inputmodelPair;
+  countObjectFrequencies = countObjectFrequenciesin;
+  countObjectFrequencies1 = countObjectFrequencies1in;
+  meanNormalizationPair = meanPair;
+  stdNormalizationPair = stdPair;
+  countObjectPairFrequencies = countObjectPairFrequenciesin;
+  maxFeatPair = maxin;
+  minFeatPair = minin;
+  thresholds = thre;
   //orderedObjectList.reserve(N_OBJECTS);
   removeID = -1;
 }
@@ -67,7 +73,7 @@ TestScene::TestScene(string inputname, std::vector<cv::EM> inputmodel, vector<ve
 void TestScene::loadAnnotation(bool removeObject) {
   cout << "The XML file name is: " << fileNameXML << endl;  
   if (removeObject) {
-    removeID = rand() % N_OBJECTS;
+    removeID = REMOVEID;  // rand() % N_OBJECTS;
   }
   parseFileXML(removeObject);
 
@@ -149,12 +155,12 @@ void TestScene::parseObject(boost::property_tree::ptree & parent, bool removeObj
       if (TESTFLAG)  {
         cout << "Remove object ID is: " << removeID << endl;
       }
-      if ( (newObject.getActualObjectID() == 0 ) && (removeID == 0) ) {}
-      else if ( (newObject.getActualObjectID() == 1 ) && (removeID == 1) ) {}
-      else if ( (newObject.getActualObjectID() == 2 ) && (removeID == 2) ) {}
+      if ( newObject.getActualObjectID() ==  removeID) {}
+   //   if ( (newObject.getActualObjectID() == 0 ) && (removeID == 0) ) {}
+   //    else if ( (newObject.getActualObjectID() == 1 ) && (removeID == 1) ) {}
+   //    else if ( (newObject.getActualObjectID() == 2 ) && (removeID == 2) ) {}
       else {
         objectList.push_back(newObject);
-        //orderedObjectList.push_back(newObject);
         numberOfObjects++;
         if (TESTFLAG) {
           cout << "Adding object ID = " << newObject.getActualObjectID() << endl;
@@ -164,7 +170,6 @@ void TestScene::parseObject(boost::property_tree::ptree & parent, bool removeObj
     // if I do not remove any object (the standard behaviour)
     else {
       objectList.push_back(newObject);
-      //orderedObjectList.push_back(newObject);
       numberOfObjects++;
     }
   //}
@@ -317,7 +322,7 @@ void TestScene::predictObjectClasses() {
     int maxProbClassIndex;
     int countModel = 0;
 
-    /* convert the features into a cv::Mat object ("feats") for matrix multiplication  */
+    // convert the features into a cv::Mat object ("feats") for matrix multiplication  
     int countFeats = 0;    
     for ( int j = 0; j < featureListSingleObject[0].size() ; j++ ) { 
       vector<float> allFeatValues = (featureListSingleObject[i][j]).getAllValues();
@@ -330,50 +335,83 @@ void TestScene::predictObjectClasses() {
       cout << endl << endl << "The extracted features of test object " << i << " are : " << endl
           << feats << endl << endl;
     }
-    
-
-   /*  Feature matrix normalization */
-   /*
-    for (int c = 0 ; c < fsize ; c++ ) {
-        normalizedFeatMat1.at<double>(c) = (feats.at<double>(c) - (meanNormalization[i][c]) ) / ( stdNormalization[i][c] );
-      } 
-   */
-
-   // cv::Mat normalizedFeatMat = feats.clone();
-    /* test: reduce feat dimensionality   */
-    if (TESTFLAG) {
-      normalizedFeatMat = feats.colRange(0, 9);     
-      cout << "The extracted features COLUMN SUBSET of test object " << i << " is " << endl
-          << normalizedFeatMat << endl << feats << endl;
-    }
-    
-    if (DEBUG) {
-      cout << "The extracted normalized features of the test object " << i << " are : " << endl  
-           << normalizedFeatMat << endl;
-    }
-    
-    /* for each of the 3 learned GMM models ( monitor , keyboard,  mouse )  */
+          
+    // for each of the  learned GMM models ( monitor, keyboard,  mouse, ...) 
     for(vector<cv::EM>::iterator it2 = learnedModelSingleObject.begin(); it2 != learnedModelSingleObject.end(); ++it2) {
      
       if (DEBUG) {
         cout << std::endl << "Testing against learned GMM model : " << countModel << endl;
       }
+ 
       /* extract mean, cov, and weight coefficients for current GMM model  */
       cv::Mat _means = (*it2).get<cv::Mat>("means"); 			//  dims x nclusters
       cv::Mat _weights = (*it2).get<cv::Mat> ("weights");  		//  nclusters x 1
       vector<cv::Mat> _covs = (*it2).get<vector<cv::Mat> > ("covs");    // nclusters x dims x dims
       if (DEBUG) {
-        cout << "The mean matrix of current GMM model is : "  << _means << endl;
+        cout << endl << "The mean matrix of current GMM model is : "  << _means << endl;
         cout << "The weights of current GMM model are : "  << _weights << endl;
       }
       
+      // **************************************************************************************
+      //  NORMALIZATION:   Feature matrix normalization 
+
+      /* // // old version of normalization
+      normalizedFeatMat = feats.clone();
+      for (int c = 0 ; c < fsize ; c++ ) {
+        normalizedFeatMat.at<double>(c) = (feats.at<double>(c) - (meanNormalization[countModel][c]) ) / ( stdNormalization[countModel][c] );
+      } 
+      */
+      
+//        normalizedFeatMat = doNormalization(feats, meanNormalization[countModel], stdNormalization[countModel]);
+      normalizedFeatMat = feats.clone();
+
+
+      if (DEBUG) {
+        cout << endl <<  "The extracted normalized features of the test object " << i << " are : " << endl  
+             << normalizedFeatMat << endl;
+      }
+
+      // // test: reduce feat dimensionality    
+      cv::Mat featsTrain = normalizedFeatMat.colRange(0, 9);     
+      /*
+      cv::Mat featsTrain = cv::Mat(normalizedFeatMat.rows, 4 , CV_64F);   
+      normalizedFeatMat.col(0).copyTo(featsTrain.col(0));
+      normalizedFeatMat.col(1).copyTo(featsTrain.col(1));
+      normalizedFeatMat.col(3).copyTo(featsTrain.col(2));
+      normalizedFeatMat.col(4).copyTo(featsTrain.col(3));
+      */
+      if (DEBUG) {
+
+        cout << "The extracted features COLUMN SUBSET of test object " << i << " is " << endl
+            << featsTrain << endl << feats << endl;
+      }
+
+      bool outlier = false;
+      //****************************************************************************************
       /* Compute probability for the current GMM model: */
       // Using multivariate normal distribution computation
-      prob = computeGMMProbability(normalizedFeatMat, _means, _covs, _weights);
+      prob = computeGMMProbability(featsTrain, _means, _covs, _weights);
       prob = log(prob);
-      if (TESTFLAG) {
-        cout << " likelihood Multivariate Normal Distribution for class : " 
-		<< countModel << "    =  " << prob << endl;
+      cout << "Prob test   "<< prob << endl << "thre   " << thresholds[countModel] << endl;
+      if (prob < thresholds[countModel]) {
+        // outlier = true;
+      }
+
+
+      // ***********************************************************************************
+      // compute a-priori probablity of object classes in terms of frequency of appearence
+
+      int currentObjectCategoryFreq = countObjectFrequencies[countModel];
+
+      double CurrentObjectCategoryProb = ((double)(currentObjectCategoryFreq))/( NSCENES + 1);
+      double probPost = prob + log(CurrentObjectCategoryProb);
+      // ***********************************************************************************
+
+      if (DEBUG) {
+        cout << " Likelihood Multivariate Normal Distribution for Object class : " 
+		<< countModel << "  is  =  " << prob << "  with likelihood frequency  =   " << 
+                (CurrentObjectCategoryProb) << endl;
+                 
       }
       
       // Using the OpenCV EM function : "predict()"
@@ -388,36 +426,38 @@ void TestScene::predictObjectClasses() {
 
       // push back probability of current GMM model into vector of probabilities for current object
       vectorProb.push_back(prob);
-
-      // the computation of the maximum probability for the current unknown object in test scene
-      // TO DO: change inserting a THRESHOLD !!! TO DO
-      if (countModel == 0) {
-         maxProbValue = prob;
-         maxProbClassIndex = countModel;
+      if ( countModel == 0) {
+        maxProbValue = -100000;
+        maxProbClassIndex = -1;
       }
-      else {
-        if (prob > maxProbValue) {
-          maxProbValue = prob;
-          maxProbClassIndex = countModel;
-        }
+      cout << "Prob test   "<< probPost << endl << "outlier   " << outlier << endl;
+      
+      if ( (probPost > maxProbValue) && (outlier == false)  ) {
+        maxProbValue = probPost;
+        maxProbClassIndex = countModel;
       }
 
       if (DEBUG) {
         cout << "   After computing likelihood with predict: " << countModel << endl
-              << "Prob = " << prob << endl;
+              << "Prob = " << probPost << endl;
       }
       countModel++;
     }     
-    if (DEBUG) {
+    if (TESTFLAG) {
       cout << std::endl << " End Predict object class for object in the object list : " << i << 
-      endl  << endl;;
+      endl << "Prob value = " << maxProbValue << endl << "Predicted class  " << maxProbClassIndex << endl
+          << "Actual class " <<  (objectList.at(i)).getActualObjectID() << endl ;
+      if ( (objectList.at(i)).getActualObjectID() != maxProbClassIndex ) {
+        cout << "ERROR OBJECT CLASSIFICATION" << endl; 
+      }
     }
  
     predictedClasses.push_back(maxProbClassIndex);
-
-    // orderedObjectList.at(maxProbClassIndex) = objectList.at(i);  // to do : delete
     (objectList.at(i)).setPredictedObjectID(maxProbClassIndex);
+    
 
+
+// *****************************************************************************
     if (DEBUG) { 
       cout << "The predicted class is : " << maxProbClassIndex << " for the unknown object no. " << i 
 		<< endl << endl;  
@@ -429,7 +469,7 @@ void TestScene::predictObjectClasses() {
 void TestScene::evaluateObjectClassificationPerformance() {
 
   int size = learnedModelSingleObject.size();
-  cMatrix = cv::Mat::zeros(size, size, CV_32S);
+  cMatrix = cv::Mat::zeros(size, size+1, CV_32S);
 
   if (TESTFLAG) {
     cout << "The confusion matrix is : " << endl << cMatrix << endl <<" after inizialization." << endl;
@@ -445,7 +485,12 @@ void TestScene::evaluateObjectClassificationPerformance() {
       cout << "The actual class is : " << actualClass << endl <<
 		" The predicted class is : " << predictedClass << endl;
     }
-    cMatrix.at<int>(actualClass, predictedClass) ++;
+    if (predictedClass != -1) {
+      cMatrix.at<int>(actualClass, predictedClass) ++;
+    }
+    else {
+      cMatrix.at<int>(actualClass, (size)) ++;
+    }
   }
   
   if (TESTFLAG) {
@@ -732,8 +777,7 @@ double TestScene::computeProbObjectPairs_AllFeats_old() {
 double TestScene::computeProbObjectPairs_AllFeats() {
   double prob;
   double sumProb = 0;
-  // int objPairID;
-  // int i = 0;   // iterator over the Pairs-Of-Object models
+
   if (TESTFLAG) { 
     cout << " The size of the learned model pair object is :  " << learnedModelPairObject.size()
 	 << endl;
@@ -749,19 +793,12 @@ double TestScene::computeProbObjectPairs_AllFeats() {
     int objectID1 = (*it).getObjectID1();
     int objectID2 = (*it).getObjectID2();
 
-    // objPairID  = objectPairID.at(i);
+
     if (TESTFLAG) {
         cout << std::endl << "Predict prob for New Object-Pair Features : " << objectID1 << " and " << objectID2 << endl;
     }
-    int ID2original;
-    if (objectID2 > objectID1) { 
-      objectID2 = objectID2 - 1;
-      ID2original = objectID2 + 1;
-    } 
-    else {ID2original = objectID2; }
 
-    //
-    if ( (learnedModelPairObject[objectID1][objectID2]).isTrained() == true && (objectID1 != 9) && (ID2original != 9) ) {
+    if ( (learnedModelPairObject[objectID1][objectID2]).isTrained() == true ) {
 
       /* extract mean, cov, and weight coefficients for CORRESPONDING GMM model  */
       _means = (learnedModelPairObject[objectID1][objectID2]).get<cv::Mat>("means"); // dims x nclusters
@@ -777,33 +814,49 @@ double TestScene::computeProbObjectPairs_AllFeats() {
         vector<float> allFeatValues = (*it2).getAllValues();   
         double feat = (double)allFeatValues.at(0); 
         features.at<double>( countFeat ) = feat;
-     
         countFeat++;     
       }
+
+
+      // *********************************************************************************
+      // NORMALIZATION OF THE FEATURE MATRIX:
+      cv::Mat feat;
+      if (NORMALIZEPAIR) {
+        feat = doNormalization(features, meanNormalizationPair[objectID1][objectID2], stdNormalizationPair[objectID1][objectID2]);
+      }
+      else {
+        feat = features.clone();
+      }
+      // *********************************************************************************
+
+
       if (TESTFLAG) {
-        cout << "The features are : " << endl << features << endl;
+        cout << "The features are : " << endl << feat << endl;
       }
 
-    /* Computing likelihood with OpenCV predict function */
-    /*
-    cv::Mat Out;  
-    cv::Vec2d vec = (*it).predict(feats, Out);
-    if (TESTFLAG) {
-      cout  << " Compute Likelihood (Opencv predict) for class " << i << " :  "   << vec(0) << endl;
-    }
-    prob = (double)vec(0);
-    */
+      //// Computing likelihood with OpenCV predict function 
+      /*
+      cv::Mat Out;  
+      cv::Vec2d vec = (*it).predict(feats, Out);
+      if (TESTFLAG) {
+        cout  << " Compute Likelihood (Opencv predict) for class " << i << " :  "   << vec(0) << endl;
+      }
+      prob = (double)vec(0);
+      */
 
-      /* Computing probability with developed Multivariate Normal distribution function */
-      prob = computeGMMProbability(features, _means, _covs, _weights);
+      // Computing probability with developed Multivariate Normal distribution function 
+      prob = computeGMMProbability(feat, _means, _covs, _weights);
       prob = log(prob);
+      // product of probabilities -> sum of log(probabilities)
       sumProb += prob;
+      int coOccurrenceFrequency = countObjectPairFrequencies[objectID1][objectID2];
+      double coOccurrenceProb = (double(coOccurrenceFrequency))/(NSCENES + 1);
+      sumProb += log(coOccurrenceProb);
       if (TESTFLAG) {
-        cout << " Compute likelihood with function Multivariate Normal Distribution : " << prob << endl;
+        cout << " Compute likelihood with function Multivariate Normal Distribution : " << endl << "Likelihood =  " << prob << 
+        " and the co-occurrence likelihood = " << log(coOccurrenceProb) << endl;
       }
-      //i++;
-
-    }//
+     }
     else { 
       cout << "Not trained : " <<   objectID1 << " and " << objectID2 << endl;  
     }
@@ -812,78 +865,171 @@ double TestScene::computeProbObjectPairs_AllFeats() {
     cout << "The total sum of likelihoods is : " << sumProb << endl;
   }
   totalSceneLogP = sumProb;
+    if (TESTFLAG) {
+    cout << "In TestScene::computeProbObjectPairs_AllFeats() before return " << endl;
+  }
   return sumProb;
 }
 
 
+/* New strategy for simlarity score computation */
+double TestScene::computeSimilarityScore() {
 
-
-/* 
-compute the probability value of a GMM (multivariate normal distribution) 
-given means, covariance matrices, mixture weights
-and the input feature vector = test sample
-*/
-double computeGMMProbability(cv::Mat feats, cv::Mat _means, vector<cv::Mat> _covs, cv::Mat _weights) {
-  int nclusters = _weights.cols;
-  if (DEBUG) {
-    cout << endl << endl << "The number of mixture components is : " << nclusters << endl;
-      std::cout << "The size of the means is:  " << _means.size()  << endl <<
-      "  and weights : " << _weights.size() << std::endl <<  
-      "  and feats : " << feats.size() << std::endl << 
-      "  and covs : " << _covs.size() << std::endl ;
-  }
-  double totProb = 0;
-
-  for (int i = 0; i < nclusters; i++) { 
-    if (DEBUG) { 
-      std::cout<< std::endl << "The current cluster is :  "  << i << std::endl; 
-    }
-    cv::Mat current_mean = _means.row(i);
-    double current_weight = _weights.at<double>(i);
-    cv::Mat current_cov = _covs.at(i);
-
-    double dim = (double) current_mean.cols;
-    if (DEBUG) { 
-      std::cout << "The current mean is : " << current_mean <<  std::endl ; 
-      std::cout << "The current covariance matrix is : " << current_cov <<  std::endl ; 
-    }
-
-    //  compute the determinant of standard deviation matrix
-    double detCov = determinant(current_cov);
-    if (DEBUG) { 
-      std::cout << "The determinant of the covariance matrix is : " << detCov <<  std::endl ; 
-    }
-
-    //  compute the first term of the multivariate normal distribution
-    double term1_ = sqrt ( pow ( (2*PI) , dim ) *  detCov  ) ; 
-    double term1 = 1 / term1_;
-    if (DEBUG) { 
-      std::cout << "The  first term is : " << term1 <<  std::endl ; 
-    }
-    cv::Mat test_samplet = feats; //.t();
-    // compute the exponential term
-    cv::Mat terma = (test_samplet - current_mean);
-    cv::Mat termb = ((current_cov)).inv();   
-    cv::Mat termc = (test_samplet - current_mean).t();
-    if (DEBUG) {
-      std::cout << "x is : " << test_samplet <<  std::endl ;
-      std::cout << "(x - mu) is : " << terma <<  std::endl ;
-      std::cout << "cov.inv() is : " << termb <<  std::endl ;
-      std::cout << "cov * cov.inv() = " << current_cov * current_cov.inv() << endl;
-      std::cout << "(x - mu ^ T) is : " << termc <<  std::endl ; 
-    }
-    cv::Mat termexp =  - 0.5 * terma * termb * termc;
-    if (DEBUG) {    
-      std::cout << "The  exponential term is : " << termexp <<  std::endl ; 
-    }
-    double termExp = termexp.at<double>(0);
-    double term2 = exp(termExp);
-    double probCluster = term1 * term2;
-    if (DEBUG) { 
-      std::cout << "The final probability is : " << probCluster << std::endl; 
-    }
-    totProb += probCluster * current_weight;
+  double prob;
+  double sumProb = 0;
+  double prodProb = 1;
+  if (TESTFLAG) { 
+    cout << " The size of the learned model pair object is :  " << learnedModelPairObject.size()
+	 << endl;
   }
 
-  return totProb;
+  cv::Mat _means;
+  cv::Mat _weights;
+  vector<cv::Mat> _covs;
+
+  /* For each vector_FeatureInformation = Object-Pair*/
+  for (vector<AllFeatPairObject>::iterator it = featureListPair.begin(); it != featureListPair.end(); ++it) {
+
+    int objectID1 = (*it).getObjectID1();
+    int objectID2 = (*it).getObjectID2();
+
+
+    if (TESTFLAG) {
+        cout << std::endl << "Predict prob for New Object-Pair Features : " << objectID1 << " and " << objectID2 << endl;
+    }
+    if ((objectID1 != -1) && (objectID2 != -1 )) {
+    if (  (learnedModelPairObject[objectID1][objectID2]).isTrained() == true ) {
+
+      /* extract mean, cov, and weight coefficients for CORRESPONDING GMM model  */
+      _means = (learnedModelPairObject[objectID1][objectID2]).get<cv::Mat>("means"); // dims x nclusters
+      _weights = (learnedModelPairObject[objectID1][objectID2]).get<cv::Mat> ("weights");  //  nclusters x 1
+      _covs = (learnedModelPairObject[objectID1][objectID2]).get<vector<cv::Mat> >("covs");     
+ 
+      vector<FeatureInformation> featureCurrentObjectPair = (*it).getAllFeatures();
+
+      cv::Mat features(1, (featureCurrentObjectPair).size(),  CV_64F);  
+      int countFeat = 0;
+
+      for (vector<FeatureInformation>::iterator it2 = featureCurrentObjectPair.begin(); it2 != featureCurrentObjectPair.end(); ++it2 )  {
+        vector<float> allFeatValues = (*it2).getAllValues();   
+        double feat = (double)allFeatValues.at(0); 
+        features.at<double>( countFeat ) = feat;
+        countFeat++;     
+      }
+      if (TESTFLAG) {
+        cout << "The features are : " << endl << features << endl;
+      }
+
+      // *********************************************************************************
+      // NORMALIZATION OF THE FEATURE MATRIX:
+      cv::Mat feat;
+      if (NORMALIZEPAIR == 1) {
+        feat = doNormalization(features, meanNormalizationPair[objectID1][objectID2], stdNormalizationPair[objectID1][objectID2]);
+      }
+      else if (NORMALIZEPAIR == 2) {
+        feat = doNormalizationMinMax(features, maxFeatPair[objectID1][objectID2], minFeatPair[objectID1][objectID2]);
+      }
+      else {
+        feat = features.clone();
+      }
+      // *********************************************************************************
+
+      cv::Mat featsTrain = feat.colRange(0, 5);     
+      
+      if (TESTFLAG) {
+        cout << "The features are : " << endl << featsTrain << endl;
+        cout << "The GMM MEANS are : " << endl << _means << endl;
+        cout << "The GMM WEIGHTS are : " << endl << _weights << endl;
+      }
+      //// Computing likelihood with OpenCV predict function 
+      bool opencvprob = false;
+      if (opencvprob) {
+        cv::Mat Out;  
+        cv::Vec2d vec = (learnedModelPairObject[objectID1][objectID2]).predict(featsTrain, Out);
+        prob = (double)vec(0);
+        prob = pow(10, prob);
+      }
+      else {
+        prob = computeGMMProbability(featsTrain, _means, _covs, _weights);
+      }
+
+      int coOccurrenceFrequency = countObjectPairFrequencies[objectID1][objectID2];
+      double coOccurrenceProb = (double(coOccurrenceFrequency))/(NSCENES + 1);
+
+      sumProb += (prob * coOccurrenceProb);
+      prodProb = prodProb *  (prob * coOccurrenceProb);
+
+      
+      if (TESTFLAG) {
+        cout << "Prob / likelihood =  " << prob << endl <<
+        " co-occurrence probability weight = " << coOccurrenceProb << endl <<
+        " product = " << (prob * coOccurrenceProb) << endl ;
+        
+      }
+     }
+    else { 
+      cout << "Not trained : " <<   objectID1 << " and " << objectID2 << endl;  
+    }
+    }
+  }
+  if (TESTFLAG) {
+    cout << "The total sum of likelihoods is : " << sumProb << endl;
+    cout << "The total product  likelihoods  : " << log(prodProb) << endl;
+  }
+
+
+  //******************************************************************************
+  /*
+  int fsize = 9;
+  cv::Mat featSO = cv::Mat::zeros ( 1, fsize,  CV_64F );
+ 
+  for (int i  = 0; i < featureListSingleObject.size(); i++ ) {  
+      
+    int objectID = (objectList[i]).getPredictedObjectID();
+
+    // convert the features into a cv::Mat object ("feats") for matrix multiplication  
+    int countFeats = 0;    
+    for ( int j = 0; j < featureListSingleObject[0].size() ; j++ ) { 
+      vector<float> allFeatValues = (featureListSingleObject[i][j]).getAllValues();
+      for (int k = 0; k < allFeatValues.size() ; k++ ) { 
+        featSO.at<double>(countFeats) = (double) allFeatValues[k];   // 1 x dims
+        countFeats++; 
+      }   
+    } 
+     
+    if ( (learnedModelSingleObject[objectID]).isTrained() == true ) {
+
+      // extract mean, cov, and weight coefficients for CORRESPONDING GMM model  
+      cv::Mat _means = (learnedModelSingleObject[objectID]).get<cv::Mat>("means"); // dims x nclusters
+      cv::Mat _weights = (learnedModelSingleObject[objectID]).get<cv::Mat> ("weights");  //  nclusters x 1
+      vector<cv::Mat> _covs = (learnedModelSingleObject[objectID]).get<vector<cv::Mat> >("covs");  
+
+      prob = computeGMMProbability(featSO, _means, _covs, _weights);
+  
+     // compute a-priori probablity of object classes in terms of frequency of appearence
+
+      int currentObjectCategoryFreq = countObjectFrequencies[objectID];
+      double CurrentObjectCategoryProb = ((double)(currentObjectCategoryFreq))/( NSCENES + 1);
+      prob = prob * (CurrentObjectCategoryProb);
+      sumProb += prob;
+
+      if (TESTFLAG) {
+        cout << "Prob / likelihood =  " << prob << endl <<
+        " occurrence probability weight = " << CurrentObjectCategoryProb << endl <<
+        " product = " << (prob * CurrentObjectCategoryProb) << endl ;
+      }
+    }
+  }
+   */
+
+  //*****************************************************************************
+
+  totalSceneLogP = sumProb;
+
+  return sumProb;
+
 }
+
+
+
+

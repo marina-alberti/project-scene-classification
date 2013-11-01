@@ -13,6 +13,7 @@ CMakeFiles/TestScene.dir/TestScene.cpp.o
  /home/marina/Project_Scene_Classification/project-scene-classification/src/SceneInformation.hpp
  /home/marina/Project_Scene_Classification/project-scene-classification/src/TestScene.cpp
  /home/marina/Project_Scene_Classification/project-scene-classification/src/TestScene.hpp
+ /home/marina/Project_Scene_Classification/project-scene-classification/src/utils.hpp
  /opt/ros/groovy/include/opencv2/calib3d/calib3d.hpp
  /opt/ros/groovy/include/opencv2/contrib/contrib.hpp
  /opt/ros/groovy/include/opencv2/contrib/openfabmap.hpp

@@ -11,3 +11,4 @@
 /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/SceneInformation.dir
 /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/TestScene.dir
 /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/test.dir
+/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/utils.dir

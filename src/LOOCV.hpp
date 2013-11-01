@@ -23,10 +23,10 @@
 #include "DatabaseInformation.hpp"
 #include "TestScene.hpp"
 
-#define N_CLUSTERS_OBJECT 3
-#define N_CLUSTERS_PAIR 5  // 5
+#define N_CLUSTERS_OBJECT 2
+#define N_CLUSTERS_PAIR 2  // 5
 #define INDEX_TEST 30
-
+#define BOOLREMOVE 1
 
 class LOOCV{ 
 
@@ -36,6 +36,7 @@ private:
   string dirname;
   int numberOfFiles;
 
+  vector<double> thresholds;
   // names of all files in the folder chosen for cross-validation experiments
   vector<string> allFileNames;
 
@@ -50,6 +51,7 @@ private:
   //  it will contain N_combinations models : combintations of object category pairs
   std::vector<vector<cv::EM> > learnedModelPairObject;     
 
+  // <N_objectClasses x N_featuresSingleObject (1-D features)>
   vector<vector<double> > meanNormalization;
   vector<vector<double> > stdNormalization;
 
@@ -60,6 +62,15 @@ private:
   cv::Mat cMatrixObjectClassification;
 
   bool cMatrixSet;
+  
+  vector<int> countObjectFrequencies; 
+  vector<int> countObjectFrequencies1;
+  vector<vector< int> > countObjectPairFrequencies;  
+  
+  vector<vector<vector<double> > > meanNormalizationPair;
+  vector<vector<vector<double> > > stdNormalizationPair;
+  vector<vector<vector<double> > > minFeatPair;
+  vector<vector<vector<double> > > maxFeatPair;
 
 public:
 

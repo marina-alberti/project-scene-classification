@@ -109,6 +109,8 @@ opencv2/ml/ml.hpp
 /home/marina/Project_Scene_Classification/project-scene-classification/src/opencv2/ml/ml.hpp
 cmath
 -
+utils.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/utils.hpp
 
 /home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
 string
@@ -193,6 +195,36 @@ AllFeatSingleObject.hpp
 /home/marina/Project_Scene_Classification/project-scene-classification/src/AllFeatSingleObject.hpp
 AllFeatPairObject.hpp
 /home/marina/Project_Scene_Classification/project-scene-classification/src/AllFeatPairObject.hpp
+
+/home/marina/Project_Scene_Classification/project-scene-classification/src/utils.hpp
+string.h
+-
+vector
+-
+fstream
+-
+sstream
+-
+iostream
+-
+string
+-
+cstring
+-
+dirent.h
+-
+cstdlib
+-
+sys/stat.h
+-
+sys/types.h
+-
+opencv2/opencv.hpp
+-
+opencv2/ml/ml.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/opencv2/ml/ml.hpp
+cmath
+-
 
 /opt/ros/groovy/include/opencv2/calib3d/calib3d.hpp
 opencv2/core/core.hpp

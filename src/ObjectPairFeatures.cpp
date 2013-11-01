@@ -126,10 +126,12 @@ void ObjectPairFeatures::extractFeatures() {
   allFeatures.push_back(EuclideanDistance2d);
   computeOrientation2d();
   allFeatures.push_back(orientation2d);
-  computeSizeDifference();
-  allFeatures.push_back(sizeDifference);
+
   computeVerticalHeightDifference();
   allFeatures.push_back(verticalHeightDifference);
+
+  computeSizeDifference();
+  allFeatures.push_back(sizeDifference);
   
 }
 

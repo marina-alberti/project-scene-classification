@@ -34,6 +34,7 @@ void Object::setObjectName(string inputName) {
   if (strcmp(nameChar, "Pen") == 0 || strcmp(nameChar, "Pen2") == 0 || strcmp(nameChar, "Pen3") == 0 || strcmp(nameChar, "pen") == 0 || strcmp(nameChar, "Pencil") == 0) {
     actualObjectID = 6;
   }
+  
 } 
 
 

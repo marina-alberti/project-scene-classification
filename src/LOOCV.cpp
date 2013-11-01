@@ -15,24 +15,23 @@ void LOOCV::compute() {
   storeFiles();
 
  /* Following computation should be for each cross validation fold */
-  for (int i = 0; i < 3; i++) {      //; i < allFileNames.size(); i++ ) {
+  for (int i = 0; i < allFileNames.size(); i++) {      	// allFileNames.size()
+      cout << endl << endl << "inside LOOCV looping: LOOP = " << i << endl << endl;
+      indexLoop = i;
+      // i = INDEX_TEST;
+      createTrainingSet(i);
+      createTestSet(i);
+      doTraining();
+      cout << endl << endl << "inside LOOCV looping: LOOP = " << i << endl << endl;
+      doTest(); 
 
-    cout << endl << endl << "inside LOOCV looping: LOOP = " << i << endl << endl;
-    indexLoop = i;
-    // i = INDEX_TEST;
-    createTrainingSet(i);
-    createTestSet(i);
-    doTraining();
-
-    doTest();  // TO DO put back
-
-    if (DEBUG) {
-      cout << std::endl << " Inside LOOCV compute. End test. " << endl;
+      if (TESTFLAG) {
+        cout << std::endl << " Inside LOOCV compute. End test. " << endl;
+      }
     }
-    
-  }
+        evaluatePerformance(cMatrixObjectClassification);
   for (int j = 0; j < probSceneListLoocv.size(); j++ ) {
-    cout << "Scene "  << j << " :  Simlarity score :  " << probSceneListLoocv[j] << endl;
+    cout  << (probSceneListLoocv[j]) << endl;
   }
 }
 
@@ -52,7 +51,7 @@ void LOOCV::storeFiles() {
       if ((strcmp(ep->d_name, ".") == 0) || (strcmp(ep->d_name, "..") == 0)) {continue; }
       string filepath = dirname + "/" + ep->d_name;
       string filenameXML = filepath;
-      if (DEBUG) { cout << "The XML file name is: " << filenameXML << endl;   }
+      if (TESTFLAG) { cout << "The XML file name is: " << filenameXML << endl;   }
       allFileNames.push_back(filenameXML);
       numberOfFiles++;
     }
@@ -70,8 +69,9 @@ void LOOCV::storeFiles() {
 
 void LOOCV::createTrainingSet(int index) {
   trainingFilesList.clear();
+
   for ( int  i = 0; i < allFileNames.size(); i++ ) {
-    if (i != index) {
+    if (i != index) {  
       trainingFilesList.push_back(allFileNames.at(i));
     }
   }
@@ -83,6 +83,9 @@ void LOOCV::createTrainingSet(int index) {
 // to do: eliminate for loop - write an inline function
 void LOOCV::createTestSet(int index) {
   testFilesList = allFileNames.at(index);
+
+  //testFilesList = "./mock_Duplicate/710-25-06-13-afternoonNotebook.xml";
+  //testFilesList = "./mock_Duplicate/719-27-06-13-morningPhone.xml";
   //testFilesList = "./mock_Missing_mouse/710-27-06-13-morning.xml";
   // testFilesList = "./mock_Duplicate/719-25-06-13-morning_mouse.xml";
 }
@@ -108,10 +111,13 @@ void LOOCV::doTraining() {
   // (i) Learning Object category models 
   storeDatabase.computeGMM_SingleObject_AllFeat(N_CLUSTERS_OBJECT);
 
+  // storeDatabase.computeGMMSingleObject_Onemodel();
 
   // (ii) Learning spatial relations between different object categories 
   // // storeDatabase.computeGMM_PairObject_SingleFeat(N_CLUSTERS_PAIR);   
   storeDatabase.computeGMM_PairObject_AllFeat(N_CLUSTERS_PAIR); 
+
+
 
   // Store the learned models into the data members of LOOCV class 
   learnedModelSingleObject = storeDatabase.getLearnedModelSingleObject();
@@ -123,10 +129,23 @@ void LOOCV::doTraining() {
     cout <<  "Inside LOOCV Do training: the size of learnedModelSingleObject is : " 
          << learnedModelSingleObject.size() << endl;
   }
+   
+  // Stores also the values of mean and std for the normalization of the feature matrices.
   meanNormalization = storeDatabase.getmeanNormalization();
   stdNormalization = storeDatabase.getstdNormalization();
+  storeDatabase.computeObjectFrequencies();
 
-  // storeDatabase.printFeatureMatrix();
+  // stores the frequency count for the different object categories and co-occurrence of object categories
+  countObjectFrequencies = storeDatabase.getObjectFrequencies();
+  countObjectFrequencies1 = storeDatabase.getObjectFrequencies1();
+  countObjectPairFrequencies = storeDatabase.getObjectPairFrequencies();
+  
+  meanNormalizationPair = storeDatabase.getmeanNormalizationPair();
+  stdNormalizationPair = storeDatabase.getstdNormalizationPair();
+  maxFeatPair =  storeDatabase.getmaxFeatPair();
+  minFeatPair =  storeDatabase.getminFeatPair();
+  //storeDatabase.printFeatureMatrix();
+  thresholds = storeDatabase.getThresholds();
 
   cout << endl ; 
 
@@ -137,14 +156,14 @@ void LOOCV::doTraining() {
 void LOOCV::doTest() {
   cout << "TestFile = "  << testFilesList << endl;
 
-  TestScene unknownScene(testFilesList, learnedModelSingleObject, meanNormalization, stdNormalization, learnedModelPairObject);
+  TestScene unknownScene(testFilesList, learnedModelSingleObject, meanNormalization, stdNormalization, learnedModelPairObject, countObjectFrequencies, countObjectFrequencies1, meanNormalizationPair, stdNormalizationPair, countObjectPairFrequencies, maxFeatPair, minFeatPair, thresholds);
 
   if (DEBUG) {
     cout << endl<< "Inside LOOCV Test. Before Loading annotations. " << endl;
   }
 
   // choose 1 to randomly remove 1 object from the test scene, 0 for normal behaviour.
-  unknownScene.loadAnnotation(0);
+  unknownScene.loadAnnotation(BOOLREMOVE);
 
   if (DEBUG) {
     cout << endl<< "Inside LOOCV Test. Before extracting features. " << endl;
@@ -172,13 +191,16 @@ void LOOCV::doTest() {
   if (TESTFLAG) {
     cout << "The total confusion matrix is: " << endl << cMatrixObjectClassification << endl;
   }
-
+ 
   unknownScene.extractFeaturesPairObjects_HandleMissing();
 
-  double prob = unknownScene.computeProbObjectPairs_AllFeats();
+  // double prob = unknownScene.computeProbObjectPairs_AllFeats();   // old version
 
+  double prob = unknownScene.computeSimilarityScore();
+  cout << "In LOOCV do Test after calling computeProbObjectPairs_AllFeats()" << endl;
   probSceneListLoocv.push_back(prob);
   
+  cout << "In LOOCV do Test after push back " << endl;
  
 
 }

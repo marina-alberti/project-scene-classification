@@ -92,6 +92,7 @@ test: libTestScene.a
 test: libLOOCV.a
 test: libAllFeatSingleObject.a
 test: libAllFeatPairObject.a
+test: libutils.a
 test: /opt/ros/groovy/lib/libopencv_calib3d.so
 test: /opt/ros/groovy/lib/libopencv_contrib.so
 test: /opt/ros/groovy/lib/libopencv_core.so
@@ -139,6 +140,7 @@ test: libTestScene.a
 test: libObjectFeatures.a
 test: libObject.a
 test: libFeatureInformation.a
+test: libutils.a
 test: CMakeFiles/test.dir/build.make
 test: CMakeFiles/test.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable test"
