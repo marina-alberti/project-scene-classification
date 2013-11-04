@@ -99,160 +99,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named AllFeatPairObject
+# Target rules for targets named sceneClassification
 
 # Build rule for target.
-AllFeatPairObject: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 AllFeatPairObject
-.PHONY : AllFeatPairObject
+sceneClassification: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 sceneClassification
+.PHONY : sceneClassification
 
 # fast build rule for target.
-AllFeatPairObject/fast:
-	$(MAKE) -f CMakeFiles/AllFeatPairObject.dir/build.make CMakeFiles/AllFeatPairObject.dir/build
-.PHONY : AllFeatPairObject/fast
-
-#=============================================================================
-# Target rules for targets named AllFeatSingleObject
-
-# Build rule for target.
-AllFeatSingleObject: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 AllFeatSingleObject
-.PHONY : AllFeatSingleObject
-
-# fast build rule for target.
-AllFeatSingleObject/fast:
-	$(MAKE) -f CMakeFiles/AllFeatSingleObject.dir/build.make CMakeFiles/AllFeatSingleObject.dir/build
-.PHONY : AllFeatSingleObject/fast
-
-#=============================================================================
-# Target rules for targets named ApiConvertKTHDB
-
-# Build rule for target.
-ApiConvertKTHDB: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ApiConvertKTHDB
-.PHONY : ApiConvertKTHDB
-
-# fast build rule for target.
-ApiConvertKTHDB/fast:
-	$(MAKE) -f CMakeFiles/ApiConvertKTHDB.dir/build.make CMakeFiles/ApiConvertKTHDB.dir/build
-.PHONY : ApiConvertKTHDB/fast
-
-#=============================================================================
-# Target rules for targets named ApiFeatureExtraction
-
-# Build rule for target.
-ApiFeatureExtraction: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ApiFeatureExtraction
-.PHONY : ApiFeatureExtraction
-
-# fast build rule for target.
-ApiFeatureExtraction/fast:
-	$(MAKE) -f CMakeFiles/ApiFeatureExtraction.dir/build.make CMakeFiles/ApiFeatureExtraction.dir/build
-.PHONY : ApiFeatureExtraction/fast
-
-#=============================================================================
-# Target rules for targets named DatabaseInformation
-
-# Build rule for target.
-DatabaseInformation: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 DatabaseInformation
-.PHONY : DatabaseInformation
-
-# fast build rule for target.
-DatabaseInformation/fast:
-	$(MAKE) -f CMakeFiles/DatabaseInformation.dir/build.make CMakeFiles/DatabaseInformation.dir/build
-.PHONY : DatabaseInformation/fast
-
-#=============================================================================
-# Target rules for targets named FeatureInformation
-
-# Build rule for target.
-FeatureInformation: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 FeatureInformation
-.PHONY : FeatureInformation
-
-# fast build rule for target.
-FeatureInformation/fast:
-	$(MAKE) -f CMakeFiles/FeatureInformation.dir/build.make CMakeFiles/FeatureInformation.dir/build
-.PHONY : FeatureInformation/fast
-
-#=============================================================================
-# Target rules for targets named LOOCV
-
-# Build rule for target.
-LOOCV: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 LOOCV
-.PHONY : LOOCV
-
-# fast build rule for target.
-LOOCV/fast:
-	$(MAKE) -f CMakeFiles/LOOCV.dir/build.make CMakeFiles/LOOCV.dir/build
-.PHONY : LOOCV/fast
-
-#=============================================================================
-# Target rules for targets named Object
-
-# Build rule for target.
-Object: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Object
-.PHONY : Object
-
-# fast build rule for target.
-Object/fast:
-	$(MAKE) -f CMakeFiles/Object.dir/build.make CMakeFiles/Object.dir/build
-.PHONY : Object/fast
-
-#=============================================================================
-# Target rules for targets named ObjectFeatures
-
-# Build rule for target.
-ObjectFeatures: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ObjectFeatures
-.PHONY : ObjectFeatures
-
-# fast build rule for target.
-ObjectFeatures/fast:
-	$(MAKE) -f CMakeFiles/ObjectFeatures.dir/build.make CMakeFiles/ObjectFeatures.dir/build
-.PHONY : ObjectFeatures/fast
-
-#=============================================================================
-# Target rules for targets named ObjectPairFeatures
-
-# Build rule for target.
-ObjectPairFeatures: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 ObjectPairFeatures
-.PHONY : ObjectPairFeatures
-
-# fast build rule for target.
-ObjectPairFeatures/fast:
-	$(MAKE) -f CMakeFiles/ObjectPairFeatures.dir/build.make CMakeFiles/ObjectPairFeatures.dir/build
-.PHONY : ObjectPairFeatures/fast
-
-#=============================================================================
-# Target rules for targets named SceneInformation
-
-# Build rule for target.
-SceneInformation: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 SceneInformation
-.PHONY : SceneInformation
-
-# fast build rule for target.
-SceneInformation/fast:
-	$(MAKE) -f CMakeFiles/SceneInformation.dir/build.make CMakeFiles/SceneInformation.dir/build
-.PHONY : SceneInformation/fast
-
-#=============================================================================
-# Target rules for targets named TestScene
-
-# Build rule for target.
-TestScene: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 TestScene
-.PHONY : TestScene
-
-# fast build rule for target.
-TestScene/fast:
-	$(MAKE) -f CMakeFiles/TestScene.dir/build.make CMakeFiles/TestScene.dir/build
-.PHONY : TestScene/fast
+sceneClassification/fast:
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/build
+.PHONY : sceneClassification/fast
 
 #=============================================================================
 # Target rules for targets named test
@@ -268,24 +125,24 @@ test/fast:
 .PHONY : test/fast
 
 #=============================================================================
-# Target rules for targets named utils
+# Target rules for targets named test_object_class_prediction
 
 # Build rule for target.
-utils: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 utils
-.PHONY : utils
+test_object_class_prediction: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_object_class_prediction
+.PHONY : test_object_class_prediction
 
 # fast build rule for target.
-utils/fast:
-	$(MAKE) -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/build
-.PHONY : utils/fast
+test_object_class_prediction/fast:
+	$(MAKE) -f CMakeFiles/test_object_class_prediction.dir/build.make CMakeFiles/test_object_class_prediction.dir/build
+.PHONY : test_object_class_prediction/fast
 
 AllFeatPairObject.o: AllFeatPairObject.cpp.o
 .PHONY : AllFeatPairObject.o
 
 # target to build an object file
 AllFeatPairObject.cpp.o:
-	$(MAKE) -f CMakeFiles/AllFeatPairObject.dir/build.make CMakeFiles/AllFeatPairObject.dir/AllFeatPairObject.cpp.o
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/AllFeatPairObject.cpp.o
 .PHONY : AllFeatPairObject.cpp.o
 
 AllFeatPairObject.i: AllFeatPairObject.cpp.i
@@ -293,7 +150,7 @@ AllFeatPairObject.i: AllFeatPairObject.cpp.i
 
 # target to preprocess a source file
 AllFeatPairObject.cpp.i:
-	$(MAKE) -f CMakeFiles/AllFeatPairObject.dir/build.make CMakeFiles/AllFeatPairObject.dir/AllFeatPairObject.cpp.i
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/AllFeatPairObject.cpp.i
 .PHONY : AllFeatPairObject.cpp.i
 
 AllFeatPairObject.s: AllFeatPairObject.cpp.s
@@ -301,7 +158,7 @@ AllFeatPairObject.s: AllFeatPairObject.cpp.s
 
 # target to generate assembly for a file
 AllFeatPairObject.cpp.s:
-	$(MAKE) -f CMakeFiles/AllFeatPairObject.dir/build.make CMakeFiles/AllFeatPairObject.dir/AllFeatPairObject.cpp.s
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/AllFeatPairObject.cpp.s
 .PHONY : AllFeatPairObject.cpp.s
 
 AllFeatSingleObject.o: AllFeatSingleObject.cpp.o
@@ -309,7 +166,7 @@ AllFeatSingleObject.o: AllFeatSingleObject.cpp.o
 
 # target to build an object file
 AllFeatSingleObject.cpp.o:
-	$(MAKE) -f CMakeFiles/AllFeatSingleObject.dir/build.make CMakeFiles/AllFeatSingleObject.dir/AllFeatSingleObject.cpp.o
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/AllFeatSingleObject.cpp.o
 .PHONY : AllFeatSingleObject.cpp.o
 
 AllFeatSingleObject.i: AllFeatSingleObject.cpp.i
@@ -317,7 +174,7 @@ AllFeatSingleObject.i: AllFeatSingleObject.cpp.i
 
 # target to preprocess a source file
 AllFeatSingleObject.cpp.i:
-	$(MAKE) -f CMakeFiles/AllFeatSingleObject.dir/build.make CMakeFiles/AllFeatSingleObject.dir/AllFeatSingleObject.cpp.i
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/AllFeatSingleObject.cpp.i
 .PHONY : AllFeatSingleObject.cpp.i
 
 AllFeatSingleObject.s: AllFeatSingleObject.cpp.s
@@ -325,7 +182,7 @@ AllFeatSingleObject.s: AllFeatSingleObject.cpp.s
 
 # target to generate assembly for a file
 AllFeatSingleObject.cpp.s:
-	$(MAKE) -f CMakeFiles/AllFeatSingleObject.dir/build.make CMakeFiles/AllFeatSingleObject.dir/AllFeatSingleObject.cpp.s
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/AllFeatSingleObject.cpp.s
 .PHONY : AllFeatSingleObject.cpp.s
 
 ApiConvertKTHDB.o: ApiConvertKTHDB.cpp.o
@@ -333,7 +190,7 @@ ApiConvertKTHDB.o: ApiConvertKTHDB.cpp.o
 
 # target to build an object file
 ApiConvertKTHDB.cpp.o:
-	$(MAKE) -f CMakeFiles/ApiConvertKTHDB.dir/build.make CMakeFiles/ApiConvertKTHDB.dir/ApiConvertKTHDB.cpp.o
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/ApiConvertKTHDB.cpp.o
 .PHONY : ApiConvertKTHDB.cpp.o
 
 ApiConvertKTHDB.i: ApiConvertKTHDB.cpp.i
@@ -341,7 +198,7 @@ ApiConvertKTHDB.i: ApiConvertKTHDB.cpp.i
 
 # target to preprocess a source file
 ApiConvertKTHDB.cpp.i:
-	$(MAKE) -f CMakeFiles/ApiConvertKTHDB.dir/build.make CMakeFiles/ApiConvertKTHDB.dir/ApiConvertKTHDB.cpp.i
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/ApiConvertKTHDB.cpp.i
 .PHONY : ApiConvertKTHDB.cpp.i
 
 ApiConvertKTHDB.s: ApiConvertKTHDB.cpp.s
@@ -349,7 +206,7 @@ ApiConvertKTHDB.s: ApiConvertKTHDB.cpp.s
 
 # target to generate assembly for a file
 ApiConvertKTHDB.cpp.s:
-	$(MAKE) -f CMakeFiles/ApiConvertKTHDB.dir/build.make CMakeFiles/ApiConvertKTHDB.dir/ApiConvertKTHDB.cpp.s
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/ApiConvertKTHDB.cpp.s
 .PHONY : ApiConvertKTHDB.cpp.s
 
 ApiFeatureExtraction.o: ApiFeatureExtraction.cpp.o
@@ -357,7 +214,7 @@ ApiFeatureExtraction.o: ApiFeatureExtraction.cpp.o
 
 # target to build an object file
 ApiFeatureExtraction.cpp.o:
-	$(MAKE) -f CMakeFiles/ApiFeatureExtraction.dir/build.make CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.o
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/ApiFeatureExtraction.cpp.o
 .PHONY : ApiFeatureExtraction.cpp.o
 
 ApiFeatureExtraction.i: ApiFeatureExtraction.cpp.i
@@ -365,7 +222,7 @@ ApiFeatureExtraction.i: ApiFeatureExtraction.cpp.i
 
 # target to preprocess a source file
 ApiFeatureExtraction.cpp.i:
-	$(MAKE) -f CMakeFiles/ApiFeatureExtraction.dir/build.make CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.i
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/ApiFeatureExtraction.cpp.i
 .PHONY : ApiFeatureExtraction.cpp.i
 
 ApiFeatureExtraction.s: ApiFeatureExtraction.cpp.s
@@ -373,7 +230,7 @@ ApiFeatureExtraction.s: ApiFeatureExtraction.cpp.s
 
 # target to generate assembly for a file
 ApiFeatureExtraction.cpp.s:
-	$(MAKE) -f CMakeFiles/ApiFeatureExtraction.dir/build.make CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.s
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/ApiFeatureExtraction.cpp.s
 .PHONY : ApiFeatureExtraction.cpp.s
 
 DatabaseInformation.o: DatabaseInformation.cpp.o
@@ -381,7 +238,7 @@ DatabaseInformation.o: DatabaseInformation.cpp.o
 
 # target to build an object file
 DatabaseInformation.cpp.o:
-	$(MAKE) -f CMakeFiles/DatabaseInformation.dir/build.make CMakeFiles/DatabaseInformation.dir/DatabaseInformation.cpp.o
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/DatabaseInformation.cpp.o
 .PHONY : DatabaseInformation.cpp.o
 
 DatabaseInformation.i: DatabaseInformation.cpp.i
@@ -389,7 +246,7 @@ DatabaseInformation.i: DatabaseInformation.cpp.i
 
 # target to preprocess a source file
 DatabaseInformation.cpp.i:
-	$(MAKE) -f CMakeFiles/DatabaseInformation.dir/build.make CMakeFiles/DatabaseInformation.dir/DatabaseInformation.cpp.i
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/DatabaseInformation.cpp.i
 .PHONY : DatabaseInformation.cpp.i
 
 DatabaseInformation.s: DatabaseInformation.cpp.s
@@ -397,7 +254,7 @@ DatabaseInformation.s: DatabaseInformation.cpp.s
 
 # target to generate assembly for a file
 DatabaseInformation.cpp.s:
-	$(MAKE) -f CMakeFiles/DatabaseInformation.dir/build.make CMakeFiles/DatabaseInformation.dir/DatabaseInformation.cpp.s
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/DatabaseInformation.cpp.s
 .PHONY : DatabaseInformation.cpp.s
 
 FeatureInformation.o: FeatureInformation.cpp.o
@@ -405,7 +262,7 @@ FeatureInformation.o: FeatureInformation.cpp.o
 
 # target to build an object file
 FeatureInformation.cpp.o:
-	$(MAKE) -f CMakeFiles/FeatureInformation.dir/build.make CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.o
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/FeatureInformation.cpp.o
 .PHONY : FeatureInformation.cpp.o
 
 FeatureInformation.i: FeatureInformation.cpp.i
@@ -413,7 +270,7 @@ FeatureInformation.i: FeatureInformation.cpp.i
 
 # target to preprocess a source file
 FeatureInformation.cpp.i:
-	$(MAKE) -f CMakeFiles/FeatureInformation.dir/build.make CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.i
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/FeatureInformation.cpp.i
 .PHONY : FeatureInformation.cpp.i
 
 FeatureInformation.s: FeatureInformation.cpp.s
@@ -421,7 +278,7 @@ FeatureInformation.s: FeatureInformation.cpp.s
 
 # target to generate assembly for a file
 FeatureInformation.cpp.s:
-	$(MAKE) -f CMakeFiles/FeatureInformation.dir/build.make CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.s
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/FeatureInformation.cpp.s
 .PHONY : FeatureInformation.cpp.s
 
 LOOCV.o: LOOCV.cpp.o
@@ -429,7 +286,7 @@ LOOCV.o: LOOCV.cpp.o
 
 # target to build an object file
 LOOCV.cpp.o:
-	$(MAKE) -f CMakeFiles/LOOCV.dir/build.make CMakeFiles/LOOCV.dir/LOOCV.cpp.o
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/LOOCV.cpp.o
 .PHONY : LOOCV.cpp.o
 
 LOOCV.i: LOOCV.cpp.i
@@ -437,7 +294,7 @@ LOOCV.i: LOOCV.cpp.i
 
 # target to preprocess a source file
 LOOCV.cpp.i:
-	$(MAKE) -f CMakeFiles/LOOCV.dir/build.make CMakeFiles/LOOCV.dir/LOOCV.cpp.i
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/LOOCV.cpp.i
 .PHONY : LOOCV.cpp.i
 
 LOOCV.s: LOOCV.cpp.s
@@ -445,7 +302,7 @@ LOOCV.s: LOOCV.cpp.s
 
 # target to generate assembly for a file
 LOOCV.cpp.s:
-	$(MAKE) -f CMakeFiles/LOOCV.dir/build.make CMakeFiles/LOOCV.dir/LOOCV.cpp.s
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/LOOCV.cpp.s
 .PHONY : LOOCV.cpp.s
 
 Object.o: Object.cpp.o
@@ -453,7 +310,7 @@ Object.o: Object.cpp.o
 
 # target to build an object file
 Object.cpp.o:
-	$(MAKE) -f CMakeFiles/Object.dir/build.make CMakeFiles/Object.dir/Object.cpp.o
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/Object.cpp.o
 .PHONY : Object.cpp.o
 
 Object.i: Object.cpp.i
@@ -461,7 +318,7 @@ Object.i: Object.cpp.i
 
 # target to preprocess a source file
 Object.cpp.i:
-	$(MAKE) -f CMakeFiles/Object.dir/build.make CMakeFiles/Object.dir/Object.cpp.i
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/Object.cpp.i
 .PHONY : Object.cpp.i
 
 Object.s: Object.cpp.s
@@ -469,7 +326,7 @@ Object.s: Object.cpp.s
 
 # target to generate assembly for a file
 Object.cpp.s:
-	$(MAKE) -f CMakeFiles/Object.dir/build.make CMakeFiles/Object.dir/Object.cpp.s
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/Object.cpp.s
 .PHONY : Object.cpp.s
 
 ObjectFeatures.o: ObjectFeatures.cpp.o
@@ -477,7 +334,7 @@ ObjectFeatures.o: ObjectFeatures.cpp.o
 
 # target to build an object file
 ObjectFeatures.cpp.o:
-	$(MAKE) -f CMakeFiles/ObjectFeatures.dir/build.make CMakeFiles/ObjectFeatures.dir/ObjectFeatures.cpp.o
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/ObjectFeatures.cpp.o
 .PHONY : ObjectFeatures.cpp.o
 
 ObjectFeatures.i: ObjectFeatures.cpp.i
@@ -485,7 +342,7 @@ ObjectFeatures.i: ObjectFeatures.cpp.i
 
 # target to preprocess a source file
 ObjectFeatures.cpp.i:
-	$(MAKE) -f CMakeFiles/ObjectFeatures.dir/build.make CMakeFiles/ObjectFeatures.dir/ObjectFeatures.cpp.i
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/ObjectFeatures.cpp.i
 .PHONY : ObjectFeatures.cpp.i
 
 ObjectFeatures.s: ObjectFeatures.cpp.s
@@ -493,7 +350,7 @@ ObjectFeatures.s: ObjectFeatures.cpp.s
 
 # target to generate assembly for a file
 ObjectFeatures.cpp.s:
-	$(MAKE) -f CMakeFiles/ObjectFeatures.dir/build.make CMakeFiles/ObjectFeatures.dir/ObjectFeatures.cpp.s
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/ObjectFeatures.cpp.s
 .PHONY : ObjectFeatures.cpp.s
 
 ObjectPairFeatures.o: ObjectPairFeatures.cpp.o
@@ -501,7 +358,7 @@ ObjectPairFeatures.o: ObjectPairFeatures.cpp.o
 
 # target to build an object file
 ObjectPairFeatures.cpp.o:
-	$(MAKE) -f CMakeFiles/ObjectPairFeatures.dir/build.make CMakeFiles/ObjectPairFeatures.dir/ObjectPairFeatures.cpp.o
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/ObjectPairFeatures.cpp.o
 .PHONY : ObjectPairFeatures.cpp.o
 
 ObjectPairFeatures.i: ObjectPairFeatures.cpp.i
@@ -509,7 +366,7 @@ ObjectPairFeatures.i: ObjectPairFeatures.cpp.i
 
 # target to preprocess a source file
 ObjectPairFeatures.cpp.i:
-	$(MAKE) -f CMakeFiles/ObjectPairFeatures.dir/build.make CMakeFiles/ObjectPairFeatures.dir/ObjectPairFeatures.cpp.i
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/ObjectPairFeatures.cpp.i
 .PHONY : ObjectPairFeatures.cpp.i
 
 ObjectPairFeatures.s: ObjectPairFeatures.cpp.s
@@ -517,7 +374,7 @@ ObjectPairFeatures.s: ObjectPairFeatures.cpp.s
 
 # target to generate assembly for a file
 ObjectPairFeatures.cpp.s:
-	$(MAKE) -f CMakeFiles/ObjectPairFeatures.dir/build.make CMakeFiles/ObjectPairFeatures.dir/ObjectPairFeatures.cpp.s
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/ObjectPairFeatures.cpp.s
 .PHONY : ObjectPairFeatures.cpp.s
 
 SceneInformation.o: SceneInformation.cpp.o
@@ -525,7 +382,7 @@ SceneInformation.o: SceneInformation.cpp.o
 
 # target to build an object file
 SceneInformation.cpp.o:
-	$(MAKE) -f CMakeFiles/SceneInformation.dir/build.make CMakeFiles/SceneInformation.dir/SceneInformation.cpp.o
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/SceneInformation.cpp.o
 .PHONY : SceneInformation.cpp.o
 
 SceneInformation.i: SceneInformation.cpp.i
@@ -533,7 +390,7 @@ SceneInformation.i: SceneInformation.cpp.i
 
 # target to preprocess a source file
 SceneInformation.cpp.i:
-	$(MAKE) -f CMakeFiles/SceneInformation.dir/build.make CMakeFiles/SceneInformation.dir/SceneInformation.cpp.i
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/SceneInformation.cpp.i
 .PHONY : SceneInformation.cpp.i
 
 SceneInformation.s: SceneInformation.cpp.s
@@ -541,7 +398,7 @@ SceneInformation.s: SceneInformation.cpp.s
 
 # target to generate assembly for a file
 SceneInformation.cpp.s:
-	$(MAKE) -f CMakeFiles/SceneInformation.dir/build.make CMakeFiles/SceneInformation.dir/SceneInformation.cpp.s
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/SceneInformation.cpp.s
 .PHONY : SceneInformation.cpp.s
 
 TestScene.o: TestScene.cpp.o
@@ -549,7 +406,7 @@ TestScene.o: TestScene.cpp.o
 
 # target to build an object file
 TestScene.cpp.o:
-	$(MAKE) -f CMakeFiles/TestScene.dir/build.make CMakeFiles/TestScene.dir/TestScene.cpp.o
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/TestScene.cpp.o
 .PHONY : TestScene.cpp.o
 
 TestScene.i: TestScene.cpp.i
@@ -557,7 +414,7 @@ TestScene.i: TestScene.cpp.i
 
 # target to preprocess a source file
 TestScene.cpp.i:
-	$(MAKE) -f CMakeFiles/TestScene.dir/build.make CMakeFiles/TestScene.dir/TestScene.cpp.i
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/TestScene.cpp.i
 .PHONY : TestScene.cpp.i
 
 TestScene.s: TestScene.cpp.s
@@ -565,8 +422,32 @@ TestScene.s: TestScene.cpp.s
 
 # target to generate assembly for a file
 TestScene.cpp.s:
-	$(MAKE) -f CMakeFiles/TestScene.dir/build.make CMakeFiles/TestScene.dir/TestScene.cpp.s
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/TestScene.cpp.s
 .PHONY : TestScene.cpp.s
+
+Training.o: Training.cpp.o
+.PHONY : Training.o
+
+# target to build an object file
+Training.cpp.o:
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/Training.cpp.o
+.PHONY : Training.cpp.o
+
+Training.i: Training.cpp.i
+.PHONY : Training.i
+
+# target to preprocess a source file
+Training.cpp.i:
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/Training.cpp.i
+.PHONY : Training.cpp.i
+
+Training.s: Training.cpp.s
+.PHONY : Training.s
+
+# target to generate assembly for a file
+Training.cpp.s:
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/Training.cpp.s
+.PHONY : Training.cpp.s
 
 test.o: test.cpp.o
 .PHONY : test.o
@@ -592,12 +473,36 @@ test.cpp.s:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/test.cpp.s
 .PHONY : test.cpp.s
 
+test_object_class_prediction.o: test_object_class_prediction.cpp.o
+.PHONY : test_object_class_prediction.o
+
+# target to build an object file
+test_object_class_prediction.cpp.o:
+	$(MAKE) -f CMakeFiles/test_object_class_prediction.dir/build.make CMakeFiles/test_object_class_prediction.dir/test_object_class_prediction.cpp.o
+.PHONY : test_object_class_prediction.cpp.o
+
+test_object_class_prediction.i: test_object_class_prediction.cpp.i
+.PHONY : test_object_class_prediction.i
+
+# target to preprocess a source file
+test_object_class_prediction.cpp.i:
+	$(MAKE) -f CMakeFiles/test_object_class_prediction.dir/build.make CMakeFiles/test_object_class_prediction.dir/test_object_class_prediction.cpp.i
+.PHONY : test_object_class_prediction.cpp.i
+
+test_object_class_prediction.s: test_object_class_prediction.cpp.s
+.PHONY : test_object_class_prediction.s
+
+# target to generate assembly for a file
+test_object_class_prediction.cpp.s:
+	$(MAKE) -f CMakeFiles/test_object_class_prediction.dir/build.make CMakeFiles/test_object_class_prediction.dir/test_object_class_prediction.cpp.s
+.PHONY : test_object_class_prediction.cpp.s
+
 utils.o: utils.cpp.o
 .PHONY : utils.o
 
 # target to build an object file
 utils.cpp.o:
-	$(MAKE) -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/utils.cpp.o
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/utils.cpp.o
 .PHONY : utils.cpp.o
 
 utils.i: utils.cpp.i
@@ -605,7 +510,7 @@ utils.i: utils.cpp.i
 
 # target to preprocess a source file
 utils.cpp.i:
-	$(MAKE) -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/utils.cpp.i
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/utils.cpp.i
 .PHONY : utils.cpp.i
 
 utils.s: utils.cpp.s
@@ -613,7 +518,7 @@ utils.s: utils.cpp.s
 
 # target to generate assembly for a file
 utils.cpp.s:
-	$(MAKE) -f CMakeFiles/utils.dir/build.make CMakeFiles/utils.dir/utils.cpp.s
+	$(MAKE) -f CMakeFiles/sceneClassification.dir/build.make CMakeFiles/sceneClassification.dir/utils.cpp.s
 .PHONY : utils.cpp.s
 
 # Help Target
@@ -622,22 +527,11 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... AllFeatPairObject"
-	@echo "... AllFeatSingleObject"
-	@echo "... ApiConvertKTHDB"
-	@echo "... ApiFeatureExtraction"
-	@echo "... DatabaseInformation"
-	@echo "... FeatureInformation"
-	@echo "... LOOCV"
-	@echo "... Object"
-	@echo "... ObjectFeatures"
-	@echo "... ObjectPairFeatures"
-	@echo "... SceneInformation"
-	@echo "... TestScene"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... sceneClassification"
 	@echo "... test"
-	@echo "... utils"
+	@echo "... test_object_class_prediction"
 	@echo "... AllFeatPairObject.o"
 	@echo "... AllFeatPairObject.i"
 	@echo "... AllFeatPairObject.s"
@@ -674,9 +568,15 @@ help:
 	@echo "... TestScene.o"
 	@echo "... TestScene.i"
 	@echo "... TestScene.s"
+	@echo "... Training.o"
+	@echo "... Training.i"
+	@echo "... Training.s"
 	@echo "... test.o"
 	@echo "... test.i"
 	@echo "... test.s"
+	@echo "... test_object_class_prediction.o"
+	@echo "... test_object_class_prediction.i"
+	@echo "... test_object_class_prediction.s"
 	@echo "... utils.o"
 	@echo "... utils.i"
 	@echo "... utils.s"

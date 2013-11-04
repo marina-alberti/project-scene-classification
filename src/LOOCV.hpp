@@ -72,6 +72,8 @@ private:
   vector<vector<vector<double> > > minFeatPair;
   vector<vector<vector<double> > > maxFeatPair;
 
+  DatabaseInformation storeDatabase;
+
 public:
 
   LOOCV(string);
@@ -81,6 +83,8 @@ public:
   void createTestSet(int);
   void doTraining();
   void doTest();
+  DatabaseInformation getDatabaseInformation() { return storeDatabase; }
+
  // DatabaseInformation storeDatabaseTraining( vector<string> );
 
 };

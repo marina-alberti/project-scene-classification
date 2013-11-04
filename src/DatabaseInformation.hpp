@@ -66,14 +66,14 @@ private:
 
 public:
 
-  DatabaseInformation( vector<string> );
+  DatabaseInformation();
   int getNumberOfScenes() { return numberOfScenes; }
 
   /*
   parse all xml files in the data folder
   add to sceneList push_back
   */
-  void loadAnnotationsInIDS();   
+  void loadAnnotationsInIDS(vector<string>);   
 
   /* 
   For each scene the features are extracted in the 

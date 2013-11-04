@@ -1,14 +1,3 @@
-/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/AllFeatPairObject.dir
-/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/AllFeatSingleObject.dir
-/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/ApiConvertKTHDB.dir
-/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/ApiFeatureExtraction.dir
-/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/DatabaseInformation.dir
-/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/FeatureInformation.dir
-/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/LOOCV.dir
-/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/Object.dir
-/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/ObjectFeatures.dir
-/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/ObjectPairFeatures.dir
-/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/SceneInformation.dir
-/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/TestScene.dir
+/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/sceneClassification.dir
 /home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/test.dir
-/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/utils.dir
+/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/test_object_class_prediction.dir

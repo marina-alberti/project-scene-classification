@@ -5,6 +5,7 @@ CMakeFiles/TestScene.dir/TestScene.cpp.o: AllFeatPairObject.hpp
 CMakeFiles/TestScene.dir/TestScene.cpp.o: AllFeatSingleObject.hpp
 CMakeFiles/TestScene.dir/TestScene.cpp.o: ApiConvertKTHDB.hpp
 CMakeFiles/TestScene.dir/TestScene.cpp.o: ApiFeatureExtraction.hpp
+CMakeFiles/TestScene.dir/TestScene.cpp.o: DatabaseInformation.hpp
 CMakeFiles/TestScene.dir/TestScene.cpp.o: FeatureInformation.hpp
 CMakeFiles/TestScene.dir/TestScene.cpp.o: Object.hpp
 CMakeFiles/TestScene.dir/TestScene.cpp.o: ObjectFeatures.hpp

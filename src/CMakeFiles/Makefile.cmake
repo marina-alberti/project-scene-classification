@@ -57,18 +57,7 @@ SET(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 SET(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/AllFeatPairObject.dir/DependInfo.cmake"
-  "CMakeFiles/AllFeatSingleObject.dir/DependInfo.cmake"
-  "CMakeFiles/ApiConvertKTHDB.dir/DependInfo.cmake"
-  "CMakeFiles/ApiFeatureExtraction.dir/DependInfo.cmake"
-  "CMakeFiles/DatabaseInformation.dir/DependInfo.cmake"
-  "CMakeFiles/FeatureInformation.dir/DependInfo.cmake"
-  "CMakeFiles/LOOCV.dir/DependInfo.cmake"
-  "CMakeFiles/Object.dir/DependInfo.cmake"
-  "CMakeFiles/ObjectFeatures.dir/DependInfo.cmake"
-  "CMakeFiles/ObjectPairFeatures.dir/DependInfo.cmake"
-  "CMakeFiles/SceneInformation.dir/DependInfo.cmake"
-  "CMakeFiles/TestScene.dir/DependInfo.cmake"
+  "CMakeFiles/sceneClassification.dir/DependInfo.cmake"
   "CMakeFiles/test.dir/DependInfo.cmake"
-  "CMakeFiles/utils.dir/DependInfo.cmake"
+  "CMakeFiles/test_object_class_prediction.dir/DependInfo.cmake"
   )

@@ -287,6 +287,8 @@ AllFeatPairObject.hpp
 /home/marina/Project_Scene_Classification/project-scene-classification/src/AllFeatPairObject.hpp
 utils.hpp
 /home/marina/Project_Scene_Classification/project-scene-classification/src/utils.hpp
+DatabaseInformation.hpp
+/home/marina/Project_Scene_Classification/project-scene-classification/src/DatabaseInformation.hpp
 
 /home/marina/Project_Scene_Classification/project-scene-classification/src/utils.hpp
 string.h

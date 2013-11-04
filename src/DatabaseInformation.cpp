@@ -4,17 +4,17 @@
 #define TESTFLAG 1
 
 
-
-DatabaseInformation::DatabaseInformation(vector<string> trainingFilesList) {
+DatabaseInformation::DatabaseInformation() {
   numberOfScenes = 0;
-  filesList = trainingFilesList;
-  //dirname = inputDir;
+  // filesList = trainingFilesList;
+  // dirname = inputDir;
 }
 
 
 
-void DatabaseInformation::loadAnnotationsInIDS() {
+void DatabaseInformation::loadAnnotationsInIDS(vector<string> trainingFilesList) {
 
+  filesList = trainingFilesList;
   for (int i = 0; i < filesList.size(); i++ ) {
 
     string filenameXML = filesList.at(i);

@@ -24,6 +24,7 @@
 #include <algorithm>
 #include "AllFeatPairObject.hpp"
 #include "utils.hpp"
+#include "DatabaseInformation.hpp"
 
 #define N_OBJECTS 7
 #define NORMALIZEPAIR 1
@@ -41,8 +42,7 @@ private:
   int numberOfObjects;
   vector<Object> objectList;
   vector<double> predictedClasses;
-  // (0) monitor, (1) keyboard, (2) mouse in this order
- // vector<Object> orderedObjectList;  
+  
   string fileNameXML;
 
   /* Each element is one object -> N_objects separate FeatureInformation vectors */
@@ -84,21 +84,25 @@ private:
   vector<vector<vector<double> > > minFeatPair;
   vector<vector<vector<double> > > maxFeatPair;
 
+  DatabaseInformation trainedParameters;
+
 public:
 
   /*  load the given file index data */
-  TestScene(string, vector<cv::EM> , vector<vector<double> > , vector<vector<double> > , vector<vector<cv::EM> >, vector<int>, vector<int> , vector<vector<vector<double> > > , vector<vector<vector<double> > >,   vector<vector< int> >, vector<vector<vector<double> > >, vector<vector<vector<double> > >, vector<double> );
+  TestScene(DatabaseInformation & ) ;
 
   /* loadAnnotations In IDS */
-  void loadAnnotation(bool);
+  void loadAnnotation(string, bool);
 
   void parseFileXML(bool);
     
+  void loadAnnotationServiceFormat(vector<string>, vector<string>, vector<vector<pcl::PointXYZ> >);
+
   /* extract feats only for one scene only single objects */
   void extractFeatures();
 
   /* Compute the probabilities for each object matched with all the learned models */
-  void predictObjectClasses();
+  vector<vector<double> > predictObjectClasses();
 
   void evaluateObjectClassificationPerformance(); 
 
@@ -122,7 +126,6 @@ public:
   cv::Mat getConfusionMatrix() {return cMatrix; }
 
   double computeSimilarityScore();
-   
 
 
 };

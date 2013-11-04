@@ -185,7 +185,7 @@ CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
 CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=SceneDescription
+CMAKE_PROJECT_NAME:STATIC=SceneClassification
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -370,6 +370,12 @@ PCL_VISUALIZATION_LIBRARY_DEBUG:FILEPATH=/opt/ros/groovy/lib/libpcl_visualizatio
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
 //Value Computed by CMake
+SceneClassification_BINARY_DIR:STATIC=/home/marina/Project_Scene_Classification/project-scene-classification/src
+
+//Value Computed by CMake
+SceneClassification_SOURCE_DIR:STATIC=/home/marina/Project_Scene_Classification/project-scene-classification
+
+//Value Computed by CMake
 SceneDescription_BINARY_DIR:STATIC=/home/marina/Project_Scene_Classification/project-scene-classification/src
 
 //Value Computed by CMake
@@ -379,7 +385,13 @@ SceneDescription_SOURCE_DIR:STATIC=/home/marina/Project_Scene_Classification/pro
 SceneInformation_LIB_DEPENDS:STATIC=general;Object;general;FeatureInformation;general;AllFeatSingleObject;general;AllFeatPairObject;
 
 //Dependencies for the target
-TestScene_LIB_DEPENDS:STATIC=general;Object;general;ObjectFeatures;general;utils;
+TestScene_LIB_DEPENDS:STATIC=general;Object;general;ObjectFeatures;general;utils;general;DatabaseInformation;
+
+//Dependencies for the target
+Training_LIB_DEPENDS:STATIC=general;DatabaseInformation;
+
+//Dependencies for the target
+sceneClassification_LIB_DEPENDS:STATIC=debug;/opt/ros/groovy/lib/libopencv_calib3d.so;debug;/opt/ros/groovy/lib/libopencv_contrib.so;debug;/opt/ros/groovy/lib/libopencv_core.so;debug;/opt/ros/groovy/lib/libopencv_features2d.so;debug;/opt/ros/groovy/lib/libopencv_flann.so;debug;/opt/ros/groovy/lib/libopencv_gpu.so;debug;/opt/ros/groovy/lib/libopencv_highgui.so;debug;/opt/ros/groovy/lib/libopencv_imgproc.so;debug;/opt/ros/groovy/lib/libopencv_legacy.so;debug;/opt/ros/groovy/lib/libopencv_ml.so;debug;/opt/ros/groovy/lib/libopencv_nonfree.so;debug;/opt/ros/groovy/lib/libopencv_objdetect.so;debug;/opt/ros/groovy/lib/libopencv_photo.so;debug;/opt/ros/groovy/lib/libopencv_stitching.so;debug;/opt/ros/groovy/lib/libopencv_superres.so;debug;/opt/ros/groovy/lib/libopencv_ts.so;debug;/opt/ros/groovy/lib/libopencv_video.so;debug;/opt/ros/groovy/lib/libopencv_videostab.so;optimized;/opt/ros/groovy/lib/libopencv_calib3d.so;optimized;/opt/ros/groovy/lib/libopencv_contrib.so;optimized;/opt/ros/groovy/lib/libopencv_core.so;optimized;/opt/ros/groovy/lib/libopencv_features2d.so;optimized;/opt/ros/groovy/lib/libopencv_flann.so;optimized;/opt/ros/groovy/lib/libopencv_gpu.so;optimized;/opt/ros/groovy/lib/libopencv_highgui.so;optimized;/opt/ros/groovy/lib/libopencv_imgproc.so;optimized;/opt/ros/groovy/lib/libopencv_legacy.so;optimized;/opt/ros/groovy/lib/libopencv_ml.so;optimized;/opt/ros/groovy/lib/libopencv_nonfree.so;optimized;/opt/ros/groovy/lib/libopencv_objdetect.so;optimized;/opt/ros/groovy/lib/libopencv_photo.so;optimized;/opt/ros/groovy/lib/libopencv_stitching.so;optimized;/opt/ros/groovy/lib/libopencv_superres.so;optimized;/opt/ros/groovy/lib/libopencv_ts.so;optimized;/opt/ros/groovy/lib/libopencv_video.so;optimized;/opt/ros/groovy/lib/libopencv_videostab.so;
 
 //Dependencies for target
 utils_LIB_DEPENDS:STATIC=

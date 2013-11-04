@@ -86,18 +86,16 @@ void LOOCV::createTestSet(int index) {
 
   //testFilesList = "./mock_Duplicate/710-25-06-13-afternoonNotebook.xml";
   //testFilesList = "./mock_Duplicate/719-27-06-13-morningPhone.xml";
-  //testFilesList = "./mock_Missing_mouse/710-27-06-13-morning.xml";
-  // testFilesList = "./mock_Duplicate/719-25-06-13-morning_mouse.xml";
 }
 
 
 void LOOCV::doTraining() {
 
-  DatabaseInformation storeDatabase(trainingFilesList);
+  DatabaseInformation storeDatabase;
 
   // Convert objects annotations from KTH manual annotation tool format ->
 //     -> Internal Data Structure (IDS) 
-  storeDatabase.loadAnnotationsInIDS();
+  storeDatabase.loadAnnotationsInIDS(trainingFilesList);
 
   // Feature Extraction  
   cout << "Inside LOOCV Training: Before calling apifeatureextraction from LOOCV" << endl;
@@ -144,7 +142,6 @@ void LOOCV::doTraining() {
   stdNormalizationPair = storeDatabase.getstdNormalizationPair();
   maxFeatPair =  storeDatabase.getmaxFeatPair();
   minFeatPair =  storeDatabase.getminFeatPair();
-  //storeDatabase.printFeatureMatrix();
   thresholds = storeDatabase.getThresholds();
 
   cout << endl ; 
@@ -156,14 +153,14 @@ void LOOCV::doTraining() {
 void LOOCV::doTest() {
   cout << "TestFile = "  << testFilesList << endl;
 
-  TestScene unknownScene(testFilesList, learnedModelSingleObject, meanNormalization, stdNormalization, learnedModelPairObject, countObjectFrequencies, countObjectFrequencies1, meanNormalizationPair, stdNormalizationPair, countObjectPairFrequencies, maxFeatPair, minFeatPair, thresholds);
+  TestScene unknownScene(storeDatabase);
 
   if (DEBUG) {
     cout << endl<< "Inside LOOCV Test. Before Loading annotations. " << endl;
   }
 
   // choose 1 to randomly remove 1 object from the test scene, 0 for normal behaviour.
-  unknownScene.loadAnnotation(BOOLREMOVE);
+  unknownScene.loadAnnotation(testFilesList, BOOLREMOVE);
 
   if (DEBUG) {
     cout << endl<< "Inside LOOCV Test. Before extracting features. " << endl;

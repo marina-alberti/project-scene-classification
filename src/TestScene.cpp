@@ -22,36 +22,10 @@ static const std::string TAG_COLOR = "color";
 static const std::string TAG_INDICES = "indices";
 
 
-int setPairID(int a, int b) {
-  int out;
-  if( a == 0 && b == 1) {
-    out = 0;
-  }
-  else if( a == 0 && b == 2) {
-    out = 1;
-  }
-  else if( a == 1 && b == 0) {
-    out = 2;
-  }
-  else if( a == 1 && b == 2) {
-    out = 3;
-  }
-  else if( a == 2 && b == 0) {
-    out = 4;
-  }
-  else if( a == 2 && b == 1) {
-    out = 5;
-  }
-  else {
-  cout << "Error: not existing object pair:  " << a << "   " << b << endl;
-  exit(1);
-  }
-  return out;  
-}
-
-TestScene::TestScene(string inputname, std::vector<cv::EM> inputmodel, vector<vector<double> > inputmeanNormalization , vector<vector<double> > inputstdNormalization , vector<vector<cv::EM> > inputmodelPair, vector<int> countObjectFrequenciesin, vector<int> countObjectFrequencies1in, vector<vector<vector<double> > > meanPair, vector<vector<vector<double> > > stdPair,   vector<vector< int> > countObjectPairFrequenciesin , vector<vector<vector<double> > > maxin, vector<vector<vector<double> > > minin, vector<double> thre) {
+TestScene::TestScene(DatabaseInformation & inputDatabaseInformation) {
     
-  fileNameXML = inputname;
+  // fileNameXML = inputname;
+  /*
   learnedModelSingleObject = inputmodel;
   meanNormalization = inputmeanNormalization;
   stdNormalization = inputstdNormalization;
@@ -64,13 +38,31 @@ TestScene::TestScene(string inputname, std::vector<cv::EM> inputmodel, vector<ve
   maxFeatPair = maxin;
   minFeatPair = minin;
   thresholds = thre;
-  //orderedObjectList.reserve(N_OBJECTS);
+  */
+
+  trainedParameters = inputDatabaseInformation;
+
+  learnedModelSingleObject = trainedParameters.getLearnedModelSingleObject();
+  learnedModelPairObject = trainedParameters.getLearnedModelPairObject();
+  meanNormalization = trainedParameters.getmeanNormalization();
+  stdNormalization = trainedParameters.getstdNormalization();
+  countObjectFrequencies = trainedParameters.getObjectFrequencies();
+  countObjectFrequencies1 = trainedParameters.getObjectFrequencies1();
+  countObjectPairFrequencies = trainedParameters.getObjectPairFrequencies();
+  meanNormalizationPair = trainedParameters.getmeanNormalizationPair();
+  stdNormalizationPair = trainedParameters.getstdNormalizationPair();
+  maxFeatPair =  trainedParameters.getmaxFeatPair();
+  minFeatPair =  trainedParameters.getminFeatPair();
+  thresholds = trainedParameters.getThresholds();
+
   removeID = -1;
 }
 
 
   /* loadAnnotations In IDS */
-void TestScene::loadAnnotation(bool removeObject) {
+void TestScene::loadAnnotation(string inputname, bool removeObject) {
+
+  fileNameXML = inputname;
   cout << "The XML file name is: " << fileNameXML << endl;  
   if (removeObject) {
     removeID = REMOVEID;  // rand() % N_OBJECTS;
@@ -145,20 +137,12 @@ void TestScene::parseObject(boost::property_tree::ptree & parent, bool removeObj
   // "setObjectName" will also set object actual ID "actualObjectID" field of Object 
   newObject.setObjectName(parent.get<std::string>(TAG_NAME));
 
-  
-
-  /* Currently adds to the objectList fo TestScene only monitor keyboard and mouse */
-  // to do : eliminate this checking and consider all objects !! 		TO DO
-//  if ( newObject.getActualObjectID() == 0 || newObject.getActualObjectID() == 1 || newObject.getActualObjectID() == 2)  {   
     // if I randomly remove 1 object from the test scene:
     if (removeObject ) {
       if (TESTFLAG)  {
         cout << "Remove object ID is: " << removeID << endl;
       }
       if ( newObject.getActualObjectID() ==  removeID) {}
-   //   if ( (newObject.getActualObjectID() == 0 ) && (removeID == 0) ) {}
-   //    else if ( (newObject.getActualObjectID() == 1 ) && (removeID == 1) ) {}
-   //    else if ( (newObject.getActualObjectID() == 2 ) && (removeID == 2) ) {}
       else {
         objectList.push_back(newObject);
         numberOfObjects++;
@@ -172,7 +156,6 @@ void TestScene::parseObject(boost::property_tree::ptree & parent, bool removeObj
       objectList.push_back(newObject);
       numberOfObjects++;
     }
-  //}
 }
 
 
@@ -300,23 +283,48 @@ void TestScene::extractFeatures() {
 }
 
 
+
+void TestScene::loadAnnotationServiceFormat(vector<string> type, vector<string> object_id, vector<vector<pcl::PointXYZ> > bbox) {
+
+  // for each object in the test scene
+  for (vector<vector<pcl::PointXYZ> >::iterator it = bbox.begin(); it != bbox.end(); ++it) {
+
+    Object newObject;
+
+    vector<pcl::PointXYZ> bboxCurrentObject = *it;
+    newObject.setBoundingBox(bboxCurrentObject); 
+    // "setObjectName" will also set object actual ID "actualObjectID" field of Object 
+    // newObject.setObjectName(parent.get<std::string>(TAG_NAME));
+
+    objectList.push_back(newObject);
+    numberOfObjects++;
+
+  }
+
+}
+
+
 /* 
 for each object in object list
 test on the 3 models input = all the features
 store probability
 */
-void TestScene::predictObjectClasses() {
+vector<vector<double> > TestScene::predictObjectClasses() {
 
   int fsize = 9;
   cv::Mat feats = cv::Mat::zeros ( 1, fsize,  CV_64F );
   double prob;
   cv::Mat normalizedFeatMat;
+  vector<vector<double> > vectorProbabilitiesObjects;
+
 
   // for each object in the objectList
   for (int i  = 0; i < featureListSingleObject.size(); i++ ) {  
     if (TESTFLAG) {
         cout << std::endl << "Predict object class for a new unknown object in the object list : " << i << endl;
      }
+    // vectorProb: a vector with a likelihood value for each of the considered object categories 
+    //  against which the test object is matched
     vector<double> vectorProb;
     double maxProbValue;
     int maxProbClassIndex;
@@ -339,10 +347,8 @@ void TestScene::predictObjectClasses() {
     // for each of the  learned GMM models ( monitor, keyboard,  mouse, ...) 
     for(vector<cv::EM>::iterator it2 = learnedModelSingleObject.begin(); it2 != learnedModelSingleObject.end(); ++it2) {
      
-      if (DEBUG) {
-        cout << std::endl << "Testing against learned GMM model : " << countModel << endl;
-      }
- 
+      bool outlier = false;
+
       /* extract mean, cov, and weight coefficients for current GMM model  */
       cv::Mat _means = (*it2).get<cv::Mat>("means"); 			//  dims x nclusters
       cv::Mat _weights = (*it2).get<cv::Mat> ("weights");  		//  nclusters x 1
@@ -353,23 +359,11 @@ void TestScene::predictObjectClasses() {
       }
       
       // **************************************************************************************
-      //  NORMALIZATION:   Feature matrix normalization 
-
-      /* // // old version of normalization
-      normalizedFeatMat = feats.clone();
-      for (int c = 0 ; c < fsize ; c++ ) {
-        normalizedFeatMat.at<double>(c) = (feats.at<double>(c) - (meanNormalization[countModel][c]) ) / ( stdNormalization[countModel][c] );
-      } 
-      */
+      // //  NORMALIZATION:   Feature matrix normalization 
       
-//        normalizedFeatMat = doNormalization(feats, meanNormalization[countModel], stdNormalization[countModel]);
+      //  normalizedFeatMat = doNormalization(feats, meanNormalization[countModel], stdNormalization[countModel]);
       normalizedFeatMat = feats.clone();
-
-
-      if (DEBUG) {
-        cout << endl <<  "The extracted normalized features of the test object " << i << " are : " << endl  
-             << normalizedFeatMat << endl;
-      }
+      // **************************************************************************************
 
       // // test: reduce feat dimensionality    
       cv::Mat featsTrain = normalizedFeatMat.colRange(0, 9);     
@@ -381,28 +375,22 @@ void TestScene::predictObjectClasses() {
       normalizedFeatMat.col(4).copyTo(featsTrain.col(3));
       */
       if (DEBUG) {
-
         cout << "The extracted features COLUMN SUBSET of test object " << i << " is " << endl
             << featsTrain << endl << feats << endl;
       }
 
-      bool outlier = false;
       //****************************************************************************************
       /* Compute probability for the current GMM model: */
       // Using multivariate normal distribution computation
       prob = computeGMMProbability(featsTrain, _means, _covs, _weights);
       prob = log(prob);
-      cout << "Prob test   "<< prob << endl << "thre   " << thresholds[countModel] << endl;
       if (prob < thresholds[countModel]) {
         // outlier = true;
       }
 
-
       // ***********************************************************************************
       // compute a-priori probablity of object classes in terms of frequency of appearence
-
       int currentObjectCategoryFreq = countObjectFrequencies[countModel];
-
       double CurrentObjectCategoryProb = ((double)(currentObjectCategoryFreq))/( NSCENES + 1);
       double probPost = prob + log(CurrentObjectCategoryProb);
       // ***********************************************************************************
@@ -411,7 +399,6 @@ void TestScene::predictObjectClasses() {
         cout << " Likelihood Multivariate Normal Distribution for Object class : " 
 		<< countModel << "  is  =  " << prob << "  with likelihood frequency  =   " << 
                 (CurrentObjectCategoryProb) << endl;
-                 
       }
       
       // Using the OpenCV EM function : "predict()"
@@ -424,28 +411,30 @@ void TestScene::predictObjectClasses() {
       prob = (double)vec(0);
       */
 
-      // push back probability of current GMM model into vector of probabilities for current object
-      vectorProb.push_back(prob);
+
       if ( countModel == 0) {
         maxProbValue = -100000;
         maxProbClassIndex = -1;
       }
-      cout << "Prob test   "<< probPost << endl << "outlier   " << outlier << endl;
       
       if ( (probPost > maxProbValue) && (outlier == false)  ) {
         maxProbValue = probPost;
         maxProbClassIndex = countModel;
       }
 
-      if (DEBUG) {
-        cout << "   After computing likelihood with predict: " << countModel << endl
-              << "Prob = " << probPost << endl;
+      // push back probability of current GMM model into vector of probabilities for current object
+      vectorProb.push_back(probPost);
+
+      if (TESTFLAG) {
+        cout << " Compute likelihood for object category type : " << countModel 
+              << "   likelihood = " << probPost << endl;
       }
       countModel++;
     }     
+
     if (TESTFLAG) {
       cout << std::endl << " End Predict object class for object in the object list : " << i << 
-      endl << "Prob value = " << maxProbValue << endl << "Predicted class  " << maxProbClassIndex << endl
+      endl << "Prob value = " << maxProbValue << endl << "Predicted object class  " << maxProbClassIndex << endl
           << "Actual class " <<  (objectList.at(i)).getActualObjectID() << endl ;
       if ( (objectList.at(i)).getActualObjectID() != maxProbClassIndex ) {
         cout << "ERROR OBJECT CLASSIFICATION" << endl; 
@@ -454,15 +443,12 @@ void TestScene::predictObjectClasses() {
  
     predictedClasses.push_back(maxProbClassIndex);
     (objectList.at(i)).setPredictedObjectID(maxProbClassIndex);
-    
 
-
-// *****************************************************************************
-    if (DEBUG) { 
-      cout << "The predicted class is : " << maxProbClassIndex << " for the unknown object no. " << i 
-		<< endl << endl;  
-    }
+    vectorProbabilitiesObjects.push_back(vectorProb);
+ 
   }
+
+  return vectorProbabilitiesObjects;
 }
 
 

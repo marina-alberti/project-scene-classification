@@ -6,6 +6,7 @@ CMakeFiles/TestScene.dir/TestScene.cpp.o
  /home/marina/Project_Scene_Classification/project-scene-classification/src/AllFeatSingleObject.hpp
  /home/marina/Project_Scene_Classification/project-scene-classification/src/ApiConvertKTHDB.hpp
  /home/marina/Project_Scene_Classification/project-scene-classification/src/ApiFeatureExtraction.hpp
+ /home/marina/Project_Scene_Classification/project-scene-classification/src/DatabaseInformation.hpp
  /home/marina/Project_Scene_Classification/project-scene-classification/src/FeatureInformation.hpp
  /home/marina/Project_Scene_Classification/project-scene-classification/src/Object.hpp
  /home/marina/Project_Scene_Classification/project-scene-classification/src/ObjectFeatures.hpp
