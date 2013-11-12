@@ -1,2 +1,0 @@
-/usr/bin/ar cr libObjectPairFeatures.a  CMakeFiles/ObjectPairFeatures.dir/ObjectPairFeatures.cpp.o
-/usr/bin/ranlib libObjectPairFeatures.a

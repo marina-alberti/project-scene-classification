@@ -1,2 +1,0 @@
-/usr/bin/ar cr libFeatureInformation.a  CMakeFiles/FeatureInformation.dir/FeatureInformation.cpp.o
-/usr/bin/ranlib libFeatureInformation.a

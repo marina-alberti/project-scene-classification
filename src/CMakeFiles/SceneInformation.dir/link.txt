@@ -1,2 +1,0 @@
-/usr/bin/ar cr libSceneInformation.a  CMakeFiles/SceneInformation.dir/SceneInformation.cpp.o
-/usr/bin/ranlib libSceneInformation.a

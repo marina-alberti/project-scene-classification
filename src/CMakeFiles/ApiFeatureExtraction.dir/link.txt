@@ -1,2 +1,0 @@
-/usr/bin/ar cr libApiFeatureExtraction.a  CMakeFiles/ApiFeatureExtraction.dir/ApiFeatureExtraction.cpp.o
-/usr/bin/ranlib libApiFeatureExtraction.a

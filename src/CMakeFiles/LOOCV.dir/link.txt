@@ -1,2 +1,0 @@
-/usr/bin/ar cr libLOOCV.a  CMakeFiles/LOOCV.dir/LOOCV.cpp.o
-/usr/bin/ranlib libLOOCV.a

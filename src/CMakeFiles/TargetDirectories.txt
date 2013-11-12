@@ -1,3 +1,0 @@
-/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/sceneClassification.dir
-/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/test.dir
-/home/marina/Project_Scene_Classification/project-scene-classification/src/CMakeFiles/test_object_class_prediction.dir

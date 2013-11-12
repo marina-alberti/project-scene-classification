@@ -1,2 +1,0 @@
-/usr/bin/ar cr libAllFeatPairObject.a  CMakeFiles/AllFeatPairObject.dir/AllFeatPairObject.cpp.o
-/usr/bin/ranlib libAllFeatPairObject.a

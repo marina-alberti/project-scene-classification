@@ -1,4 +1,0 @@
-DatabaseInformation construction: pass the string with the folder name
-as a command line argument.
-
-
