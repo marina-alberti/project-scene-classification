@@ -23,6 +23,10 @@ void ObjectFeatures::computePose() {
   pose.addValue(objectPose.x);
   pose.addValue(objectPose.y);
   pose.addValue(objectPose.z);
+
+  poseX.addValue(objectPose.x);
+  poseY.addValue(objectPose.y);
+  poseZ.addValue(objectPose.z);
 }
 
 
@@ -199,7 +203,11 @@ void  ObjectFeatures::computeSizeProjectedZ() {
 void ObjectFeatures::extractFeatures() {
 
   computePose();
-  allFeatures.push_back(pose);
+  // allFeatures.push_back(pose);
+
+  allFeatures.push_back(poseX);
+  allFeatures.push_back(poseY);
+  allFeatures.push_back(poseZ);
  
   computeAngle2dCentroid();
   allFeatures.push_back(angle2dCentroid);

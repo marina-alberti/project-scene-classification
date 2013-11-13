@@ -21,6 +21,7 @@
 #include "opencv2/ml/ml.hpp"
 #include <cmath>
 #include "utils.hpp"
+#include "ApiConvertSimulationDB.hpp"
 
 #define NOBJECTCLASSES 7
 #define NORMALIZEPAIR 1
@@ -29,16 +30,15 @@
 class DatabaseInformation{
 
 private:
+
   string dirname;
   int numberOfScenes;
   vector<string> filesList;
-
   vector<SceneInformation> sceneList;
 
- // vector<vector<FeatureInformation> > featureMatrixSingleObject;
- // vector<vector<FeatureInformation> > featureMatrixPairObject;
+  // // // <N_objectClasses * N_scenes * N_featuresSingleObject>
 
-  // <N_objectClasses * N_scenes * N_featuresSingleObject>
+
   vector<vector<vector<FeatureInformation> > > FMSingleObject;  
   vector<vector<vector<vector<FeatureInformation> > > > FMPairObject;    
 
@@ -52,7 +52,6 @@ private:
   vector<vector< int> > objectFrequencies;
   vector<int> countObjectFrequencies; 
   vector<int> countObjectFrequencies1;
-  // vector<int> countObjectFrequencies2;
   vector<vector<vector<int> > > objectPairFrequencies;
   vector<vector< int> > countObjectPairFrequencies;  
 
@@ -98,21 +97,21 @@ public:
 
   void computeGMMSingleObject_Onemodel();
 
-  void computeGMM_SingleObject_AllFeat(int );    
+  void computeGMM_SingleObject_AllFeat(int );    // used
 
   void computeGMM_PairObject_SingleFeat(int);    
 
-  void computeGMM_PairObject_AllFeat( int) ;
+  void computeGMM_PairObject_AllFeat( int) ;     // used
+
+  void computeObjectFrequencies();
+
+  double computeStdWeights(cv::Mat FeatMat, vector<double> maxvector, vector<double> minvector);
 
   std::vector<cv::EM> getLearnedModelSingleObject () { return learnedModelSingleObject; }
   std::vector<std::vector<cv::EM> > getLearnedModelPairObject() {return learnedModelPairObject; }
 
   vector<vector<double> > getmeanNormalization() { return meanNormalization; }
   vector<vector<double> > getstdNormalization() { return stdNormalization; }
-
-  void computeObjectFrequencies();
-
-  double computeStdWeights(cv::Mat FeatMat, vector<double> maxvector, vector<double> minvector);
 
   vector<int> getObjectFrequencies() { return countObjectFrequencies; }
   vector<int> getObjectFrequencies1() { return countObjectFrequencies1; }

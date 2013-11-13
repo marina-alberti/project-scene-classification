@@ -189,7 +189,7 @@ void LOOCV::doTest() {
     cout << "The total confusion matrix is: " << endl << cMatrixObjectClassification << endl;
   }
  
-  unknownScene.extractFeaturesPairObjects_HandleMissing();
+  unknownScene.extractFeaturesPairObjects();
 
   // double prob = unknownScene.computeProbObjectPairs_AllFeats();   // old version
 

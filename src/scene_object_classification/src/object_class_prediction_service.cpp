@@ -27,8 +27,6 @@ Request and response are passed by reference:
 
 using namespace std; 
 
-
-
 bool handle_group_estimate(strands_qsr_msgs::GetGroupEstimate::Request  & req,
          strands_qsr_msgs::GetGroupEstimate::Response & res) {
 
@@ -45,8 +43,11 @@ bool handle_group_estimate(strands_qsr_msgs::GetGroupEstimate::Request  & req,
   // Training using the real-world KTH dataset of 42 desktop scenes
   //*******************************************************************
   Training computeTraining;
-  // computeTraining.compute(inputFolder);    // training on the real world KTH database
-  computeTraining.compute(fileSimulationDatabase, true);     // training on the simulated database of 500 scenes
+  //// training on the real world KTH database
+  // computeTraining.compute(inputFolder);    
+  //// training on the simulated database of 500 scenes
+  computeTraining.createTrainingSet(fileSimulationDatabase, true);     
+  computeTraining.doTraining();
   DatabaseInformation trainedDatabase = computeTraining.getDatabaseInformation(); 
   
   //*******************************************************************
@@ -54,7 +55,7 @@ bool handle_group_estimate(strands_qsr_msgs::GetGroupEstimate::Request  & req,
   // Input test scene: same data as the request fields of the ROS service. 
   //*******************************************************************
   // type
-  const char *vinit[] = {"Monitor", "Keyboard", "Mouse",  "Mug", "Lapotp", "Lamp", "Pen/pencil"};
+  const char *vinit[] = {"Monitor", "Keyboard", "Mouse",  "Mug", "Lapotp", "Lamp", "Pen/pencil", "Book"};
   vector<string> type(vinit, (vinit+ sizeof(vinit)/sizeof(vinit[0]))); 
 
   // object_id

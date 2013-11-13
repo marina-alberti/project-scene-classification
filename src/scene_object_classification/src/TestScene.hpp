@@ -94,11 +94,11 @@ public:
   /* loadAnnotations In IDS */
   void loadAnnotation(string, bool);
 
-  void parseFileXML(bool);
+  //  void parseFileXML(bool);
     
   void loadAnnotationServiceFormat(vector<string>, vector<string>, vector<vector<pcl::PointXYZ> >);
 
-  /* extract feats only for one scene only single objects */
+  /* extract feats only for one scene only "single object features" */
   void extractFeatures();
 
   /* Compute the probabilities for each object matched with all the learned models */
@@ -113,7 +113,7 @@ public:
    void extractFeaturesPairObjects();
 
   /* Extract feats object pairs, handles missing objects and multiple objects. */
-   void extractFeaturesPairObjects_HandleMissing();
+  // void extractFeaturesPairObjects_HandleMissing();
 
   /* Compute the probabilities / likelihoods for the object pairs */ 
   double computeProbObjectPairs();

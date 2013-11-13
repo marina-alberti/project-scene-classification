@@ -31,14 +31,6 @@ void ApiFeatureExtraction::extractFeaturesSingleObjects( SceneInformation & inpu
       << singleObjectFeatures.size() << endl;
     }
     
-    /*
-    for(vector<FeatureInformation>::iterator it2 = singleObjectFeatures.begin(); it2 != singleObjectFeatures.end(); ++it2) {
-      inputScene.addFeatureSingleObject(*it2);
-      if (DEBUG) {
-        // cout << "The added feature is : " << (*it2) << endl; 
-      }
-    }
-    */
     int objectID =  (*it).getActualObjectID();
     inputScene.addAllFeatSingleObject(singleObjectFeatures, objectID) ; // new
     
@@ -48,6 +40,7 @@ void ApiFeatureExtraction::extractFeaturesSingleObjects( SceneInformation & inpu
 }
 
 // to do: add check the actual object ID.
+
 
 /*
 For each object (i) in the scene:
@@ -85,15 +78,7 @@ void ApiFeatureExtraction::extractFeaturesPairObjects(SceneInformation & inputSc
         int objectID1 = (*it).getActualObjectID();
         int objectID2 = (*it2).getActualObjectID();
         inputScene.addAllFeatPairObject( _features, objectID1, objectID2);  // new
-;
-/*
-        for(vector<FeatureInformation>::iterator it3 = _features.begin(); it3 != _features.end(); ++it3) {
-          inputScene.addFeaturePairObject((*it3));
-          if (DEBUG) {
-           // cout << "The added feature is : " << (*it3) << endl; 
-          }
-        }
-*/
+
       }
     }
  

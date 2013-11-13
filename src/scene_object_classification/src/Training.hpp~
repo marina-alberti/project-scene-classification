@@ -75,11 +75,12 @@ public:
 
   Training();
   void storeFiles();
-  void createTrainingSet();
-  void compute(string);
+  void createTrainingSet_Real();
+  void createTrainingSet_Simulation();
+  void createTrainingSet(string, bool = false);
   void doTraining();
   DatabaseInformation getDatabaseInformation();
-  void createTrainingSet_Simulation();
+
 
 };
 

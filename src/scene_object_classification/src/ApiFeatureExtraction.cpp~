@@ -1,6 +1,7 @@
 #include "ApiFeatureExtraction.hpp"
 
 #define DEBUG 0
+#define TESTFLAG 1
 
 ApiFeatureExtraction::ApiFeatureExtraction() {
 }
@@ -48,6 +49,7 @@ void ApiFeatureExtraction::extractFeaturesSingleObjects( SceneInformation & inpu
 
 // to do: add check the actual object ID.
 
+
 /*
 For each object (i) in the scene:
  - Iterates over all the other objects and for each other object: 
@@ -84,15 +86,7 @@ void ApiFeatureExtraction::extractFeaturesPairObjects(SceneInformation & inputSc
         int objectID1 = (*it).getActualObjectID();
         int objectID2 = (*it2).getActualObjectID();
         inputScene.addAllFeatPairObject( _features, objectID1, objectID2);  // new
-;
-/*
-        for(vector<FeatureInformation>::iterator it3 = _features.begin(); it3 != _features.end(); ++it3) {
-          inputScene.addFeaturePairObject((*it3));
-          if (DEBUG) {
-           // cout << "The added feature is : " << (*it3) << endl; 
-          }
-        }
-*/
+
       }
     }
  

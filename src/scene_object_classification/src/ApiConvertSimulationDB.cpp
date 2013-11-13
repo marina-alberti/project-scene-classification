@@ -27,6 +27,7 @@ ApiConvertSimulationDB::ApiConvertSimulationDB(string inputFileName) {
   fileNameJSON = inputFileName;
 }
 
+
 /* 
 This function parses the whole JSON file and iteratively parses the scenes in the file.
 */
@@ -74,11 +75,11 @@ void ApiConvertSimulationDB::parseSceneJSON(boost::property_tree::ptree::value_t
           cout << "And the object category type is: " << objectList.second.get_value<std::string>() << endl;
         }
         Object newObject;
-        // newObject.setObjectName(objectList.first); // no this database does not contain this field
-        newObject.setInstanceName(objectList.first);
 
+        newObject.setInstanceName(objectList.first);
         newObject.setObjectName(objectList.second.get_value<std::string>());
         newObject.setCategoryName(objectList.second.get_value<std::string>());
+
         objectVector.push_back(newObject);
         cout << newObject.getObjectName() << endl;
       }

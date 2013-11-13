@@ -12,39 +12,42 @@
 #include <pcl/point_types.h>
 #include <pcl/point_cloud.h>
 
-// to do: include header files for the ROS services and messages
 #include "ros/ros.h"
-// #include "strands_qsr_msgs/GetGroupEstimate.h"
-// #include "strands_qsr_msgs/BBox.h"
-// #include "strands_qsr_msgs/GroupEstimate.h"
+
 
 #define DEBUG 0
-
-/* 
-Request and response are passed by reference:
- bool add(beginner_tutorials::AddTwoInts::Request  &req,
-   beginner_tutorials::AddTwoInts::Response &res)
-*/
 
 using namespace std; 
 
 int main(int argc, char *argv[]) {
 
+  /*
   string dataFolderName = (argv[ 1 ]);
   cout << "The input folder name is: " << dataFolderName << endl; 
   string inputFolder =  "./" +  dataFolderName ;
+  */
+
+  string inputFolder =  "/home/marina/Project_Scene_Classification/project-scene-classification/src/scene_object_classification/data/data_more_objects" ;
+
+  string fileSimulationDatabase = "/home/marina/Project_Scene_Classification/project-scene-classification/src/scene_object_classification/data/data_simulation/simulation/bham_office_desk_500_modifiedroot.json";
 
   //*******************************************************************
-  // Training using the real-world KTH dataset of 42 desktop scenes
+  // Training
   //*******************************************************************
-  Training computeTraining(inputFolder);
-  computeTraining.compute();
+  Training computeTraining;
+  // training on the simulated database of 500 scenes
+  // computeTraining.createTrainingSet(fileSimulationDatabase, true);     
+  computeTraining.createTrainingSet(inputFolder, false);     
+  computeTraining.doTraining();
+
   DatabaseInformation trainedDatabase = computeTraining.getDatabaseInformation(); 
   
+
   //*******************************************************************
   // Creating data like the request of ROS service
   // Input test scene: same data as the request fields of the ROS service. 
   //*******************************************************************
+
   // type
   const char *vinit[] = {"Monitor", "Keyboard", "Mouse",  "Mug", "Lapotp", "Lamp", "Pen/pencil"};
   vector<string> type(vinit, (vinit+ sizeof(vinit)/sizeof(vinit[0]))); 
@@ -141,67 +144,10 @@ int main(int argc, char *argv[]) {
   unknownScene.loadAnnotationServiceFormat(type, object_id, bbox);
   unknownScene.extractFeatures();
  
- // Compute probabilities for all modeled object categories + classify objects. 
+  // Compute probabilities for all modeled object categories + classify objects. 
   vector<vector<double> > weights = unknownScene.predictObjectClasses();
 
-  // ********************************************************
-  // Creating the ROS service response with the computed fields
-  // ********************************************************
 
-/*
-# unique object identifiers
-string object_id
-# object types
-string[] type
-# type weights
-float32[] weight
-// *************************************************************
-def handle_group_estimate(req):
-    res = GetGroupEstimateResponse()
-    res.estimate = list()
-    for obj in req.object_id:    
-        est = GroupEstimate()
-        est.object_id = obj
-        est.type  = list()
-        est.weight  = list()
-
-        for t in req.type:
-            est.type.append(t)
-            est.weight.append(random.uniform(0,1))
-
-        res.estimate.append(est)
-
-    return res
-// *************************************************************
-*/
- /*
-  vector<strands_qsr_msgs::GroupEstimate> estimate;
-
-  // for each object in the test scene
-  for ( int i = 0; i < object_id.size(); i++ ) {
-
-    strands_qsr_msgs::GroupEstimate currentObjectEstimate;
-    currentObjectEstimate.object_id = object_id.at(i);
-
-    ROS_INFO("Creating response for object_id: %s ", currentObjectEstimate.object_id.c_str());
-
-    // for each of the modeled object cateogories the test object is tested against
-    for ( int j = 0; j < type.size(); j++ ) {
-      double currentWeight = weights[i][j];
-      string currentType = type[j];
-
-      currentObjectEstimate.weight.push_back(currentWeight); 
-      currentObjectEstimate.type.push_back(currentType);
-
-      ROS_INFO("The weight is: %f for object type: %s", currentWeight, currentType.c_str());
-    }
-
-    estimate.push_back(currentObjectEstimate);
-  }  
-
-  res.estimate = estimate;
-
-  */
 
   return 0;
 }

@@ -1,0 +1,1907 @@
+
+NORMALIZATION:
+
+[47, 0, 0, 0, 10, 0, 0;
+  0, 42, 0, 0, 0, 0, 0;
+  0, 0, 37, 0, 0, 0, 0;
+  0, 0, 0, 13, 2, 0, 0;
+  0, 0, 0, 0, 26, 0, 0;
+  2, 0, 0, 0, 1, 1, 1;
+  0, 0, 0, 0, 1, 0, 42]
+
+
+NORMALIZATION AND FREQUENCY COUNT PROB
+
+[49, 0, 0, 0, 8, 0, 0;
+  0, 42, 0, 0, 0, 0, 0;
+  1, 0, 36, 0, 0, 0, 0;
+  0, 0, 0, 13, 2, 0, 0;
+  0, 0, 0, 0, 26, 0, 0;
+  2, 0, 0, 0, 1, 1, 1;
+  0, 0, 0, 0, 1, 0, 42]
+
+
+NORMALIZATION AND FREQUENCY COUNT PROB1
+
+[49, 0, 0, 0, 8, 0, 0;
+  0, 42, 0, 0, 0, 0, 0;
+  1, 0, 36, 0, 0, 0, 0;
+  0, 0, 0, 13, 2, 0, 0;
+  0, 0, 0, 0, 26, 0, 0;
+  2, 0, 0, 0, 1, 1, 1;
+  0, 0, 0, 0, 1, 0, 42]
+h
+NO NORMALIZATION:
+
+[54, 0, 0, 0, 3, 0, 0;
+  0, 42, 0, 0, 0, 0, 0;
+  0, 0, 36, 1, 0, 0, 0;
+  0, 0, 0, 15, 0, 0, 0;
+  4, 0, 0, 0, 22, 0, 0;
+  2, 0, 0, 0, 0, 1, 2;
+  0, 0, 0, 0, 1, 0, 42]
+
+NO-NORMALIZATION AND FREQUENCY COUNT PROB
+
+[54, 0, 0, 0, 3, 0, 0;
+  0, 42, 0, 0, 0, 0, 0;
+  0, 0, 36, 1, 0, 0, 0;
+  0, 0, 0, 15, 0, 0, 0;
+  4, 0, 0, 0, 22, 0, 0;
+  2, 0, 0, 0, 0, 1, 2;
+  0, 0, 0, 0, 1, 0, 42]
+
+NO-NORMALIZATION AND FREQUENCY COUNT PROB1
+
+[54, 0, 0, 0, 3, 0, 0;
+  0, 42, 0, 0, 0, 0, 0;
+  0, 0, 36, 1, 0, 0, 0;
+  0, 0, 0, 15, 0, 0, 0;
+  4, 0, 0, 0, 22, 0, 0;
+  2, 0, 0, 0, 0, 1, 2;
+  0, 0, 0, 0, 1, 0, 42]
+
+// NO-NORMALIZATION AND FREQUENCY COUNT PROB + less clusters from 3 to 2   
+
+[55, 0, 0, 0, 2, 0, 0;
+  0, 42, 0, 0, 0, 0, 0;
+  0, 0, 36, 0, 0, 0, 1;
+  0, 0, 0, 15, 0, 0, 0;
+  1, 0, 0, 0, 25, 0, 0;
+  3, 0, 0, 0, 0, 1, 1;
+  0, 0, 0, 0, 1, 0, 42]
+
+ //**************************************************************
+ //**************************************************************
+ //**************************************************************
+
+
+[53, 0, 0, 0, 3, 0, 0;
+  0, 41, 0, 0, 0, 0, 0;
+  0, 0, 34, 0, 0, 0, 0;
+  0, 0, 0, 13, 0, 0, 0;
+  0, 0, 0, 0, 24, 0, 0;
+  0, 0, 0, 0, 0, 1, 0;
+  0, 0, 0, 0, 0, 0, 38]
+Object 0
+Precision: 1
+recall:    0.929825
+Fmeasure:  0.963636
+Object 1
+Precision: 1
+recall:    0.97619
+Fmeasure:  0.987952
+Object 2
+Precision: 1
+recall:    0.918919
+Fmeasure:  0.957746
+Object 3
+Precision: 1
+recall:    0.866667
+Fmeasure:  0.928571
+Object 4
+Precision: 0.888889
+recall:    0.923077
+Fmeasure:  0.90566
+Object 5
+Precision: 1
+recall:    0.2
+Fmeasure:  0.333333
+Object 6
+Precision: 1
+recall:    0.883721
+Fmeasure:  0.938272
+
+i had mistaken the annotations: same, with new annotations:
+// NO-NORMALIZATION AND FREQUENCY COUNT PROB + less clusters from 3 to 2 
+
+[55, 0, 0, 0, 2, 0, 0;                         <--- best result
+  0, 42, 0, 0, 0, 0, 0;
+  0, 0, 36, 1, 0, 0, 0;
+  0, 0, 0, 15, 0, 0, 0;
+  1, 0, 0, 0, 25, 0, 0;
+  1, 0, 0, 0, 1, 3, 0;
+  0, 0, 0, 0, 0, 0, 43]
+
+Object 0
+Precision: 0.964912
+recall:    0.964912
+Fmeasure:  0.964912
+Object 1
+Precision: 1
+recall:    1
+Fmeasure:  1
+Object 2
+Precision: 1
+recall:    0.972973
+Fmeasure:  0.986301
+Object 3
+Precision: 0.9375
+recall:    1
+Fmeasure:  0.967742
+Object 4
+Precision: 0.892857
+recall:    0.961538
+Fmeasure:  0.925926
+Object 5
+Precision: 1
+recall:    0.6
+Fmeasure:  0.75
+Object 6
+Precision: 1
+recall:    1
+Fmeasure:  1
+
+*****************************************************************
+FEATURE SINGLE OBJECT VARIATIONS:
+// NO-NORMALIZATION AND FREQUENCY COUNT PROB + less clusters from 3 to 2 
+ //**************************************************************
+ //**************************************************************
+(1) only first three position 0 1 2
+
+[54, 0, 0, 0, 3, 0, 0;
+  0, 30, 4, 0, 0, 0, 8;
+  0, 6, 30, 0, 0, 0, 1;
+  0, 1, 0, 14, 0, 0, 0;
+  2, 0, 0, 0, 24, 0, 0;
+  3, 0, 0, 0, 0, 2, 0;
+  0, 1, 3, 0, 0, 0, 39]
+
+Object 0
+Precision: 0.915254
+recall:    0.947368
+Fmeasure:  0.931034
+Object 1
+Precision: 0.789474
+recall:    0.714286
+Fmeasure:  0.75
+Object 2
+Precision: 0.810811
+recall:    0.810811
+Fmeasure:  0.810811
+Object 3
+Precision: 1
+recall:    0.933333
+Fmeasure:  0.965517
+Object 4
+Precision: 0.888889
+recall:    0.923077
+Fmeasure:  0.90566
+Object 5
+Precision: 1
+recall:    0.4
+Fmeasure:  0.571429
+Object 6
+Precision: 0.8125
+recall:    0.906977
+Fmeasure:  0.857143
+ //**************************************************************
+(2) 3 4  angles
+
+[50, 0, 0, 1, 0, 5, 1;
+  5, 26, 8, 2, 0, 0, 1;
+  0, 5, 28, 0, 0, 0, 4;
+  3, 10, 2, 0, 0, 0, 0;
+  5, 6, 6, 0, 8, 0, 1;
+  2, 0, 0, 0, 0, 3, 0;
+  5, 15, 19, 0, 4, 0, 0]
+
+Object 0
+Precision: 0.714286
+recall:    0.877193
+Fmeasure:  0.787402
+Object 1
+Precision: 0.419355
+recall:    0.619048
+Fmeasure:  0.5
+Object 2
+Precision: 0.444444
+recall:    0.756757
+Fmeasure:  0.56
+Object 3
+Precision: 0
+recall:    0
+Fmeasure:  0
+Object 4
+Precision: 0.666667
+recall:    0.307692
+Fmeasure:  0.421053
+Object 5
+Precision: 0.375
+recall:    0.6
+Fmeasure:  0.461538
+Object 6
+Precision: 0
+recall:    0
+Fmeasure:  0
+ //**************************************************************
+(3) 5 volume
+
+[52, 3, 0, 0, 2, 0, 0;
+  1, 36, 0, 5, 0, 0, 0;
+  0, 0, 37, 0, 0, 0, 0;
+  0, 1, 0, 14, 0, 0, 0;
+  6, 0, 0, 0, 20, 0, 0;
+  5, 0, 0, 0, 0, 0, 0;
+  0, 0, 0, 0, 0, 0, 43]
+
+Object 0
+Precision: 0.8125
+recall:    0.912281
+Fmeasure:  0.859504
+Object 1
+Precision: 0.9
+recall:    0.857143
+Fmeasure:  0.878049
+Object 2
+Precision: 1
+recall:    1
+Fmeasure:  1
+Object 3
+Precision: 0.736842
+recall:    0.933333
+Fmeasure:  0.823529
+Object 4
+Precision: 0.909091
+recall:    0.769231
+Fmeasure:  0.833333
+Object 5
+Precision: 0
+recall:    0
+Fmeasure:  0
+Object 6
+Precision: 1
+recall:    1
+Fmeasure:  1
+ //**************************************************************
+(4) 6 7 8 size
+
+
+[55, 0, 0, 0, 2, 0, 0;
+  0, 42, 0, 0, 0, 0, 0;
+  0, 0, 37, 0, 0, 0, 0;
+  0, 0, 0, 15, 0, 0, 0;
+  5, 0, 0, 0, 21, 0, 0;
+  0, 0, 0, 0, 2, 3, 0;
+  0, 0, 0, 0, 0, 0, 43]
+
+Object 0
+Precision: 0.916667
+recall:    0.964912
+Fmeasure:  0.940171
+Object 1
+Precision: 1
+recall:    1
+Fmeasure:  1
+Object 2
+Precision: 1
+recall:    1
+Fmeasure:  1
+Object 3
+Precision: 1
+recall:    1
+Fmeasure:  1
+Object 4
+Precision: 0.84
+recall:    0.807692
+Fmeasure:  0.823529
+Object 5
+Precision: 1
+recall:    0.6
+Fmeasure:  0.75
+Object 6
+Precision: 1
+recall:    1
+Fmeasure:  1
+
+ //**************************************************************
+EXTRA: only x y position and angles
+
+[53, 0, 0, 3, 0, 1, 0;
+  4, 27, 4, 1, 0, 0, 6;
+  1, 2, 25, 0, 0, 0, 9;
+  5, 7, 2, 0, 0, 0, 1;
+  4, 1, 6, 0, 9, 0, 6;
+  2, 0, 0, 0, 0, 3, 0;
+  4, 9, 19, 0, 3, 0, 8]
+
+Precision: 0.726027
+recall:    0.929825
+Fmeasure:  0.815385
+Object 1
+Precision: 0.586957
+recall:    0.642857
+Fmeasure:  0.613636
+Object 2
+Precision: 0.446429
+recall:    0.675676
+Fmeasure:  0.537634
+Object 3
+Precision: 0
+recall:    0
+Fmeasure:  0
+Object 4
+Precision: 0.75
+recall:    0.346154
+Fmeasure:  0.473684
+Object 5
+Precision: 0.75
+recall:    0.6
+Fmeasure:  0.666667
+Object 6
+Precision: 0.266667
+recall:    0.186047
+Fmeasure:  0.219178
+
+ //**************************************************************
+
+
+// NO-NORMALIZATION AND FREQUENCY COUNT PROB + less clusters from 3 to 1 (!) 
+   just to check that GMM is needed
+
+[54, 0, 0, 0, 3, 0, 0;
+  0, 42, 0, 0, 0, 0, 0;
+  0, 0, 36, 0, 0, 0, 1;
+  0, 0, 0, 14, 0, 0, 1;
+  4, 0, 0, 0, 22, 0, 0;
+  0, 0, 0, 0, 0, 4, 1;
+  0, 0, 0, 0, 1, 0, 42]
+
+
+-------------------
+NORMALIZATION;
+
+Scene 0 :  Simlarity score :  -inf
+
+This -inf similarity score, happens bcs of the object misclassification: 
+the mug is classified as the lamp and then the likelihood of object
+pair features involving the misclassified object are VERY LOW , -inf
+ 
+
+Scene 1 :  Simlarity score :  -99.6832
+Scene 2 :  Simlarity score :  -18.4193
+Scene 3 :  Simlarity score :  28.642
+Scene 4 :  Simlarity score :  30.3895
+Scene 5 :  Simlarity score :  -188.166
+Scene 6 :  Simlarity score :  -4.29315
+Scene 7 :  Simlarity score :  8.24235
+Scene 8 :  Simlarity score :  -148.424
+Scene 9 :  Simlarity score :  41.4454
+Scene 10 :  Simlarity score :  -248.07
+Scene 11 :  Simlarity score :  32.2201
+Scene 12 :  Simlarity score :  -8.51749
+Scene 13 :  Simlarity score :  -7.79704
+Scene 14 :  Simlarity score :  -1011.66
+Scene 15 :  Simlarity score :  -137.98
+Scene 16 :  Simlarity score :  -7.35237
+Scene 17 :  Simlarity score :  -7.89842
+Scene 18 :  Simlarity score :  -0.84546
+Scene 19 :  Simlarity score :  -647.343
+Scene 20 :  Simlarity score :  -inf
+Scene 21 :  Simlarity score :  13.9269
+Scene 22 :  Simlarity score :  -0.882395
+Scene 23 :  Simlarity score :  -133.924
+Scene 24 :  Simlarity score :  -19.4585
+Scene 25 :  Simlarity score :  -69.9408
+Scene 26 :  Simlarity score :  -48.6049
+Scene 27 :  Simlarity score :  -inf
+Scene 28 :  Simlarity score :  13.9565
+Scene 29 :  Simlarity score :  -232.724
+Scene 30 :  Simlarity score :  -inf
+Scene 31 :  Simlarity score :  -37.6491
+Scene 32 :  Simlarity score :  21.7456
+Scene 33 :  Simlarity score :  6.96905
+Scene 34 :  Simlarity score :  -43.6625
+Scene 35 :  Simlarity score :  -93.3426
+Scene 36 :  Simlarity score :  -1.06037
+Scene 37 :  Simlarity score :  -217.475
+Scene 38 :  Simlarity score :  -87.8295
+Scene 39 :  Simlarity score :  -165.584
+Scene 40 :  Simlarity score :  38.7448
+
+
+Pair Normalization - no single object normalization
+
+Scene 0 :  Similarity score :  -247.609
+Scene 1 :  Similarity score :  -263.936
+Scene 2 :  Similarity score :  -242.701
+Scene 3 :  Similarity score :  -69.8763
+Scene 4 :  Similarity score :  -53.7981
+Scene 5 :  Similarity score :  -260.051
+Scene 6 :  Similarity score :  -92.4287
+Scene 7 :  Similarity score :  -102.983
+Scene 8 :  Similarity score :  -325.509
+Scene 9 :  Similarity score :  -53.1159
+Scene 10 :  Similarity score :  -419.228
+Scene 11 :  Similarity score :  -88.4857
+Scene 12 :  Similarity score :  -38.7634
+Scene 13 :  Similarity score :  -291.673
+Scene 14 :  Similarity score :  -191.245
+Scene 15 :  Similarity score :  -107.673
+Scene 16 :  Similarity score :  -125.526
+Scene 17 :  Similarity score :  -75.1151
+Scene 18 :  Similarity score :  -53.4967
+Scene 19 :  Similarity score :  -1435.56
+Scene 20 :  Similarity score :  -290.845
+Scene 21 :  Similarity score :  -44.6448
+Scene 22 :  Similarity score :  -202.122
+Scene 23 :  Similarity score :  -159.17
+Scene 24 :  Similarity score :  -68.0789
+Scene 25 :  Similarity score :  -68.9912
+Scene 26 :  Similarity score :  -71.1786
+Scene 27 :  Similarity score :  -inf
+Scene 28 :  Similarity score :  -153.576
+Scene 29 :  Similarity score :  -54.7391
+Scene 30 :  Similarity score :  -348.298
+Scene 31 :  Similarity score :  -263.865
+Scene 32 :  Similarity score :  -214.039
+Scene 33 :  Similarity score :  -107.633
+Scene 34 :  Similarity score :  -89.7125
+Scene 35 :  Similarity score :  -233.96
+Scene 36 :  Similarity score :  -212.61
+Scene 37 :  Similarity score :  -210.629
+Scene 38 :  Similarity score :  -inf
+Scene 39 :  Similarity score :  -76.381
+Scene 40 :  Similarity score :  -297.586
+Scene 41 :  Similarity score :  -53.5689
+
+NO Pair Normalization - no single object normalization
+
+Scene 0 :  Similarity score :  -28.3358
+Scene 1 :  Similarity score :  -99.6832
+Scene 2 :  Similarity score :  -251.807
+Scene 3 :  Similarity score :  28.642
+Scene 4 :  Similarity score :  30.3895
+Scene 5 :  Similarity score :  -188.166
+Scene 6 :  Similarity score :  -4.29315
+Scene 7 :  Similarity score :  8.24235
+Scene 8 :  Similarity score :  -154.235
+Scene 9 :  Similarity score :  41.4454
+Scene 10 :  Similarity score :  -248.07
+Scene 11 :  Similarity score :  32.2201
+Scene 12 :  Similarity score :  50.0784
+Scene 13 :  Similarity score :  -7.79704
+Scene 14 :  Similarity score :  46.6266
+Scene 15 :  Similarity score :  -137.98
+Scene 16 :  Similarity score :  -7.35237
+Scene 17 :  Similarity score :  -7.89842
+Scene 18 :  Similarity score :  -0.84546
+Scene 19 :  Similarity score :  -647.343
+Scene 20 :  Similarity score :  -360.262
+Scene 21 :  Similarity score :  13.9269
+Scene 22 :  Similarity score :  -0.882395
+Scene 23 :  Similarity score :  -36.9256
+Scene 24 :  Similarity score :  -19.4585
+Scene 25 :  Similarity score :  43.8624
+Scene 26 :  Similarity score :  37.0132
+Scene 27 :  Similarity score :  -inf
+Scene 28 :  Similarity score :  -84.951
+Scene 29 :  Similarity score :  39.6558
+Scene 30 :  Similarity score :  -144.096
+Scene 31 :  Similarity score :  -168.083
+Scene 32 :  Similarity score :  -37.6491
+Scene 33 :  Similarity score :  21.7456
+Scene 34 :  Similarity score :  7.81898
+Scene 35 :  Similarity score :  -36.7665
+Scene 36 :  Similarity score :  -103.161
+Scene 37 :  Similarity score :  -61.4701
+Scene 38 :  Similarity score :  -inf
+Scene 39 :  Similarity score :  32.8329
+Scene 40 :  Similarity score :  -159.105
+Scene 41 :  Similarity score :  28.844
+
+*******************************************************
+SCORE = Sum of prob * frequency of co occurrence
+Single object normalization type 2 minmax - no single object normalization
+
+ Inside LOOCV compute. End test. 
+Scene 0 :  Similarity score :  17300.4
+Scene 1 :  Similarity score :  213302
+Scene 2 :  Similarity score :  2370.27
+Scene 3 :  Similarity score :  15301.8
+Scene 4 :  Similarity score :  166.895
+Scene 5 :  Similarity score :  60538
+Scene 6 :  Similarity score :  1809.94
+Scene 7 :  Similarity score :  29302.5
+Scene 8 :  Similarity score :  8556.95
+Scene 9 :  Similarity score :  269321
+Scene 10 :  Similarity score :  48.5145
+Scene 11 :  Similarity score :  31344.9
+Scene 12 :  Similarity score :  56239.8
+Scene 13 :  Similarity score :  124455
+Scene 14 :  Similarity score :  49430.6
+Scene 15 :  Similarity score :  540.315
+Scene 16 :  Similarity score :  79095.7
+Scene 17 :  Similarity score :  45467.2
+Scene 18 :  Similarity score :  2.03182
+Scene 19 :  Similarity score :  1155.67
+Scene 20 :  Similarity score :  9327.07
+Scene 21 :  Similarity score :  49409
+Scene 22 :  Similarity score :  4104.99
+Scene 23 :  Similarity score :  8113.86
+Scene 24 :  Similarity score :  233.947
+Scene 25 :  Similarity score :  103445
+Scene 26 :  Similarity score :  628076
+Scene 27 :  Similarity score :  2045.06
+Scene 28 :  Similarity score :  7825.51
+Scene 29 :  Similarity score :  945.971
+Scene 30 :  Similarity score :  10491.6
+Scene 31 :  Similarity score :  734.728
+Scene 32 :  Similarity score :  604.532
+Scene 33 :  Similarity score :  43398.5
+Scene 34 :  Similarity score :  1050.9
+Scene 35 :  Similarity score :  42175
+Scene 36 :  Similarity score :  901.354
+Scene 37 :  Similarity score :  8534.56
+Scene 38 :  Similarity score :  7338.66
+Scene 39 :  Similarity score :  42123.2
+Scene 40 :  Similarity score :  12656.1
+Scene 41 :  Similarity score :  352872
+
+SCORE = Sum of prob * frequency of co occurrence
+Single object normalization type 1 mean, std - no single object normalization
+
+Scene 0 :  Similarity score :  12.2155
+Scene 1 :  Similarity score :  50.7781
+Scene 2 :  Similarity score :  0.63799
+Scene 3 :  Similarity score :  7.98606
+Scene 4 :  Similarity score :  0.119216
+Scene 5 :  Similarity score :  23.3525
+Scene 6 :  Similarity score :  0.20336
+Scene 7 :  Similarity score :  4.38773
+Scene 8 :  Similarity score :  4.35879
+Scene 9 :  Similarity score :  139.962
+Scene 10 :  Similarity score :  0.0540232
+Scene 11 :  Similarity score :  13.5885
+Scene 12 :  Similarity score :  26.8061
+Scene 13 :  Similarity score :  56.9029
+Scene 14 :  Similarity score :  34.9729
+Scene 15 :  Similarity score :  0.366455
+Scene 16 :  Similarity score :  37.3582
+Scene 17 :  Similarity score :  16.9173
+Scene 18 :  Similarity score :  0.00140616
+Scene 19 :  Similarity score :  0.777353
+Scene 20 :  Similarity score :  5.06532
+Scene 21 :  Similarity score :  16.9619
+Scene 22 :  Similarity score :  2.64689
+Scene 23 :  Similarity score :  1.54451
+Scene 24 :  Similarity score :  0.0411951
+Scene 25 :  Similarity score :  18.2387
+Scene 26 :  Similarity score :  340.2
+Scene 27 :  Similarity score :  1.29664
+Scene 28 :  Similarity score :  1.04163
+Scene 29 :  Similarity score :  0.527132
+Scene 30 :  Similarity score :  0.924627
+Scene 31 :  Similarity score :  0.237236
+Scene 32 :  Similarity score :  0.379819
+Scene 33 :  Similarity score :  175.529
+Scene 34 :  Similarity score :  0.671166
+Scene 35 :  Similarity score :  25.6887
+Scene 36 :  Similarity score :  0.148499
+Scene 37 :  Similarity score :  4.11189
+Scene 38 :  Similarity score :  3.49448
+Scene 39 :  Similarity score :  19.9732
+Scene 40 :  Similarity score :  1.12472
+Scene 41 :  Similarity score :  10.2609
+
+SCORE = Sum of prob * frequency of co occurrence
+Single object normalization type 1 mean, std - no single object normalization
+OpenCv predict function for prob/likelihood of feature computation
+ prob = pow(10, prob);
+
+Scene 0 :  Similarity score :  283.584
+Scene 1 :  Similarity score :  3706.19
+Scene 2 :  Similarity score :  0.149068
+Scene 3 :  Similarity score :  34.7483
+Scene 4 :  Similarity score :  0.00139328
+Scene 5 :  Similarity score :  2011.85
+Scene 6 :  Similarity score :  0.0100311
+Scene 7 :  Similarity score :  11.7768
+Scene 8 :  Similarity score :  45.4818
+Scene 9 :  Similarity score :  181653
+Scene 10 :  Similarity score :  0.00146882
+Scene 11 :  Similarity score :  671.625
+Scene 12 :  Similarity score :  1197.14
+Scene 13 :  Similarity score :  13684
+Scene 14 :  Similarity score :  2305.16
+Scene 15 :  Similarity score :  0.0376828
+Scene 16 :  Similarity score :  6246.88
+Scene 17 :  Similarity score :  1186.5
+Scene 18 :  Similarity score :  2.20026e-07
+Scene 19 :  Similarity score :  0.455165
+Scene 20 :  Similarity score :  17.2725
+Scene 21 :  Similarity score :  773.144
+Scene 22 :  Similarity score :  1.09323
+Scene 23 :  Similarity score :  1.80569
+Scene 24 :  Similarity score :  0.000509343
+Scene 25 :  Similarity score :  482.365
+Scene 26 :  Similarity score :  1.0087e+06
+Scene 27 :  Similarity score :  3.97603
+Scene 28 :  Similarity score :  1.44373
+Scene 29 :  Similarity score :  0.20085
+Scene 30 :  Similarity score :  1.01704
+Scene 31 :  Similarity score :  0.0286872
+Scene 32 :  Similarity score :  0.105984
+Scene 33 :  Similarity score :  82697.8
+Scene 34 :  Similarity score :  0.24445
+Scene 35 :  Similarity score :  2158.83
+Scene 36 :  Similarity score :  0.00309992
+Scene 37 :  Similarity score :  7.61746
+Scene 38 :  Similarity score :  4.97997
+Scene 39 :  Similarity score :  477.995
+Scene 40 :  Similarity score :  0.219827
+Scene 41 :  Similarity score :  75.7392
+
+*************************************************************
+Note: for object pair SR - based scene similarity SCOREs:
+the results:
+
+- (i) with feauture normalization#1 (mean, std) 
+
+- (ii) normalization#2 (min, max) 
+
+both using my own function for computing value of GMM pdf in given feature values, 
+
+- (iii) with feature normalization 1 (mean, std) + using the opencv likelihood value 
+converted into a "prob"
+
+are all "proportial" or "same" in the sense that the absolute values 
+of similarity scores are different, 
+but the maximum, minumum scores correspond to same scenes.
+
+These results are obtained by considering the "union" of the SR scores
+weighted by the object categiries co occurrence probability (frequency), meaning doing a weighted sum 
+of the probabilities.
+*************************************************************
+
+
+-> After modifying object class prediction with 2-mixtures GMM.
+SCORE = Sum of prob * frequency of co occurrence
+Single object normalization type 1 mean, std - no single object normalization
+
+Inside LOOCV compute. End test. 
+Scene 0 :  Similarity score :  11.2122
+Scene 1 :  Similarity score :  50.5035
+Scene 2 :  Similarity score :  0.899144
+Scene 3 :  Similarity score :  7.71132
+Scene 4 :  Similarity score :  0.151803
+Scene 5 :  Similarity score :  17.1041
+Scene 6 :  Similarity score :  0.199434
+Scene 7 :  Similarity score :  4.26597
+Scene 8 :  Similarity score :  4.35664
+Scene 9 :  Similarity score :  139.963
+Scene 10 :  Similarity score :  0.517088
+Scene 11 :  Similarity score :  14.3317
+Scene 12 :  Similarity score :  26.8061
+Scene 13 :  Similarity score :  56.874
+Scene 14 :  Similarity score :  34.7116
+Scene 15 :  Similarity score :  0.367258
+Scene 16 :  Similarity score :  37.3626
+Scene 17 :  Similarity score :  22.0984
+Scene 18 :  Similarity score :  0.780609
+Scene 19 :  Similarity score :  0.76085
+Scene 20 :  Similarity score :  4.49264
+Scene 21 :  Similarity score :  15.92
+Scene 22 :  Similarity score :  2.58359
+Scene 23 :  Similarity score :  1.54507
+Scene 24 :  Similarity score :  0.065119
+Scene 25 :  Similarity score :  18.2381
+Scene 26 :  Similarity score :  340.199
+Scene 27 :  Similarity score :  1.289
+Scene 28 :  Similarity score :  1.11193
+Scene 29 :  Similarity score :  0.563774
+Scene 30 :  Similarity score :  0.924626
+Scene 31 :  Similarity score :  0.422978
+Scene 32 :  Similarity score :  0.38568
+Scene 33 :  Similarity score :  27.9625
+Scene 34 :  Similarity score :  0.672898
+Scene 35 :  Similarity score :  23.0193
+Scene 36 :  Similarity score :  0.109782
+Scene 37 :  Similarity score :  4.12229
+Scene 38 :  Similarity score :  3.4377
+Scene 39 :  Similarity score :  19.8428
+Scene 40 :  Similarity score :  1.50641
+Scene 41 :  Similarity score :  12.7441
+
+
+After modifying object class prediction with 2-mixtures GMM from 3 
+(yielding best object classification confusion matrix, see results).
+SCORE = Sum of prob * frequency of co occurrence
+Single object normalization type 1 mean, std - no single object normalization
+
+-> After also change object pair GMMs to  2-mixtures GMM from 5.
+
+Observation: in general , the probabilities have lower values.
+Examples : scene 36: 340 -> 31
+
+Scene 0 :  Similarity score :  3.05708
+Scene 1 :  Similarity score :  37.0069
+Scene 2 :  Similarity score :  0.353368
+Scene 3 :  Similarity score :  4.122
+Scene 4 :  Similarity score :  0.0435265
+Scene 5 :  Similarity score :  35.0607
+Scene 6 :  Similarity score :  0.102559
+Scene 7 :  Similarity score :  6.05088
+Scene 8 :  Similarity score :  8.15925
+Scene 9 :  Similarity score :  0.623236
+Scene 10 :  Similarity score :  0.13207
+Scene 11 :  Similarity score :  23.1664
+Scene 12 :  Similarity score :  27.4708
+Scene 13 :  Similarity score :  18.7522
+Scene 14 :  Similarity score :  8.34379
+Scene 15 :  Similarity score :  0.145908
+Scene 16 :  Similarity score :  1.46165
+Scene 17 :  Similarity score :  25.9835
+Scene 18 :  Similarity score :  0.0855175
+Scene 19 :  Similarity score :  0.319382
+Scene 20 :  Similarity score :  4.2365
+Scene 21 :  Similarity score :  22.0851
+Scene 22 :  Similarity score :  5.73137
+Scene 23 :  Similarity score :  1.23953
+Scene 24 :  Similarity score :  0.00897703
+Scene 25 :  Similarity score :  0.564906
+Scene 26 :  Similarity score :  31.8921
+Scene 27 :  Similarity score :  0.0671864
+Scene 28 :  Similarity score :  0.288317
+Scene 29 :  Similarity score :  0.0760356
+Scene 30 :  Similarity score :  0.338544
+Scene 31 :  Similarity score :  0.384615
+Scene 32 :  Similarity score :  0.498752
+Scene 33 :  Similarity score :  18.7791
+Scene 34 :  Similarity score :  0.0924575
+Scene 35 :  Similarity score :  20.3444
+Scene 36 :  Similarity score :  2.58098
+Scene 37 :  Similarity score :  2.29272
+Scene 38 :  Similarity score :  1.76056
+Scene 39 :  Similarity score :  24.6503
+Scene 40 :  Similarity score :  1.40206
+Scene 41 :  Similarity score :  9.94469
+
+
+
+*******************************************************************************************
+
+Resutsl 1 single GMM, normal trainig , for object class prediction:
+
+The actual object labels:
+
+[0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 5; 5; 5; 5; 5; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6]
+
+The predicted clusters (note the the clusters ids do not necessarily correspond to the actual object class ID, 
+GMM is UNSUPERVISED clustering)
+
+[2; 2; 2; 1; 2; 1; 2; 1; 2; 2; 2; 1; 2; 2; 2; 2; 2; 1; 2; 2; 1; 1; 2; 2; 1; 2; 1; 2; 1; 2; 2; 2; 1; 2; 2; 1; 2; 2; 1; 2; 2; 1; 1; 2; 2; 1; 1; 2; 1; 2; 2; 2; 2; 2; 1; 5; 5; 5; 5; 0; 0; 5; 5; 5; 5; 1; 5; 0; 5; 0; 5; 0; 0; 0; 0; 0; 5; 5; 5; 5; 5; 5; 5; 5; 5; 5; 5; 5; 0; 0; 0; 5; 5; 5; 5; 5; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 1; 1; 1; 3; 1; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 2; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 0; 3]
+
+
+*******************************************************
+After modifying object class prediction with 2-mixtures GMM from 3 
+(yielding best object classification confusion matrix, see results).
+-> After also change object pair GMMs to 3-mixtures GMM from 5.
+SCORE = Sum of prob * frequency of co occurrence
+No Pair of object normalization - no single object normalization
+
+Comparisons when removing all pbjects of 1 object category:
+
+*******************************************************
+No removed
+
+Scene 0     8.97114
+Scene 1     9.32134
+Scene 2     5.35449
+Scene 3     9.36585
+Scene 4     8.4452
+Scene 5     8.34722
+Scene 6     6.52519
+Scene 7     9.02071
+Scene 8     5.33626
+Scene 9     8.79
+Scene 10     9.51856
+Scene 11     8.18032
+Scene 12     9.64507
+Scene 13     8.33987
+Scene 14     9.49319
+Scene 15     7.22789
+Scene 16     8.66955
+Scene 17     7.26987
+Scene 18     5.39017
+Scene 19     8.13383
+Scene 20     7.69846
+Scene 21     8.35607
+Scene 22     9.24868
+Scene 23     8.56327
+Scene 24     5.03575
+Scene 25     9.585
+Scene 26     7.74123
+Scene 27     7.48294
+Scene 28     5.62254
+Scene 29     8.86814
+Scene 30     9.62129
+Scene 31     4.11105
+Scene 32     6.61481
+Scene 33     9.36749
+Scene 34     5.5898
+Scene 35     8.29514
+Scene 36     7.46406
+Scene 37     7.851
+Scene 38     8.25519
+Scene 39     9.1942
+Scene 40     7.13792
+Scene 41     9.2249
+
+*******************************************************
+Remove monitor
+
+Scene 0     8.51643
+Scene 1     8.75845
+Scene 2     2.81512
+Scene 3     8.85811
+Scene 4     7.85628
+Scene 5     6.38377
+Scene 6     3.54092
+Scene 7     7.30774
+Scene 8     5.30179
+Scene 9     8.00106
+Scene 10     9.50798
+Scene 11     5.77457
+Scene 12     9.18393
+Scene 13     5.32022
+Scene 14     7.61802
+Scene 15     5.88747
+Scene 16     7.5862
+Scene 17     6.33253
+Scene 18     5.38869
+Scene 19     5.8355
+Scene 20     6.49348
+Scene 21     6.72108
+Scene 22     7.77052
+Scene 23     8.23009
+Scene 24     -1.60037
+Scene 25     8.36292
+Scene 26     7.43469
+Scene 27     7.37336
+Scene 28     2.27377
+Scene 29     8.77767
+Scene 30     9.60308
+Scene 31     -0.153973
+Scene 32     2.25359
+Scene 33     9.20396
+Scene 34     3.99384
+Scene 35     5.83694
+Scene 36     5.2058
+Scene 37     6.08511
+Scene 38     5.24322
+Scene 39     9.10137
+Scene 40     6.34952
+Scene 41     7.43146
+
+
+*******************************************************
+Remove keybaord
+
+Scene 0     7.85459
+Scene 1     8.48615
+Scene 2     4.88019
+Scene 3     7.82616
+Scene 4     7.61744
+Scene 5     8.24819
+Scene 6     5.93679
+Scene 7     8.75728
+Scene 8     3.26157
+Scene 9     8.0846
+Scene 10     3.88081
+Scene 11     8.14656
+Scene 12     8.64405
+Scene 13     8.33518
+Scene 14     9.07005
+Scene 15     6.9182
+Scene 16     8.24647
+Scene 17     6.96581
+Scene 18     -inf
+Scene 19     8.02183
+Scene 20     7.35169
+Scene 21     8.15412
+Scene 22     8.93218
+Scene 23     7.13134
+Scene 24     -4.5397
+Scene 25     8.07248
+Scene 26     6.67255
+Scene 27     4.7615
+Scene 28     4.68348
+Scene 29     6.10626
+Scene 30     5.72992
+Scene 31     3.60277
+Scene 32     4.21659
+Scene 33     7.51699
+Scene 34     3.80367
+Scene 35     8.26838
+Scene 36     7.3276
+Scene 37     7.57904
+Scene 38     8.1967
+Scene 39     6.90031
+Scene 40     6.46517
+Scene 41     8.50894
+
+
+*******************************************************
+Remove mouse
+
+Scene 0     8.37045
+Scene 1     9.28606
+Scene 2     5.35449
+Scene 3     8.02944
+Scene 4     3.62323
+Scene 5     6.79218
+Scene 6     5.59432
+Scene 7     8.4376
+Scene 8     5.02421
+Scene 9     5.84952
+Scene 10     4.97406
+Scene 11     7.82777
+Scene 12     8.45484
+Scene 13     6.4671
+Scene 14     9.13559
+Scene 15     3.17937
+Scene 16     7.91658
+Scene 17     6.4983
+Scene 18     -1.12355
+Scene 19     2.93593
+Scene 20     6.11493
+Scene 21     7.58259
+Scene 22     8.75882
+Scene 23     7.76336
+Scene 24     5.03575
+Scene 25     8.86249
+Scene 26     7.42243
+Scene 27     5.74648
+Scene 28     5.62254
+Scene 29     5.11003
+Scene 30     5.6156
+Scene 31     4.11105
+Scene 32     6.51185
+Scene 33     7.79576
+Scene 34     5.12726
+Scene 35     6.49039
+Scene 36     3.89974
+Scene 37     7.851
+Scene 38     7.91713
+Scene 39     7.87563
+Scene 40     7.13792
+Scene 41     8.74749
+
+*******************************************************
+Remove mug
+
+Scene 0     8.97114
+Scene 1     9.32134
+Scene 2     5.35449
+Scene 3     9.36585
+Scene 4     8.4452
+Scene 5     8.34722
+Scene 6     6.52519
+Scene 7     9.02071
+Scene 8     5.33626
+Scene 9     8.79
+Scene 10     9.51856
+Scene 11     8.18032
+Scene 12     9.64507
+Scene 13     8.33987
+Scene 14     9.49319
+Scene 15     7.22789
+Scene 16     8.66955
+Scene 17     7.26987
+Scene 18     5.39017
+Scene 19     8.13383
+Scene 20     7.69846
+Scene 21     8.35607
+Scene 22     9.24868
+Scene 23     8.56327
+Scene 24     5.03575
+Scene 25     9.585
+Scene 26     7.74123
+Scene 27     7.48294
+Scene 28     5.62254
+Scene 29     8.86814
+Scene 30     9.62129
+Scene 31     4.11105
+Scene 32     6.61481
+Scene 33     9.36749
+Scene 34     5.5898
+Scene 35     8.29514
+Scene 36     7.46406
+Scene 37     7.851
+Scene 38     8.25519
+Scene 39     9.1942
+Scene 40     7.13792
+Scene 41     9.2249
+
+*******************************************************
+Remove Lamp
+
+Scene 0     8.97008
+Scene 1     9.32134
+Scene 2     5.30665
+Scene 3     9.36585
+Scene 4     8.4452
+Scene 5     8.34141
+Scene 6     6.52519
+Scene 7     9.02071
+Scene 8     5.33626
+Scene 9     8.78893
+Scene 10     9.51488
+Scene 11     8.16833
+Scene 12     9.64507
+Scene 13     8.3309
+Scene 14     9.49257
+Scene 15     7.21495
+Scene 16     8.66955
+Scene 17     7.26987
+Scene 18     5.39017
+Scene 19     8.13383
+Scene 20     7.68599
+Scene 21     8.35607
+Scene 22     9.24793
+Scene 23     8.56327
+Scene 24     5.03437
+Scene 25     9.58451
+Scene 26     7.74123
+Scene 27     7.47512
+Scene 28     5.0672
+Scene 29     8.86814
+Scene 30     9.60049
+Scene 31     4.11105
+Scene 32     6.60899
+Scene 33     9.36749
+Scene 34     5.5898
+Scene 35     8.28899
+Scene 36     7.46406
+Scene 37     7.82959
+Scene 38     8.25519
+Scene 39     9.1942
+Scene 40     7.13098
+Scene 41     9.2249
+
+*******************************************************
+Remove laptop
+
+Scene 0     8.97114
+Scene 1     9.32134
+Scene 2     5.35449
+Scene 3     9.36585
+Scene 4     8.4452
+Scene 5     8.34722
+Scene 6     6.52519
+Scene 7     9.02071
+Scene 8     5.33626
+Scene 9     8.79
+Scene 10     9.51856
+Scene 11     8.18032
+Scene 12     9.64507
+Scene 13     8.33987
+Scene 14     9.49319
+Scene 15     7.22789
+Scene 16     8.66955
+Scene 17     7.26987
+Scene 18     5.39017
+Scene 19     8.13383
+Scene 20     7.69846
+Scene 21     8.35607
+Scene 22     9.24868
+Scene 23     8.56306
+Scene 24     5.03575
+Scene 25     9.585
+Scene 26     7.74123
+Scene 27     7.48294
+Scene 28     5.62254
+Scene 29     8.86814
+Scene 30     9.62129
+Scene 31     4.11105
+Scene 32     6.61481
+Scene 33     9.36749
+Scene 34     5.5898
+Scene 35     8.29514
+Scene 36     7.46406
+Scene 37     7.851
+Scene 38     8.25519
+Scene 39     9.1942
+Scene 40     7.13792
+Scene 41     9.2249
+
+*******************************************************
+Remove pen
+
+Scene 0     8.25898
+Scene 1     5.85739
+Scene 2     4.29165
+Scene 3     9.28345
+Scene 4     8.4452
+Scene 5     8.05755
+Scene 6     6.52519
+Scene 7     8.31365
+Scene 8     3.6009
+Scene 9     8.79
+Scene 10     9.51856
+Scene 11     6.80207
+Scene 12     9.28524
+Scene 13     8.1305
+Scene 14     8.78587
+Scene 15     7.22789
+Scene 16     8.04506
+Scene 17     6.37396
+Scene 18     5.39017
+Scene 19     8.13383
+Scene 20     7.47591
+Scene 21     7.71458
+Scene 22     8.40771
+Scene 23     8.04468
+Scene 24     5.03575
+Scene 25     9.585
+Scene 26     6.09887
+Scene 27     7.34329
+Scene 28     5.62254
+Scene 29     8.86814
+Scene 30     9.62129
+Scene 31     3.15502
+Scene 32     6.61481
+Scene 33     9.12672
+Scene 34     5.5898
+Scene 35     8.04977
+Scene 36     7.45876
+Scene 37     5.42356
+Scene 38     7.03262
+Scene 39     8.86606
+Scene 40     3.96896
+Scene 41     8.90265
+
+*******************************************************
+*******************************************************
+*******************************************************
+*******************************************************
+*******************************************************
+*******************************************************
+*******************************************************
+*******************************************************
+same experiments
+Ncluster for object pairs GMMs from 3 to 2
+Min number of samples for object pairs from 7 to 3
+Total min number of samples from 21 to 10
+
+********************************************************
+No removed
+
+10.3733
+9.11028
+6.09068
+9.9782
+8.30315
+7.90376
+6.97653
+8.60805
+5.29727
+11.0877
+9.07378
+8.34377
+9.44419
+7.99642
+11.7631
+6.82697
+9.64804
+6.90546
+5.58141
+6.86234
+7.74688
+7.99167
+10.1602
+8.139
+5.0432
+10.3939
+8.55621
+12.8772
+5.297
+9.25224
+9.71618
+5.24738
+9.79856
+9.75134
+6.82794
+7.95856
+6.92985
+7.9181
+9.62087
+9.76171
+6.91583
+9.4709
+
+********************************************************
+No monitor
+
+10.2468
+8.76015
+5.0554
+8.86344
+7.86274
+7.48096
+5.13298
+7.28752
+5.25616
+11.0621
+9.05819
+6.61179
+9.10019
+7.35115
+11.7
+5.93287
+7.57719
+6.40115
+5.37869
+5.8459
+6.75279
+6.77783
+9.8729
+7.57264
+-1.59915
+10.3473
+8.26439
+12.8744
+2.13902
+8.7783
+9.69429
+-0.123807
+9.75142
+9.59329
+4.55698
+7.25697
+5.38835
+6.42896
+5.28993
+9.432
+5.47079
+6.98954
+
+********************************************************
+No keyboard
+
+10.1927
+7.89743
+5.88248
+9.57354
+7.19697
+7.74373
+6.46264
+8.18707
+3.19013
+11.0402
+3.68
+8.30708
+8.21042
+7.98967
+11.7457
+6.45143
+9.51235
+6.41036
+3.87879
+6.37758
+7.44092
+7.60363
+10.0572
+7.13501
+-2.26758
+10.2523
+7.34473
+12.8733
+3.26823
+8.23846
+7.49657
+4.674
+9.79494
+7.86575
+6.51273
+7.93054
+6.61686
+7.70877
+9.6042
+9.09752
+6.69322
+9.38841
+
+********************************************************
+No mouse
+
+8.44233
+9.0727
+6.09068
+7.01032
+4.63031
+7.67021
+5.99867
+8.55877
+4.96497
+6.02548
+4.692
+7.8296
+8.22664
+7.73994
+8.65729
+5.24222
+7.59311
+6.34302
+-1.075
+4.10405
+6.17349
+7.54251
+8.61726
+6.79275
+5.0432
+5.59202
+7.17265
+6.39176
+5.297
+5.026
+5.35103
+5.21108
+4.5007
+7.5501
+5.34109
+7.61142
+4.91048
+7.9181
+6.57482
+7.72453
+6.91583
+7.56015
+
+********************************************************
+No mug
+
+10.364
+9.11028
+6.09068
+9.9782
+8.30315
+7.88067
+6.83435
+8.60805
+5.29727
+11.0877
+9.07378
+8.34377
+9.44419
+7.98808
+11.7613
+6.6243
+9.64804
+6.90546
+5.58141
+6.82039
+7.73526
+7.99167
+10.151
+8.139
+5.0432
+10.3939
+8.55621
+12.8766
+5.297
+9.25224
+9.71618
+5.24738
+9.79676
+9.75134
+6.7672
+7.94774
+6.89118
+7.9181
+9.6193
+9.76171
+6.91583
+9.4709
+
+********************************************************
+No lamp
+
+9.06168
+9.11028
+5.66925
+9.9782
+8.30315
+7.20725
+6.97653
+8.60805
+5.29727
+8.36066
+9.07219
+8.25268
+9.44419
+7.39948
+9.20303
+6.70204
+9.64804
+6.90546
+5.58141
+6.86231
+7.64579
+7.99167
+9.08716
+8.139
+5.04123
+8.61877
+8.55621
+7.92505
+5.10583
+9.25224
+9.61115
+5.24738
+6.72921
+9.75134
+6.82794
+7.46487
+6.92985
+7.80147
+9.62087
+9.76171
+6.8067
+9.4709
+
+********************************************************
+No laptop
+
+10.3733
+9.11028
+6.09068
+9.9782
+8.30315
+7.90376
+6.97653
+8.60805
+5.29727
+11.0877
+9.07378
+8.34377
+9.44419
+7.99642
+11.7631
+6.82697
+9.64804
+6.90546
+5.58141
+6.86234
+7.74688
+7.99167
+10.1602
+8.13881
+5.0432
+10.3939
+8.55621
+12.8772
+5.297
+9.25224
+9.71618
+5.24738
+9.79856
+9.75134
+6.82794
+7.95856
+6.92985
+7.9181
+9.62087
+9.76171
+6.91583
+9.4709
+
+********************************************************
+No pen
+
+
+10.2443
+5.75621
+4.35754
+9.93046
+8.30315
+6.41405
+6.97653
+6.52605
+3.69485
+11.0877
+9.07378
+7.28864
+9.09311
+6.20217
+11.7202
+6.82697
+9.51188
+5.37648
+5.58141
+6.86234
+7.51609
+7.04079
+9.93838
+7.92328
+5.0432
+10.3939
+8.20616
+12.8759
+5.297
+9.25224
+9.71618
+4.48678
+9.79856
+9.62781
+6.82794
+6.46915
+6.88889
+5.30601
+9.57734
+9.30881
+4.21599
+9.30552
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Nclusters = 3
+minNsamples = 15
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+All objects:
+
+10.1078
+9.32134
+5.83035
+9.36585
+8.4452
+8.64364
+6.53298
+9.02135
+5.33628
+10.383
+9.51856
+8.25379
+9.65835
+8.6371
+10.0958
+7.65361
+8.66955
+7.26987
+5.40571
+8.14425
+8.07926
+8.35542
+10.1178
+8.56327
+5.03574
+9.87386
+7.74123
+9.95206
+5.62254
+8.86814
+9.62129
+4.21646
+8.79702
+9.36749
+5.63449
+8.56268
+7.46452
+7.95275
+8.25671
+9.1942
+7.21365
+9.2249
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+No monitor
+
+9.96955
+8.75845
+4.98099
+8.85811
+7.85628
+7.61119
+3.54092
+7.31133
+5.30179
+10.2652
+9.50798
+6.38718
+9.20491
+7.4064
+9.46509
+6.83798
+7.5862
+6.33253
+5.38869
+5.83555
+7.42817
+6.7191
+9.7171
+8.23009
+-1.60037
+9.1222
+7.43469
+9.94292
+2.27377
+8.77767
+9.60308
+-0.146761
+8.67399
+9.20396
+3.99384
+7.3539
+5.2058
+6.57136
+5.24306
+9.10137
+6.50913
+7.43146
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+No keyboard
+
+9.86472
+8.48616
+5.56291
+7.82616
+7.61744
+8.57096
+5.95077
+8.75813
+3.26177
+10.2744
+3.88081
+8.22246
+8.67978
+8.63362
+9.88647
+7.46246
+8.24647
+6.96581
+1.23332
+8.03348
+7.85583
+8.15365
+9.99703
+7.13134
+-4.71108
+8.99667
+6.67255
+9.86967
+4.68348
+6.10626
+5.72992
+3.77221
+8.68883
+7.51699
+4.04479
+8.54227
+7.32812
+7.71058
+8.19831
+6.90031
+6.60854
+8.50894
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+No mouse
+
+8.43604
+9.28606
+5.83035
+8.02944
+3.62323
+7.68102
+5.61395
+8.4376
+5.02421
+5.86968
+4.97406
+7.92725
+8.45482
+7.53469
+9.16026
+5.20864
+7.91658
+6.4983
+-1.12355
+3.99859
+6.26118
+7.58202
+8.78807
+7.76336
+5.03574
+8.86249
+7.42243
+6.00252
+5.62254
+5.11003
+5.6156
+4.11105
+6.55423
+7.79576
+5.19733
+7.42282
+3.91582
+7.95275
+7.91926
+7.87563
+7.21365
+8.74749
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+No mug
+
+
+10.0958
+9.32134
+5.83035
+9.36585
+8.4452
+8.63887
+6.52519
+9.02135
+5.33628
+10.383
+9.51856
+8.25379
+9.65835
+8.63579
+10.0915
+7.57529
+8.66955
+7.26987
+5.40571
+8.13384
+8.07926
+8.35542
+10.1116
+8.56327
+5.03574
+9.87386
+7.74123
+9.95175
+5.62254
+8.86814
+9.62129
+4.21646
+8.7926
+9.36749
+5.5898
+8.561
+7.46406
+7.95275
+8.25525
+9.1942
+7.21365
+9.2249
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+No lamp
+
+
+9.00658
+9.32134
+5.30665
+9.36585
+8.4452
+8.34782
+6.53298
+9.02135
+5.33628
+8.78893
+9.51488
+8.16833
+9.65835
+8.33267
+9.50043
+7.32542
+8.66955
+7.26987
+5.40571
+8.14425
+7.68599
+8.35542
+9.26249
+8.56327
+5.03437
+9.58451
+7.74123
+7.47877
+5.0672
+8.86814
+9.60049
+4.21646
+6.64752
+9.36749
+5.63449
+8.2912
+7.46452
+7.82959
+8.25671
+9.1942
+7.13098
+9.2249
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+No laptop
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+No pen
+
+9.92934
+5.85739
+4.29165
+9.28345
+8.4452
+8.12089
+6.53298
+8.31365
+3.60105
+10.383
+9.51856
+6.81281
+9.28524
+8.19561
+9.7634
+7.65361
+8.04506
+6.37396
+5.40571
+8.14425
+7.90678
+7.71408
+9.84385
+8.04468
+5.03574
+9.87386
+6.09887
+9.93687
+5.62254
+8.86814
+9.62129
+3.40903
+8.79702
+9.12672
+5.63449
+8.11828
+7.45923
+5.42356
+7.03757
+8.86606
+3.96896
+8.90265
+
+
+
+
+
+
+
+
+
+
+

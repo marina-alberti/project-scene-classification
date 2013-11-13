@@ -22,6 +22,7 @@ static const std::string TAG_COLOR = "color";
 static const std::string TAG_INDICES = "indices";
 
 
+//******************************************************************************
 TestScene::TestScene(DatabaseInformation & inputDatabaseInformation) {
     
   // fileNameXML = inputname;
@@ -39,9 +40,7 @@ TestScene::TestScene(DatabaseInformation & inputDatabaseInformation) {
   minFeatPair = minin;
   thresholds = thre;
   */
-
   trainedParameters = inputDatabaseInformation;
-
   learnedModelSingleObject = trainedParameters.getLearnedModelSingleObject();
   learnedModelPairObject = trainedParameters.getLearnedModelPairObject();
   meanNormalization = trainedParameters.getmeanNormalization();
@@ -54,33 +53,22 @@ TestScene::TestScene(DatabaseInformation & inputDatabaseInformation) {
   maxFeatPair =  trainedParameters.getmaxFeatPair();
   minFeatPair =  trainedParameters.getminFeatPair();
   thresholds = trainedParameters.getThresholds();
-
   removeID = -1;
 }
 
-
-  /* loadAnnotations In IDS */
+//******************************************************************************
+  /* loadAnnotations in IDS. Input: the name of an XML file */
 void TestScene::loadAnnotation(string inputname, bool removeObject) {
 
   fileNameXML = inputname;
-  cout << "The XML file name is: " << fileNameXML << endl;  
   if (removeObject) {
     removeID = REMOVEID;  // rand() % N_OBJECTS;
   }
-  parseFileXML(removeObject);
 
-}
-
-
-void TestScene::parseFileXML(bool removeObject) {
-
-  cout << "The filename of the test scene is : " << fileNameXML << endl;
   boost::property_tree::ptree root;
   read_xml(fileNameXML, root);
-
   std::string scenarioType = root.get<std::string>(TAG_SCENARIO + "." + "type");
   // mySceneInformation.setType(scenarioType);
-
   ptree& tableDimensions = root.get_child(TAG_SCENARIO + "." + TAG_DIMENSIONS);
   deskLength = tableDimensions.get<float>(TAG_LENGTH);
   deskWidth = tableDimensions.get<float>(TAG_WIDTH);
@@ -94,17 +82,17 @@ void TestScene::parseFileXML(bool removeObject) {
 
   boost::property_tree::ptree& allObjects = root.get_child(TAG_SCENARIO + "." + TAG_ALLOBJECTS);
   boost::property_tree::ptree::iterator it = allObjects.begin();
-  
   it++;
 
   for(; it != allObjects.end(); it++){
     if (DEBUG) {   cout << "New object will be parsed" << endl;     }
     parseObject(it->second, removeObject);
   }
+
 }
 
 
-
+//******************************************************************************
 void TestScene::parseObject(boost::property_tree::ptree & parent, bool removeObject) {
   Object newObject;
   if (DEBUG) {
@@ -159,7 +147,7 @@ void TestScene::parseObject(boost::property_tree::ptree & parent, bool removeObj
 }
 
 
-
+//******************************************************************************
 vector<pcl::PointXYZ> TestScene::convertObjectParameters(){
   if (DEBUG) {
   cout << "Indide the convertObjectParameters function" << endl;
@@ -242,6 +230,8 @@ vector<pcl::PointXYZ> TestScene::convertObjectParameters(){
   return out;
 }
 
+
+//******************************************************************************
 void TestScene::setmapKTHparameters(float x, float y, float z, float roll, float pitch, float yaw, float length, float width, float height) {
   mapKTHparameters["x"] = x;
   mapKTHparameters["y"] = y;
@@ -254,36 +244,14 @@ void TestScene::setmapKTHparameters(float x, float y, float z, float roll, float
   mapKTHparameters["width"] = width;
 }
 
-
+//******************************************************************************
 void TestScene::setDeskCentroid() { 
   deskCentroid.x = deskLength / 2;
   deskCentroid.y = deskWidth / 2;
   deskCentroid.z = 0;
 }
 
-
-void TestScene::extractFeatures() {
-
-  /* For each object */
-  for(vector<Object>::iterator it = objectList.begin(); it != objectList.end(); ++it) {
-    
-    Object currentObject = *it;
-    if (DEBUG) {
-      cout << endl << "Adding the features of a new object: "  << currentObject.getObjectName() << endl; 
-    }
-    ObjectFeatures singleObjectFeatureExtraction(currentObject, deskCentroid);  
-    singleObjectFeatureExtraction.extractFeatures();  
-    vector<FeatureInformation> singleObjectFeatures = singleObjectFeatureExtraction.getAllFeatures();
-    if (DEBUG) { 
-      cout << "The size of the features of the current object is : " 
-      << singleObjectFeatures.size() << endl;
-    }
-    featureListSingleObject.push_back(singleObjectFeatures);
-  }
-}
-
-
-
+//******************************************************************************
 void TestScene::loadAnnotationServiceFormat(vector<string> type, vector<string> object_id, vector<vector<pcl::PointXYZ> > bbox) {
 
   // for each object in the test scene
@@ -303,15 +271,41 @@ void TestScene::loadAnnotationServiceFormat(vector<string> type, vector<string> 
 
 }
 
+//******************************************************************************
+void TestScene::extractFeatures() {
 
+  /* For each object */
+  for(vector<Object>::iterator it = objectList.begin(); it != objectList.end(); ++it) {
+    
+    Object currentObject = *it;
+    if (DEBUG) {
+      cout << endl << "Adding the features of a new object: "  << currentObject.getObjectName() << endl; 
+    }
+
+    ObjectFeatures singleObjectFeatureExtraction(currentObject, deskCentroid);  
+    singleObjectFeatureExtraction.extractFeatures();  
+    vector<FeatureInformation> singleObjectFeatures = singleObjectFeatureExtraction.getAllFeatures();
+
+    if (DEBUG) { 
+      cout << "The size of the features of the current object is : " 
+      << singleObjectFeatures.size() << endl;
+    }
+
+    featureListSingleObject.push_back(singleObjectFeatures);
+  }
+}
+
+
+
+//******************************************************************************
 /* 
 for each object in object list
-test on the 3 models input = all the features
+test on the models input = all the features
 store probability
 */
 vector<vector<double> > TestScene::predictObjectClasses() {
 
-  int fsize = 9;
+  int fsize = featureListSingleObject[0].size();
   cv::Mat feats = cv::Mat::zeros ( 1, fsize,  CV_64F );
   double prob;
   cv::Mat normalizedFeatMat;
@@ -354,7 +348,7 @@ vector<vector<double> > TestScene::predictObjectClasses() {
       cv::Mat _weights = (*it2).get<cv::Mat> ("weights");  		//  nclusters x 1
       vector<cv::Mat> _covs = (*it2).get<vector<cv::Mat> > ("covs");    // nclusters x dims x dims
       if (TESTFLAG) {
-        cout << endl << "The mean matrix of current GMM model is : "  << _means << endl;
+        cout << endl << "The mean matrix of current GMM model is : "  << endl << _means << endl;
         cout << "The weights of current GMM model are : "  << _weights << endl;
       }
       
@@ -451,11 +445,11 @@ vector<vector<double> > TestScene::predictObjectClasses() {
   return vectorProbabilitiesObjects;
 }
 
-
+//*************************************************************************************
 void TestScene::evaluateObjectClassificationPerformance() {
 
   int size = learnedModelSingleObject.size();
-  cMatrix = cv::Mat::zeros(size, size+1, CV_32S);
+  cMatrix = cv::Mat::zeros(size, size + 1, CV_32S);
 
   if (TESTFLAG) {
     cout << "The confusion matrix is : " << endl << cMatrix << endl <<" after inizialization." << endl;
@@ -485,7 +479,7 @@ void TestScene::evaluateObjectClassificationPerformance() {
     
 }
 
-
+//*************************************************************************************
 /*
 For each object (i) in the scene:
  - Iterates over all the other objects and for each other object: 
@@ -493,61 +487,10 @@ For each object (i) in the scene:
      - computes feature for object pair (i, j)
      - adds the features to the vector<features> of the scene "inputScene".
 */
-/*
 void TestScene::extractFeaturesPairObjects() {
-
-  for(vector<Object>::iterator it = orderedObjectList.begin(); it != orderedObjectList.end(); ++it) {
-    Object referenceObject = *it;
-
-    if (DEBUG) {
-      cout << endl << "Adding the features of a new REFERENCE object. " << endl; 
-    }
-    for(vector<Object>::iterator it2 = orderedObjectList.begin(); it2 != orderedObjectList.end(); ++it2) {
-      if (it2 != it) {
-        Object targetObject = *it2;
-        if (DEBUG) {
-        cout << endl << "Adding the features of a new TARGET object. Pair is : " << 
-		referenceObject.getObjectName() << ",  " << targetObject.getObjectName() << endl; 
-        }
-        // all feature for current object pair 
-        ObjectPairFeatures pairObjectFeatureExtraction(referenceObject, targetObject);
-        pairObjectFeatureExtraction.extractFeatures();
-        vector<FeatureInformation> _features = pairObjectFeatureExtraction.getAllFeatures();
-
-        //
-        //for (int i = 0 ; i < _features.size() ; i++ ) {
-        //  featureListPairObject.push_back(_features.at(i));
-       // }
-        //
-        featureListPairObject.push_back(_features);
-        if (TESTFLAG) { 
-          cout << "The size of the features of the current object pair is : " 
-               << _features.size() << endl;
-        }
-      }
-
-    }
-    if (TESTFLAG) { 
-      cout << "The size of the features of the TOTAL featureListPairObject is : " 
-               << featureListPairObject.size() << endl;
-    } 
-  }
-}
-*/
-
-
-/*
-For each object (i) in the scene:
- - Iterates over all the other objects and for each other object: 
-     -  takes this object (j)
-     - computes feature for object pair (i, j)
-     - adds the features to the vector<features> of the scene "inputScene".
-*/
-void TestScene::extractFeaturesPairObjects_HandleMissing() {
 
   for(vector<Object>::iterator it = objectList.begin(); it != objectList.end(); ++it) {
     Object referenceObject = *it;
-//    int referenceObjectID = referenceObject.getActualObjectID();
 
     if (DEBUG) {
       cout << endl << "Adding the features of a new REFERENCE object. " << endl; 
@@ -556,7 +499,6 @@ void TestScene::extractFeaturesPairObjects_HandleMissing() {
     
       if (it2 != it) {
         Object targetObject = *it2;
-  //      int targetObjectID = targetObject.getActualObjectID();
 
         if (DEBUG) {
         cout << endl << "Adding the features of a new TARGET object. Pair is : " << 
@@ -566,12 +508,6 @@ void TestScene::extractFeaturesPairObjects_HandleMissing() {
         ObjectPairFeatures pairObjectFeatureExtraction(referenceObject, targetObject);
         pairObjectFeatureExtraction.extractFeatures();
         vector<FeatureInformation> _features = pairObjectFeatureExtraction.getAllFeatures();
-
-        /*
-        for (int i = 0 ; i < _features.size() ; i++ ) {
-          featureListPairObject.push_back(_features.at(i));
-        }
-        */
 
         /* Check the object class IDs of the reference object and target object
         and accordingly set ID of the current Object-Pair */
@@ -759,6 +695,8 @@ double TestScene::computeProbObjectPairs_AllFeats_old() {
 */
 
 
+
+//*************************************************************************************
 /* Compute prob scene vesion 2: handles missing objects and dupliacte objects */
 double TestScene::computeProbObjectPairs_AllFeats() {
   double prob;
@@ -857,7 +795,7 @@ double TestScene::computeProbObjectPairs_AllFeats() {
   return sumProb;
 }
 
-
+//*************************************************************************************
 /* New strategy for simlarity score computation */
 double TestScene::computeSimilarityScore() {
 

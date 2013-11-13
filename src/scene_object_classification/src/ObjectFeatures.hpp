@@ -31,7 +31,9 @@ private:
   FeatureInformation sizeProjectedX;
   FeatureInformation sizeProjectedY;
   FeatureInformation sizeProjectedZ;
-  
+  FeatureInformation poseX;
+  FeatureInformation poseY;
+  FeatureInformation poseZ;
   vector<FeatureInformation> allFeatures;
 
   void computePose();

@@ -11,7 +11,7 @@ DatabaseInformation::DatabaseInformation() {
 }
 
 
-
+//****************************************************************************
 void DatabaseInformation::loadAnnotationsInIDS(vector<string> trainingFilesList) {
 
   filesList = trainingFilesList;
@@ -30,7 +30,7 @@ void DatabaseInformation::loadAnnotationsInIDS(vector<string> trainingFilesList)
   }
 }
 
-
+//****************************************************************************
 /* 
    Loads into the "sceneList" data member of this "DatabaseInformation" class
    all the scenes present in the given file.
@@ -46,37 +46,31 @@ void DatabaseInformation::loadAnnotationsInIDS_Simulation(string fileAnnotations
   convertAnnotation.parseFileJSON(sceneList);   // pass by reference the scene list 
 
   numberOfScenes = sceneList.size(); 
-  cout << "The number of scenes in the database is : " << numberOfScenes << endl;
+
+  if (TESTFLAG)  { cout << "The number of scenes in the database is : " << numberOfScenes << endl; }
  
 }
 
+
+//****************************************************************************
 /*
 This function - for each scene in "sceneList" - calls to apiFeatureExtraction
-and stores the features in the vectors of features
-of the scene
+and stores the features in the vectors of features of the scene
 */
 void DatabaseInformation::callApiFeatureExtraction() {
   
   for(vector<SceneInformation>::iterator it = sceneList.begin(); it != sceneList.end(); ++it) {
+
     if (DEBUG) {cout << endl << endl << "Feature Extraction STARTS: "<< endl 
 	<< "Selecting a new scene for feature extration (inside DatabaseInformation::callApiFeatureExtraction)" << endl; }
     
     SceneInformation currentScene = (*it);  
     ApiFeatureExtraction extractFeaturesApi; 
-    extractFeaturesApi.extractFeaturesSingleObjects((*it));  
-
-  //  if (DEBUG) {
-  //    vector<FeatureInformation> allFeats = (*it).getFeatureListSingleObject();
-  //    cout << "In DBINFO callApiFE : The size of the vector of Feat of current scene is : " << 
-  //	allFeats.size() << endl;
- //   } 
-    if (DEBUG) {
-      cout << "In DBINFO callApiFE : After extracting all single object features. " << endl<<endl<<endl; 
-    }
-    extractFeaturesApi.extractFeaturesPairObjects((*it)); 
+    extractFeaturesApi.extractFeaturesSingleObjects(*it);  
+    extractFeaturesApi.extractFeaturesPairObjects(*it); 
   }
 }
-
+//****************************************************************************
 
 /*
   This function collects all the features stor  void computeGMMSingleObject_Onemodel();ed into the field "featureList" of 
@@ -109,9 +103,10 @@ void DatabaseInformation::setFeatureMatrix() {
 */
 
 
-
+//****************************************************************************
 /*  New version of the function : creates feature matrices for all objects 
      and pairs objects, in predefined category list */ 
+
 void DatabaseInformation::setFeatureMatrix() {
 
   if (TESTFLAG) {
@@ -461,6 +456,8 @@ void DatabaseInformation::computeGMM_SingleObject_AllFeat(int nclusters) {
 */
 
 
+
+//****************************************************************************
 void DatabaseInformation::computeGMM_SingleObject_AllFeat(int nclusters) {
   int fsize = 9;        // to do: compute it
   int countFeat;
@@ -471,7 +468,7 @@ void DatabaseInformation::computeGMM_SingleObject_AllFeat(int nclusters) {
   // for each considered object class ("i" is also the object class ID as stored in Object-> actualObjectID)
   for ( int i = 0 ; i < FMSingleObject.size(); i++ ) {
 
-    if (DEBUG)  {cout << "Current object :  " << i << endl; }
+    if (TESTFLAG)  {cout << "Current object :  " << i << endl; }
     
     // inizialize the feature matrix "FeatMat" for current object class, as a cv::Mat object
     cv::Mat FeatMat = cv::Mat::zeros ( FMSingleObject.at(i).size(), fsize,  CV_64F ); 
@@ -496,6 +493,7 @@ void DatabaseInformation::computeGMM_SingleObject_AllFeat(int nclusters) {
       }
       countScene++; 
     }
+
     // obtain "FeatMat" : <numberOfScenes x numberOfFeatures> (meaning 1-D features)
 
     // **********************************************************************
@@ -504,7 +502,9 @@ void DatabaseInformation::computeGMM_SingleObject_AllFeat(int nclusters) {
     
     vector<double> meansVectorCurrentObject = computeMean(FeatMat);
     vector<double> stdVectorCurrentObject = computeStd(FeatMat, meansVectorCurrentObject);
+
     //cv::Mat normalizedFeatMat = doNormalization(FeatMat, meansVectorCurrentObject, stdVectorCurrentObject);
+
     meanNormalization.push_back(meansVectorCurrentObject);
     stdNormalization.push_back(stdVectorCurrentObject);
 
@@ -579,6 +579,7 @@ void DatabaseInformation::computeGMM_SingleObject_AllFeat(int nclusters) {
     }
     learnedModelSingleObject.push_back(em_model);
 
+
     // **************************************************************************
     // testing on the same training database:
 
@@ -594,9 +595,9 @@ void DatabaseInformation::computeGMM_SingleObject_AllFeat(int nclusters) {
       if (prob < minProb) {
         minProb = prob;
       }
-      cout << "Model  " << i << " prob " << prob << endl;
+      // cout << "Model  " << i << " prob " << prob << endl;
     }
-    cout << "Model  " << i << "    minprob  " << minProb << endl << endl;
+    cout << "Model  " << i << "  minprob  " << minProb << endl << endl;
 
     thresholds.push_back(minProb);
 
@@ -620,11 +621,13 @@ void DatabaseInformation::computeGMM_SingleObject_AllFeat(int nclusters) {
 }
 
 
+
+//****************************************************************************
 void DatabaseInformation::computeGMMSingleObject_Onemodel() {
 
   // i have to give the labels to the classes
 
-  int fsize = 9;        // to do: compute it
+  int fsize = FMSingleObject.size();        // to do: compute it
   int countFeat;
   if (TESTFLAG) {
     cout << endl << endl << "Starting Compute 1 GMM for Single Objects / All Feats " << endl << FMSingleObject.size() << endl;
@@ -633,7 +636,7 @@ void DatabaseInformation::computeGMMSingleObject_Onemodel() {
   // FeatMat will contain the data for all the objects, and will have size = Nsamples x featsize
   //  where Nsamples is the sum of the numbers of samples for each object category
 
-  cv::Mat FeatMat ; //= cv::Mat::zeros ( FMSingleObject.at(i).size(), fsize,  CV_64F ); 
+  cv::Mat FeatMat; //= cv::Mat::zeros ( FMSingleObject.at(i).size(), fsize,  CV_64F ); 
   cv::Mat labels;
 
   // for each considered object class ("i" is also the object class ID as stored in Object-> actualObjectID)
@@ -716,7 +719,7 @@ void DatabaseInformation::computeGMMSingleObject_Onemodel() {
 
 
 }
-
+//****************************************************************************
 
 /*  
 Train a GMM model for pairs of objects considering 1 feature (SR) at a time.
@@ -877,7 +880,7 @@ double DatabaseInformation::computeStdWeights(cv::Mat FeatMat, vector<double> ma
 }
 
 
-
+//****************************************************************************
 void DatabaseInformation::computeGMM_PairObject_AllFeat(int nclusters) {
 
   if (TESTFLAG) {
@@ -885,7 +888,7 @@ void DatabaseInformation::computeGMM_PairObject_AllFeat(int nclusters) {
   }
 
   learnedModelPairObject.reserve(NOBJECTCLASSES);
-  int numberOfFeat = 5;  			  // to do: compute it
+  int numberOfFeat = FMPairObject[0].size();       // 5; compute it
   int countFeat;
 
   // loop over reference object i
@@ -993,7 +996,7 @@ void DatabaseInformation::computeGMM_PairObject_AllFeat(int nclusters) {
   }
 }
 
-
+//****************************************************************************
 void DatabaseInformation::computeObjectFrequencies() {
   if (TESTFLAG) {
     cout << "Inside DatabaseInformation::computeObjectFrequencies() start" << endl;

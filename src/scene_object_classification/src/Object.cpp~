@@ -6,12 +6,22 @@ Object::Object() {
   objectName = "";
   predictedObjectID = -1;
   actualObjectID = -1;
+  instanceName = "";
+  categoryName = "";
+
 }
 
+/* 
+The function additionally sets also the "categoryName" field
+used for compatibility with the simulated data to define the IDs of 
+different object categories.
+*/
 void Object::setObjectName(string inputName) {
+ 
   objectName = inputName;
 
-  // set object actual ID 
+  // set object actual ID based on the name
+
   const char * nameChar = inputName.c_str();
   if ( strcmp(nameChar, "Monitor") == 0 || strcmp(nameChar, "monitor") == 0 || strcmp(nameChar, "Screen") == 0 || strcmp(nameChar, "Monitor2") == 0) {
     actualObjectID = 0;
@@ -27,7 +37,7 @@ void Object::setObjectName(string inputName) {
   }
   if (strcmp(nameChar, "Mug") == 0 || strcmp(nameChar, "Cup") == 0 || strcmp(nameChar, "mug") == 0) {
     actualObjectID = 3;
-    categoryName = "Mug";
+    categoryName = "Cup";
   }
   if (strcmp(nameChar, "Lamp") == 0 || strcmp(nameChar, "Lamp2") == 0) {
     actualObjectID = 4;
@@ -41,7 +51,52 @@ void Object::setObjectName(string inputName) {
     actualObjectID = 6;
     categoryName = "Pencil";
   }
-  
+
+  // new classes added from the classes present in the simulated scenes
+  if (strcmp(nameChar, "Book") == 0) {
+    actualObjectID = 7;
+    categoryName = "Book";
+  }
+  /*
+  if (strcmp(nameChar, "Bottle") == 0) {
+    actualObjectID = 8;
+    categoryName = "Bottle";
+  }
+  if (strcmp(nameChar, "Calculator") == 0) {
+    actualObjectID = 9;
+    categoryName = "Calculator";
+  }
+  if (strcmp(nameChar, "PC") == 0) {
+    actualObjectID = 10;
+    categoryName = "PC";
+  }
+  if (strcmp(nameChar, "Glass") == 0) {
+    actualObjectID = 11;
+    categoryName = "Glass";
+  }
+  if (strcmp(nameChar, "Headphone") == 0) {
+    actualObjectID = 12;
+    categoryName = "Headphone";
+  }
+  if (strcmp(nameChar, "Keys") == 0) {
+    actualObjectID = 13;
+    categoryName = "Keys";
+  }
+  if (strcmp(nameChar, "MobilePhone") == 0) {
+    actualObjectID = 14;
+    categoryName = "MobilePhone";
+  }
+  if (strcmp(nameChar, "Stapler") == 0) {
+    actualObjectID = 15;
+    categoryName = "Stapler";
+  }
+  if (strcmp(nameChar, "Telephone") == 0) {
+    actualObjectID = 16;
+    categoryName = "Telephone";
+  }
+  */
+
+
 } 
 
 void Object::setInstanceName(string inputName) {

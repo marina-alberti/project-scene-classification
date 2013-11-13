@@ -1,0 +1,1393 @@
+The input folder name is: data_more_objects/
+
+
+inside LOOCV looping: LOOP = 0
+
+The XML file name is: ./data_more_objects//606-michele-24-06-13-morning.xml
+The XML file name is: ./data_more_objects//710-26-06-13-morning.xml
+The XML file name is: ./data_more_objects//606-alejandro-25-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//606-alejandro-24-06-13-morning.xml
+The XML file name is: ./data_more_objects//714-24-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//719-25-06-13-morning.xml
+The XML file name is: ./data_more_objects//606-michele-24-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//606-michele-21-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//609-24-06-13-morning.xml
+The XML file name is: ./data_more_objects//710-24-06-13-morning.xml
+The XML file name is: ./data_more_objects//714-25-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//606-michele-25-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//714-24-06-13-morning.xml
+The XML file name is: ./data_more_objects//609-24-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//714-25-06-13-morning.xml
+The XML file name is: ./data_more_objects//606-alejandro-24-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//719-24-06-13-morning.xml
+The XML file name is: ./data_more_objects//719-21-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//714-27-06-13-morning.xml
+The XML file name is: ./data_more_objects//714-26-06-13-morning.xml
+The XML file name is: ./data_more_objects//719-25-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//609-25-06-13-morning.xml
+The XML file name is: ./data_more_objects//606-michele-25-06-13-morning.xml
+The XML file name is: ./data_more_objects//710-21-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//609-25-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//606-michele-27-06-13-morning.xml
+The XML file name is: ./data_more_objects//609-26-06-13-morning.xml
+The XML file name is: ./data_more_objects//710-24-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//606-alejandro-27-06-13-morning.xml
+The XML file name is: ./data_more_objects//710-25-06-13-morning.xml
+The XML file name is: ./data_more_objects//606-alejandro-26-06-13-morning.xml
+The XML file name is: ./data_more_objects//609-27-06-13-morning.xml
+The XML file name is: ./data_more_objects//606-alejandro-21-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//719-24-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//714-21-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//719-27-06-13-morning.xml
+The XML file name is: ./data_more_objects//710-25-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//606-michele-26-06-13-morning.xml
+The XML file name is: ./data_more_objects//606-michele-26-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//710-27-06-13-morning.xml
+The XML file name is: ./data_more_objects//606-alejandro-25-06-13-morning.xml
+Inside LOOCV Training: Before calling apifeatureextraction from LOOCV
+Inside LOOCV Training: The total number of Scenes is: 41
+In setFeatureMatrix : start.
+In setFeatureMatrix : reserved space in the matrix, == NOBJECTCLASSES.
+In setFeatureMatrix : current object class ID: i =  0
+In setFeatureMatrix : current object class ID: i =  1
+In setFeatureMatrix : current object class ID: i =  2
+In setFeatureMatrix : current object class ID: i =  3
+In setFeatureMatrix : current object class ID: i =  4
+In setFeatureMatrix : current object class ID: i =  5
+In setFeatureMatrix : current object class ID: i =  6
+In setFeatureMatrix : end of single object features.
+The size of FMSingleObject is :  7
+The size of FMSingleObject 1 = Monitor is :  55
+The size of FMSingleObject 2 = keyboard is :  41
+The size of FMSingleObject 3 = mouse is :  36
+The size of FMSingleObject 4 = mug is :  14
+The size of FMSingleObject 5 = lamp is :  25
+The size of FMSingleObject 6 = laptop is :  5
+The size of FMSingleObject 7 = pen is :  42
+In setFeatureMatrix : current object classes IDs : i =  0 and j = 0
+In setFeatureMatrix : current object classes IDs : i =  0 and j = 1
+In setFeatureMatrix : current object classes IDs : i =  0 and j = 2
+In setFeatureMatrix : current object classes IDs : i =  0 and j = 3
+In setFeatureMatrix : current object classes IDs : i =  0 and j = 4
+In setFeatureMatrix : current object classes IDs : i =  0 and j = 5
+In setFeatureMatrix : current object classes IDs : i =  0 and j = 6
+In setFeatureMatrix : current object classes IDs : i =  1 and j = 0
+In setFeatureMatrix : current object classes IDs : i =  1 and j = 1
+In setFeatureMatrix : current object classes IDs : i =  1 and j = 2
+In setFeatureMatrix : current object classes IDs : i =  1 and j = 3
+In setFeatureMatrix : current object classes IDs : i =  1 and j = 4
+In setFeatureMatrix : current object classes IDs : i =  1 and j = 5
+In setFeatureMatrix : current object classes IDs : i =  1 and j = 6
+In setFeatureMatrix : current object classes IDs : i =  2 and j = 0
+In setFeatureMatrix : current object classes IDs : i =  2 and j = 1
+In setFeatureMatrix : current object classes IDs : i =  2 and j = 2
+In setFeatureMatrix : current object classes IDs : i =  2 and j = 3
+In setFeatureMatrix : current object classes IDs : i =  2 and j = 4
+In setFeatureMatrix : current object classes IDs : i =  2 and j = 5
+In setFeatureMatrix : current object classes IDs : i =  2 and j = 6
+In setFeatureMatrix : current object classes IDs : i =  3 and j = 0
+In setFeatureMatrix : current object classes IDs : i =  3 and j = 1
+In setFeatureMatrix : current object classes IDs : i =  3 and j = 2
+In setFeatureMatrix : current object classes IDs : i =  3 and j = 3
+In setFeatureMatrix : current object classes IDs : i =  3 and j = 4
+In setFeatureMatrix : current object classes IDs : i =  3 and j = 5
+In setFeatureMatrix : current object classes IDs : i =  3 and j = 6
+In setFeatureMatrix : current object classes IDs : i =  4 and j = 0
+In setFeatureMatrix : current object classes IDs : i =  4 and j = 1
+In setFeatureMatrix : current object classes IDs : i =  4 and j = 2
+In setFeatureMatrix : current object classes IDs : i =  4 and j = 3
+In setFeatureMatrix : current object classes IDs : i =  4 and j = 4
+In setFeatureMatrix : current object classes IDs : i =  4 and j = 5
+In setFeatureMatrix : current object classes IDs : i =  4 and j = 6
+In setFeatureMatrix : current object classes IDs : i =  5 and j = 0
+In setFeatureMatrix : current object classes IDs : i =  5 and j = 1
+In setFeatureMatrix : current object classes IDs : i =  5 and j = 2
+In setFeatureMatrix : current object classes IDs : i =  5 and j = 3
+In setFeatureMatrix : current object classes IDs : i =  5 and j = 4
+In setFeatureMatrix : current object classes IDs : i =  5 and j = 5
+In setFeatureMatrix : current object classes IDs : i =  5 and j = 6
+In setFeatureMatrix : current object classes IDs : i =  6 and j = 0
+In setFeatureMatrix : current object classes IDs : i =  6 and j = 1
+In setFeatureMatrix : current object classes IDs : i =  6 and j = 2
+In setFeatureMatrix : current object classes IDs : i =  6 and j = 3
+In setFeatureMatrix : current object classes IDs : i =  6 and j = 4
+In setFeatureMatrix : current object classes IDs : i =  6 and j = 5
+In setFeatureMatrix : current object classes IDs : i =  6 and j = 6
+Inside LOOCV Training: The feature matrix has been filled.
+Inside DBInfo compute GMM SO: size of model is now: 1
+The size of the means is:  [9 x 3]  and weights : [3 x 1]
+
+The mean matrix of current GMM model is : [0.6452535283029179, 0.5873278656012594, 0.281107581984344, 1.781028117722143, 0.7461890923647629, 0.01813613892270199, 0.5438762042647973, 0.08977270945465725, 0.4723904558283663;
+  1.036056020661057, 0.5495574349541155, 0.2760092738528409, 0.5031250511186386, 0.4854917486861071, 0.02131596654838332, 0.5403334295676369, 0.258516617975961, 0.3998269892751071;
+  0.3725781778660299, 0.5434175047733223, 0.273953913855846, 2.570928801115797, 0.9752743196267274, 0.01952863908919925, 0.5571934619709125, 0.3033798908654345, 0.4439670896407439]
+The weights are : [0.3424431931548078, 0.34545455134068, 0.3121022555045123]
+Inside DBInfo compute GMM SO: size of model is now: 2
+The size of the means is:  [9 x 3]  and weights : [3 x 1]
+
+The mean matrix of current GMM model is : [0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073;
+  0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073;
+  0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073]
+The weights are : [2.225073858507252e-308, 1, 2.225073858507252e-308]
+Inside DBInfo compute GMM SO: size of model is now: 3
+The size of the means is:  [9 x 3]  and weights : [3 x 1]
+
+The mean matrix of current GMM model is : [0.9366421682494027, 0.2313720334853445, 0.02415095823151725, 5.612776490620204, 0.2535271912813187, 0.0003616528065841911, 0.08323995726449149, 0.1194206520915031, 0.04887334491525377;
+  0.8844135403633118, 0.433320164680481, 0.03098865412175655, 0.3597789406776428, 0.4555769264698029, 0.0004890781710855663, 0.07335150241851807, 0.1166402995586395, 0.06197730824351311;
+  0.8844135403633118, 0.433320164680481, 0.03098865412175655, 0.3597789406776428, 0.4555769264698029, 0.0004890781710855663, 0.07335150241851807, 0.1166402995586395, 0.06197730824351311]
+The weights are : [0.9722222222222222, 0.02777777777777778, 2.22507385850726e-308]
+Inside DBInfo compute GMM SO: size of model is now: 4
+The size of the means is:  [9 x 3]  and weights : [3 x 1]
+
+The mean matrix of current GMM model is : [0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003;
+  0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003;
+  0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003]
+The weights are : [2.225073858507245e-308, 1, 2.225073858507245e-308]
+Inside DBInfo compute GMM SO: size of model is now: 5
+The size of the means is:  [9 x 3]  and weights : [3 x 1]
+
+The mean matrix of current GMM model is : [0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842;
+  0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842;
+  0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842]
+The weights are : [2.225073858507213e-308, 1, 2.225073858507213e-308]
+Inside DBInfo compute GMM SO: size of model is now: 6
+The size of the means is:  [9 x 3]  and weights : [3 x 1]
+
+The mean matrix of current GMM model is : [1.017850995063782, 0.5656957626342773, 0.101416103541851, 0.4019815921783447, 0.5072658658027649, 0.01978074759244919, 0.3357020616531372, 0.3209079802036285, 0.2028322070837021;
+  0.7754999995231628, 0.581000030040741, 0.01011885516345501, 1.057878613471985, 0.6429851055145264, 9.633161243982613e-05, 0.01700001955032349, 0.2800000011920929, 0.02023771032691002;
+  0.9608860214551289, 0.5969295303026835, 0.09605521708726883, 0.6478211283683777, 0.5566578110059102, 0.01909600757062435, 0.3611053029696146, 0.3264491558074951, 0.1921104341745377]
+The weights are : [0.2, 0.2, 0.6000000000000001]
+Inside DBInfo compute GMM SO: size of model is now: 7
+The size of the means is:  [9 x 3]  and weights : [3 x 1]
+
+The mean matrix of current GMM model is : [0.6832956075668335, 0.3606812953948975, 0.2795734107494354, 0.07688750326633453, 0.4856828451156616, 0.05587131902575493, 0.6064579486846924, 0.48336261510849, 0.5591468214988708;
+  0.6832956075668335, 0.3606812953948975, 0.2795734107494354, 0.07688750326633453, 0.4856828451156616, 0.05587131902575493, 0.6064579486846924, 0.48336261510849, 0.5591468214988708;
+  0.6938833962308197, 0.2555907098803579, 0.00882461515436994, 4.254248267789258, 0.4491871384585776, 4.211870755836305e-05, 0.09974039091569621, 0.1173652659465627, 0.01579557178632879]
+The weights are : [2.225073858507471e-308, 0.02380952380952381, 0.9761904761904762]
+
+
+Starting Compute 1 GMM for Single Objects / All Feats 
+7
+Current object :  0
+FeatMat size is [9 x 55]
+labels size is [1 x 55]
+[0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0]
+Current object :  1
+FeatMat size is [9 x 96]
+labels size is [1 x 96]
+[0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1]
+Current object :  2
+FeatMat size is [9 x 132]
+labels size is [1 x 132]
+[0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2]
+Current object :  3
+FeatMat size is [9 x 146]
+labels size is [1 x 146]
+[0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3]
+Current object :  4
+FeatMat size is [9 x 171]
+labels size is [1 x 171]
+[0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4]
+Current object :  5
+FeatMat size is [9 x 176]
+labels size is [1 x 176]
+[0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 5; 5; 5; 5; 5]
+Current object :  6
+FeatMat size is [9 x 218]
+labels size is [1 x 218]
+[0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 1; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 4; 5; 5; 5; 5; 5; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6; 6]
+
+[2; 2; 2; 1; 2; 1; 2; 1; 2; 2; 2; 1; 2; 2; 2; 2; 2; 1; 2; 2; 1; 1; 2; 2; 1; 2; 1; 2; 1; 2; 2; 2; 1; 2; 2; 1; 2; 2; 1; 2; 2; 1; 1; 2; 2; 1; 1; 2; 1; 2; 2; 2; 2; 2; 1; 5; 5; 5; 5; 0; 0; 5; 5; 5; 5; 1; 5; 0; 5; 0; 5; 0; 0; 0; 0; 0; 5; 5; 5; 5; 5; 5; 5; 5; 5; 5; 5; 5; 0; 0; 0; 5; 5; 5; 5; 5; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 1; 1; 1; 3; 1; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 2; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 0; 3]
+
+[6.123895101698043; 4.145912927664426; 4.306550361549199; 9.516082896718064; 4.063020127510404; 10.23531822982995; 6.361040482761927; 9.305600638031983; 6.078005618552909; 6.005485226404645; 5.305375404715114; 8.563290454423292; 4.903395393595169; 6.262033201670599; 5.296176963620118; 5.954658162355349; 5.342721626436328; 6.249114555407589; 6.285487156907807; 4.556787757819787; 9.655940068625334; 7.909034703074429; 3.826834827513489; 6.406252036692425; 8.51174112320453; 6.189157330617897; 7.651384305442608; 5.143323782030496; 8.32041624557079; 5.948701115709284; 5.255732604475979; 5.919979913272458; 4.35174079534519; 5.943133856889556; 4.350630994623742; -1.102445338859146; 4.640358507779089; 3.628185899081066; 9.603009343508784; 4.774280542207071; 4.103856094217861; 10.48954805763816; 6.987014810265704; 5.352827883350775; 3.798345989143526; 10.293262897657; 7.542895004443771; 6.167019200005885; 8.383155193554892; 3.993811069005551; 5.984448025170883; 4.846660599012946; 4.07907405161361; 4.175979594938713; 10.38895252426136; 14.36566079080825; 17.79057178932; 19.17147783070828; 16.41674243723773; 10.13828548570568; 9.467721639196725; 17.43872449946435; 17.13144506797203; 14.52041925267451; 15.73715162114016; -0.1341513391610842; 16.15894354771337; 8.308050267844038; 16.10344219416998; 8.7767971049538; 12.68404161538977; 10.68758531273414; 8.542662346638572; 7.396617549454788; 9.790789055212112; 8.33698978684566; 15.16438025811857; 16.8362780890339; 14.69623129479185; 13.79497679527842; 17.44829706542158; 8.08873018334824; 15.6362919920223; 19.3508335803069; 11.63475944304206; 16.58272982672624; 12.91215157600896; 19.10093756692664; 11.02770866328133; 8.672813508765653; 10.48011314670589; 16.90471614133524; 10.89239972812056; 15.84734837174795; 17.35647798991236; 17.69245991398052; 13.28348781243491; 14.98846393580739; 15.09640747097905; 14.99095579973349; 12.20320847168362; 15.8555664314262; 14.81553135134027; 12.94598838762304; 13.70208315064077; 15.50792555663979; 15.40047265278411; 14.73593705579251; 14.96678674055131; 15.4746440210378; 14.37889781620038; 11.54850991924586; 11.03205508575774; 14.18784439230263; 15.25325877230924; 12.76764351677165; 14.17745608773529; 15.43884929163813; 14.00628248156224; 15.47080939739997; 14.90298714951722; 15.32438378813109; 14.06285898673076; 11.94153940488823; 12.39657733865517; 14.82549657051094; 12.38569012659874; 14.64821155565254; 9.147704987358196; 14.85248180431552; 15.56522013845812; 13.37386071288306; 12.62456724043507; 7.824410873670502; 10.99579729093818; 9.235596328292285; 5.848255446890622; 7.174801804600339; 6.715002360910759; 11.82266869049796; 5.454004656998272; 10.78552486580699; 10.11540685312155; 10.59249987737399; 9.091963533872757; 7.785819348836419; -0.3075681173422176; 2.992642441284987; -1.729397567335569; 0.5240721218426714; -0.6954836179178443; -4.675030509762195; -3.457170315196667; 0.1170943675335714; -6.160936918818228; -5.966177471146757; -3.770922236286744; 1.036639301341838; -1.478059032881077; 1.649615055013722; 2.705105034348986; 0.7236996233975184; 4.018953598656015; 3.006053136919844; 2.200555855937118; 0.2392632231983942; -5.564344927561233; 1.488985694927512; 0.3226631690721202; 0.558598051233405; -1.935158075158229; 8.940030051688399; 9.485660767578914; 9.608593347416672; 4.964264176528948; 7.989131443030644; 20.57398708790997; 18.46204993209176; 20.05077985710134; 14.64832971098132; 12.47049876806024; 14.84955683991901; 19.16700277620318; 18.11496072286796; 15.3787714784134; 20.29128949139603; 16.7960975403697; 17.48840581647907; 14.16882194470576; 16.86452070400134; 18.3965370127469; 19.29737196182457; 17.39728038191309; 15.73102379266901; 18.64091270789114; 15.28929512476353; 19.75082568182655; 16.80727289140783; 18.08215179346012; 20.26704698839179; 19.42085287579727; 3.490818169729616; 13.33663806986193; 18.73110750510263; 19.73873052152571; 17.31832050442474; 12.4135837246171; 16.396507919753; 17.69479552757174; 18.09725050613807; 17.88671983458346; 19.75581496394243; 19.4448637851228; 14.75574607314667; 16.78082203496645; 16.62018928297691; 12.04137677091551; 20.67982565450341]
+[2; 2; 2; 1; 2; 1; 2; 1; 2; 2; 2; 1; 2; 2; 2; 2; 2; 1; 2; 2; 1; 1; 2; 2; 1; 2; 1; 2; 1; 2; 2; 2; 1; 2; 2; 1; 2; 2; 1; 2; 2; 1; 1; 2; 2; 1; 1; 2; 1; 2; 2; 2; 2; 2; 1; 5; 5; 5; 5; 0; 0; 5; 5; 5; 5; 1; 5; 0; 5; 0; 5; 0; 0; 0; 0; 0; 5; 5; 5; 5; 5; 5; 5; 5; 5; 5; 5; 5; 0; 0; 0; 5; 5; 5; 5; 5; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 0; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 2; 1; 1; 1; 3; 1; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 2; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 3; 0; 3]
+Inside DBInfo compute GMM PAIR O: start.
+Inside DBInfo compute GMM PAIR O: size of model is now: 0 for object classes :   0 and 0
+Before normalization 
+
+
+The feature matrix N ROWS is 28
+Training the EM model for: Objects : 0 and 0
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 0 for object classes :   0 and 1
+Before normalization 
+
+
+The feature matrix N ROWS is 55
+Training the EM model for: Objects : 0 and 1
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 0 for object classes :   0 and 2
+Before normalization 
+
+
+The feature matrix N ROWS is 50
+Training the EM model for: Objects : 0 and 2
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 0 for object classes :   0 and 3
+Before normalization 
+
+
+The feature matrix N ROWS is 19
+Training the EM model for: Objects : 0 and 3
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 0 for object classes :   0 and 4
+Before normalization 
+
+
+The feature matrix N ROWS is 32
+Training the EM model for: Objects : 0 and 4
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 0 for object classes :   0 and 5
+Before normalization 
+
+
+The feature matrix N ROWS is 5
+NOT Training the EM model for: Objects : 0 and 5
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 0 for object classes :   0 and 6
+Before normalization 
+
+
+The feature matrix N ROWS is 52
+Training the EM model for: Objects : 0 and 6
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 1 for object classes :   1 and 0
+Before normalization 
+
+
+The feature matrix N ROWS is 55
+Training the EM model for: Objects : 1 and 0
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 1 for object classes :   1 and 1
+Before normalization 
+
+
+The feature matrix N ROWS is 0
+NOT Training the EM model for: Objects : 1 and 1
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 1 for object classes :   1 and 2
+Before normalization 
+
+
+The feature matrix N ROWS is 36
+Training the EM model for: Objects : 1 and 2
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 1 for object classes :   1 and 3
+Before normalization 
+
+
+The feature matrix N ROWS is 14
+Training the EM model for: Objects : 1 and 3
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 1 for object classes :   1 and 4
+Before normalization 
+
+
+The feature matrix N ROWS is 25
+Training the EM model for: Objects : 1 and 4
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 1 for object classes :   1 and 5
+Before normalization 
+
+
+The feature matrix N ROWS is 5
+NOT Training the EM model for: Objects : 1 and 5
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 1 for object classes :   1 and 6
+Before normalization 
+
+
+The feature matrix N ROWS is 42
+Training the EM model for: Objects : 1 and 6
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 2 for object classes :   2 and 0
+Before normalization 
+
+
+The feature matrix N ROWS is 50
+Training the EM model for: Objects : 2 and 0
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 2 for object classes :   2 and 1
+Before normalization 
+
+
+The feature matrix N ROWS is 36
+Training the EM model for: Objects : 2 and 1
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 2 for object classes :   2 and 2
+Before normalization 
+
+
+The feature matrix N ROWS is 0
+NOT Training the EM model for: Objects : 2 and 2
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 2 for object classes :   2 and 3
+Before normalization 
+
+
+The feature matrix N ROWS is 14
+Training the EM model for: Objects : 2 and 3
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 2 for object classes :   2 and 4
+Before normalization 
+
+
+The feature matrix N ROWS is 16
+Training the EM model for: Objects : 2 and 4
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 2 for object classes :   2 and 5
+Before normalization 
+
+
+The feature matrix N ROWS is 5
+NOT Training the EM model for: Objects : 2 and 5
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 2 for object classes :   2 and 6
+Before normalization 
+
+
+The feature matrix N ROWS is 36
+Training the EM model for: Objects : 2 and 6
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 3 for object classes :   3 and 0
+Before normalization 
+
+
+The feature matrix N ROWS is 19
+Training the EM model for: Objects : 3 and 0
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 3 for object classes :   3 and 1
+Before normalization 
+
+
+The feature matrix N ROWS is 14
+Training the EM model for: Objects : 3 and 1
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 3 for object classes :   3 and 2
+Before normalization 
+
+
+The feature matrix N ROWS is 14
+Training the EM model for: Objects : 3 and 2
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 3 for object classes :   3 and 3
+Before normalization 
+
+
+The feature matrix N ROWS is 0
+NOT Training the EM model for: Objects : 3 and 3
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 3 for object classes :   3 and 4
+Before normalization 
+
+
+The feature matrix N ROWS is 10
+Training the EM model for: Objects : 3 and 4
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 3 for object classes :   3 and 5
+Before normalization 
+
+
+The feature matrix N ROWS is 1
+NOT Training the EM model for: Objects : 3 and 5
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 3 for object classes :   3 and 6
+Before normalization 
+
+
+The feature matrix N ROWS is 11
+Training the EM model for: Objects : 3 and 6
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 4 for object classes :   4 and 0
+Before normalization 
+
+
+The feature matrix N ROWS is 32
+Training the EM model for: Objects : 4 and 0
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 4 for object classes :   4 and 1
+Before normalization 
+
+
+The feature matrix N ROWS is 25
+Training the EM model for: Objects : 4 and 1
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 4 for object classes :   4 and 2
+Before normalization 
+
+
+The feature matrix N ROWS is 16
+Training the EM model for: Objects : 4 and 2
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 4 for object classes :   4 and 3
+Before normalization 
+
+
+The feature matrix N ROWS is 10
+Training the EM model for: Objects : 4 and 3
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 4 for object classes :   4 and 4
+Before normalization 
+
+
+The feature matrix N ROWS is 10
+Training the EM model for: Objects : 4 and 4
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 4 for object classes :   4 and 5
+Before normalization 
+
+
+The feature matrix N ROWS is 0
+NOT Training the EM model for: Objects : 4 and 5
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 4 for object classes :   4 and 6
+Before normalization 
+
+
+The feature matrix N ROWS is 21
+Training the EM model for: Objects : 4 and 6
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 5 for object classes :   5 and 0
+Before normalization 
+
+
+The feature matrix N ROWS is 5
+NOT Training the EM model for: Objects : 5 and 0
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 5 for object classes :   5 and 1
+Before normalization 
+
+
+The feature matrix N ROWS is 5
+NOT Training the EM model for: Objects : 5 and 1
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 5 for object classes :   5 and 2
+Before normalization 
+
+
+The feature matrix N ROWS is 5
+NOT Training the EM model for: Objects : 5 and 2
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 5 for object classes :   5 and 3
+Before normalization 
+
+
+The feature matrix N ROWS is 1
+NOT Training the EM model for: Objects : 5 and 3
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 5 for object classes :   5 and 4
+Before normalization 
+
+
+The feature matrix N ROWS is 0
+NOT Training the EM model for: Objects : 5 and 4
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 5 for object classes :   5 and 5
+Before normalization 
+
+
+The feature matrix N ROWS is 0
+NOT Training the EM model for: Objects : 5 and 5
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 5 for object classes :   5 and 6
+Before normalization 
+
+
+The feature matrix N ROWS is 9
+Training the EM model for: Objects : 5 and 6
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 6 for object classes :   6 and 0
+Before normalization 
+
+
+The feature matrix N ROWS is 52
+Training the EM model for: Objects : 6 and 0
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 6 for object classes :   6 and 1
+Before normalization 
+
+
+The feature matrix N ROWS is 42
+Training the EM model for: Objects : 6 and 1
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 6 for object classes :   6 and 2
+Before normalization 
+
+
+The feature matrix N ROWS is 36
+Training the EM model for: Objects : 6 and 2
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 6 for object classes :   6 and 3
+Before normalization 
+
+
+The feature matrix N ROWS is 11
+Training the EM model for: Objects : 6 and 3
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 6 for object classes :   6 and 4
+Before normalization 
+
+
+The feature matrix N ROWS is 21
+Training the EM model for: Objects : 6 and 4
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 6 for object classes :   6 and 5
+Before normalization 
+
+
+The feature matrix N ROWS is 9
+Training the EM model for: Objects : 6 and 5
+
+Inside DBInfo compute GMM PAIR O: size of model is now: 6 for object classes :   6 and 6
+Before normalization 
+
+
+The feature matrix N ROWS is 38
+Training the EM model for: Objects : 6 and 6
+
+Inside LOOCV Do training: the size of learnedModelPairObject is : 7
+Inside LOOCV Do training: the size of learnedModelSingleObject is : 7
+
+41     41     36     14     20     5     27     
+41     41     36     14     20     5     27     
+36     36     36     14     15     5     24     
+14     14     14     14     10     1     9     
+20     20     15     10     20     0     11     
+5     5     5     1     0     5     5     
+27     27     24     9     11     5     27     
+
+
+inside LOOCV looping: LOOP = 0
+
+TestFile = ./data_more_objects//609-21-06-13-afternoon.xml
+The XML file name is: ./data_more_objects//609-21-06-13-afternoon.xml
+The filename of the test scene is : ./data_more_objects//609-21-06-13-afternoon.xml
+
+Predict object class for a new unknown object in the object list : 0
+
+The mean matrix of current GMM model is : [0.6452535283029179, 0.5873278656012594, 0.281107581984344, 1.781028117722143, 0.7461890923647629, 0.01813613892270199, 0.5438762042647973, 0.08977270945465725, 0.4723904558283663;
+  1.036056020661057, 0.5495574349541155, 0.2760092738528409, 0.5031250511186386, 0.4854917486861071, 0.02131596654838332, 0.5403334295676369, 0.258516617975961, 0.3998269892751071;
+  0.3725781778660299, 0.5434175047733223, 0.273953913855846, 2.570928801115797, 0.9752743196267274, 0.01952863908919925, 0.5571934619709125, 0.3033798908654345, 0.4439670896407439]
+The weights of current GMM model are : [0.3424431931548078, 0.34545455134068, 0.3121022555045123]
+
+The extracted normalized features of the test object 0 are : 
+[0.6983990073204041, 0.2374469041824341, 0.02977376058697701, 4.427647113800049, 0.3277272582054138, 0.0003994483849965036, 0.06476610898971558, 0.1168938130140305, 0.05954752117395401]
+ Likelihood Multivariate Normal Distribution for Object class : 0  is  =  -52.5567  with likelihood frequency  =   0.97619
+
+The mean matrix of current GMM model is : [0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073;
+  0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073;
+  0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073]
+The weights of current GMM model are : [2.225073858507252e-308, 1, 2.225073858507252e-308]
+
+The extracted normalized features of the test object 0 are : 
+[0.6983990073204041, 0.2374469041824341, 0.02977376058697701, 4.427647113800049, 0.3277272582054138, 0.0003994483849965036, 0.06476610898971558, 0.1168938130140305, 0.05954752117395401]
+ Likelihood Multivariate Normal Distribution for Object class : 1  is  =  -33.6325  with likelihood frequency  =   0.97619
+
+The mean matrix of current GMM model is : [0.9366421682494027, 0.2313720334853445, 0.02415095823151725, 5.612776490620204, 0.2535271912813187, 0.0003616528065841911, 0.08323995726449149, 0.1194206520915031, 0.04887334491525377;
+  0.8844135403633118, 0.433320164680481, 0.03098865412175655, 0.3597789406776428, 0.4555769264698029, 0.0004890781710855663, 0.07335150241851807, 0.1166402995586395, 0.06197730824351311;
+  0.8844135403633118, 0.433320164680481, 0.03098865412175655, 0.3597789406776428, 0.4555769264698029, 0.0004890781710855663, 0.07335150241851807, 0.1166402995586395, 0.06197730824351311]
+The weights of current GMM model are : [0.9722222222222222, 0.02777777777777778, 2.22507385850726e-308]
+
+The extracted normalized features of the test object 0 are : 
+[0.6983990073204041, 0.2374469041824341, 0.02977376058697701, 4.427647113800049, 0.3277272582054138, 0.0003994483849965036, 0.06476610898971558, 0.1168938130140305, 0.05954752117395401]
+ Likelihood Multivariate Normal Distribution for Object class : 2  is  =  20.949  with likelihood frequency  =   0.857143
+
+The mean matrix of current GMM model is : [0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003;
+  0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003;
+  0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003]
+The weights of current GMM model are : [2.225073858507245e-308, 1, 2.225073858507245e-308]
+
+The extracted normalized features of the test object 0 are : 
+[0.6983990073204041, 0.2374469041824341, 0.02977376058697701, 4.427647113800049, 0.3277272582054138, 0.0003994483849965036, 0.06476610898971558, 0.1168938130140305, 0.05954752117395401]
+ Likelihood Multivariate Normal Distribution for Object class : 3  is  =  -36.2269  with likelihood frequency  =   0.333333
+
+The mean matrix of current GMM model is : [0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842;
+  0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842;
+  0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842]
+The weights of current GMM model are : [2.225073858507213e-308, 1, 2.225073858507213e-308]
+
+The extracted normalized features of the test object 0 are : 
+[0.6983990073204041, 0.2374469041824341, 0.02977376058697701, 4.427647113800049, 0.3277272582054138, 0.0003994483849965036, 0.06476610898971558, 0.1168938130140305, 0.05954752117395401]
+ Likelihood Multivariate Normal Distribution for Object class : 4  is  =  -24.8856  with likelihood frequency  =   0.47619
+
+The mean matrix of current GMM model is : [1.017850995063782, 0.5656957626342773, 0.101416103541851, 0.4019815921783447, 0.5072658658027649, 0.01978074759244919, 0.3357020616531372, 0.3209079802036285, 0.2028322070837021;
+  0.7754999995231628, 0.581000030040741, 0.01011885516345501, 1.057878613471985, 0.6429851055145264, 9.633161243982613e-05, 0.01700001955032349, 0.2800000011920929, 0.02023771032691002;
+  0.9608860214551289, 0.5969295303026835, 0.09605521708726883, 0.6478211283683777, 0.5566578110059102, 0.01909600757062435, 0.3611053029696146, 0.3264491558074951, 0.1921104341745377]
+The weights of current GMM model are : [0.2, 0.2, 0.6000000000000001]
+
+The extracted normalized features of the test object 0 are : 
+[0.6983990073204041, 0.2374469041824341, 0.02977376058697701, 4.427647113800049, 0.3277272582054138, 0.0003994483849965036, 0.06476610898971558, 0.1168938130140305, 0.05954752117395401]
+ Likelihood Multivariate Normal Distribution for Object class : 5  is  =  -inf  with likelihood frequency  =   0.119048
+
+The mean matrix of current GMM model is : [0.6832956075668335, 0.3606812953948975, 0.2795734107494354, 0.07688750326633453, 0.4856828451156616, 0.05587131902575493, 0.6064579486846924, 0.48336261510849, 0.5591468214988708;
+  0.6832956075668335, 0.3606812953948975, 0.2795734107494354, 0.07688750326633453, 0.4856828451156616, 0.05587131902575493, 0.6064579486846924, 0.48336261510849, 0.5591468214988708;
+  0.6938833962308197, 0.2555907098803579, 0.00882461515436994, 4.254248267789258, 0.4491871384585776, 4.211870755836305e-05, 0.09974039091569621, 0.1173652659465627, 0.01579557178632879]
+The weights of current GMM model are : [2.225073858507471e-308, 0.02380952380952381, 0.9761904761904762]
+
+The extracted normalized features of the test object 0 are : 
+[0.6983990073204041, 0.2374469041824341, 0.02977376058697701, 4.427647113800049, 0.3277272582054138, 0.0003994483849965036, 0.06476610898971558, 0.1168938130140305, 0.05954752117395401]
+ Likelihood Multivariate Normal Distribution for Object class : 6  is  =  -227.968  with likelihood frequency  =   0.642857
+
+Predict object class for a new unknown object in the object list : 1
+
+The mean matrix of current GMM model is : [0.6452535283029179, 0.5873278656012594, 0.281107581984344, 1.781028117722143, 0.7461890923647629, 0.01813613892270199, 0.5438762042647973, 0.08977270945465725, 0.4723904558283663;
+  1.036056020661057, 0.5495574349541155, 0.2760092738528409, 0.5031250511186386, 0.4854917486861071, 0.02131596654838332, 0.5403334295676369, 0.258516617975961, 0.3998269892751071;
+  0.3725781778660299, 0.5434175047733223, 0.273953913855846, 2.570928801115797, 0.9752743196267274, 0.01952863908919925, 0.5571934619709125, 0.3033798908654345, 0.4439670896407439]
+The weights of current GMM model are : [0.3424431931548078, 0.34545455134068, 0.3121022555045123]
+
+The extracted normalized features of the test object 1 are : 
+[0.3965131640434265, 0.2824530899524689, 0.02661268040537834, 3.344809532165527, 0.6189614534378052, 0.004627757705748081, 0.46444171667099, 0.1949062347412109, 0.05322536081075668]
+ Likelihood Multivariate Normal Distribution for Object class : 0  is  =  -20.8675  with likelihood frequency  =   0.97619
+
+The mean matrix of current GMM model is : [0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073;
+  0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073;
+  0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073]
+The weights of current GMM model are : [2.225073858507252e-308, 1, 2.225073858507252e-308]
+
+The extracted normalized features of the test object 1 are : 
+[0.3965131640434265, 0.2824530899524689, 0.02661268040537834, 3.344809532165527, 0.6189614534378052, 0.004627757705748081, 0.46444171667099, 0.1949062347412109, 0.05322536081075668]
+ Likelihood Multivariate Normal Distribution for Object class : 1  is  =  15.9172  with likelihood frequency  =   0.97619
+
+The mean matrix of current GMM model is : [0.9366421682494027, 0.2313720334853445, 0.02415095823151725, 5.612776490620204, 0.2535271912813187, 0.0003616528065841911, 0.08323995726449149, 0.1194206520915031, 0.04887334491525377;
+  0.8844135403633118, 0.433320164680481, 0.03098865412175655, 0.3597789406776428, 0.4555769264698029, 0.0004890781710855663, 0.07335150241851807, 0.1166402995586395, 0.06197730824351311;
+  0.8844135403633118, 0.433320164680481, 0.03098865412175655, 0.3597789406776428, 0.4555769264698029, 0.0004890781710855663, 0.07335150241851807, 0.1166402995586395, 0.06197730824351311]
+The weights of current GMM model are : [0.9722222222222222, 0.02777777777777778, 2.22507385850726e-308]
+
+The extracted normalized features of the test object 1 are : 
+[0.3965131640434265, 0.2824530899524689, 0.02661268040537834, 3.344809532165527, 0.6189614534378052, 0.004627757705748081, 0.46444171667099, 0.1949062347412109, 0.05322536081075668]
+ Likelihood Multivariate Normal Distribution for Object class : 2  is  =  -inf  with likelihood frequency  =   0.857143
+
+The mean matrix of current GMM model is : [0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003;
+  0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003;
+  0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003]
+The weights of current GMM model are : [2.225073858507245e-308, 1, 2.225073858507245e-308]
+
+The extracted normalized features of the test object 1 are : 
+[0.3965131640434265, 0.2824530899524689, 0.02661268040537834, 3.344809532165527, 0.6189614534378052, 0.004627757705748081, 0.46444171667099, 0.1949062347412109, 0.05322536081075668]
+ Likelihood Multivariate Normal Distribution for Object class : 3  is  =  -602.103  with likelihood frequency  =   0.333333
+
+The mean matrix of current GMM model is : [0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842;
+  0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842;
+  0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842]
+The weights of current GMM model are : [2.225073858507213e-308, 1, 2.225073858507213e-308]
+
+The extracted normalized features of the test object 1 are : 
+[0.3965131640434265, 0.2824530899524689, 0.02661268040537834, 3.344809532165527, 0.6189614534378052, 0.004627757705748081, 0.46444171667099, 0.1949062347412109, 0.05322536081075668]
+ Likelihood Multivariate Normal Distribution for Object class : 4  is  =  -20.6594  with likelihood frequency  =   0.47619
+
+The mean matrix of current GMM model is : [1.017850995063782, 0.5656957626342773, 0.101416103541851, 0.4019815921783447, 0.5072658658027649, 0.01978074759244919, 0.3357020616531372, 0.3209079802036285, 0.2028322070837021;
+  0.7754999995231628, 0.581000030040741, 0.01011885516345501, 1.057878613471985, 0.6429851055145264, 9.633161243982613e-05, 0.01700001955032349, 0.2800000011920929, 0.02023771032691002;
+  0.9608860214551289, 0.5969295303026835, 0.09605521708726883, 0.6478211283683777, 0.5566578110059102, 0.01909600757062435, 0.3611053029696146, 0.3264491558074951, 0.1921104341745377]
+The weights of current GMM model are : [0.2, 0.2, 0.6000000000000001]
+
+The extracted normalized features of the test object 1 are : 
+[0.3965131640434265, 0.2824530899524689, 0.02661268040537834, 3.344809532165527, 0.6189614534378052, 0.004627757705748081, 0.46444171667099, 0.1949062347412109, 0.05322536081075668]
+ Likelihood Multivariate Normal Distribution for Object class : 5  is  =  -inf  with likelihood frequency  =   0.119048
+
+The mean matrix of current GMM model is : [0.6832956075668335, 0.3606812953948975, 0.2795734107494354, 0.07688750326633453, 0.4856828451156616, 0.05587131902575493, 0.6064579486846924, 0.48336261510849, 0.5591468214988708;
+  0.6832956075668335, 0.3606812953948975, 0.2795734107494354, 0.07688750326633453, 0.4856828451156616, 0.05587131902575493, 0.6064579486846924, 0.48336261510849, 0.5591468214988708;
+  0.6938833962308197, 0.2555907098803579, 0.00882461515436994, 4.254248267789258, 0.4491871384585776, 4.211870755836305e-05, 0.09974039091569621, 0.1173652659465627, 0.01579557178632879]
+The weights of current GMM model are : [2.225073858507471e-308, 0.02380952380952381, 0.9761904761904762]
+
+The extracted normalized features of the test object 1 are : 
+[0.3965131640434265, 0.2824530899524689, 0.02661268040537834, 3.344809532165527, 0.6189614534378052, 0.004627757705748081, 0.46444171667099, 0.1949062347412109, 0.05322536081075668]
+ Likelihood Multivariate Normal Distribution for Object class : 6  is  =  -inf  with likelihood frequency  =   0.642857
+
+Predict object class for a new unknown object in the object list : 2
+
+The mean matrix of current GMM model is : [0.6452535283029179, 0.5873278656012594, 0.281107581984344, 1.781028117722143, 0.7461890923647629, 0.01813613892270199, 0.5438762042647973, 0.08977270945465725, 0.4723904558283663;
+  1.036056020661057, 0.5495574349541155, 0.2760092738528409, 0.5031250511186386, 0.4854917486861071, 0.02131596654838332, 0.5403334295676369, 0.258516617975961, 0.3998269892751071;
+  0.3725781778660299, 0.5434175047733223, 0.273953913855846, 2.570928801115797, 0.9752743196267274, 0.01952863908919925, 0.5571934619709125, 0.3033798908654345, 0.4439670896407439]
+The weights of current GMM model are : [0.3424431931548078, 0.34545455134068, 0.3121022555045123]
+
+The extracted normalized features of the test object 2 are : 
+[0.6601977348327637, 0.4549897313117981, 0.04343735054135323, 2.176199197769165, 0.6034217476844788, 0.0009780452819541097, 0.09980696439743042, 0.1219794750213623, 0.08687470108270645]
+ Likelihood Multivariate Normal Distribution for Object class : 0  is  =  -27.6882  with likelihood frequency  =   0.97619
+
+The mean matrix of current GMM model is : [0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073;
+  0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073;
+  0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073]
+The weights of current GMM model are : [2.225073858507252e-308, 1, 2.225073858507252e-308]
+
+The extracted normalized features of the test object 2 are : 
+[0.6601977348327637, 0.4549897313117981, 0.04343735054135323, 2.176199197769165, 0.6034217476844788, 0.0009780452819541097, 0.09980696439743042, 0.1219794750213623, 0.08687470108270645]
+ Likelihood Multivariate Normal Distribution for Object class : 1  is  =  -36.5908  with likelihood frequency  =   0.97619
+
+The mean matrix of current GMM model is : [0.9366421682494027, 0.2313720334853445, 0.02415095823151725, 5.612776490620204, 0.2535271912813187, 0.0003616528065841911, 0.08323995726449149, 0.1194206520915031, 0.04887334491525377;
+  0.8844135403633118, 0.433320164680481, 0.03098865412175655, 0.3597789406776428, 0.4555769264698029, 0.0004890781710855663, 0.07335150241851807, 0.1166402995586395, 0.06197730824351311;
+  0.8844135403633118, 0.433320164680481, 0.03098865412175655, 0.3597789406776428, 0.4555769264698029, 0.0004890781710855663, 0.07335150241851807, 0.1166402995586395, 0.06197730824351311]
+The weights of current GMM model are : [0.9722222222222222, 0.02777777777777778, 2.22507385850726e-308]
+
+The extracted normalized features of the test object 2 are : 
+[0.6601977348327637, 0.4549897313117981, 0.04343735054135323, 2.176199197769165, 0.6034217476844788, 0.0009780452819541097, 0.09980696439743042, 0.1219794750213623, 0.08687470108270645]
+ Likelihood Multivariate Normal Distribution for Object class : 2  is  =  -57.3558  with likelihood frequency  =   0.857143
+
+The mean matrix of current GMM model is : [0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003;
+  0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003;
+  0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003]
+The weights of current GMM model are : [2.225073858507245e-308, 1, 2.225073858507245e-308]
+
+The extracted normalized features of the test object 2 are : 
+[0.6601977348327637, 0.4549897313117981, 0.04343735054135323, 2.176199197769165, 0.6034217476844788, 0.0009780452819541097, 0.09980696439743042, 0.1219794750213623, 0.08687470108270645]
+ Likelihood Multivariate Normal Distribution for Object class : 3  is  =  9.07061  with likelihood frequency  =   0.333333
+
+The mean matrix of current GMM model is : [0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842;
+  0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842;
+  0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842]
+The weights of current GMM model are : [2.225073858507213e-308, 1, 2.225073858507213e-308]
+
+The extracted normalized features of the test object 2 are : 
+[0.6601977348327637, 0.4549897313117981, 0.04343735054135323, 2.176199197769165, 0.6034217476844788, 0.0009780452819541097, 0.09980696439743042, 0.1219794750213623, 0.08687470108270645]
+ Likelihood Multivariate Normal Distribution for Object class : 4  is  =  -20.8183  with likelihood frequency  =   0.47619
+
+The mean matrix of current GMM model is : [1.017850995063782, 0.5656957626342773, 0.101416103541851, 0.4019815921783447, 0.5072658658027649, 0.01978074759244919, 0.3357020616531372, 0.3209079802036285, 0.2028322070837021;
+  0.7754999995231628, 0.581000030040741, 0.01011885516345501, 1.057878613471985, 0.6429851055145264, 9.633161243982613e-05, 0.01700001955032349, 0.2800000011920929, 0.02023771032691002;
+  0.9608860214551289, 0.5969295303026835, 0.09605521708726883, 0.6478211283683777, 0.5566578110059102, 0.01909600757062435, 0.3611053029696146, 0.3264491558074951, 0.1921104341745377]
+The weights of current GMM model are : [0.2, 0.2, 0.6000000000000001]
+
+The extracted normalized features of the test object 2 are : 
+[0.6601977348327637, 0.4549897313117981, 0.04343735054135323, 2.176199197769165, 0.6034217476844788, 0.0009780452819541097, 0.09980696439743042, 0.1219794750213623, 0.08687470108270645]
+ Likelihood Multivariate Normal Distribution for Object class : 5  is  =  -inf  with likelihood frequency  =   0.119048
+
+The mean matrix of current GMM model is : [0.6832956075668335, 0.3606812953948975, 0.2795734107494354, 0.07688750326633453, 0.4856828451156616, 0.05587131902575493, 0.6064579486846924, 0.48336261510849, 0.5591468214988708;
+  0.6832956075668335, 0.3606812953948975, 0.2795734107494354, 0.07688750326633453, 0.4856828451156616, 0.05587131902575493, 0.6064579486846924, 0.48336261510849, 0.5591468214988708;
+  0.6938833962308197, 0.2555907098803579, 0.00882461515436994, 4.254248267789258, 0.4491871384585776, 4.211870755836305e-05, 0.09974039091569621, 0.1173652659465627, 0.01579557178632879]
+The weights of current GMM model are : [2.225073858507471e-308, 0.02380952380952381, 0.9761904761904762]
+
+The extracted normalized features of the test object 2 are : 
+[0.6601977348327637, 0.4549897313117981, 0.04343735054135323, 2.176199197769165, 0.6034217476844788, 0.0009780452819541097, 0.09980696439743042, 0.1219794750213623, 0.08687470108270645]
+ Likelihood Multivariate Normal Distribution for Object class : 6  is  =  -inf  with likelihood frequency  =   0.642857
+
+Predict object class for a new unknown object in the object list : 3
+
+The mean matrix of current GMM model is : [0.6452535283029179, 0.5873278656012594, 0.281107581984344, 1.781028117722143, 0.7461890923647629, 0.01813613892270199, 0.5438762042647973, 0.08977270945465725, 0.4723904558283663;
+  1.036056020661057, 0.5495574349541155, 0.2760092738528409, 0.5031250511186386, 0.4854917486861071, 0.02131596654838332, 0.5403334295676369, 0.258516617975961, 0.3998269892751071;
+  0.3725781778660299, 0.5434175047733223, 0.273953913855846, 2.570928801115797, 0.9752743196267274, 0.01952863908919925, 0.5571934619709125, 0.3033798908654345, 0.4439670896407439]
+The weights of current GMM model are : [0.3424431931548078, 0.34545455134068, 0.3121022555045123]
+
+The extracted normalized features of the test object 3 are : 
+[0.43705153465271, 0.5742418766021729, 0.2749999761581421, 2.494532585144043, 0.9202333092689514, 0.01835820451378822, 0.5601030588150024, 0.08943110704421997, 0.4699999988079071]
+ Likelihood Multivariate Normal Distribution for Object class : 0  is  =  14.7757  with likelihood frequency  =   0.97619
+
+The mean matrix of current GMM model is : [0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073;
+  0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073;
+  0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073]
+The weights of current GMM model are : [2.225073858507252e-308, 1, 2.225073858507252e-308]
+
+The extracted normalized features of the test object 3 are : 
+[0.43705153465271, 0.5742418766021729, 0.2749999761581421, 2.494532585144043, 0.9202333092689514, 0.01835820451378822, 0.5601030588150024, 0.08943110704421997, 0.4699999988079071]
+ Likelihood Multivariate Normal Distribution for Object class : 1  is  =  -inf  with likelihood frequency  =   0.97619
+
+The mean matrix of current GMM model is : [0.9366421682494027, 0.2313720334853445, 0.02415095823151725, 5.612776490620204, 0.2535271912813187, 0.0003616528065841911, 0.08323995726449149, 0.1194206520915031, 0.04887334491525377;
+  0.8844135403633118, 0.433320164680481, 0.03098865412175655, 0.3597789406776428, 0.4555769264698029, 0.0004890781710855663, 0.07335150241851807, 0.1166402995586395, 0.06197730824351311;
+  0.8844135403633118, 0.433320164680481, 0.03098865412175655, 0.3597789406776428, 0.4555769264698029, 0.0004890781710855663, 0.07335150241851807, 0.1166402995586395, 0.06197730824351311]
+The weights of current GMM model are : [0.9722222222222222, 0.02777777777777778, 2.22507385850726e-308]
+
+The extracted normalized features of the test object 3 are : 
+[0.43705153465271, 0.5742418766021729, 0.2749999761581421, 2.494532585144043, 0.9202333092689514, 0.01835820451378822, 0.5601030588150024, 0.08943110704421997, 0.4699999988079071]
+ Likelihood Multivariate Normal Distribution for Object class : 2  is  =  -inf  with likelihood frequency  =   0.857143
+
+The mean matrix of current GMM model is : [0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003;
+  0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003;
+  0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003]
+The weights of current GMM model are : [2.225073858507245e-308, 1, 2.225073858507245e-308]
+
+The extracted normalized features of the test object 3 are : 
+[0.43705153465271, 0.5742418766021729, 0.2749999761581421, 2.494532585144043, 0.9202333092689514, 0.01835820451378822, 0.5601030588150024, 0.08943110704421997, 0.4699999988079071]
+ Likelihood Multivariate Normal Distribution for Object class : 3  is  =  -inf  with likelihood frequency  =   0.333333
+
+The mean matrix of current GMM model is : [0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842;
+  0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842;
+  0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842]
+The weights of current GMM model are : [2.225073858507213e-308, 1, 2.225073858507213e-308]
+
+The extracted normalized features of the test object 3 are : 
+[0.43705153465271, 0.5742418766021729, 0.2749999761581421, 2.494532585144043, 0.9202333092689514, 0.01835820451378822, 0.5601030588150024, 0.08943110704421997, 0.4699999988079071]
+ Likelihood Multivariate Normal Distribution for Object class : 4  is  =  -1.00123  with likelihood frequency  =   0.47619
+
+The mean matrix of current GMM model is : [1.017850995063782, 0.5656957626342773, 0.101416103541851, 0.4019815921783447, 0.5072658658027649, 0.01978074759244919, 0.3357020616531372, 0.3209079802036285, 0.2028322070837021;
+  0.7754999995231628, 0.581000030040741, 0.01011885516345501, 1.057878613471985, 0.6429851055145264, 9.633161243982613e-05, 0.01700001955032349, 0.2800000011920929, 0.02023771032691002;
+  0.9608860214551289, 0.5969295303026835, 0.09605521708726883, 0.6478211283683777, 0.5566578110059102, 0.01909600757062435, 0.3611053029696146, 0.3264491558074951, 0.1921104341745377]
+The weights of current GMM model are : [0.2, 0.2, 0.6000000000000001]
+
+The extracted normalized features of the test object 3 are : 
+[0.43705153465271, 0.5742418766021729, 0.2749999761581421, 2.494532585144043, 0.9202333092689514, 0.01835820451378822, 0.5601030588150024, 0.08943110704421997, 0.4699999988079071]
+ Likelihood Multivariate Normal Distribution for Object class : 5  is  =  -inf  with likelihood frequency  =   0.119048
+
+The mean matrix of current GMM model is : [0.6832956075668335, 0.3606812953948975, 0.2795734107494354, 0.07688750326633453, 0.4856828451156616, 0.05587131902575493, 0.6064579486846924, 0.48336261510849, 0.5591468214988708;
+  0.6832956075668335, 0.3606812953948975, 0.2795734107494354, 0.07688750326633453, 0.4856828451156616, 0.05587131902575493, 0.6064579486846924, 0.48336261510849, 0.5591468214988708;
+  0.6938833962308197, 0.2555907098803579, 0.00882461515436994, 4.254248267789258, 0.4491871384585776, 4.211870755836305e-05, 0.09974039091569621, 0.1173652659465627, 0.01579557178632879]
+The weights of current GMM model are : [2.225073858507471e-308, 0.02380952380952381, 0.9761904761904762]
+
+The extracted normalized features of the test object 3 are : 
+[0.43705153465271, 0.5742418766021729, 0.2749999761581421, 2.494532585144043, 0.9202333092689514, 0.01835820451378822, 0.5601030588150024, 0.08943110704421997, 0.4699999988079071]
+ Likelihood Multivariate Normal Distribution for Object class : 6  is  =  -inf  with likelihood frequency  =   0.642857
+
+Predict object class for a new unknown object in the object list : 4
+
+The mean matrix of current GMM model is : [0.6452535283029179, 0.5873278656012594, 0.281107581984344, 1.781028117722143, 0.7461890923647629, 0.01813613892270199, 0.5438762042647973, 0.08977270945465725, 0.4723904558283663;
+  1.036056020661057, 0.5495574349541155, 0.2760092738528409, 0.5031250511186386, 0.4854917486861071, 0.02131596654838332, 0.5403334295676369, 0.258516617975961, 0.3998269892751071;
+  0.3725781778660299, 0.5434175047733223, 0.273953913855846, 2.570928801115797, 0.9752743196267274, 0.01952863908919925, 0.5571934619709125, 0.3033798908654345, 0.4439670896407439]
+The weights of current GMM model are : [0.3424431931548078, 0.34545455134068, 0.3121022555045123]
+
+The extracted normalized features of the test object 4 are : 
+[0.9320787191390991, 0.4066189825534821, 0.3295508325099945, 0.2683621942996979, 0.4113604426383972, 0.01279931515455246, 0.5001575350761414, 0.3808086216449738, 0.3832895159721375]
+ Likelihood Multivariate Normal Distribution for Object class : 0  is  =  10.2564  with likelihood frequency  =   0.97619
+
+The mean matrix of current GMM model is : [0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073;
+  0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073;
+  0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073]
+The weights of current GMM model are : [2.225073858507252e-308, 1, 2.225073858507252e-308]
+
+The extracted normalized features of the test object 4 are : 
+[0.9320787191390991, 0.4066189825534821, 0.3295508325099945, 0.2683621942996979, 0.4113604426383972, 0.01279931515455246, 0.5001575350761414, 0.3808086216449738, 0.3832895159721375]
+ Likelihood Multivariate Normal Distribution for Object class : 1  is  =  -inf  with likelihood frequency  =   0.97619
+
+The mean matrix of current GMM model is : [0.9366421682494027, 0.2313720334853445, 0.02415095823151725, 5.612776490620204, 0.2535271912813187, 0.0003616528065841911, 0.08323995726449149, 0.1194206520915031, 0.04887334491525377;
+  0.8844135403633118, 0.433320164680481, 0.03098865412175655, 0.3597789406776428, 0.4555769264698029, 0.0004890781710855663, 0.07335150241851807, 0.1166402995586395, 0.06197730824351311;
+  0.8844135403633118, 0.433320164680481, 0.03098865412175655, 0.3597789406776428, 0.4555769264698029, 0.0004890781710855663, 0.07335150241851807, 0.1166402995586395, 0.06197730824351311]
+The weights of current GMM model are : [0.9722222222222222, 0.02777777777777778, 2.22507385850726e-308]
+
+The extracted normalized features of the test object 4 are : 
+[0.9320787191390991, 0.4066189825534821, 0.3295508325099945, 0.2683621942996979, 0.4113604426383972, 0.01279931515455246, 0.5001575350761414, 0.3808086216449738, 0.3832895159721375]
+ Likelihood Multivariate Normal Distribution for Object class : 2  is  =  -inf  with likelihood frequency  =   0.857143
+
+The mean matrix of current GMM model is : [0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003;
+  0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003;
+  0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003]
+The weights of current GMM model are : [2.225073858507245e-308, 1, 2.225073858507245e-308]
+
+The extracted normalized features of the test object 4 are : 
+[0.9320787191390991, 0.4066189825534821, 0.3295508325099945, 0.2683621942996979, 0.4113604426383972, 0.01279931515455246, 0.5001575350761414, 0.3808086216449738, 0.3832895159721375]
+ Likelihood Multivariate Normal Distribution for Object class : 3  is  =  -inf  with likelihood frequency  =   0.333333
+
+The mean matrix of current GMM model is : [0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842;
+  0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842;
+  0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842]
+The weights of current GMM model are : [2.225073858507213e-308, 1, 2.225073858507213e-308]
+
+The extracted normalized features of the test object 4 are : 
+[0.9320787191390991, 0.4066189825534821, 0.3295508325099945, 0.2683621942996979, 0.4113604426383972, 0.01279931515455246, 0.5001575350761414, 0.3808086216449738, 0.3832895159721375]
+ Likelihood Multivariate Normal Distribution for Object class : 4  is  =  2.75194  with likelihood frequency  =   0.47619
+
+The mean matrix of current GMM model is : [1.017850995063782, 0.5656957626342773, 0.101416103541851, 0.4019815921783447, 0.5072658658027649, 0.01978074759244919, 0.3357020616531372, 0.3209079802036285, 0.2028322070837021;
+  0.7754999995231628, 0.581000030040741, 0.01011885516345501, 1.057878613471985, 0.6429851055145264, 9.633161243982613e-05, 0.01700001955032349, 0.2800000011920929, 0.02023771032691002;
+  0.9608860214551289, 0.5969295303026835, 0.09605521708726883, 0.6478211283683777, 0.5566578110059102, 0.01909600757062435, 0.3611053029696146, 0.3264491558074951, 0.1921104341745377]
+The weights of current GMM model are : [0.2, 0.2, 0.6000000000000001]
+
+The extracted normalized features of the test object 4 are : 
+[0.9320787191390991, 0.4066189825534821, 0.3295508325099945, 0.2683621942996979, 0.4113604426383972, 0.01279931515455246, 0.5001575350761414, 0.3808086216449738, 0.3832895159721375]
+ Likelihood Multivariate Normal Distribution for Object class : 5  is  =  -inf  with likelihood frequency  =   0.119048
+
+The mean matrix of current GMM model is : [0.6832956075668335, 0.3606812953948975, 0.2795734107494354, 0.07688750326633453, 0.4856828451156616, 0.05587131902575493, 0.6064579486846924, 0.48336261510849, 0.5591468214988708;
+  0.6832956075668335, 0.3606812953948975, 0.2795734107494354, 0.07688750326633453, 0.4856828451156616, 0.05587131902575493, 0.6064579486846924, 0.48336261510849, 0.5591468214988708;
+  0.6938833962308197, 0.2555907098803579, 0.00882461515436994, 4.254248267789258, 0.4491871384585776, 4.211870755836305e-05, 0.09974039091569621, 0.1173652659465627, 0.01579557178632879]
+The weights of current GMM model are : [2.225073858507471e-308, 0.02380952380952381, 0.9761904761904762]
+
+The extracted normalized features of the test object 4 are : 
+[0.9320787191390991, 0.4066189825534821, 0.3295508325099945, 0.2683621942996979, 0.4113604426383972, 0.01279931515455246, 0.5001575350761414, 0.3808086216449738, 0.3832895159721375]
+ Likelihood Multivariate Normal Distribution for Object class : 6  is  =  -inf  with likelihood frequency  =   0.642857
+
+Predict object class for a new unknown object in the object list : 5
+
+The mean matrix of current GMM model is : [0.6452535283029179, 0.5873278656012594, 0.281107581984344, 1.781028117722143, 0.7461890923647629, 0.01813613892270199, 0.5438762042647973, 0.08977270945465725, 0.4723904558283663;
+  1.036056020661057, 0.5495574349541155, 0.2760092738528409, 0.5031250511186386, 0.4854917486861071, 0.02131596654838332, 0.5403334295676369, 0.258516617975961, 0.3998269892751071;
+  0.3725781778660299, 0.5434175047733223, 0.273953913855846, 2.570928801115797, 0.9752743196267274, 0.01952863908919925, 0.5571934619709125, 0.3033798908654345, 0.4439670896407439]
+The weights of current GMM model are : [0.3424431931548078, 0.34545455134068, 0.3121022555045123]
+
+The extracted normalized features of the test object 5 are : 
+[0.8004932403564453, 0.4083723723888397, 0.007000000216066837, 0.6911319494247437, 0.4717353284358978, 2.547998519730754e-05, 0.1389864087104797, 0.04648295044898987, 0.01400000043213367]
+ Likelihood Multivariate Normal Distribution for Object class : 0  is  =  -47.8394  with likelihood frequency  =   0.97619
+
+The mean matrix of current GMM model is : [0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073;
+  0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073;
+  0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073]
+The weights of current GMM model are : [2.225073858507252e-308, 1, 2.225073858507252e-308]
+
+The extracted normalized features of the test object 5 are : 
+[0.8004932403564453, 0.4083723723888397, 0.007000000216066837, 0.6911319494247437, 0.4717353284358978, 2.547998519730754e-05, 0.1389864087104797, 0.04648295044898987, 0.01400000043213367]
+ Likelihood Multivariate Normal Distribution for Object class : 1  is  =  -26.5072  with likelihood frequency  =   0.97619
+
+The mean matrix of current GMM model is : [0.9366421682494027, 0.2313720334853445, 0.02415095823151725, 5.612776490620204, 0.2535271912813187, 0.0003616528065841911, 0.08323995726449149, 0.1194206520915031, 0.04887334491525377;
+  0.8844135403633118, 0.433320164680481, 0.03098865412175655, 0.3597789406776428, 0.4555769264698029, 0.0004890781710855663, 0.07335150241851807, 0.1166402995586395, 0.06197730824351311;
+  0.8844135403633118, 0.433320164680481, 0.03098865412175655, 0.3597789406776428, 0.4555769264698029, 0.0004890781710855663, 0.07335150241851807, 0.1166402995586395, 0.06197730824351311]
+The weights of current GMM model are : [0.9722222222222222, 0.02777777777777778, 2.22507385850726e-308]
+
+The extracted normalized features of the test object 5 are : 
+[0.8004932403564453, 0.4083723723888397, 0.007000000216066837, 0.6911319494247437, 0.4717353284358978, 2.547998519730754e-05, 0.1389864087104797, 0.04648295044898987, 0.01400000043213367]
+ Likelihood Multivariate Normal Distribution for Object class : 2  is  =  -52.2809  with likelihood frequency  =   0.857143
+
+The mean matrix of current GMM model is : [0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003;
+  0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003;
+  0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003]
+The weights of current GMM model are : [2.225073858507245e-308, 1, 2.225073858507245e-308]
+
+The extracted normalized features of the test object 5 are : 
+[0.8004932403564453, 0.4083723723888397, 0.007000000216066837, 0.6911319494247437, 0.4717353284358978, 2.547998519730754e-05, 0.1389864087104797, 0.04648295044898987, 0.01400000043213367]
+ Likelihood Multivariate Normal Distribution for Object class : 3  is  =  -142.946  with likelihood frequency  =   0.333333
+
+The mean matrix of current GMM model is : [0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842;
+  0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842;
+  0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842]
+The weights of current GMM model are : [2.225073858507213e-308, 1, 2.225073858507213e-308]
+
+The extracted normalized features of the test object 5 are : 
+[0.8004932403564453, 0.4083723723888397, 0.007000000216066837, 0.6911319494247437, 0.4717353284358978, 2.547998519730754e-05, 0.1389864087104797, 0.04648295044898987, 0.01400000043213367]
+ Likelihood Multivariate Normal Distribution for Object class : 4  is  =  -27.8586  with likelihood frequency  =   0.47619
+
+The mean matrix of current GMM model is : [1.017850995063782, 0.5656957626342773, 0.101416103541851, 0.4019815921783447, 0.5072658658027649, 0.01978074759244919, 0.3357020616531372, 0.3209079802036285, 0.2028322070837021;
+  0.7754999995231628, 0.581000030040741, 0.01011885516345501, 1.057878613471985, 0.6429851055145264, 9.633161243982613e-05, 0.01700001955032349, 0.2800000011920929, 0.02023771032691002;
+  0.9608860214551289, 0.5969295303026835, 0.09605521708726883, 0.6478211283683777, 0.5566578110059102, 0.01909600757062435, 0.3611053029696146, 0.3264491558074951, 0.1921104341745377]
+The weights of current GMM model are : [0.2, 0.2, 0.6000000000000001]
+
+The extracted normalized features of the test object 5 are : 
+[0.8004932403564453, 0.4083723723888397, 0.007000000216066837, 0.6911319494247437, 0.4717353284358978, 2.547998519730754e-05, 0.1389864087104797, 0.04648295044898987, 0.01400000043213367]
+ Likelihood Multivariate Normal Distribution for Object class : 5  is  =  -694.596  with likelihood frequency  =   0.119048
+
+The mean matrix of current GMM model is : [0.6832956075668335, 0.3606812953948975, 0.2795734107494354, 0.07688750326633453, 0.4856828451156616, 0.05587131902575493, 0.6064579486846924, 0.48336261510849, 0.5591468214988708;
+  0.6832956075668335, 0.3606812953948975, 0.2795734107494354, 0.07688750326633453, 0.4856828451156616, 0.05587131902575493, 0.6064579486846924, 0.48336261510849, 0.5591468214988708;
+  0.6938833962308197, 0.2555907098803579, 0.00882461515436994, 4.254248267789258, 0.4491871384585776, 4.211870755836305e-05, 0.09974039091569621, 0.1173652659465627, 0.01579557178632879]
+The weights of current GMM model are : [2.225073858507471e-308, 0.02380952380952381, 0.9761904761904762]
+
+The extracted normalized features of the test object 5 are : 
+[0.8004932403564453, 0.4083723723888397, 0.007000000216066837, 0.6911319494247437, 0.4717353284358978, 2.547998519730754e-05, 0.1389864087104797, 0.04648295044898987, 0.01400000043213367]
+ Likelihood Multivariate Normal Distribution for Object class : 6  is  =  17.0736  with likelihood frequency  =   0.642857
+
+Predict object class for a new unknown object in the object list : 6
+
+The mean matrix of current GMM model is : [0.6452535283029179, 0.5873278656012594, 0.281107581984344, 1.781028117722143, 0.7461890923647629, 0.01813613892270199, 0.5438762042647973, 0.08977270945465725, 0.4723904558283663;
+  1.036056020661057, 0.5495574349541155, 0.2760092738528409, 0.5031250511186386, 0.4854917486861071, 0.02131596654838332, 0.5403334295676369, 0.258516617975961, 0.3998269892751071;
+  0.3725781778660299, 0.5434175047733223, 0.273953913855846, 2.570928801115797, 0.9752743196267274, 0.01952863908919925, 0.5571934619709125, 0.3033798908654345, 0.4439670896407439]
+The weights of current GMM model are : [0.3424431931548078, 0.34545455134068, 0.3121022555045123]
+
+The extracted normalized features of the test object 6 are : 
+[0.3304305076599121, 0.2487757802009583, 0.3667662143707275, 3.392249345779419, 0.6453441977500916, 0.06948147714138031, 0.6787503361701965, 0.2375515699386597, 0.6535323858261108]
+ Likelihood Multivariate Normal Distribution for Object class : 0  is  =  -23.6048  with likelihood frequency  =   0.97619
+
+The mean matrix of current GMM model is : [0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073;
+  0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073;
+  0.7081471594368539, 0.3154078809226432, 0.02231052874519331, 3.828123218130048, 0.4479157815619213, 0.004673015164415829, 0.4629374299107529, 0.245841301069027, 0.04691374015699073]
+The weights of current GMM model are : [2.225073858507252e-308, 1, 2.225073858507252e-308]
+
+The extracted normalized features of the test object 6 are : 
+[0.3304305076599121, 0.2487757802009583, 0.3667662143707275, 3.392249345779419, 0.6453441977500916, 0.06948147714138031, 0.6787503361701965, 0.2375515699386597, 0.6535323858261108]
+ Likelihood Multivariate Normal Distribution for Object class : 1  is  =  -inf  with likelihood frequency  =   0.97619
+
+The mean matrix of current GMM model is : [0.9366421682494027, 0.2313720334853445, 0.02415095823151725, 5.612776490620204, 0.2535271912813187, 0.0003616528065841911, 0.08323995726449149, 0.1194206520915031, 0.04887334491525377;
+  0.8844135403633118, 0.433320164680481, 0.03098865412175655, 0.3597789406776428, 0.4555769264698029, 0.0004890781710855663, 0.07335150241851807, 0.1166402995586395, 0.06197730824351311;
+  0.8844135403633118, 0.433320164680481, 0.03098865412175655, 0.3597789406776428, 0.4555769264698029, 0.0004890781710855663, 0.07335150241851807, 0.1166402995586395, 0.06197730824351311]
+The weights of current GMM model are : [0.9722222222222222, 0.02777777777777778, 2.22507385850726e-308]
+
+The extracted normalized features of the test object 6 are : 
+[0.3304305076599121, 0.2487757802009583, 0.3667662143707275, 3.392249345779419, 0.6453441977500916, 0.06948147714138031, 0.6787503361701965, 0.2375515699386597, 0.6535323858261108]
+ Likelihood Multivariate Normal Distribution for Object class : 2  is  =  -inf  with likelihood frequency  =   0.857143
+
+The mean matrix of current GMM model is : [0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003;
+  0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003;
+  0.6643918986831392, 0.3118660194533212, 0.05918032782418387, 2.977164401539734, 0.4596243921135153, 0.001189180404513276, 0.1129549592733383, 0.1187488239790712, 0.1197892273111003]
+The weights of current GMM model are : [2.225073858507245e-308, 1, 2.225073858507245e-308]
+
+The extracted normalized features of the test object 6 are : 
+[0.3304305076599121, 0.2487757802009583, 0.3667662143707275, 3.392249345779419, 0.6453441977500916, 0.06948147714138031, 0.6787503361701965, 0.2375515699386597, 0.6535323858261108]
+ Likelihood Multivariate Normal Distribution for Object class : 3  is  =  -inf  with likelihood frequency  =   0.333333
+
+The mean matrix of current GMM model is : [0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842;
+  0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842;
+  0.8296783423423767, 0.386131078004837, 0.3414350122213364, 2.953757851719856, 0.576780590415001, 0.0509522407874465, 0.4274536180496216, 0.4314169538021088, 0.5388700258731842]
+The weights of current GMM model are : [2.225073858507213e-308, 1, 2.225073858507213e-308]
+
+The extracted normalized features of the test object 6 are : 
+[0.3304305076599121, 0.2487757802009583, 0.3667662143707275, 3.392249345779419, 0.6453441977500916, 0.06948147714138031, 0.6787503361701965, 0.2375515699386597, 0.6535323858261108]
+ Likelihood Multivariate Normal Distribution for Object class : 4  is  =  2.15707  with likelihood frequency  =   0.47619
+
+The mean matrix of current GMM model is : [1.017850995063782, 0.5656957626342773, 0.101416103541851, 0.4019815921783447, 0.5072658658027649, 0.01978074759244919, 0.3357020616531372, 0.3209079802036285, 0.2028322070837021;
+  0.7754999995231628, 0.581000030040741, 0.01011885516345501, 1.057878613471985, 0.6429851055145264, 9.633161243982613e-05, 0.01700001955032349, 0.2800000011920929, 0.02023771032691002;
+  0.9608860214551289, 0.5969295303026835, 0.09605521708726883, 0.6478211283683777, 0.5566578110059102, 0.01909600757062435, 0.3611053029696146, 0.3264491558074951, 0.1921104341745377]
+The weights of current GMM model are : [0.2, 0.2, 0.6000000000000001]
+
+The extracted normalized features of the test object 6 are : 
+[0.3304305076599121, 0.2487757802009583, 0.3667662143707275, 3.392249345779419, 0.6453441977500916, 0.06948147714138031, 0.6787503361701965, 0.2375515699386597, 0.6535323858261108]
+ Likelihood Multivariate Normal Distribution for Object class : 5  is  =  -inf  with likelihood frequency  =   0.119048
+
+The mean matrix of current GMM model is : [0.6832956075668335, 0.3606812953948975, 0.2795734107494354, 0.07688750326633453, 0.4856828451156616, 0.05587131902575493, 0.6064579486846924, 0.48336261510849, 0.5591468214988708;
+  0.6832956075668335, 0.3606812953948975, 0.2795734107494354, 0.07688750326633453, 0.4856828451156616, 0.05587131902575493, 0.6064579486846924, 0.48336261510849, 0.5591468214988708;
+  0.6938833962308197, 0.2555907098803579, 0.00882461515436994, 4.254248267789258, 0.4491871384585776, 4.211870755836305e-05, 0.09974039091569621, 0.1173652659465627, 0.01579557178632879]
+The weights of current GMM model are : [2.225073858507471e-308, 0.02380952380952381, 0.9761904761904762]
+
+The extracted normalized features of the test object 6 are : 
+[0.3304305076599121, 0.2487757802009583, 0.3667662143707275, 3.392249345779419, 0.6453441977500916, 0.06948147714138031, 0.6787503361701965, 0.2375515699386597, 0.6535323858261108]
+ Likelihood Multivariate Normal Distribution for Object class : 6  is  =  -inf  with likelihood frequency  =   0.642857
+The confusion matrix is : 
+[0, 0, 0, 0, 0, 0, 0;
+  0, 0, 0, 0, 0, 0, 0;
+  0, 0, 0, 0, 0, 0, 0;
+  0, 0, 0, 0, 0, 0, 0;
+  0, 0, 0, 0, 0, 0, 0;
+  0, 0, 0, 0, 0, 0, 0;
+  0, 0, 0, 0, 0, 0, 0]
+ after inizialization.
+The actual class is : 2
+ The predicted class is : 2
+The actual class is : 1
+ The predicted class is : 1
+The actual class is : 3
+ The predicted class is : 3
+The actual class is : 0
+ The predicted class is : 0
+The actual class is : 0
+ The predicted class is : 0
+The actual class is : 6
+ The predicted class is : 6
+The actual class is : 4
+ The predicted class is : 4
+The confusion matrix is : 
+[2, 0, 0, 0, 0, 0, 0;
+  0, 1, 0, 0, 0, 0, 0;
+  0, 0, 1, 0, 0, 0, 0;
+  0, 0, 0, 1, 0, 0, 0;
+  0, 0, 0, 0, 1, 0, 0;
+  0, 0, 0, 0, 0, 0, 0;
+  0, 0, 0, 0, 0, 0, 1]
+ after the computation.
+The total confusion matrix is: 
+[2, 0, 0, 0, 0, 0, 0;
+  0, 1, 0, 0, 0, 0, 0;
+  0, 0, 1, 0, 0, 0, 0;
+  0, 0, 0, 1, 0, 0, 0;
+  0, 0, 0, 0, 1, 0, 0;
+  0, 0, 0, 0, 0, 0, 0;
+  0, 0, 0, 0, 0, 0, 1]
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the TOTAL featureListPairObject is : 6
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the TOTAL featureListPairObject is : 12
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the TOTAL featureListPairObject is : 18
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the TOTAL featureListPairObject is : 23
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the TOTAL featureListPairObject is : 28
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the TOTAL featureListPairObject is : 34
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the current object pair is : 5
+The size of the features of the TOTAL featureListPairObject is : 40
+ The size of the learned model pair object is :  7
+
+Predict prob for New Object-Pair Features : 2 and 1
+The features are : 
+[-0.114282076439367, -0.1127675416500799, 0.488859317055592, 0.0004852790566718791, -0.04649097821878276]
+Prob / likelihood =  1.69119e-05
+ co-occurrence probability weight = 0.857143
+ product = 1.44959e-05
+
+Predict prob for New Object-Pair Features : 2 and 3
+The features are : 
+[-1.045361600497032, -1.033763197139588, -0.869893607085119, -1.631146509352124, -4.16696760104918]
+Prob / likelihood =  1.75702e-26
+ co-occurrence probability weight = 0.333333
+ product = 5.85674e-27
+
+Predict prob for New Object-Pair Features : 2 and 0
+The features are : 
+[-0.4095280257162158, -0.3482946100263192, 0.32416722622586, -0.3987801742693631, -0.1863220143889351]
+Prob / likelihood =  0.000410896
+ co-occurrence probability weight = 0.857143
+ product = 0.000352196
+
+Predict prob for New Object-Pair Features : 2 and 0
+The features are : 
+[-1.022565932109959, -1.351860059781292, -1.897950507476973, -0.8791811586198554, 1.108256391601385]
+Prob / likelihood =  2.20916e-05
+ co-occurrence probability weight = 0.857143
+ product = 1.89357e-05
+
+Predict prob for New Object-Pair Features : 2 and 6
+The features are : 
+[-1.165867812685279, -1.120125680690244, -1.474076963519236, -0.1710500685101887, -0.3196470916694302]
+Prob / likelihood =  0.474304
+ co-occurrence probability weight = 0.571429
+ product = 0.271031
+
+Predict prob for New Object-Pair Features : 2 and 4
+The features are : 
+[-0.2062998443148309, -0.08424338115398594, 1.280095464839838, 0.1328064976566307, -0.1395915941599274]
+Prob / likelihood =  2.00997e-05
+ co-occurrence probability weight = 0.357143
+ product = 7.17845e-06
+
+Predict prob for New Object-Pair Features : 1 and 2
+The features are : 
+[-0.114282076439367, -0.1127675416500799, 0.9235734266577095, -0.4924718381439062, 0.04649097821878276]
+Prob / likelihood =  0.000165834
+ co-occurrence probability weight = 0.857143
+ product = 0.000142144
+
+Predict prob for New Object-Pair Features : 1 and 3
+The features are : 
+[-0.6341552901588942, -0.6215060837833885, -1.140851006728925, -1.459763206188297, -2.613094165805945]
+Prob / likelihood =  4.41258e-09
+ co-occurrence probability weight = 0.333333
+ product = 1.47086e-09
+
+Predict prob for New Object-Pair Features : 1 and 0
+The features are : 
+[-0.63159875996393, -0.5035237711238851, -0.1853055364396984, -0.3917048121674673, -0.13258394384645]
+Prob / likelihood =  1.81632e-05
+ co-occurrence probability weight = 0.97619
+ product = 1.77307e-05
+
+Predict prob for New Object-Pair Features : 1 and 0
+The features are : 
+[2.005168002056416, 1.666346326172264, -1.777612228591377, -0.5720976604442385, 1.213849997402253]
+Prob / likelihood =  0.814676
+ co-occurrence probability weight = 0.97619
+ product = 0.795279
+
+Predict prob for New Object-Pair Features : 1 and 6
+The features are : 
+[-0.06513837743364198, -0.05285435660547037, -1.426151437599875, -0.1592798107494309, -0.2789173157684863]
+Prob / likelihood =  1.83824
+ co-occurrence probability weight = 0.642857
+ product = 1.18173
+
+Predict prob for New Object-Pair Features : 1 and 4
+The features are : 
+[-1.693746227490547, -1.840699255800531, 0.519605381913379, -0.1866367477813168, 0.3195074699232758]
+Prob / likelihood =  1.08292e-07
+ co-occurrence probability weight = 0.47619
+ product = 5.15675e-08
+
+Predict prob for New Object-Pair Features : 3 and 2
+The features are : 
+[-1.045361600497032, -1.033763197139588, 0.3644749818862957, 2.034164407083892, 4.16696760104918]
+Prob / likelihood =  2.47687e-27
+ co-occurrence probability weight = 0.333333
+ product = 8.25624e-28
+
+Predict prob for New Object-Pair Features : 3 and 1
+The features are : 
+[-0.6341552901588942, -0.6215060837833885, 0.289545451948918, 2.551948822042819, 2.613094165805945]
+Prob / likelihood =  2.23997e-12
+ co-occurrence probability weight = 0.333333
+ product = 7.46656e-13
+
+Predict prob for New Object-Pair Features : 3 and 0
+The features are : 
+[-0.7081414166112208, -0.6642739243871318, 0.3557634255629156, 0.425592777516984, -0.03175468682438334]
+Prob / likelihood =  4.85982e-05
+ co-occurrence probability weight = 0.333333
+ product = 1.61994e-05
+
+Predict prob for New Object-Pair Features : 3 and 0
+The features are : 
+[-0.4293919166068882, -0.5622867156937241, 2.335567198704767, -0.3127863886537899, 1.218245026395927]
+Prob / likelihood =  2.822e-10
+ co-occurrence probability weight = 0.333333
+ product = 9.40667e-11
+
+Predict prob for New Object-Pair Features : 3 and 6
+The features are : 
+[-1.092330529988174, -0.9878773045089217, 1.001990526426634, -0.3168478275270604, -0.1580193241878856]
+Prob / likelihood =  1.60632
+ co-occurrence probability weight = 0.214286
+ product = 0.344212
+
+Predict prob for New Object-Pair Features : 3 and 4
+The features are : 
+[-0.557311036978118, -0.5396008977765023, 0.743350115696902, 2.251742033824138, -0.1216437780342356]
+Prob / likelihood =  4.55932e-21
+ co-occurrence probability weight = 0.238095
+ product = 1.08555e-21
+
+Predict prob for New Object-Pair Features : 0 and 2
+The features are : 
+[-0.4095280257162158, -0.3482946100263192, 0.3241673580948755, -0.1379572182563133, 0.1863220143889351]
+Prob / likelihood =  0.530602
+ co-occurrence probability weight = 0.857143
+ product = 0.454802
+
+Predict prob for New Object-Pair Features : 0 and 1
+The features are : 
+[-0.63159875996393, -0.5035237711238851, -0.185305377243029, -0.153565832034294, 0.13258394384645]
+Prob / likelihood =  0.0296624
+ co-occurrence probability weight = 0.97619
+ product = 0.0289562
+
+Predict prob for New Object-Pair Features : 0 and 3
+The features are : 
+[-0.7081414166112208, -0.6642739243871318, 1.103820742664927, -0.2502680813755611, 0.03175468682438334]
+Prob / likelihood =  0.050534
+ co-occurrence probability weight = 0.333333
+ product = 0.0168447
+
+Predict prob for New Object-Pair Features : 0 and 6
+The features are : 
+[-0.5624184660696474, -0.5027757590003146, 1.020015362098977, -0.1427586884217932, -0.1611389096955382]
+Prob / likelihood =  0.0792674
+ co-occurrence probability weight = 0.642857
+ product = 0.0509576
+
+Predict prob for New Object-Pair Features : 0 and 4
+The features are : 
+[-1.474601045988984, -1.400336460791916, -0.07868445390319799, -0.1759157271758349, 0.4426065791014636]
+Prob / likelihood =  0.127087
+ co-occurrence probability weight = 0.47619
+ product = 0.0605177
+
+Predict prob for New Object-Pair Features : 0 and 2
+The features are : 
+[-1.022565932109959, -1.351860059781292, -1.897950760831336, -0.09686972367442427, -1.108256391601385]
+Prob / likelihood =  0.00374826
+ co-occurrence probability weight = 0.857143
+ product = 0.00321279
+
+Predict prob for New Object-Pair Features : 0 and 1
+The features are : 
+[2.005168002056416, 1.666346326172264, -1.777612414171507, -0.1108088082142226, -1.213849997402253]
+Prob / likelihood =  2.6895e-08
+ co-occurrence probability weight = 0.97619
+ product = 2.62546e-08
+
+Predict prob for New Object-Pair Features : 0 and 3
+The features are : 
+[-0.4293919166068882, -0.5622867156937241, -1.329247711350139, -0.2330964972362222, -1.218245026395927]
+Prob / likelihood =  0.00190845
+ co-occurrence probability weight = 0.333333
+ product = 0.000636149
+
+Predict prob for New Object-Pair Features : 0 and 6
+The features are : 
+[-1.172136214808304, -1.565013008077678, -1.539145110907692, -0.1427436207701822, -0.9145505049458545]
+Prob / likelihood =  1.26494e-05
+ co-occurrence probability weight = 0.642857
+ product = 8.13176e-06
+
+Predict prob for New Object-Pair Features : 0 and 4
+The features are : 
+[0.5735747360430821, 0.597336920778085, -0.787787927252865, -0.1431040602509234, -0.450633789181043]
+Prob / likelihood =  0.0462175
+ co-occurrence probability weight = 0.47619
+ product = 0.0220083
+
+Predict prob for New Object-Pair Features : 6 and 2
+The features are : 
+[-1.165867812685279, -1.120125680690244, 0.555521530591416, 1.257945943335308, 0.3196470916694302]
+Prob / likelihood =  5.23126e-07
+ co-occurrence probability weight = 0.571429
+ product = 2.98929e-07
+
+Predict prob for New Object-Pair Features : 6 and 1
+The features are : 
+[-0.06513837743364198, -0.05285435660547037, 0.6717601865716265, 0.2682220890902571, 0.2789173157684863]
+Prob / likelihood =  6.38244e-05
+ co-occurrence probability weight = 0.642857
+ product = 4.103e-05
+
+Predict prob for New Object-Pair Features : 6 and 3
+The features are : 
+[-1.092330529988174, -0.9878773045089217, -0.111307326577033, -0.0115837605561778, 0.1580193241878856]
+Prob / likelihood =  1.87689e-06
+ co-occurrence probability weight = 0.214286
+ product = 4.02191e-07
+
+Predict prob for New Object-Pair Features : 6 and 0
+The features are : 
+[-0.5624184660696474, -0.5027757590003146, 1.070858239572595, 0.3558427131572319, 0.1611389096955382]
+Prob / likelihood =  8.25001e-06
+ co-occurrence probability weight = 0.642857
+ product = 5.30358e-06
+
+Predict prob for New Object-Pair Features : 6 and 0
+The features are : 
+[-1.172136214808304, -1.565013008077678, 5.013372095744125, -0.2519740686081036, 0.9145505049458545]
+Prob / likelihood =  1.97921e-21
+ co-occurrence probability weight = 0.642857
+ product = 1.27235e-21
+
+Predict prob for New Object-Pair Features : 6 and 4
+The features are : 
+[-0.2315512982464311, -0.3313630820814805, 0.7451085931942339, 1.029635887662816, 1.036570884874042]
+Prob / likelihood =  9.52118e-07
+ co-occurrence probability weight = 0.261905
+ product = 2.49364e-07
+
+Predict prob for New Object-Pair Features : 4 and 2
+The features are : 
+[-0.2062998443148309, -0.08424338115398594, 1.280095499177359, -0.3169424984383852, 0.1395915941599274]
+Prob / likelihood =  0.00646421
+ co-occurrence probability weight = 0.357143
+ product = 0.00230864
+
+Predict prob for New Object-Pair Features : 4 and 1
+The features are : 
+[-1.693746227490547, -1.840699255800531, -1.813474354463058, -0.5906666986855007, -0.3195074699232758]
+Prob / likelihood =  6.13757e-08
+ co-occurrence probability weight = 0.47619
+ product = 2.92265e-08
+
+Predict prob for New Object-Pair Features : 4 and 3
+The features are : 
+[-0.557311036978118, -0.5396008977765023, -1.076230819039159, -1.920589460674116, 0.1216437780342356]
+Prob / likelihood =  9.31684e-07
+ co-occurrence probability weight = 0.238095
+ product = 2.2183e-07
+
+Predict prob for New Object-Pair Features : 4 and 0
+The features are : 
+[-1.474601045988984, -1.400336460791916, -0.3766936634698276, -0.4046156632931278, -0.4426065791014636]
+Prob / likelihood =  584.117
+ co-occurrence probability weight = 0.47619
+ product = 278.151
+
+Predict prob for New Object-Pair Features : 4 and 0
+The features are : 
+[0.5735747360430821, 0.597336920778085, -1.12323148953493, -0.8355513898623136, 0.450633789181043]
+Prob / likelihood =  1.99783e-05
+ co-occurrence probability weight = 0.47619
+ product = 9.51346e-06
+
+Predict prob for New Object-Pair Features : 4 and 6
+The features are : 
+[-0.2315512982464312, -0.3313630820814805, -2.159276484044359, -0.2255835081454982, -1.036570884874042]
+Prob / likelihood =  0.267036
+ co-occurrence probability weight = 0.261905
+ product = 0.069938
+The total sum of likelihoods is : 281.454
+In TestScene::computeProbObjectPairs_AllFeats() before return 
+In LOOCV do Test after calling computeProbObjectPairs_AllFeats()
+In LOOCV do Test after push back 
+
+ Inside LOOCV compute. End test. 
+Scene 0 :  Similarity score :  281.454

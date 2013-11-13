@@ -27,6 +27,7 @@ ApiConvertSimulationDB::ApiConvertSimulationDB(string inputFileName) {
   fileNameJSON = inputFileName;
 }
 
+
 /* 
 This function parses the whole JSON file and iteratively parses the scenes in the file.
 */
@@ -118,6 +119,7 @@ void ApiConvertSimulationDB::parseSceneJSON(boost::property_tree::ptree::value_t
         }
         (objectVector[countObject]).setBoundingBox(boundingBoxVertices);
         currentScene.addObject(objectVector[countObject]);
+        countObject++;
       }
     }
 

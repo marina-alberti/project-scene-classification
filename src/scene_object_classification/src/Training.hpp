@@ -74,12 +74,13 @@ private:
 public:
 
   Training();
+  void createTrainingSet(string, bool = false);
   void storeFiles();
-  void createTrainingSet();
-  void compute(string, bool = false);
+  void createTrainingSet_Real();
+  void createTrainingSet_Simulation();
   void doTraining();
   DatabaseInformation getDatabaseInformation();
-  void createTrainingSet_Simulation();
+
 
 };
 

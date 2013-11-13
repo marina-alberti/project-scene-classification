@@ -21,10 +21,20 @@ static const std::string TAG_HEIGHT = "height";
 static const std::string TAG_COLOR = "color";
 static const std::string TAG_INDICES = "indices";
 
+
+/* 
+Class constructor, sest the field: "fileNameXML" which contains the information
+of a scene
+*/
 ApiConvertKTHDB::ApiConvertKTHDB(string inputFileName) {
   fileNameXML = inputFileName;
 }
 
+
+/* 
+Parses the XML file. Stores the data about the table and the other objects in the 
+scene into an object of class "SceneInformation", which is passed by reference as an argument.
+*/
 void ApiConvertKTHDB::parseFileXML(SceneInformation & mySceneInformation){
 
   boost::property_tree::ptree root;
@@ -36,7 +46,7 @@ void ApiConvertKTHDB::parseFileXML(SceneInformation & mySceneInformation){
     std::cout << "From Api: scenario type =  "<< scenarioType << endl;
     std::cout << "From getType function: the scenario type is " << mySceneInformation.getType() << endl;
   }
- //// To add later for desk properties (length and width parametrs)
+  //// To add later for desk properties (length and width parametrs)
   ptree& tableDimensions = root.get_child(TAG_SCENARIO + "." + TAG_DIMENSIONS);
   float  _deskLength = tableDimensions.get<float>(TAG_LENGTH);
   float  _deskWidth = tableDimensions.get<float>(TAG_WIDTH);
@@ -61,6 +71,11 @@ void ApiConvertKTHDB::parseFileXML(SceneInformation & mySceneInformation){
 }
 
 
+/*
+Parses a single object in the scene. Adds the information about the object to 
+the object_instnace of class "SceneInformation" which is passed by reference 
+to the function as an argument.
+*/
 void ApiConvertKTHDB::parseObject(boost::property_tree::ptree & parent, SceneInformation &mySceneInformation){
   Object newObject;
   if (DEBUG) {
@@ -89,36 +104,20 @@ void ApiConvertKTHDB::parseObject(boost::property_tree::ptree & parent, SceneInf
   }
   vector<pcl::PointXYZ> myboundingBoxPoints = convertObjectParameters();
   newObject.setBoundingBox(myboundingBoxPoints); 
+
+  newObject.setInstanceName(parent.get<std::string>(TAG_NAME));
+
+  // setting the name sets also the numeric object ID
   newObject.setObjectName(parent.get<std::string>(TAG_NAME));
 
-// to do: add set object ID  TO DO: uncomment
-// setActualObjectID(int i)
+  string currentName = parent.get<std::string>(TAG_NAME);
+  const char * currentNameChar = currentName.c_str();
 
-    string currentName = parent.get<std::string>(TAG_NAME);
-    const char * currentNameChar = currentName.c_str();
 /*
     if (strcmp(currentNameChar, "Monitor") == 0 || strcmp(currentNameChar, "monitor") == 0 || strcmp(currentNameChar, "Screen") == 0 || strcmp(currentNameChar, "Monitor2") == 0) {
        newObject.setActualObjectID(0);
-    }
-    if (strcmp(currentNameChar, "Keyboard") == 0 || strcmp(currentNameChar, "keyboard") == 0) {
-       newObject.setActualObjectID(1);
-    }
-    if (strcmp(currentNameChar, "Mouse") == 0 || strcmp(currentNameChar, "mouse") == 0) {
-       newObject.setActualObjectID(2);
-    }
-    if (strcmp(currentNameChar, "Mug") == 0 || strcmp(currentNameChar, "Cup") == 0) {
-       newObject.setActualObjectID(3);
-    }
-    if (strcmp(currentNameChar, "Lamp") == 0 || strcmp(currentNameChar, "Lamp2") == 0) {
-       newObject.setActualObjectID(4);
-    }
-    if (strcmp(currentNameChar, "Laptop") == 0 || strcmp(currentNameChar, "laptop") == 0) {
-       newObject.setActualObjectID(5);
-    }
-    if (strcmp(currentNameChar, "Pen") == 0 || strcmp(currentNameChar, "Pen2") == 0 || strcmp(currentNameChar, "Pen3") == 0) {
-       newObject.setActualObjectID(6);
-    }
 */
+
   if (newObject.getActualObjectID() != -1) {
     mySceneInformation.addObject(newObject);
   }

@@ -8,18 +8,18 @@ Training::Training() {
   numberOfFiles = 0;
 }
 
-void Training::compute(string inputfolder, bool simulationDatabase) {
+void Training::createTrainingSet(string inputfolder, bool simulationDatabase) {
   
   dirname = inputfolder;
 
   if (simulationDatabase == false) {
     storeFiles();
-    createTrainingSet();
+    createTrainingSet_Real();
   }
   else {
     createTrainingSet_Simulation();
   }
-  doTraining();
+  //doTraining();
 }
 
 // getAnnotationFileNames change the function name
@@ -56,7 +56,7 @@ void Training::storeFiles() {
 }
 
 
-void Training::createTrainingSet() {
+void Training::createTrainingSet_Real() {
   trainingFilesList.clear();
   for ( int  i = 0; i < allFileNames.size(); i++ ) {
       trainingFilesList.push_back(allFileNames.at(i));
@@ -87,18 +87,14 @@ void Training::doTraining() {
   //******************************************************************************
   // Feature Extraction  
 
-  cout << "Inside Training Training: Before calling apifeatureextraction from Training" << endl;
   storeDatabase.callApiFeatureExtraction();
   storeDatabase.setFeatureMatrix();
-  cout << "Inside Training Training: The feature matrix has been filled." << endl;
-
   
   //******************************************************************************
   // Learning module 
 
   // (i) Learning Object category models 
   storeDatabase.computeGMM_SingleObject_AllFeat(N_CLUSTERS_OBJECT);
-
   
   // (ii) Learning spatial relations between different object categories 
   storeDatabase.computeGMM_PairObject_AllFeat(N_CLUSTERS_PAIR); 
@@ -145,8 +141,6 @@ void Training::doTraining() {
          << learnedModelSingleObject.size() << endl;
   }
  
-  
-
 }
 
 DatabaseInformation Training::getDatabaseInformation() {

@@ -52,6 +52,8 @@ public:
 
   void setInstanceName(string);
   void setCategoryName(string);
+  string getInstanceName() { return instanceName; }
+  string getCategoryName() { return categoryName; }
 
 };
 

@@ -77,6 +77,9 @@ add_library( sceneClassification src/Object.cpp src/SceneInformation.cpp src/Api
 ## Declare a cpp executable
 add_executable(object_class_prediction_service src/object_class_prediction_service.cpp)
 add_executable(test src/test.cpp)
+add_executable(test_object_class_prediction src/test_object_class_prediction.cpp)
+
+
 
 ## Add cmake target dependencies of the executable/library
 ## as an example, message headers may need to be generated before nodes
@@ -88,6 +91,8 @@ target_link_libraries( object_class_prediction_service ${catkin_LIBRARIES})
 target_link_libraries( object_class_prediction_service sceneClassification)
 target_link_libraries( test ${catkin_LIBRARIES})
 target_link_libraries( test sceneClassification)
+target_link_libraries( test_object_class_prediction ${catkin_LIBRARIES})
+target_link_libraries( test_object_class_prediction sceneClassification)
 target_link_libraries( sceneClassification ${OpenCV_LIBS} )
 
 
